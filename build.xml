@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<project xmlns:ht="happytrails" name="AWSSdkDocsPHP-3.0" basedir="." default="build">
+  <description>Build script for the PHP SDK Dev Guide.</description>
+  <import file="${happytrails.root}/happytrails.xml"/>
+  <ht:import file="zfast/zonbook-rst.xml" as="zfast"/>
+  <!-- The "build" target is required by happy trails -->
+  <target name="build" depends="release"/>
+  <target name="release" depends="zfast.release"/>
+  <!-- If you have extra_server_files to copy -->
+  <!--
+  <property name="custom-post-build-enabled" value="true"/>
+  <target name="custom-post-build" description="Copy extra HTML files">
+    <echo>Copying extra server content...</echo>
+    <copy todir="${output.dir}/server-root/sdk-for-php/">
+      <fileset dir="extra_server_files"/>
+    </copy>
+  </target>
+  -->
+</project>
