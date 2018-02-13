@@ -24,3 +24,4 @@ AWS SDK for PHP Developer Guide
 
     welcome
     document-history
+\n
