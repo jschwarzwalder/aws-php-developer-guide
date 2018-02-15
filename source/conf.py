@@ -49,6 +49,10 @@ show_pdf_link = True
 # Whether or not to show the language selector
 show_lang_selector = True
 
+# The link to the top of the doc source tree on GitHub. This allows generation
+# of per-page "Edit on GitHub" links.
+github_doc_url = 'https://github.com/awsdocs/aws-java-developer-guide/tree/master/doc_source'
+
 #
 # Version Information
 #
@@ -93,8 +97,8 @@ forum_id = '80'
 # Note: The following extra_navlinks were a guess, and never seemed to actually
 # do anything to the built HTML docs.
 extra_navlinks = [
-#    ('SDK Home', 'https://aws.amazon.com/sdk-for-php/'),
-#    ('GitHub', 'https://github.com/aws/aws-sdk-php'),
+    ('SDK Home', 'https://aws.amazon.com/sdk-for-php/'),
+    ('GitHub', 'https://github.com/aws/aws-sdk-php'),
 ]
 
 build_html = True
