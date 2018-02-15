@@ -381,9 +381,9 @@ that creates credentials using assume role parameters and ``StsClient`` informat
 
 .. note::
 
-To avoid unnecessarily fetching STS credentials on every API operation, you can use
- ``memoize`` function that handles automatically refreshing the credentials when they expire.
-See details with following example code.
+   To avoid unnecessarily fetching STS credentials on every API operation, you can use
+   ``memoize`` function that handles automatically refreshing the credentials when they expire.
+   See details with following example code.
 
 .. code-block:: php
 

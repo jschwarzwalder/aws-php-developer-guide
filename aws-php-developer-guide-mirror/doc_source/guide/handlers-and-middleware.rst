@@ -11,7 +11,13 @@ behavior.
 Handlers
 --------
 
-.. include:: ../_snippets/handler-description.txt
+A handler is a function that performs the actual transformation of a command
+and request into a result. A handler typically sends HTTP requests. Handlers
+can be composed with middlewares to augment their behavior. A handler is a
+function that accepts an ``Aws\CommandInterface`` and a
+``Psr\Http\Message\RequestInterface`` and returns a promise that is fulfilled
+with an ``Aws\ResultInterface`` or rejected with an
+``Aws\Exception\AwsException`` reason.
 
 Here's a handler that returns the same mock result for each call:
 
@@ -90,7 +96,12 @@ them in FIFO order.
 Middleware
 ----------
 
-.. include:: ../_snippets/middleware-description.txt
+Middleware are a special type of high level function that that augment the
+behavior of transferring a command and delegate to a "next" handler. Middleware
+functions accept an ``Aws\CommandInterface`` and a
+``Psr\Http\Message\RequestInterface`` and return a promise that is fulfilled
+with an ``Aws\ResultInterface`` or rejected with an
+``Aws\Exception\AwsException`` reason.
 
 A middleware is a higher-order function that modifies a command,
 request, or result as it passes through the middleware. A middleware takes the

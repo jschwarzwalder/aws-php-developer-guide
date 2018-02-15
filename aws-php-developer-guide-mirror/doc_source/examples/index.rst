@@ -1,4 +1,4 @@
-.. Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -8,16 +8,17 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-###############
-Getting Started
-###############
+=============
+Code Examples
+=============
 
-This section provides information about how to install, set up, and use the |sdk-java|.
+This chapter includes code examples that demonstrate common Amazon Web Services scenarios using the AWS SDK for PHP.
 
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
+    :maxdepth: 2
 
-   requirements
-   setup-install
-   basic-sdk-usage
+    cw-examples.rst
+    ec2-examples.rst
+    iam-examples.rst
+    s3-examples.rst
+    sqs-examples.rst
