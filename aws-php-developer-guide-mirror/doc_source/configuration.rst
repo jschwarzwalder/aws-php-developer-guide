@@ -28,7 +28,7 @@ constructor.
 
     $s3Client = new S3Client($options);
 
-Refer to the :doc:`basic usage guide </getting-started/basic-usage>` for more
+Refer to the :doc:`basic usage guide <basic-usage>` for more
 information on constructing clients.
 
 api_provider

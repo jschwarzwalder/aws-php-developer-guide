@@ -5,7 +5,7 @@ JMESPath Expressions in the SDK
 `JMESPath <http://jmespath.org/>`_ allows you to declaratively specify how to
 extract elements from a JSON document. The AWS SDK for PHP has a dependency on
 `jmespath.php <https://github.com/jmespath/jmespath.php>`_ to power some of the
-high level abstractions like :doc:`paginators` and :doc:`waiters`, but also
+high-level abstractions like :ref:`paginators` and :ref:`waiters`, but also
 exposes JMESPath searching on ``Aws\ResultInterface`` and
 ``Aws\ResultPaginator``.
 
@@ -14,7 +14,7 @@ You can play around with JMESPath in your browser by trying the online
 about the language, including the available expressions and functions in the
 `JMESPath specification <http://jmespath.org/specification.html>`_.
 
-JMESPath is supported in the `AWS CLI <http://aws.amazon.com/cli/>`_.
+`AWS CLI <http://aws.amazon.com/cli/>`_ supports JMESPath.
 Expressions you write for CLI output are 100% compatible with expressions
 written for the AWS SDK for PHP.
 
@@ -236,14 +236,14 @@ filter projection.
 Extracting data from paginators
 -------------------------------
 
-As you know from the :doc:`paginators` guide, ``Aws\ResultPaginator`` objects
+As you know from the :ref:`paginators` guide, ``Aws\ResultPaginator`` objects
 are used to yield results from a pageable API operation. The SDK allows you to
 extract and iterate over filtered data from ``Aws\ResultPaginator`` objects
 essentially implementing a `flat-map <http://martinfowler.com/articles/collection-pipeline/flat-map.html>`_
 over the iterator in which the result of a JMESPath expression is the map
 function.
 
-Let's say you wanted to created an ``Iterator`` the yields only objects from a
+Let's say you wanted to created an ``Iterator`` that yields only objects from a
 bucket that are larger than 1 MB. This can be achieved by first creating a
 ``ListObjects`` paginator and then applying a ``search()`` function to the
 paginator, creating a flat-mapped iterator over the paginated data.

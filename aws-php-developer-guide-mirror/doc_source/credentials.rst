@@ -339,7 +339,7 @@ credentials from Amazon EC2 instance profiles.
     setting the ``AWS_EC2_METADATA_DISABLED`` environment variable to ``true``.
 
 ecsCredentials provider
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 ``Aws\Credentials\CredentialProvider::ecsCredentials`` attempts to load
 credentials by a ``GET`` request, whose uri is specified by environment variable

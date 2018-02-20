@@ -8,8 +8,7 @@ PHP and how the new version differs from the Version 2 of the SDK.
 .. note::
 
     The basic usage pattern of the SDK (i.e., ``$result = $client->operation($params);``)
-    has not changed from Version 2 to Version 3, which should result in a fairly
-    smooth migration.
+    has not changed from Version 2 to Version 3, which should result in a smooth migration.
 
 Introduction
 ------------
@@ -70,11 +69,11 @@ The dependencies of the SDK have changed in this version.
   interfaces for managing asynchronous requests and coroutines. While Guzzle's
   multi-cURL HTTP handler ultimately implements the non-blocking I/O model that
   allows for asynchronous requests, this package provides the ability to program
-  within that paradigm. See :doc:`promises` for more details.
+  within that paradigm. See :ref:`promises` for more details.
 - The PHP implementation of `JMESPath <http://jmespath.org/>`_
   (``mtdowling/jmespath.php``) is used in the SDK to provide the data querying
   ability of the ``Aws\Result::search()`` and ``Aws\ResultPaginator::search()``
-  methods. See :doc:`jmespath` for more details.
+  methods. See :ref:`jmespath` for more details.
 
 Region and version options are now required
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -140,7 +139,7 @@ Client configuration has changed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The client configuration options in Version 3 of the SDK have changed a little
-from Version 2. See the :doc:`configuration` page for a description of all the
+from Version 2. See the :ref:`configuration` page for a description of all the
 supported options.
 
 .. note::
@@ -328,7 +327,7 @@ was that they were not flexible enough, because the iterator only emitted
 specific values from each result, and if there were other values you needed from
 the results, you could only retrieve them via event listeners.
 
-In Version 3, Iterators have been replaced with :doc:`Paginators <paginators>`.
+In Version 3, Iterators have been replaced with :ref:`Paginators <paginators>`.
 They are similar in purpose, but Paginators are more flexible, because they
 yield result objects instead of values from a response.
 
@@ -355,7 +354,7 @@ in both Version 2 and Version 3.
         }
     }
 
-Paginator objects have a ``search()`` method that allows you to use :doc:`JMESPath <jmespath>`
+Paginator objects have a ``search()`` method that allows you to use :ref:`JMESPath <jmespath>`
 expressions to extract data more easily from the result set.
 
 .. code-block:: php
@@ -379,16 +378,16 @@ objects aside from the clients) have been improved or updated. Some have
 even been removed.
 
 * Updated:
-    * The way you use the :doc:`S3 Multipart Uploader </service/s3-multipart-upload>`
+    * The way you use the :ref:`S3 Multipart Uploader <s3-multipart-upload>`
       has changed. The Glacier Multipart Uploader has been changed in similar ways.
-    * The way to create :doc:`S3 Presigned URLs </service/s3-presigned-url>` has changed.
+    * The way to create :ref:`S3 Presigned URLs <s3-presigned-url>` has changed.
     * The ``Aws\S3\Sync`` namespace have been replaced by the ``Aws\S3\Transfer``
       class. The ``S3Client::uploadDirectory()`` and ``S3Client::downloadBucket()``
       methods are still available, but have different options. See the docs for
-      :doc:`/service/s3-transfer`.
+      :ref:`s3-transfer`.
     * The ``Aws\S3\Model\ClearBucket`` and ``Aws\S3\Model\DeleteObjectsBatch``
       have been replaced by ``Aws\S3\BatchDelete`` and ``S3Client::deleteMatchingObjects()``.
-    * The options and behaviors for the :doc:`/service/dynamodb-session-handler`
+    * The options and behaviors for the :ref:`dynamodb-session-handler`
       have changed slightly.
     * The ``Aws\DynamoDb\Model\BatchRequest`` namespace has been replaced by
       ``Aws\DynamoDb\WriteRequestBatch``. See the docs for
