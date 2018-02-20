@@ -69,11 +69,11 @@ The dependencies of the SDK have changed in this version.
   interfaces for managing asynchronous requests and coroutines. While Guzzle's
   multi-cURL HTTP handler ultimately implements the non-blocking I/O model that
   allows for asynchronous requests, this package provides the ability to program
-  within that paradigm. See :ref:`promises` for more details.
+  within that paradigm. See :ref:`guide_promises` for more details.
 - The PHP implementation of `JMESPath <http://jmespath.org/>`_
   (``mtdowling/jmespath.php``) is used in the SDK to provide the data querying
   ability of the ``Aws\Result::search()`` and ``Aws\ResultPaginator::search()``
-  methods. See :ref:`jmespath` for more details.
+  methods. See :ref:`guide_jmespath` for more details.
 
 Region and version options are now required
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -139,7 +139,7 @@ Client configuration has changed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The client configuration options in Version 3 of the SDK have changed a little
-from Version 2. See the :ref:`configuration` page for a description of all the
+from Version 2. See the :ref:`guide_configuration` page for a description of all the
 supported options.
 
 .. note::
@@ -327,7 +327,7 @@ was that they were not flexible enough, because the iterator only emitted
 specific values from each result, and if there were other values you needed from
 the results, you could only retrieve them via event listeners.
 
-In Version 3, Iterators have been replaced with :ref:`Paginators <paginators>`.
+In Version 3, Iterators have been replaced with :ref:`Paginators <guide_paginators>`.
 They are similar in purpose, but Paginators are more flexible, because they
 yield result objects instead of values from a response.
 
@@ -354,7 +354,7 @@ in both Version 2 and Version 3.
         }
     }
 
-Paginator objects have a ``search()`` method that allows you to use :ref:`JMESPath <jmespath>`
+Paginator objects have a ``search()`` method that allows you to use :ref:`JMESPath <guide_jmespath>`
 expressions to extract data more easily from the result set.
 
 .. code-block:: php

@@ -28,7 +28,7 @@ constructor.
 
     $s3Client = new S3Client($options);
 
-Refer to the :doc:`basic usage guide <basic-usage>` for more
+Refer to the :doc:`basic usage guide <getting-started_basic-usage>` for more
 information on constructing clients.
 
 api_provider
@@ -125,7 +125,7 @@ default provider chain across multiple processes.
     ]);
 
 You can find more information about providing credentials to a client in the
-:doc:`credentials` guide.
+:doc:`guide_credentials` guide.
 
 .. note::
 
@@ -717,7 +717,7 @@ the "credentials" key to be ignored.
         'profile' => 'production'
     ]);
 
-See :doc:`credentials` for more information on configuring credentials and the
+See :doc:`guide_credentials` for more information on configuring credentials and the
 INI file format.
 
 .. _cfg_region:
