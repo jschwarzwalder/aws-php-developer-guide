@@ -24,7 +24,7 @@ but in this sample, I'll be signing requests against an Amazon ES domain in the
 
 You'll need to provide credentials, which can be done either with the SDK's
 default provider chain or any any form of credentials described in
-:doc:`../guide/credentials`, as well as a `PSR-7 request
+:doc:`credentials`, as well as a `PSR-7 request
 <http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Psr.Http.Message.RequestInterface.html>`_
 (assumed in the code below to be named ``$psr7Request``):
 
@@ -39,4 +39,3 @@ default provider chain or any any form of credentials described in
 
     // Sign your request
     $signedRequest = $signer->signRequest($psr7Request, $credentials);
-
