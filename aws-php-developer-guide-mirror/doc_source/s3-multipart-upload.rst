@@ -155,7 +155,7 @@ Asynchronous multipart uploads
 ------------------------------
 
 Calling ``upload()`` on the ``MultipartUploader`` is a blocking request. If you are
-working in an asynchronous context, you can get a :doc:`Promise <promises>`
+working in an asynchronous context, you can get a :doc:`Promise <guide_promises>`
 for the multipart upload.
 
 .. code-block:: php

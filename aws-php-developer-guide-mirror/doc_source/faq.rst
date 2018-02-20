@@ -144,7 +144,7 @@ If you are seeing this error and you are **not** intending to use instance
 profile credentials, then you need to make sure that you are properly providing
 credentials to the SDK.
 
-For more information, see :doc:`credentials`.
+For more information, see :doc:`guide_credentials`.
 
 Does the SDK work on HHVM?
 --------------------------
@@ -186,7 +186,7 @@ understand. This is almost always encountered when attempting to run code that
 was written for a different version of PHP.
 
 If you encounter a parsing error, please check your system and make sure it
-fulfills the SDK's :doc:`requirements`.
+fulfills the SDK's :doc:`getting-started_requirements`.
 
 Why is the S3 client decompressing gzipped files?
 -------------------------------------------------

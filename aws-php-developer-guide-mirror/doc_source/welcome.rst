@@ -21,28 +21,28 @@ External links: `API Docs <http://docs.aws.amazon.com/aws-sdk-php/v3/api/>`_
 .. note::
 
     Are you migrating your project's code from using Version 2 of the SDK to
-    Version 3? If so, you should read our :doc:`migration`.
+    Version 3? If so, you should read our :doc:`guide_migration`.
 
 Getting Started
 ---------------
 
-1. :doc:`requirements`
-2. :doc:`installation`
-3. :doc:`basic-usage`
+1. :doc:`getting-started_requirements`
+2. :doc:`getting-started_installation`
+3. :doc:`getting-started_basic-usage`
 
 SDK Guides
 ----------
 
-* :doc:`configuration`
-* :doc:`credentials`
-* :doc:`commands`
-* :doc:`promises`
-* :doc:`handlers-and-middleware`
-* :doc:`streams`
-* :doc:`paginators`
-* :doc:`waiters`
-* :doc:`jmespath`
-* :doc:`migration`
+* :doc:`guide_configuration`
+* :doc:`guide_credentials`
+* :doc:`guide_commands`
+* :doc:`guide_promises`
+* :doc:`guide_handlers-and-middleware`
+* :doc:`guide_streams`
+* :doc:`guide_paginators`
+* :doc:`guide_waiters`
+* :doc:`guide_jmespath`
+* :doc:`guide_migration`
 
 Service-Specific Features
 -------------------------

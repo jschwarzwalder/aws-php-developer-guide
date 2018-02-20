@@ -13,16 +13,16 @@ Client
     Client objects are used to execute operations for a service. Each service
     that is supported in the SDK has a corresponding client object. Client
     objects have methods that correspond one-to-one with the service operations.
-    See the :doc:`basic usage guide <basic-usage>` for details
+    See the :doc:`basic usage guide <getting-started_basic-usage>` for details
     on how to create and use client objects.
 
 Command
     Command objects encapsulate the execution of an operation. When following
-    the :doc:`basic usage patterns <basic-usage>` of the SDK,
+    the :doc:`basic usage patterns <getting-started_basic-usage>` of the SDK,
     you will not deal directly with command objects. Command objects can be
     accessed using the ``getCommand()`` method of a client, in order to use
     advanced features of the SDK like concurrent requests and batching. See
-    the :doc:`commands` guide for more details.
+    the :doc:`guide_commands` guide for more details.
 
 Credentials
     To interact with AWS services, you must authenticate with the service using
@@ -30,7 +30,7 @@ Credentials
     <http://aws.amazon.com/developers/access-keys/>`_. Your access keys consist
     of two parts: your access key ID, which identifies your account, and your
     secret access, which is used to create **signatures** when executing
-    operations. You must :doc:`provide credentials <credentials>` when
+    operations. You must :doc:`provide credentials <guide_credentials>` when
     you configure a client object.
 
 Handler
@@ -61,7 +61,7 @@ Paginator
     results. Paginators are a feature of the SDK that act as an abstraction over
     this process to make it easier for developers to use paginated APIs. They
     are accessed via the ``getPaginator()`` method of the client. See the
-    :doc:`paginators` guide for more details.
+    :doc:`guide_paginators` guide for more details.
 
 Promise
     A promise represents the eventual result of an asynchronous operation. The
@@ -83,7 +83,7 @@ SDK
     <http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.Sdk.html>`_, which
     acts as a factory for the client objects for each **service**. The ``Sdk``
     class also let's you provide a set of :doc:`global configuration values
-    <configuration>` that are applied to all client objects that it
+    <guide_configuration>` that are applied to all client objects that it
     creates.
 
 Service
@@ -107,4 +107,4 @@ Waiter
     to access for several seconds. Executing a waiter allows you to wait until a
     resource enters into a particular state by sleeping and polling the
     resource's status. Waiters are accessed using the ``waitUntil()`` method of
-    the client. See the :doc:`waiters` guide for more details.
+    the client. See the :doc:`guide_waiters` guide for more details.
