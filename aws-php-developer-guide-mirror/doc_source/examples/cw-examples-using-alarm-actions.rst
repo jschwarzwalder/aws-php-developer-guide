@@ -28,7 +28,7 @@ All the example code for the AWS SDK for PHP is available `here on GitHub <https
 Credentials
 -----------
 
-Before running the example code, configure your AWS credentials, as described in :doc:`/guide/credentials`.
+Before running the example code, configure your AWS credentials, as described in :doc:`guide_credentials`.
 
 Enable Alarm Actions
 --------------------
