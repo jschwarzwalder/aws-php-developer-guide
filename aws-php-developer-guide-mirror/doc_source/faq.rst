@@ -108,7 +108,7 @@ You can sign an arbitrary `PSR-7 request
 using the SDK's `SignatureV4 class
 <https://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.Signature.SignatureV4.html>`_.
 
-See :doc:`service/cloudsearch-custom-requests` for a full example of how to do
+See :doc:`cloudsearch-custom-requests` for a full example of how to do
 so.
 
 How can I modify a command before sending it?
@@ -144,7 +144,7 @@ If you are seeing this error and you are **not** intending to use instance
 profile credentials, then you need to make sure that you are properly providing
 credentials to the SDK.
 
-For more information, see :doc:`/guide/credentials`.
+For more information, see :doc:`credentials`.
 
 Does the SDK work on HHVM?
 --------------------------
@@ -186,7 +186,7 @@ understand. This is almost always encountered when attempting to run code that
 was written for a different version of PHP.
 
 If you encounter a parsing error, please check your system and make sure it
-fulfills the SDK's :doc:`/getting-started/requirements`.
+fulfills the SDK's :doc:`requirements`.
 
 Why is the S3 client decompressing gzipped files?
 -------------------------------------------------
