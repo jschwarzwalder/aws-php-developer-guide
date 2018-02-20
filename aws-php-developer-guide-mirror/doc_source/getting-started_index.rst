@@ -8,6 +8,6 @@ PHP.
 .. toctree::
     :maxdepth: 2
 
-    requirements
-    installation
-    basic-usage
+    getting-started_requirements
+    getting-started_installation
+    getting-started_basic-usage

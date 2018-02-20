@@ -4,7 +4,7 @@ Basic SDK Usage
 
 This guide focuses on basic usage patterns of the **AWS SDK for PHP**. This
 guide assumes that you have already :doc:`downloaded and installed the SDK
-<installation>` and retrieved your `AWS access keys
+<getting-started_installation>` and retrieved your `AWS access keys
 <http://aws.amazon.com/developers/access-keys/>`_.
 
 Including the SDK
@@ -65,7 +65,7 @@ directory, AWS Identity and Access Management (IAM)
 :ref:`credential providers <credential_provider>`.
 
 All of the general client configuration options are described in detail in
-the :doc:`configuration guide <configuration>`. The array of options
+the :doc:`configuration guide <guide_configuration>`. The array of options
 provided to a client may vary based on which client you are creating. These
 custom client configuration options are described in the
 `API documentation <http://docs.aws.amazon.com/aws-sdk-php/latest/>`_ of each
