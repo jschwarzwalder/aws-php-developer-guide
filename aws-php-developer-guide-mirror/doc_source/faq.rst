@@ -108,7 +108,7 @@ You can sign an arbitrary `PSR-7 request
 using the SDK's `SignatureV4 class
 <https://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.Signature.SignatureV4.html>`_.
 
-See :doc:`cloudsearch-custom-requests` for a full example of how to do
+See :doc:`service_cloudsearch-custom-requests` for a full example of how to do
 so.
 
 How can I modify a command before sending it?

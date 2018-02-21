@@ -397,7 +397,7 @@ even been removed.
       :ref:`s3-transfer`.
     * The ``Aws\S3\Model\ClearBucket`` and ``Aws\S3\Model\DeleteObjectsBatch``
       have been replaced by ``Aws\S3\BatchDelete`` and ``S3Client::deleteMatchingObjects()``.
-    * The options and behaviors for the :ref:`dynamodb-session-handler`
+    * The options and behaviors for the :ref:`service_dynamodb-session-handler`
       have changed slightly.
     * The ``Aws\DynamoDb\Model\BatchRequest`` namespace has been replaced by
       ``Aws\DynamoDb\WriteRequestBatch``. See the docs for
