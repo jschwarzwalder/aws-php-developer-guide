@@ -52,28 +52,17 @@ List Buckets
 Create a Bucket
 ---------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/s3/CreateBucket.php
+   :lines: 16-20
+   :language: PHP
 
-    $BUCKET_NAME='<BUCKET-NAME>';
-    //Create a S3Client
-    $s3Client = new S3Client([
-        'region' => 'us-west-2',
-        'version' => '2006-03-01'
-    ]);
-    //Creating S3 Bucket
-    try {
-        $result = $s3Client->createBucket([
-            'Bucket' => $BUCKET_NAME,
-        ]);
-    }catch (AwsException $e) {
-        // output error message if fails
-        echo $e->getMessage();
-        echo "\n";
-    }
+**Code**
+
+.. literalinclude:: example_code/s3/CreateBucket.php
+   :lines: 28-45
+   :language: php
 
 Put an Object in a Bucket
 -------------------------
