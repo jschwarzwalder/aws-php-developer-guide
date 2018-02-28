@@ -13,17 +13,17 @@ Using Regions and Availability Zones
 ====================================
 
 .. meta::
-   :description: Describe AWS Regions and Availability Zones for Amazon EC2.
-   :keywords: Amazon EC2, AWS SDK for PHP examples
+   :description: Describe AWS Regions and Availability Zones for |EC2|.
+   :keywords: |EC2|, |sdk-php| examples
 
-Amazon EC2 is hosted in multiple locations worldwide. These locations are composed of regions and Availability Zones. Each region is a separate geographic area. Each region has multiple, isolated locations known as Availability Zones. Amazon EC2 provides the ability to place instances and data in multiple locations.
+|EC2| is hosted in multiple locations worldwide. These locations are composed of regions and Availability Zones. Each region is a separate geographic area. Each region has multiple, isolated locations known as Availability Zones. |EC2| provides the ability to place instances and data in multiple locations.
 
 The examples below show how to:
 
 * Describe the Availability Zones that are available to you using `DescribeAvailabilityZones <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#describeavailabilityzones>`_.
 * Describe regions that are currently available to you using `DescribeRegions <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#describeregions>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

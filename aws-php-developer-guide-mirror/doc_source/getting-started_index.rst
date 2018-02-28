@@ -12,8 +12,7 @@
 Getting Started
 ===============
 
-This chapter is dedicated to getting you up and running with the AWS SDK for
-PHP.
+This chapter is dedicated to getting you up and running with the |sdk-php|.
 
 .. toctree::
     :maxdepth: 2

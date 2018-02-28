@@ -9,10 +9,10 @@
    limitations under the License.
 
 =========
-Amazon S3
+|S3|
 =========
 
-Amazon Simple Storage Service (Amazon S3) is a web service that provides highly scalable cloud storage. Amazon S3 provides easy to use object storage, with a simple web service interface to store and retrieve any amount of data from anywhere on the web.
+|S3long|  (|S3|) is a web service that provides highly scalable cloud storage. |S3| provides easy to use object storage, with a simple web service interface to store and retrieve any amount of data from anywhere on the web.
 
 .. toctree::
     :maxdepth: 1

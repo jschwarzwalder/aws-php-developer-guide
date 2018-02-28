@@ -13,7 +13,7 @@ Streams
 =======
 
 As part of its integration of the `PSR-7 <http://www.php-fig.org/psr/psr-7/>`_
-HTTP message standard, the AWS SDK for PHP uses the `PSR-7 StreamInterface
+HTTP message standard, the |sdk-php| uses the `PSR-7 StreamInterface
 <http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Psr.Http.Message.StreamInterface.html>`_
 internally as its abstraction over `PHP streams
 <http://php.net/manual/en/intro.stream.php>`_. Any command with an input field
@@ -127,7 +127,7 @@ LimitStream
 
 LimitStream can be used to read a subset or slice of an existing stream object.
 This can be useful for breaking a large file into smaller pieces to be sent in
-chunks (e.g. Amazon S3's multipart upload API).
+chunks (e.g. |S3|'s multipart upload API).
 
 .. code-block:: php
 

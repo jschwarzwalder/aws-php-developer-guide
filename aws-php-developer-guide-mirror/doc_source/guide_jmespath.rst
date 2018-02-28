@@ -13,7 +13,7 @@ JMESPath Expressions in the SDK
 ===============================
 
 `JMESPath <http://jmespath.org/>`_ allows you to declaratively specify how to
-extract elements from a JSON document. The AWS SDK for PHP has a dependency on
+extract elements from a JSON document. The |sdk-php| has a dependency on
 `jmespath.php <https://github.com/jmespath/jmespath.php>`_ to power some of the
 high-level abstractions like :ref:`guide_paginators` and :ref:`guide_waiters`, but also
 exposes JMESPath searching on ``Aws\ResultInterface`` and
@@ -26,7 +26,7 @@ about the language, including the available expressions and functions in the
 
 `AWS CLI <http://aws.amazon.com/cli/>`_ supports JMESPath.
 Expressions you write for CLI output are 100% compatible with expressions
-written for the AWS SDK for PHP.
+written for the |sdk-php|.
 
 Extracting data from results
 ----------------------------
@@ -39,7 +39,7 @@ extracted.
 
 To demonstrate how it works, we'll first start with the default JSON output
 below, which describes two EBS (Elastic Block Storage) volumes attached to
-separate Amazon EC2 instances.
+separate |EC2| instances.
 
 .. code-block:: php
 

@@ -14,7 +14,7 @@ Requirements
 
 Aside from a baseline understanding of object-oriented programming in PHP
 (including PHP namespaces and autoloading), there are a few minimum system
-requirements to start using the AWS SDK for PHP.
+requirements to start using the |sdk-php|.
 
 Minimum requirements
 --------------------
@@ -26,7 +26,7 @@ Optional requirements
 
 * `OpenSSL PHP extension <http://php.net/manual/en/book.openssl.php>`_
 
-  You must have the OpenSSL PHP extension to sign private Amazon CloudFront
+  You must have the OpenSSL PHP extension to sign private |CFlong|
   URLs.
 
 .. _optimal-settings:
@@ -63,7 +63,7 @@ Optimal settings
   Autoloaders are used to lazily load classes as they are required by a PHP
   script. Composer will generate an autoloader that is able to autoload the PHP
   scripts of your application and all of the PHP scripts of the vendors
-  required by your application (i.e. the AWS SDK for PHP). When running in
+  required by your application (i.e. the |sdk-php|). When running in
   production, it is highly recommended that you use a classmap autoloader to
   improve the autoloader's speed. You can generate a classmap autoloader by
   passing the ``-o`` or ``--optimize-autoloader`` option to Composer's

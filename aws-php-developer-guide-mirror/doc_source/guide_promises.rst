@@ -12,7 +12,7 @@
 Promises
 ========
 
-The AWS SDK for PHP uses **promises** to allow for asynchronous workflows, and
+The |sdk-php| uses **promises** to allow for asynchronous workflows, and
 this asynchronicity allows HTTP requests to be sent concurrently. The promise
 specification used by the SDK is `Promises/A+ <https://promisesaplus.com/>`_.
 
@@ -24,14 +24,14 @@ primary way of interacting with a promise is through its ``then`` method, which
 registers callbacks to receive either a promise's eventual value or the reason
 why the promise cannot be fulfilled.
 
-The AWS SDK for PHP relies on the `guzzlehttp/promises <https://github.com/guzzle/promises>`_
+The |sdk-php| relies on the `guzzlehttp/promises <https://github.com/guzzle/promises>`_
 Composer package for its promises implementation. Guzzle promises support
 blocking and non-blocking workflows and can be used with any non-blocking event
 loop.
 
 .. note::
 
-    HTTP requests sent concurrently in the AWS SDK for PHP are done so using a
+    HTTP requests sent concurrently in the |sdk-php| are done so using a
     single thread in which non-blocking calls are used to transfer one or more
     HTTP requests while reacting to state changes (e.g., fulfilling or
     rejecting promises).
@@ -43,11 +43,11 @@ Promises are used throughout the SDK. For example, promises are used in most
 high level abstractions provided by the SDK: :ref:`paginators <async_paginators>`,
 :ref:`waiters <async_waiters>`, :ref:`command pools <command_pool>`,
 :doc:`multipart uploads <s3-multipart-upload>`,
-:doc:`Amazon S3 directory/bucket transfers <s3-transfer>`, etc.
+:doc:`|S3| directory/bucket transfers <s3-transfer>`, etc.
 
 All of the clients provided by the SDK will return promises when you invoke any
 of the ``Async`` suffixed methods. For example, the following code shows how to
-create a promise for getting the results of an Amazon DynamoDB ``DescribeTable``
+create a promise for getting the results of an |DDBlong| ``DescribeTable``
 operation.
 
 .. code-block:: php

@@ -9,14 +9,14 @@
    limitations under the License.
 
 ==========================
-Using Queues in Amazon SQS
+Using Queues in |SQS|
 ==========================
 
 .. meta::
-   :description: Create or delete Amazon SQS queues, and return lists and URLs for queues.
-   :keywords: Amazon SQS, AWS SDK for PHP examples
+   :description: Create or delete |SQS| queues, and return lists and URLs for queues.
+   :keywords: |SQS|, |sdk-php| examples
 
-To learn about Amazon SQS queues, see `How Amazon SQS Queues Work <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html>`_.
+To learn about |SQS| queues, see `How |SQS| Queues Work <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html>`_.
 
 The examples below show how to:
 
@@ -25,7 +25,7 @@ The examples below show how to:
 * Return the URL of an existing queue using `GetQueueUrl <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#getqueueurl>`_.
 * Delete a specified queue using `DeleteQueue <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#deletequeue>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

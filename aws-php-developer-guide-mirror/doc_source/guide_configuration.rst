@@ -23,7 +23,7 @@ client.
     :depth: 1
     :local:
 
-The following example shows how to pass options into an Amazon S3 client
+The following example shows how to pass options into an |S3| client
 constructor.
 
 .. code-block:: php
@@ -63,7 +63,7 @@ credentials from your environment in the following order:
 
 1. Load credentials from :ref:`environment variables <environment_credentials>`
 2. Load credentials from a :ref:`credentials ini file <credential_profiles>`
-3. Load credentials from an :ref:`IAM instance profile <instance_profile_credentials>`.
+3. Load credentials from an :ref:`|IAM| instance profile <instance_profile_credentials>`.
 
 You can provide an associative array of "key", "secret", and "token" key value
 pairs to use :ref:`hardcoded credentials <hardcoded_credentials>`.
@@ -296,10 +296,10 @@ endpoint
 :Type: ``string``
 
 The full URI of the webservice. This is only required when connecting to a
-custom endpoint (e.g., a local version of Amazon S3 or
-`Amazon DynamoDB Local <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html>`_).
+custom endpoint (e.g., a local version of |S3| or
+`|DDBlong| Local <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html>`_).
 
-Here's an example of connecting to Amazon DynamoDB Local:
+Here's an example of connecting to |DDBlong| Local:
 
 .. code-block:: php
 
@@ -606,7 +606,7 @@ stream
 
 Set to ``true`` to tell the underlying HTTP handler that you wish to stream the
 response body of a response from the web service rather than download it all
-up-front. For example, this option is relied upon in the Amazon S3 stream
+up-front. For example, this option is relied upon in the |S3| stream
 wrapper class to ensure that the data is streamed.
 
 .. _http_timeout:
@@ -760,7 +760,7 @@ retries
 Configures the maximum number of allowed retries for a client. Pass ``0`` to
 disable retries.
 
-The following example disables retries for the Amazon DynamoDB client.
+The following example disables retries for the |DDBlong| client.
 
 .. code-block:: php
 
@@ -827,7 +827,7 @@ A string representing a custom signature version to use with a service
 (e.g., ``v4``, etc.). Per/operation signature version MAY override this
 requested signature version if needed.
 
-The following examples show how to configure an Amazon S3 client to use
+The following examples show how to configure an |S3| client to use
 `signature version 4 <http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html>`_:
 
 .. code-block:: php
@@ -903,7 +903,7 @@ The version of the web service to utilize (e.g., ``2006-03-01``).
 
 A "version" configuration value is required. Specifying a version constraint
 ensures that your code will not be affected by a breaking change made to the
-service. For example, when using Amazon S3, you can lock your API version to
+service. For example, when using |S3|, you can lock your API version to
 ``2006-03-01``.
 
 .. code-block:: php

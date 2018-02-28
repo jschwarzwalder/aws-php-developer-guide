@@ -9,13 +9,12 @@
    limitations under the License.
 
 ===============
-AWS SDK for PHP
+|sdk-php|
 ===============
 
-The **AWS SDK for PHP** enables PHP developers to use
+The **|sdk-php|** enables PHP developers to use
 `Amazon Web Services <http://aws.amazon.com/>`_ from their PHP code, and build
-robust applications and software using services like Amazon S3, Amazon
-DynamoDB, Amazon Glacier, etc. You can get started in minutes by installing the
+robust applications and software using services like |S3|, |DDBlong|, |GL|, etc. You can get started in minutes by installing the
 SDK through Composer — by requiring the ``aws/aws-sdk-php`` package — or by
 downloading the standalone `aws.zip <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.zip>`_
 or `aws.phar <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.phar>`_ files.

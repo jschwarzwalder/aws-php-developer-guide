@@ -9,12 +9,12 @@
    limitations under the License.
 
 ==============================================
-Publishing Custom Metrics in Amazon CloudWatch
+Publishing Custom Metrics in |CWlong|
 ==============================================
 
 .. meta::
-   :description: Publish metric data and create alarms for Amazon CloudWatch.
-   :keywords: Amazon CloudWatch, AWS SDK for PHP examples
+   :description: Publish metric data and create alarms for |CWlong|.
+   :keywords: |CWlong|, |sdk-php| examples
 
 Metrics are data about the performance of your systems. An alarm watches a single metric over a time period you specify, and performs one or more actions based on the value of the metric relative to a given threshold over a number of time periods.
 
@@ -23,7 +23,7 @@ The examples below show how to:
 * Publish metric data using `PutMetricData <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-monitoring-2010-08-01.html#putmetricdata>`_.
 * Create an alarm using `PutMetricAlarm <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-monitoring-2010-08-01.html#putmetricalarm>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

@@ -9,24 +9,24 @@
    limitations under the License.
 
 ========================
-Managing IAM Access Keys
+Managing |IAM| Access Keys
 ========================
 
 .. meta::
-   :description: Create, delete, and get information about IAM access keys.
-   :keywords: AWS Identity and Access Management, AWS SDK for PHP examples
+   :description: Create, delete, and get information about |IAM| access keys.
+   :keywords: |IAMlong|, |sdk-php| examples
 
-Users need their own access keys to make programmatic calls to AWS. To fill this need, you can create, modify, view, or rotate access keys (access key IDs and secret access keys) for IAM users. By default, when you create an access key, its status is Active, which means the user can use the access key for API calls.
+Users need their own access keys to make programmatic calls to AWS. To fill this need, you can create, modify, view, or rotate access keys (access key IDs and secret access keys) for |IAM| users. By default, when you create an access key, its status is Active, which means the user can use the access key for API calls.
 
 The examples below show how to:
 
 * Create a secret access key and corresponding access key ID using `CreateAccessKey <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#createaccesskey>`_.
-* Return information about the access key IDs associated with an IAM user using `ListAccessKeys <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#listaccesskeys>`_.
+* Return information about the access key IDs associated with an |IAM| user using `ListAccessKeys <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#listaccesskeys>`_.
 * Retrieve information about when an access key was last used using `GetAccessKeyLastUsed <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#getaccesskeylastused>`_.
 * Change the status of an access key from Active to Inactive, or vice versa, using `UpdateAccessKey <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#updateaccesskey>`_.
-* Delete an access key pair associated with an IAM user using `DeleteAccessKey <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#deleteaccesskey>`_.
+* Delete an access key pair associated with an |IAM| user using `DeleteAccessKey <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#deleteaccesskey>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

@@ -9,31 +9,31 @@
    limitations under the License.
 
 ==================
-Managing IAM Users
+Managing |IAM| Users
 ==================
 
 .. meta::
-   :description: Create, list, update, or retrieve info about IAM users.
-   :keywords: AWS Identity and Access Management, AWS SDK for PHP examples
+   :description: Create, list, update, or retrieve info about |IAM| users.
+   :keywords: |IAMlong|, |sdk-php| examples
 
-An IAM user is an entity that you create in AWS to represent the person or service that uses it to interact with AWS. A user in AWS consists of a name and credentials.
+An |IAM| user is an entity that you create in AWS to represent the person or service that uses it to interact with AWS. A user in AWS consists of a name and credentials.
 
 The examples below show how to:
 
-* Create a new IAM user using `CreateUser <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#createuser>`_.
-* List IAM users using `ListUsers <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#listusers>`_.
-* Update an IAM user using `UpdateUser <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#updateuser>`_.
-* Retrieve info about an IAM user using `GetUser <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#getuser>`_.
-* Delete an IAM user using `DeleteUser <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#deleteuser>`_.
+* Create a new |IAM| user using `CreateUser <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#createuser>`_.
+* List |IAM| users using `ListUsers <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#listusers>`_.
+* Update an |IAM| user using `UpdateUser <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#updateuser>`_.
+* Retrieve info about an |IAM| user using `GetUser <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#getuser>`_.
+* Delete an |IAM| user using `DeleteUser <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#deleteuser>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------
 
 Before running the example code, configure your AWS credentials, as described in :doc:`guide_credentials`.
 
-Create an IAM User
+Create an |IAM| User
 ------------------
 
 .. code-block:: php
@@ -58,7 +58,7 @@ Create an IAM User
         error_log($e->getMessage());
     }
 
-List IAM Users
+List |IAM| Users
 --------------
 
 .. code-block:: php
@@ -80,7 +80,7 @@ List IAM Users
         error_log($e->getMessage());
     }
 
-Update an IAM User
+Update an |IAM| User
 ------------------
 
 .. code-block:: php
@@ -106,7 +106,7 @@ Update an IAM User
         error_log($e->getMessage());
     }
 
-Get Info about an IAM User
+Get Info about an |IAM| User
 --------------------------
 
 .. code-block:: php
@@ -130,7 +130,7 @@ Get Info about an IAM User
         error_log($e->getMessage());
     }
 
-Delete an IAM User
+Delete an |IAM| User
 ------------------
 
 .. code-block:: php

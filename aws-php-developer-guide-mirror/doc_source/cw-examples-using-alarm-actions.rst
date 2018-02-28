@@ -9,21 +9,21 @@
    limitations under the License.
 
 =================================================
-Using Alarm Actions with Amazon CloudWatch Alarms
+Using Alarm Actions with |CWlong| Alarms
 =================================================
 
 .. meta::
-   :description: Create CloudWatch alarms that automatically stop, terminate, reboot, or recover EC2 instances.
-   :keywords: Amazon Cloudwatch, AWS SDK for PHP examples
+   :description: Create |CW| alarms that automatically stop, terminate, reboot, or recover EC2 instances.
+   :keywords: |CWlong|, |sdk-php| examples
 
-Using alarm actions, you can create alarms that automatically stop, terminate, reboot, or recover your Amazon EC2 instances. You can use the stop or terminate actions when you no longer need an instance to be running. You can use the reboot and recover actions to automatically reboot those instances.
+Using alarm actions, you can create alarms that automatically stop, terminate, reboot, or recover your |EC2| instances. You can use the stop or terminate actions when you no longer need an instance to be running. You can use the reboot and recover actions to automatically reboot those instances.
 
 The examples below show how to:
 
 * Enable actions for specified alarms using `EnableAlarmActions <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-monitoring-2010-08-01.html#enablealarmactions>`_.
 * Disable actions for specified alarms using `DisableAlarmActions <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-monitoring-2010-08-01.html#disablealarmactions>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

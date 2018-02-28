@@ -9,14 +9,14 @@
    limitations under the License.
 
 ======================================
-Working with Amazon S3 Bucket Policies
+Working with |S3| Bucket Policies
 ======================================
 
 .. meta::
-   :description: Return, replace, or delete Amazon S3 bucket policies.
-   :keywords: Amazon S3, AWS SDK for PHP examples
+   :description: Return, replace, or delete |S3| bucket policies.
+   :keywords: |S3|, |sdk-php| examples
 
-You can use a bucket policy to grant permission to your Amazon S3 resources. To learn more, see `Using Bucket Policies and User Policies <http://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html>`_.
+You can use a bucket policy to grant permission to your |S3| resources. To learn more, see `Using Bucket Policies and User Policies <http://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html>`_.
 
 The example below shows how to:
 
@@ -24,7 +24,7 @@ The example below shows how to:
 * Replace a policy on a bucket using `PutBucketPolicy <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#putbucketpolicy>`_.
 * Delete a policy from a bucket using `DeleteBucketPolicy <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#deletebucketpolicy>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

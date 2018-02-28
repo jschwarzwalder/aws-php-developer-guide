@@ -9,14 +9,14 @@
    limitations under the License.
 
 ============================================
-Sending and Receiving Messages in Amazon SQS
+Sending and Receiving Messages in |SQS|
 ============================================
 
 .. meta::
-   :description: Deliver, delete, or retrieve messages using Amazon SQS.
-   :keywords: Amazon SQS, AWS SDK for PHP examples
+   :description: Deliver, delete, or retrieve messages using |SQS|.
+   :keywords: |SQS|, |sdk-php| examples
 
-To learn about Amazon SQS messages, see `Sending a Message to an Amazon SQS Queue <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-send-message.html>`_ and `Receiving and Deleting a Message from an Amazon SQS Queue <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-receive-delete-message.html>`_ in the Amazon Simple Queue Service Developer Guide.
+To learn about |SQS| messages, see `Sending a Message to an |SQS| Queue <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-send-message.html>`_ and `Receiving and Deleting a Message from an |SQS| Queue <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-receive-delete-message.html>`_ in the Amazon Simple Queue Service Developer Guide.
 
 The examples below show how to:
 
@@ -24,7 +24,7 @@ The examples below show how to:
 * Retrieve one or more messages (up to 10) from a specified queue using `ReceiveMessage <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#receivemessage>`_.
 * Delete a message from a queue using `DeleteMessage <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#deletemessage>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

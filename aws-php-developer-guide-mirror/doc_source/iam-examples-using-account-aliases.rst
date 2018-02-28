@@ -9,12 +9,12 @@
    limitations under the License.
 
 =========================
-Using IAM Account Aliases
+Using |IAM| Account Aliases
 =========================
 
 .. meta::
-   :description: Create, list, and delete aliases for AWS accout IDs using IAM.
-   :keywords: AWS Identity and Access Management, AWS SDK for PHP examples
+   :description: Create, list, and delete aliases for AWS accout IDs using |IAM|.
+   :keywords: |IAMlong|, |sdk-php| examples
 
 If you want the URL for your sign-in page to contain your company name or other friendly identifier instead of your AWS account ID, you can create an alias for your AWS account ID. If you create an AWS account alias, your sign-in page URL changes to incorporate the alias.
 
@@ -24,7 +24,7 @@ The examples below show how to:
 * List the alias associated with the AWS account using `ListAccountAliases <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#listaccountaliases>`_.
 * Delete an alias using `DeleteAccountAlias <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#deleteaccountalias>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

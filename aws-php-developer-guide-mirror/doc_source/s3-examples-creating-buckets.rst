@@ -9,12 +9,12 @@
    limitations under the License.
 
 ====================================
-Creating and Using Amazon S3 Buckets
+Creating and Using |S3| Buckets
 ====================================
 
 .. meta::
    :description:
-   :keywords: Amazon S3, AWS SDK for PHP examples
+   :keywords: |S3|, |sdk-php| examples
 
 The examples below show how to:
 
@@ -22,7 +22,7 @@ The examples below show how to:
 * Create a new bucket using `CreateBucket <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#createbucket>`_.
 * Add an object to a bucket using `PutObject <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#putobject>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

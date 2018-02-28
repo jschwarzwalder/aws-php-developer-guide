@@ -216,7 +216,7 @@ Here's a very simple example of just sending a few commands using a
     $promise->wait();
 
 That example is pretty underpowered for the ``CommandPool``. Let's try a more
-complex example. Let's say you want to upload files on disk to an Amazon S3
+complex example. Let's say you want to upload files on disk to an |S3|
 bucket. To get a list of files from disk, we can use PHP's
 ``DirectoryIterator``. This iterator yields ``SplFileInfo`` objects. The
 ``CommandPool`` accepts an iterator that yields ``Aws\CommandInterface``

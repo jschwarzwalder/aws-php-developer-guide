@@ -12,8 +12,8 @@
 Migration Guide
 ===============
 
-This guide shows how to migrate your code to use Version 3 of the AWS SDK for
-PHP and how the new version differs from the Version 2 of the SDK.
+This guide shows how to migrate your code to use Version 3 of the |sdk-php|
+and how the new version differs from the Version 2 of the SDK.
 
 .. note::
 
@@ -179,10 +179,10 @@ Some API results have changed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to provide consistency in how the SDK parses the result of an API
-operation, Amazon ElastiCache, Amazon RDS, and Amazon RedShift now have an
+operation, |ELClong|, |RDS|, and |RSlong| now have an
 additional wrapping element on some API responses.
 
-For example, calling Amazon RDS's `DescribeEngineDefaultParameters <http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultParameters.html>`_
+For example, calling |RDS|'s `DescribeEngineDefaultParameters <http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultParameters.html>`_
 result in Version 3 now includes a wrapping "EngineDefaults" element whereas in
 Version 2 this element was not present.
 
@@ -206,7 +206,7 @@ Version 2 this element was not present.
 The following operations are affected and now contain a wrapping element in the
 output of the result (provided below in parenthesis):
 
-- **Amazon ElastiCache**
+- **|ELClong|**
 
   - AuthorizeCacheSecurityGroupIngress (CacheSecurityGroup)
   - CopySnapshot (Snapshot)
@@ -227,7 +227,7 @@ output of the result (provided below in parenthesis):
   - RebootCacheCluster (CacheCluster)
   - RevokeCacheSecurityGroupIngress (CacheSecurityGroup)
 
-- **Amazon RDS**
+- **|RDS|**
 
   - AddSourceIdentifierToSubscription (EventSubscription)
   - AuthorizeDBSecurityGroupIngress (DBSecurityGroup)
@@ -258,7 +258,7 @@ output of the result (provided below in parenthesis):
   - RestoreDBInstanceToPointInTime (DBInstance)
   - RevokeDBSecurityGroupIngress (DBSecurityGroup)
 
-- **Amazon Redshift**
+- **|RSlong|**
 
   - AuthorizeClusterSecurityGroupIngress (ClusterSecurityGroup)
   - AuthorizeSnapshotAccess (Snapshot)
@@ -419,7 +419,7 @@ Comparing Code Samples from Both SDKs
 The following examples illustrate some of the ways in which using Version 3 of
 the SDK may differ from Version 2.
 
-Example: Amazon S3 ListObjects operation
+Example: |S3| ListObjects operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 From Version 2 of the SDK

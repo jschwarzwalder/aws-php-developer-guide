@@ -9,23 +9,23 @@
    limitations under the License.
 
 =============================
-Configuring Amazon S3 Buckets
+Configuring |S3| Buckets
 =============================
 
 .. meta::
-   :description: Get or set CORS configuration for an Amazon S3 bucket.
-   :keywords: Amazon S3, AWS SDK for PHP examples
+   :description: Get or set CORS configuration for an |S3| bucket.
+   :keywords: |S3|, |sdk-php| examples
 
-Cross-origin resource sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain. With CORS support in Amazon S3, you can build rich client-side web applications with Amazon S3 and selectively allow cross-origin access to your Amazon S3 resources.
+Cross-origin resource sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain. With CORS support in |S3|, you can build rich client-side web applications with |S3| and selectively allow cross-origin access to your |S3| resources.
 
-For more information about using CORS configuration with an Amazon S3 bucket, see `Cross-Origin Resource Sharing (CORS) <http://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html>`_.
+For more information about using CORS configuration with an |S3| bucket, see `Cross-Origin Resource Sharing (CORS) <http://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html>`_.
 
 The examples below show how to:
 
 * Get the CORS configuration for a bucket using `GetBucketCors <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#getbucketcors>`_.
 * Set the CORS configuration for a bucket using `PutBucketCors <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#putbucketcors>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

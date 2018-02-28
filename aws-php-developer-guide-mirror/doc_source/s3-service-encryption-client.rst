@@ -9,15 +9,15 @@
    limitations under the License.
 
 ================================
-Amazon S3 Client Side Encryption
+|S3| Client Side Encryption
 ================================
 
-The AWS SDK for PHP provides an ``S3EncryptionClient``. With client-side
+The |sdk-php| provides an ``S3EncryptionClient``. With client-side
 encryption, data is encrypted and decrypted directly in your environment. This
-means that this data is encrypted before it's transferred to Amazon S3, and you
+means that this data is encrypted before it's transferred to |S3|, and you
 don’t rely on an external service to handle encryption for you.
 
-The AWS SDK for PHP implements `envelope encryption <http://docs.aws.amazon.com/kms/latest/developerguide/workflow.html>`_
+The |sdk-php| implements `envelope encryption <http://docs.aws.amazon.com/kms/latest/developerguide/workflow.html>`_
 and utilizes `OpenSSL <https://www.openssl.org/>`_ for its encrypting and
 decrypting. The implementation is interoperable with `other SDKs that match its feature support <http://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html>`_.
 It's also compatible with `the SDK’s promise based asynchronous workflow <https://docs.aws.amazon.com/aws-sdk-php/v3/guide/guide/promises.html>`_.
@@ -28,7 +28,7 @@ Setup
 To get started with client-side encryption, you need the following:
 
 * An `AWS KMS encryption key <http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html>`_
-* An `Amazon S3 bucket <http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html>`_
+* An `|S3| bucket <http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html>`_
 
 Encryption
 ----------
@@ -75,7 +75,7 @@ interface and requires two new parameters.
 
 .. note::
 
-    In addition to the Amazon S3 and AWS KMS based service errors, you may
+    In addition to the |S3| and AWS KMS based service errors, you may
     receive thrown ``InvalidArgumentException`` objects if your
     ``'@CipherOptions'`` are not correctly configured.
 
@@ -99,7 +99,7 @@ Additional configuration options are passed through for decryption.
 
 .. note::
 
-    In addition to the Amazon S3 and AWS KMS based service errors, you may
+    In addition to the |S3| and AWS KMS based service errors, you may
     receive thrown ``InvalidArgumentException`` objects if your
     ``'@CipherOptions'`` are not correctly configured.
 
@@ -224,6 +224,6 @@ configurations.
 
 .. note::
 
-    In addition to the Amazon S3 and AWS KMS based service errors, you may
+    In addition to the |S3| and AWS KMS based service errors, you may
     receive thrown ``InvalidArgumentException`` objects if your
     ``'@CipherOptions'`` are not correctly configured.

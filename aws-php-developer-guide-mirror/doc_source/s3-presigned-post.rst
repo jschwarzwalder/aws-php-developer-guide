@@ -9,7 +9,7 @@
    limitations under the License.
 
 =========================
-Amazon S3 Presigned POSTs
+|S3| Presigned POSTs
 =========================
 
 Much like pre-signed URLs, pre-signed POSTs allow you to give write access to a

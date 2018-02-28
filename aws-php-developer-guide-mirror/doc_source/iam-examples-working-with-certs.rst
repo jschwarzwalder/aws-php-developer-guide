@@ -9,23 +9,23 @@
    limitations under the License.
 
 ====================================
-Working with IAM Server Certificates
+Working with |IAM| Server Certificates
 ====================================
 
 .. meta::
    :description: List, update, and get information about certificates using IAM.
-   :keywords: AWS Identity and Access Management, AWS SDK for PHP examples
+   :keywords: |IAMlong|, |sdk-php| examples
 
-To enable HTTPS connections to your website or application on AWS, you need an SSL/TLS server certificate. To use a certificate that you obtained from an external provider with your website or application on AWS, you must upload the certificate to IAM or import it into AWS Certificate Manager.
+To enable HTTPS connections to your website or application on AWS, you need an SSL/TLS server certificate. To use a certificate that you obtained from an external provider with your website or application on AWS, you must upload the certificate to |IAM| or import it into AWS Certificate Manager.
 
 The examples below show how to:
 
-* List the certificates stored in IAM using `ListServerCertificates <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#listservercertificates>`_.
+* List the certificates stored in |IAM| using `ListServerCertificates <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#listservercertificates>`_.
 * Retrieve information about a certificate using `GetServerCertificate <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#getservercertificate>`_.
 * Update a certificate using `UpdateServerCertificate <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#updateservercertificate>`_.
 * Delete a certificate using `DeleteServerCertificate <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#deleteservercertificate>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

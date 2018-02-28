@@ -12,7 +12,7 @@
 Basic SDK Usage
 ===============
 
-This guide focuses on basic usage patterns of the **AWS SDK for PHP**. This
+This guide focuses on basic usage patterns of the **|sdk-php|**. This
 guide assumes that you have already :doc:`downloaded and installed the SDK
 <getting-started_installation>` and retrieved your `AWS access keys
 <http://aws.amazon.com/developers/access-keys/>`_.
@@ -70,7 +70,7 @@ because the credentials should be detected by the SDK from either
 :ref:`environment variables <environment_credentials>` (via
 ``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY``), an
 :ref:`AWS credentials INI file <credential_profiles>` in your HOME
-directory, AWS Identity and Access Management (IAM)
+directory, |IAMlong| (IAM)
 :ref:`instance profile credentials <instance_profile_credentials>`, or
 :ref:`credential providers <credential_provider>`.
 
@@ -102,7 +102,7 @@ provided to a specific client constructor can also be supplied to the
     // Create an SDK class used to share configuration across clients.
     $sdk = new Aws\Sdk($sharedConfig);
 
-    // Create an Amazon S3 client using the shared configuration data.
+    // Create an |S3| client using the shared configuration data.
     $client = $sdk->createS3();
 
 Options that are shared across all clients are placed in root-level key-value
@@ -140,7 +140,7 @@ Executing service operations
 ----------------------------
 
 You can execute a service operation by calling the method of the same name on
-a client object. For example, to perform the Amazon S3 `PutObject operation
+a client object. For example, to perform the |S3| `PutObject operation
 <http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html>`_, you must
 call the ``Aws\S3\S3Client::putObject()`` method.
 

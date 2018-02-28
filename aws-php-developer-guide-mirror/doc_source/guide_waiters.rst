@@ -20,7 +20,7 @@ providing an abstracted way to wait until a resource enters into a particular
 state by polling the resource. You can find a list of the waiters supported by
 a client by viewing the API Documentation of a service client.
 
-In the following example, the Amazon S3 Client is used to create a bucket. Then
+In the following example, the |S3| Client is used to create a bucket. Then
 the waiter is used to wait until the bucket exists.
 
 .. code-block:: php

@@ -9,21 +9,21 @@
    limitations under the License.
 
 ########################
-aws-java-developer-guide
+aws-PHP-developer-guide
 ########################
 
-This repository contains source content for the official `AWS Java Developer Guide`_. The source
-code for the `AWS SDK for Java`_ is also on GitHub, at https://github.com/aws/aws-sdk-java/.
+This repository contains source content for the official `AWS PHP Developer Guide`_. The source
+code for the `AWS SDK for PHP`_ is also on GitHub, at https://github.com/aws/aws-sdk-PHP/.
 
 The guide content is written in reStructuredText_ and built using Sphinx_. It relies upon content
 which is provided in the AWS documentation team's `shared content`_ and `SDK examples`_
 repositories.
 
-AWS SDK for Java 2.0 Developer Preview
+AWS SDK for PHP 2.0 Developer Preview
 ======================================
-Take a look at the new AWS SDK for Java 2.0 developer preview at https://github.com/aws/aws-sdk-java-v2/.
+Take a look at the new AWS SDK for PHP 2.0 developer preview at https://github.com/aws/aws-sdk-PHP-v2/.
 It includes much awaited features, such as a way to plug in a HTTP implementation. To get started,
-see the `AWS SDK for Java 2.0 Developer Guide`_.
+see the `AWS SDK for PHP 2.0 Developer Guide`_.
 
 Reporting issues
 ================
@@ -74,10 +74,10 @@ Code examples in the documentation
 ----------------------------------
 
 The code examples featured in this documentation can be found in a separate repository:
-`aws-doc-sdk-examples <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/java>`_. Full
+`aws-doc-sdk-examples <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/PHP>`_. Full
 code and build files are included, so you can build and run any of the provided examples yourself.
 
-In addition to examples in Java, you'll also find examples for each of the other AWS SDKs. If you
+In addition to examples in PHP, you'll also find examples for each of the other AWS SDKs. If you
 find issues with any of the examples, you can submit issues or fork the repository and submit a pull
 request!
 
@@ -89,7 +89,7 @@ more details.
 Copyright and license
 =====================
 
-All content in this repository, unless otherwise stated, is Copyright © 2010-2016, Amazon Web
+All content in this repository, unless otherwise stated, is Copyright © 2010-2018, Amazon Web
 Services, Inc. or its affiliates. All rights reserved.
 
 Except where otherwise noted, this work is licensed under a `Creative Commons
@@ -104,15 +104,15 @@ repository.
 .. =================================================================================
 
 .. _`available sphinx builders`: http://www.sphinx-doc.org/en/stable/builders.html
-.. _`aws java developer guide`: http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/welcome.html
-.. _`aws sdk for java 2.0 developer guide`: http://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/welcome.html
-.. _`aws sdk for java`: https://aws.amazon.com/sdk-for-java/
+.. _`aws PHP developer guide`: http://docs.aws.amazon.com/sdk-for-PHP/v1/developer-guide/welcome.html
+.. _`aws sdk for PHP 2.0 developer guide`: http://docs.aws.amazon.com/sdk-for-PHP/v2/developer-guide/welcome.html
+.. _`aws sdk for PHP`: https://aws.amazon.com/sdk-for-PHP/
 .. _`forking the repository`: https://help.github.com/articles/fork-a-repo/
 .. _`pull request`: https://help.github.com/articles/using-pull-requests/
 .. _`shared content`: https://github.com/awsdocs/aws-doc-shared-content
 .. _`sdk examples`: https://github.com/awsdocs/aws-doc-sdk-examples
 .. _extlinks: http://www.sphinx-doc.org/en/stable/ext/extlinks.html
-.. _issues: https://github.com/awsdocs/aws-java-developer-guide/issues
+.. _issues: https://github.com/awsdocs/aws-PHP-developer-guide/issues
 .. _restructuredtext: http://docutils.sourceforge.net/rst.html
 .. _sphinx: http://www.sphinx-doc.org/en/stable/
 .. _substitutions: http://www.sphinx-doc.org/en/stable/rest.html#substitutions

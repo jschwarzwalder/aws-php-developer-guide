@@ -9,10 +9,10 @@
    limitations under the License.
 
 ==========
-Amazon EC2
+|EC2|
 ==========
 
-Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides virtual server hosting in the cloud. It's designed to make web-scale cloud computing easier for developers by providing resizeable compute capacity.
+|EC2long| (|EC2|) is a web service that provides virtual server hosting in the cloud. It's designed to make web-scale cloud computing easier for developers by providing resizeable compute capacity.
 
 .. toctree::
     :maxdepth: 1

@@ -28,10 +28,10 @@ AWS SDK for SDK using one of the following methods:
 #. :ref:`temporary_credentials`
 #. :ref:`assume_role_credentials`
 
-In general, it is recommended that you use IAM roles when running your
-application on Amazon EC2 and use credential profiles or environment variables
+In general, it is recommended that you use |IAM| roles when running your
+application on |EC2| and use credential profiles or environment variables
 elsewhere. Regardless of how you supply credentials to the SDK, it is encouraged that
-you follow the `IAM Best Practices <http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html>`_
+you follow the `|IAM| Best Practices <http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMBestPractices.html>`_
 when managing your credentials.
 
 .. _environment_credentials:
@@ -49,11 +49,11 @@ environment variables. These credentials are referred to as
 
 .. _instance_profile_credentials:
 
-Using IAM roles for Amazon EC2 instances
+Using |IAM| roles for |EC2| instances
 ----------------------------------------
 
-*Using IAM roles is the preferred technique for providing credentials to
-applications running on Amazon EC2.* IAM roles remove the need to worry about
+*Using |IAM| roles is the preferred technique for providing credentials to
+applications running on |EC2|.* |IAM| roles remove the need to worry about
 credential management from your application. They allow an instance to "assume"
 a role by retrieving temporary credentials from the EC2 instance's metadata
 server. These temporary credentials, often referred to as
@@ -62,16 +62,16 @@ that the role's policy allows.
 
 When launching an EC2 instance, you can choose to associate it with an IAM
 role. Any application running on that EC2 instance is then allowed to assume
-the associated role. Amazon EC2 handles all the legwork of securely
-authenticating instances to the IAM service to assume the role and periodically
+the associated role. |EC2| handles all the legwork of securely
+authenticating instances to the |IAM| service to assume the role and periodically
 refreshing the retrieved role credentials, keeping your application secure with
 almost no work on your part.
 
 If you do not explicitly provide credentials to the client object and no
 environment variable credentials are available, the SDK attempts to retrieve
-instance profile credentials from an Amazon EC2 instance metadata server. These
-credentials are available only when running on Amazon EC2 instances that have
-been configured with an IAM role.
+instance profile credentials from an |EC2| instance metadata server. These
+credentials are available only when running on |EC2| instances that have
+been configured with an |IAM| role.
 
 .. note::
 
@@ -84,20 +84,20 @@ been configured with an IAM role.
     can be passed in as the ``'credentials'`` option to a client constructor. This lets SDK
     use cached instance profile credentials instead. For more information, see ``'credentials'`` `option <http://docs.aws.amazon.com/aws-sdk-php/v3/guide/guide/configuration.html#credentials>`_.
 
-For more information, see `IAM Roles for Amazon EC2 <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html>`_.
+For more information, see `|IAM| Roles for |EC2| <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html>`_.
 
 .. _ecs_credentials:
 
-Using IAM roles for Amazon EC2 Container Service Tasks
+Using |IAM| roles for |EC2| Container Service Tasks
 ------------------------------------------------------
 
-*With IAM roles for Amazon ECS tasks, you can specify an IAM role that can be
+*With |IAM| roles for |ECS| tasks, you can specify an |IAM| role that can be
 used by the containers in a task.* This provides a strategy for managing credentials
-for your applications to use, similar to the way that Amazon EC2 instance profiles
+for your applications to use, similar to the way that |EC2| instance profiles
 provide credentials to EC2 instances.
 
 Instead of creating and distributing your AWS credentials to the containers or
-using the EC2 instance’s role, you can associate an IAM role with an ECS task definition or
+using the EC2 instance’s role, you can associate an |IAM| role with an ECS task definition or
 ``RunTask`` `API <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ecs-2014-11-13.html#runtask>`_ operation.
 
 .. note::
@@ -107,7 +107,7 @@ using the EC2 instance’s role, you can associate an IAM role with an ECS task 
     service. Please check if the service you are using supports temporary
     credentials by reading `AWS Services that Support AWS STS <http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html>`_.
 
-For more information, see `IAM Roles for Amazon EC2 Container Service Tasks <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html>`_.
+For more information, see `|IAM| Roles for |EC2| Container Service Tasks <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html>`_.
 
 .. _assume_role_credentials:
 
@@ -326,7 +326,7 @@ instanceProfile provider
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 ``Aws\Credentials\CredentialProvider::instanceProfile`` attempts to load
-credentials from Amazon EC2 instance profiles.
+credentials from |EC2| instance profiles.
 
 .. code-block:: php
 
@@ -345,7 +345,7 @@ credentials from Amazon EC2 instance profiles.
 
 .. note::
 
-    This attempt to load from Amazon EC2 instance profiles can be disabled by
+    This attempt to load from |EC2| instance profiles can be disabled by
     setting the ``AWS_EC2_METADATA_DISABLED`` environment variable to ``true``.
 
 ecsCredentials provider
@@ -529,7 +529,7 @@ Using temporary credentials from AWS STS
 
 `AWS Security Token Service <http://docs.aws.amazon.com/STS/latest/APIReference/Welcome.html>`_
 (AWS STS) enables you to request limited-privilege, **temporary credentials**
-for AWS IAM users or for users that you authenticate via identity federation.
+for AWS |IAM| users or for users that you authenticate via identity federation.
 One common use case for using temporary credentials is to grant mobile or
 client-side applications access to AWS resources by authenticating users
 through third-party identity providers (read more about `Web Identity Federation

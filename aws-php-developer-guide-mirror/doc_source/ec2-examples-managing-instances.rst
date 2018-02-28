@@ -1,4 +1,4 @@
-.. Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+        .. Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -9,23 +9,23 @@
    limitations under the License.
 
 =============================
-Managing Amazon EC2 Instances
+Managing |EC2| Instances
 =============================
 
 .. meta::
    :description:
-   :keywords: Amazon EC2, AWS SDK for PHP examples
+   :keywords: |EC2|, |sdk-php| examples
 
 The examples below show how to:
 
 * Describe EC2 instances using `DescribeInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#describeinstances>`_.
 * Enable detailed monitoring for a running instance using `MonitorInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#monitorinstances>`_.
 * Disable monitoring for a running instance using `UnmonitorInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#unmonitorinstances>`_.
-* Start an Amazon EBS-backed AMI that you've previously stopped, using `StartInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#startinstances>`_.
-* Stop an Amazon EBS-backed instance using `StopInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#stopinstances>`_.
+* Start an |EBS|-backed AMI that you've previously stopped, using `StartInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#startinstances>`_.
+* Stop an |EBS|-backed instance using `StopInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#stopinstances>`_.
 * Request a reboot of one or more instances using `RebootInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#rebootinstances>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

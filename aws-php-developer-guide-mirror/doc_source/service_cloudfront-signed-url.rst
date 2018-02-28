@@ -9,10 +9,10 @@
    limitations under the License.
 
 ============================
-Amazon CloudFront Signed URL
+|CFlong| Signed URL
 ============================
 
-Signing CloudFront URLs for Private Distributions
+Signing |CF|URLs for Private Distributions
 -------------------------------------------------
 
 Signed URLs allow you to provide users access to your private content. A signed
@@ -20,16 +20,16 @@ URL includes additional information (e.g., expiration time) that gives you more
 control over access to your content. This additional information appears in a
 policy statement, which is based on either a canned policy or a custom policy.
 For information about how to set up private distributions and why you need to
-sign URLs, please read the `Serving Private Content through CloudFront section
+sign URLs, please read the `Serving Private Content through |CF|section
 <http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html>`_
-of the CloudFront Developer Guide.
+of the |CF|Developer Guide.
 
 .. note:
 
     You must have the OpenSSL extension installed in you PHP environment in
-    order to sign CloudFront URLs.
+    order to sign |CF|URLs.
 
-You can sign a URL using the CloudFront client in the SDK. First you must
+You can sign a URL using the |CF|client in the SDK. First you must
 create a ``CloudFrontClient`` object.
 
 .. code-block:: php
@@ -41,7 +41,7 @@ create a ``CloudFrontClient`` object.
         'version' => '2014-11-06'
     ]);
 
-You can sign a CloudFront URL for a video resource using either a canned or
+You can sign a |CF|URL for a video resource using either a canned or
 custom policy.
 
 .. code-block:: php
@@ -55,7 +55,7 @@ custom policy.
         'url'         => $resourceKey,
         'expires'     => $expires,
         'private_key' => '/path/to/your/cloudfront-private-key.pem',
-        'key_pair_id' => '<cloudfront key pair id>'
+        'key_pair_id' => '<|CF|key pair id>'
     ]);
 
 To use a custom policy, provide the ``policy`` key instead of ``expires``.
@@ -81,7 +81,7 @@ To use a custom policy, provide the ``policy`` key instead of ``expires``.
         'url'    => $resourceKey,
         'policy' => $customPolicy,
         'private_key' => '/path/to/your/cloudfront-private-key.pem',
-        'key_pair_id' => '<cloudfront key pair id>'
+        'key_pair_id' => '<|CF|key pair id>'
     ]);
 
 The form of the signed URL is actually different depending on if the URL you
@@ -99,7 +99,7 @@ but will require different client-side code.
 
     <html>
     <head>
-        <title>Amazon CloudFront Streaming Example</title>
+        <title>|CFlong| Streaming Example</title>
         <script type="text/javascript" src="https://example.com/jwplayer.js"></script>
     </head>
     <body>
@@ -114,7 +114,7 @@ but will require different client-side code.
     </body>
     </html>
 
-Signing CloudFront Cookies for Private Distributions
+Signing |CF|Cookies for Private Distributions
 ----------------------------------------------------
 
 As an alternative to signed URLs, you can also grant clients access to a private
@@ -123,7 +123,7 @@ multiple restricted files, such all of the files for a video in HLS format or
 all of the files in the subscribers' area of a website. For more information on
 why you might want to use signed cookies instead of signed URLs (or vice versa),
 please read the `Choosing Between Signed URLs and Signed Cookies section <http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-choosing-signed-urls-cookies.html>`_
-of the CloudFront Developer Guide.
+of the |CF|Developer Guide.
 
 .. note:
 
@@ -151,7 +151,7 @@ difference being the method called (``getSignedCookie`` instead of ``getSignedUr
         'url'         => $resourceKey,
         'expires'     => $expires,
         'private_key' => '/path/to/your/cloudfront-private-key.pem',
-        'key_pair_id' => '<cloudfront key pair id>'
+        'key_pair_id' => '<|CF|key pair id>'
     ]);
 
 As with ``getSignedUrl``, you can provide a ``'policy'`` parameter instead of an
@@ -179,7 +179,7 @@ to create a single signed cookie for multiple files.
     $signedCookieCustomPolicy = $cloudFront->getSignedCookie([
         'policy' => $customPolicy,
         'private_key' => '/path/to/your/cloudfront-private-key.pem',
-        'key_pair_id' => '<cloudfront key pair id>'
+        'key_pair_id' => '<|CF|key pair id>'
     ]);
 
 ``getSignedCookie`` will return an array of key-value pairs, all of which must
@@ -209,4 +209,4 @@ with a Guzzle client.
 
 For more information on using signed cookies, please read the `Using Signed
 Cookies section <http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-cookies.html>`_
-of the CloudFront Developer Guide.
+of the |CF|Developer Guide.

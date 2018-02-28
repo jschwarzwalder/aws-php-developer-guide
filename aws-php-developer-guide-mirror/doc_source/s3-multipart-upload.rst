@@ -9,7 +9,7 @@
    limitations under the License.
 
 ===========================
-Amazon S3 Multipart Uploads
+|S3| Multipart Uploads
 ===========================
 
 With a single ``PutObject`` operation, you can upload objects up to 5 GB in
@@ -22,7 +22,7 @@ objects. With it you can upload objects in parts that can be uploaded
 independently, in any order, and in parallel. You can use a multipart upload
 for objects from 5 MB to 5 TB in size.
 
-Amazon S3 customers are encouraged to use multipart uploads for objects greater
+|S3| customers are encouraged to use multipart uploads for objects greater
 than 100 MB.
 
 The MultipartUploader object

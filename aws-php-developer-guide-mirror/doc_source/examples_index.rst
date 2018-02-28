@@ -12,7 +12,7 @@
 Code Examples
 =============
 
-This chapter includes code examples that demonstrate common Amazon Web Services scenarios using the AWS SDK for PHP.
+This chapter includes code examples that demonstrate common Amazon Web Services scenarios using the |sdk-php|.
 
 .. toctree::
     :maxdepth: 2

@@ -9,13 +9,13 @@
    limitations under the License.
 
 =============================
-Amazon S3 Multi-Region Client
+|S3| Multi-Region Client
 =============================
 
-The AWS SDK for PHP provides a generic multi-region client that can be used with
+The |sdk-php| provides a generic multi-region client that can be used with
 any service, which allows users to specify to which region to send a command by
 providing an ``@region`` input parameter to any command. In addition, the SDK
-provides a multi-region client for Amazon S3 that responds intelligently to
+provides a multi-region client for |S3| that responds intelligently to
 specific S3 errors and reroutes commands accordingly. This allows users to use
 the same client to talk to multiple regions -- a particularly useful feature for
 users of the :doc:`s3-stream-wrapper` whose buckets reside in multiple
@@ -24,7 +24,7 @@ regions.
 Basic Usage
 -----------
 
-The basic usage pattern of an Amazon S3 client is the same whether using a
+The basic usage pattern of an |S3| client is the same whether using a
 standard S3 client or its multi-region counterpart. The only usage difference at
 the command level is that a region may be specified using the ``@region`` input
 parameter.
@@ -63,7 +63,7 @@ parameter.
 Bucket Region Cache
 -------------------
 
-Amazon S3 multi-region clients maintain an internal cache of the regions in
+|S3| multi-region clients maintain an internal cache of the regions in
 which given buckets reside. By default, each client has its own in-memory cache.
 To share a cache between clients or processes, supply an instance of
 ``Aws\CacheInterface`` as the ``bucket_region_cache`` option to your

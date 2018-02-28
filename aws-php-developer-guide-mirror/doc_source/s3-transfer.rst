@@ -9,18 +9,18 @@
    limitations under the License.
 
 ==========================
-Amazon S3 Transfer Manager
+|S3| Transfer Manager
 ==========================
 
-The PHP SDK Amazon S3 transfer manager is used to upload entire directories to
-an Amazon S3 bucket and download entire buckets to a local directory.
+The PHP SDK |S3| transfer manager is used to upload entire directories to
+an |S3| bucket and download entire buckets to a local directory.
 
 Uploading a local directory to S3
 ---------------------------------
 
 The ``Aws\S3\Transfer`` object is used to perform transfers. The following
 example shows how to recursively upload a local directory of files to an
-Amazon S3 bucket.
+|S3| bucket.
 
 .. code-block:: php
 
@@ -42,13 +42,13 @@ Amazon S3 bucket.
     // Perform the transfer synchronously.
     $manager->transfer();
 
-In this example, we created an Amazon S3 client, created a ``Transfer`` object,
+In this example, we created an |S3| client, created a ``Transfer`` object,
 and performed transfer synchronously. Using the above example demonstrates the
 bare minimum amount of code needed to perform a transfer. The transfer object
 can perform transfers asynchronously and has various configuration options that
 can be used to customize the transfers.
 
-You can upload the local files to a "sub-folder" of a an Amazon S3 bucket by
+You can upload the local files to a "sub-folder" of a an |S3| bucket by
 providing a key prefix in the ``s3://`` URI. The following example uploads the
 local files on disk to the ``bucket`` bucket and stores the files under the
 ``foo`` key prefix.
@@ -60,11 +60,11 @@ local files on disk to the ``bucket`` bucket and stores the files under the
     $manager = new \Aws\S3\Transfer($client, $source, $dest);
     $manager->transfer();
 
-Downloading an Amazon S3 bucket
+Downloading an |S3| bucket
 -------------------------------
 
-You can recursively download an Amazon S3 bucket to a local directory on disk
-by specifying the ``$source`` argument as an Amazon S3 URI
+You can recursively download an |S3| bucket to a local directory on disk
+by specifying the ``$source`` argument as an |S3| URI
 (e.g., ``s3://bucket``) and the ``$dest`` argument as the path to a local
 directory.
 
@@ -84,7 +84,7 @@ directory.
     The SDK will automatically create any necessary directories when
     downloading the objects in the bucket.
 
-You can include a key prefix in the Amazon S3 URI after the bucket to download
+You can include a key prefix in the |S3| URI after the bucket to download
 only objects stored under a "pseudo-folder". The following example downloads
 only files stored under the "/foo" key prefix of the given bucket.
 
@@ -105,11 +105,11 @@ The ``Transfer`` object constructor accepts the following arguments:
 
 ``$source``
     (string|``\Iterator``) The source data being transferred. This can point
-    to a local path on disk (e.g., ``/path/to/files``) or an Amazon S3 bucket
+    to a local path on disk (e.g., ``/path/to/files``) or an |S3| bucket
     (e.g., ``s3://bucket``). The ``s3://`` URI may also contain a key prefix
     that can be used to only transfer objects under a common prefix.
 
-    If the ``$source`` argument is an Amazon S3 URI, then the ``$dest``
+    If the ``$source`` argument is an |S3| URI, then the ``$dest``
     argument must be a local directory (and vice versa).
 
     In addition to providing a string value, you can also provide an
@@ -119,9 +119,9 @@ The ``Transfer`` object constructor accepts the following arguments:
 
 ``$dest``
     The destination where the files will be transferred. If the ``$source``
-    argument is a local path on disk, then ``$dest`` must be an Amazon S3
+    argument is a local path on disk, then ``$dest`` must be an |S3|
     bucket URI (e.g., ``s3://bucket``). If the ``$source`` argument is an
-    Amazon S3 bucket URI, then the ``$dest`` argument must be a local path on
+    |S3| bucket URI, then the ``$dest`` argument must be a local path on
     disk.
 
 ``$options``

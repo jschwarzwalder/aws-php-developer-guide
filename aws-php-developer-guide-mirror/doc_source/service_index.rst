@@ -12,7 +12,7 @@
 Service Features
 ================
 
-Some of the services supported by the AWS SDK for PHP include additional
+Some of the services supported by the |sdk-php| include additional
 features beyond executing operations on an API. This guide documents there
 higher level features per service.
 

@@ -9,7 +9,7 @@
    limitations under the License.
 
 ===============
-AWS SDK for PHP
+|sdk-php|
 ===============
 
 .. toctree::

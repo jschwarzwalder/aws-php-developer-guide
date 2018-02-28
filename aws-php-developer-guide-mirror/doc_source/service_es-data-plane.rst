@@ -9,27 +9,27 @@
    limitations under the License.
 
 ======================================================
-Signing an Amazon Elasticsearch Service Search Request
+Signing an |ESlong| Search Request
 ======================================================
 
-Amazon Elasticsearch Service (Amazon ES) is a managed service that makes it easy
+|ESlong| (|ES|) is a managed service that makes it easy
 to deploy, operate, and scale Elasticsearch, a popular open-source search and
-analytics engine. Amazon ES offers direct access to the Elasticsearch API,
+analytics engine. |ES| offers direct access to the Elasticsearch API,
 meaning that developers can use the tools with which they’re familiar, as well
 as robust security options, such as using IAM users and roles for access
 control. Many Elasticsearch clients support request signing, but if you're using
 a client that doesn't, you can sign arbitrary PSR-7 requests with the SDK's
 built-in credential providers and signers.
 
-Signing an Amazon ES Request
+Signing an |ES| Request
 ----------------------------
 
-Amazon ES uses `Signature Version 4 <http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html>`_,
+|ES| uses `Signature Version 4 <http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html>`_,
 which means that you will need to sign requests against the service's signing
-name (``es``, in this case) and the region of your Amazon ES domain. A full list
-of regions supported by Amazon ES can be found `on AWS's Regions and Endpoints
+name (``es``, in this case) and the region of your |ES| domain. A full list
+of regions supported by |ES| can be found `on AWS's Regions and Endpoints
 page <http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticsearch-service-regions>`_,
-but in this sample, I'll be signing requests against an Amazon ES domain in the
+but in this sample, I'll be signing requests against an |ES| domain in the
 ``us-west-2`` region.
 
 You'll need to provide credentials, which can be done either with the SDK's

@@ -9,12 +9,12 @@
    limitations under the License.
 
 ==========================================
-Using Elastic IP Addresses with Amazon EC2
+Using Elastic IP Addresses with |EC2|
 ==========================================
 
 .. meta::
-   :description: Describe Amazon EC2 instances and acquire, associate, and release Elastic IP addresses.
-   :keywords: Amazon EC2, AWS SDK for PHP examples
+   :description: Describe |EC2| instances and acquire, associate, and release Elastic IP addresses.
+   :keywords: |EC2|, |sdk-php| examples
 
 An Elastic IP address is a static IP address designed for dynamic cloud computing. An Elastic IP address is associated with your AWS account. It is a public IP address, which is reachable from the Internet. If your instance does not have a public IP address, you can associate an Elastic IP address with your instance to enable communication with the Internet.
 
@@ -25,7 +25,7 @@ The examples below show how to:
 * Associate an Elastic IP address with an instance using `AssociateAddress <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#associateaddress>`_.
 * Release an Elastic IP address using `ReleaseAddress <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#releaseaddress>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

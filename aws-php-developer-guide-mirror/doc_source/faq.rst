@@ -5,7 +5,7 @@ FAQ
 What methods are available on a client?
 ---------------------------------------
 
-The AWS SDK for PHP utilizes service descriptions and dynamic
+The |sdk-php| utilizes service descriptions and dynamic
 `magic __call() methods <http://www.php.net/manual/en/language.oop5.overloading.php#object.call>`_
 to execute API operations. You can find a full list of methods available for a
 web service client in the `API documentation <http://docs.aws.amazon.com/aws-sdk-php/v3/api/index.html>`_
@@ -62,7 +62,7 @@ Why can't I upload or download files greater than 2GB?
 ------------------------------------------------------
 
 Because PHP's integer type is signed and many platforms use 32-bit integers, the
-AWS SDK for PHP does not correctly handle files larger than 2GB on a 32-bit
+|sdk-php| does not correctly handle files larger than 2GB on a 32-bit
 stack (where "stack" includes CPU, OS, web server, and PHP binary). This is a
 `well-known PHP issue <http://www.google.com/search?q=php+2gb+32-bit>`_. In the
 case of Microsoft® Windows®, only builds of PHP 7 support 64-bit integers.
@@ -132,13 +132,13 @@ was unable to find credentials in the environment.
 If you instantiate a client *without* credentials, on the first time that you
 perform a service operation, the SDK will attempt to find credentials. It first
 checks in some specific environment variables, then it looks for instance
-profile credentials, which are only available on configured Amazon EC2
+profile credentials, which are only available on configured |EC2|
 instances. If absolutely no credentials are provided or found, an
 ``Aws\Exception\CredentialsException`` is thrown.
 
 If you are seeing this error and you are intending to use instance profile
-credentials, then you need to make sure that the Amazon EC2 instance that the
-SDK is running on is configured with an appropriate IAM role.
+credentials, then you need to make sure that the |EC2| instance that the
+SDK is running on is configured with an appropriate |IAM| role.
 
 If you are seeing this error and you are **not** intending to use instance
 profile credentials, then you need to make sure that you are properly providing

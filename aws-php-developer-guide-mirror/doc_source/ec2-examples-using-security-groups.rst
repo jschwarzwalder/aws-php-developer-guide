@@ -13,10 +13,10 @@ Working with Security Groups
 ============================
 
 .. meta::
-   :description: Create, describe, and delete security groups for Amazon EC2.
-   :keywords: Amazon EC2, AWS SDK for PHP examples
+   :description: Create, describe, and delete security groups for |EC2|.
+   :keywords: |EC2|, |sdk-php| examples
 
-An Amazon EC2 security group acts as a virtual firewall that controls the traffic for one or more instances. You add rules to each security group to allow traffic to or from its associated instances. You can modify the rules for a security group at any time; the new rules are automatically applied to all instances that are associated with the security group.
+An |EC2| security group acts as a virtual firewall that controls the traffic for one or more instances. You add rules to each security group to allow traffic to or from its associated instances. You can modify the rules for a security group at any time; the new rules are automatically applied to all instances that are associated with the security group.
 
 The examples below show how to:
 
@@ -25,7 +25,7 @@ The examples below show how to:
 * Create a security group using `CreateSecurityGroup <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#createsecuritygroup>`_.
 * Delete a security group using `DeleteSecurityGroup <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#deletesecuritygroup>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

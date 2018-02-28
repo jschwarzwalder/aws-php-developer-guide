@@ -9,14 +9,14 @@
    limitations under the License.
 
 ==============================================
-Using an Amazon S3 Bucket as a Static Web Host
+Using an |S3| Bucket as a Static Web Host
 ==============================================
 
 .. meta::
-   :description: Get, set, and remove website configuration for an Amazon S3 bucket.
-   :keywords: Amazon S3, AWS SDK for PHP examples
+   :description: Get, set, and remove website configuration for an |S3| bucket.
+   :keywords: |S3|, |sdk-php| examples
 
-You can host a static website on Amazon S3. To learn more, see `Hosting a Static Website on Amazon S3 <http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html>`_.
+You can host a static website on |S3|. To learn more, see `Hosting a Static Website on |S3| <http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html>`_.
 
 The example below shows how to:
 
@@ -24,7 +24,7 @@ The example below shows how to:
 * Set the website configuration for a bucket using `PutBucketWebsite <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#putbucketwebsite>`_.
 * Remove the website configuration from a bucket using `DeleteBucketWebsite <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#deletebucketwebsite>`_.
 
-All the example code for the AWS SDK for PHP is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 Credentials
 -----------

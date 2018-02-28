@@ -12,14 +12,14 @@
 Installation
 ============
 
-There are 3 supported methods of installing the AWS SDK for PHP. The
+There are 3 supported methods of installing the |sdk-php|. The
 recommended way to install the SDK is through `Composer <http://getcomposer.org>`_.
 
 Installing via Composer
 -----------------------
 
 Using `Composer <http://getcomposer.org>`_ is the recommended way to install
-the AWS SDK for PHP. Composer is a dependency management tool for PHP that
+the |sdk-php|. Composer is a dependency management tool for PHP that
 allows you to declare the dependencies your project needs and installs them
 into your project.
 
@@ -57,10 +57,10 @@ and simply include it in your scripts to get started:
     <?php
     require '/path/to/aws.phar';
 
-Each release of the AWS SDK for PHP ships with a pre-packaged
+Each release of the |sdk-php| ships with a pre-packaged
 `phar <http://php.net/manual/en/book.phar.php>`_ (PHP archive) file containing
 all of the classes and dependencies you need to run the SDK. Additionally, the
-phar file automatically registers a class autoloader for the AWS SDK for PHP
+phar file automatically registers a class autoloader for the |sdk-php|
 and all of its dependencies when included.
 
 .. note::
@@ -76,9 +76,9 @@ and all of its dependencies when included.
 Installing via Zip
 ------------------
 
-Each release of the AWS SDK for PHP ships with a zip file containing all of the
+Each release of the |sdk-php| ships with a zip file containing all of the
 classes and dependencies you need to run the SDK. Additionally, the zip file
-includes a class autoloader for the AWS SDK for PHP and all of its dependencies.
+includes a class autoloader for the |sdk-php| and all of its dependencies.
 
 To get started, you must `download the zip file <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.zip>`_,
 unzip it into your project to a location of your choosing, and include the

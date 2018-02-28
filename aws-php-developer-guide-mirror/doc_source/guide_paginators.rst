@@ -16,7 +16,7 @@ Introduction
 ------------
 
 Some AWS service operations are paginated and respond with truncated results.
-For example, Amazon S3's ``ListObjects`` operation only returns up to 1000
+For example, |S3|'s ``ListObjects`` operation only returns up to 1000
 objects at a time. Operations like these (typically prefixed with "list" or
 "describe") require making subsequent requests with token (or marker) parameters
 to retrieve the entire set of results.

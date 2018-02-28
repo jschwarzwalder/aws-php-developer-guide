@@ -9,27 +9,27 @@
    limitations under the License.
 
 ========================
-DynamoDB Session Handler
+|DDB| Session Handler
 ========================
 
 Introduction
 ------------
 
-The **DynamoDB Session Handler** is a custom session handler for PHP that
-allows developers to use Amazon DynamoDB as a session store. Using DynamoDB
+The **|DDB| Session Handler** is a custom session handler for PHP that
+allows developers to use |DDBlong| as a session store. Using DynamoDB
 for session storage alleviates issues that occur with session handling in a
 distributed web application by moving sessions off of the local file system and
-into a shared location. DynamoDB is fast, scalable, easy to setup, and handles
+into a shared location. |DDB| is fast, scalable, easy to setup, and handles
 replication of your data automatically.
 
-The DynamoDB Session Handler uses the ``session_set_save_handler()`` function
-to hook DynamoDB operations into PHP's `native session functions <http://www.php.net/manual/en/ref.session.php>`_
+The |DDB| Session Handler uses the ``session_set_save_handler()`` function
+to hook |DDB| operations into PHP's `native session functions <http://www.php.net/manual/en/ref.session.php>`_
 to allow for a true drop in replacement. This includes support for features like
 session locking and garbage collection which are a part of PHP's default
 session handler.
 
-For more information on the Amazon DynamoDB service, please visit the
-`Amazon DynamoDB homepage <http://aws.amazon.com/dynamodb>`_.
+For more information on the |DDBlong| service, please visit the
+`|DDBlong| homepage <http://aws.amazon.com/dynamodb>`_.
 
 Basic Usage
 -----------
@@ -54,7 +54,7 @@ The first step is to instantiate and register the session handler.
 
 Before you can actually use the session handler, you need to create a table in
 which to store the sessions. This can be done ahead of time through the
-`AWS Console for Amazon DynamoDB <https://console.aws.amazon.com/dynamodb/home>`_,
+`AWS Console for |DDBlong| <https://console.aws.amazon.com/dynamodb/home>`_,
 or using the SDK.
 
 3. Use PHP sessions like normal
@@ -62,8 +62,8 @@ or using the SDK.
 
 Once the session handler is registered and the table exists, you can write to
 and read from the session using the ``$_SESSION`` superglobal, just like you
-normally do with PHP's default session handler. The DynamoDB Session Handler
-encapsulates and abstracts the interactions with Amazon DynamoDB and enables
+normally do with PHP's default session handler. The |DDB| Session Handler
+encapsulates and abstracts the interactions with |DDBlong| and enables
 you to simply use PHP's native session functions and interface.
 
 .. code-block:: php
@@ -86,10 +86,10 @@ options. All options are optional, but you should make sure to understand
 what the defaults are.
 
 ``table_name``
-    The name of the DynamoDB table in which to store the sessions. This defaults to ``'sessions'``.
+    The name of the |DDB| table in which to store the sessions. This defaults to ``'sessions'``.
 
 ``hash_key``
-    The name of the hash key in the DynamoDB sessions table. This defaults to ``'id'``.
+    The name of the hash key in the |DDB| sessions table. This defaults to ``'id'``.
 
 ``session_lifetime``
     The lifetime of an inactive session before it should be garbage collected. If it is not  provided, then the actual
@@ -139,10 +139,10 @@ following code is an example with all of the configuration options specified.
 Pricing
 -------
 
-Aside from data storage and data transfer fees, the costs associated with using Amazon DynamoDB are calculated based on
-the provisioned throughput capacity of your table (see the `Amazon DynamoDB pricing details
+Aside from data storage and data transfer fees, the costs associated with using |DDBlong| are calculated based on
+the provisioned throughput capacity of your table (see the `|DDBlong| pricing details
 <http://aws.amazon.com/dynamodb/pricing/>`_). Throughput is measured in units of Write Capacity and Read Capacity. The
-Amazon DynamoDB homepage says:
+|DDBlong| homepage says:
 
     A unit of read capacity represents one strongly consistent read per second (or two eventually consistent reads per
     second) for items as large as 4 KB. A unit of write capacity represents one write per second for items as large as
@@ -150,7 +150,7 @@ Amazon DynamoDB homepage says:
 
 Ultimately, the throughput and the costs required for your sessions table is going to correlate with your expected
 traffic and session size. The following table explains the amount of read and write operations that are performed on
-your DynamoDB table for each of the session functions.
+your |DDB| table for each of the session functions.
 
 +-------------------------------------+-----------------------------------------------------------------------------+
 | Read via ``session_start()``        | * 1 read operation (only 0.5 if ``consistent_read`` is ``false``).          |
@@ -175,8 +175,8 @@ your DynamoDB table for each of the session functions.
 Session Locking
 ---------------
 
-The DynamoDB Session Handler supports pessimistic session locking in order to mimic the behavior of PHP's default
-session handler. By default the DynamoDB Session Handler has this feature *turned off* since it can become a performance
+The |DDB| Session Handler supports pessimistic session locking in order to mimic the behavior of PHP's default
+session handler. By default the |DDB| Session Handler has this feature *turned off* since it can become a performance
 bottleneck and drive up costs, especially when an application accesses the session when using ajax requests or iframes.
 You should carefully consider whether or not your application requires session locking or not before enabling it.
 
@@ -194,7 +194,7 @@ To enable session locking, set the ``'locking'`` option to ``true`` when you ins
 Garbage Collection
 ------------------
 
-The DynamoDB Session Handler supports session garbage collection by using a series of ``Scan`` and ``BatchWriteItem``
+The |DDB| Session Handler supports session garbage collection by using a series of ``Scan`` and ``BatchWriteItem``
 operations. Due to the nature of how the ``Scan`` operation works and in order to find all of the expired sessions and
 delete them, the garbage collection process can require a lot of provisioned throughput.
 
@@ -239,10 +239,10 @@ Best Practices
 --------------
 
 #. Create your sessions table in a region that is geographically closest to or in the same region as your application
-   servers. This will ensure the lowest latency between your application and DynamoDB database.
+   servers. This will ensure the lowest latency between your application and |DDB| database.
 #. Choose the provisioned throughput capacity of your sessions table carefully, taking into account the expected traffic
    to your application and the expected size of your sessions.
-#. Monitor your consumed throughput through the AWS Management Console or with Amazon CloudWatch and adjust your
+#. Monitor your consumed throughput through the AWS Management Console or with |CWlong| and adjust your
    throughput settings as needed to meet the demands of your application.
 #. Keep the size of your sessions small (ideally less than 1 KB). Small sessions will perform better and require less
    provisioned throughput capacity.
@@ -253,10 +253,10 @@ Best Practices
 Required IAM Permissions
 ------------------------
 
-To use the DynamoDB session handler, your `configured credentials <https://docs.aws.amazon.com/aws-sdk-php/v3/guide/guide/credentials.html>`_
-must have permission to use the DynamoDB table that `you created in a previous step <https://docs.aws.amazon.com/aws-sdk-php/v3/guide/service/dynamodb-session-handler.html#create-a-table-for-storing-your-sessions>`_.
+To use the |DDB| session handler, your `configured credentials <https://docs.aws.amazon.com/aws-sdk-php/v3/guide/guide/credentials.html>`_
+must have permission to use the |DDB| table that `you created in a previous step <https://docs.aws.amazon.com/aws-sdk-php/v3/guide/service/dynamodb-session-handler.html#create-a-table-for-storing-your-sessions>`_.
 The following IAM policy contains the minimum permissions that you need. To use this policy, replace the Resource value
-with the Amazon Resource Name (ARN) of the table that you created previously. For more information about creating and
+with the |arnlong| (ARN) of the table that you created previously. For more information about creating and
 attaching IAM policies, see `Managing IAM Policies <https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage.html>`_
 in the *AWS Identity and Access Management User Guide*.
 

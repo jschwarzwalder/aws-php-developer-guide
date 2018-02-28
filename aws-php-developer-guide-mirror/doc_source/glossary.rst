@@ -5,7 +5,7 @@ Glossary
 API Version
     Services have one or more API versions, and which version you are using
     dictates which operations and parameters are valid. API versions are
-    formatted like a date. For example, the latest API version for Amazon S3 is
+    formatted like a date. For example, the latest API version for |S3| is
     ``2006-03-01``. You must :ref:`specify a version <cfg_version>` when you
     configure a client object.
 
@@ -38,7 +38,7 @@ Handler
 
 JMESPath
     `JMESPath <http://jmespath.org/>`_ is a query language for JSON-like data.
-    The AWS SDK for PHP uses JMESPath expressions to query PHP data structures.
+    The |sdk-php| uses JMESPath expressions to query PHP data structures.
     JMESPath expressions can be used directly on ``Aws\Result`` and
     ``Aws\ResultPaginator`` objects via the ``search($expression)`` method.
 
@@ -55,7 +55,7 @@ Operation
 
 Paginator
     Some AWS service operations are paginated and respond with truncated
-    results. For example, Amazon S3's ``ListObjects`` operation only returns up
+    results. For example, |S3|'s ``ListObjects`` operation only returns up
     to 1000 objects at a time. Operations like these require making subsequent
     requests with token (or marker) parameters to retrieve the entire set of
     results. Paginators are a feature of the SDK that act as an abstraction over
@@ -78,7 +78,7 @@ Region
     endpoint to use with the service.
 
 SDK
-    The term "SDK" can refer to the AWS SDK for PHP library as a whole, but also
+    The term "SDK" can refer to the |sdk-php| library as a whole, but also
     refers to the ``Aws\Sdk`` class `(docs)
     <http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.Sdk.html>`_, which
     acts as a factory for the client objects for each **service**. The ``Sdk``
@@ -87,8 +87,8 @@ SDK
     creates.
 
 Service
-    A general way to refer to any of the AWS services (e.g., Amazon S3, Amazon
-    DynamoDB, AWS OpsWorks, etc.). Each service has a corresponding **client**
+    A general way to refer to any of the AWS services (e.g., |S3|, |DDBlong|,
+    AWS OpsWorks, etc.). Each service has a corresponding **client**
     object in the SDK that supports one or more **API versions**. Each service
     also has one or more **operations** that make up its API. Services are
     supported in one or more **regions**.
@@ -102,7 +102,7 @@ Signature
 Waiter
     Waiters are a feature of the SDK that make it easier to work with operations
     that change the state of a resource and that are *eventually consistent* or
-    *asynchronous* in nature. For example, the Amazon DynamoDB ``CreateTable``
+    *asynchronous* in nature. For example, the |DDBlong| ``CreateTable``
     operation sends a response back immediately, but the table may not be ready
     to access for several seconds. Executing a waiter allows you to wait until a
     resource enters into a particular state by sleeping and polling the
