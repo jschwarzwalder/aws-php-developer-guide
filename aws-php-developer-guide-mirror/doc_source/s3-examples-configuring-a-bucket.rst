@@ -35,58 +35,30 @@ Before running the example code, configure your AWS credentials, as described in
 Get the CORS Configuration
 --------------------------
 
-.. code-block:: php
 
-    require 'vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
+**Imports**
 
-    $bucketName = 'BUCKET_NAME';
-    $client = new S3Client([
-        'region' => 'us-west-2',
-        'version' => '2006-03-01'
-    ]);
-    try {
-        $result = $client->getBucketCors([
-            'Bucket' => $bucketName, // REQUIRED
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+.. literalinclude::  example_code/s3/GetBucketCors.php
+   :lines: 16-19
+   :language: PHP
+
+**Code**
+
+.. literalinclude:: example_code/s3/GetBucketCors.php
+   :lines: 27-42
+   :language: php
 
 Set the CORS Configuration
 --------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/s3/PutBucketCors.php
+   :lines: 16-19
+   :language: PHP
 
-    $bucketName = 'BUCKET_NAME';
-    $client = new S3Client([
-        'region' => 'us-west-2',
-        'version' => '2006-03-01'
-    ]);
-    try {
-        $result = $client->putBucketCors([
-            'Bucket' => $bucketName, // REQUIRED
-            'CORSConfiguration' => [ // REQUIRED
-                'CORSRules' => [ // REQUIRED
-                    [
-                        'AllowedHeaders' => ['Authorization'],
-                        'AllowedMethods' => ['POST', 'GET', 'PUT'], // REQUIRED
-                        'AllowedOrigins' => ['*'], // REQUIRED
-                        'ExposeHeaders' => [],
-                        'MaxAgeSeconds' => 3000
-                    ],
-                ],
-            ]
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/s3/PutBucketCors.php
+   :lines: 27-53
+   :language: php

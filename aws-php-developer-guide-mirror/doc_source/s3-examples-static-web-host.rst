@@ -34,56 +34,14 @@ Before running the example code, configure your AWS credentials, as described in
 Get, Set, and Delete the Website Configuration for a Bucket
 -----------------------------------------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
-    // Create a S3Client
-    $s3Client = new S3Client([
-        'region' => 'us-west-2',
-        'version' => '2006-03-01'
-    ]);
-    // Retrieving the Bucket Website Configuration
-    $bucket = 'my-s3-bucket';
-    try {
-        $resp = $s3Client->getBucketWebsite([
-            'Bucket' => $bucket
-        ]);
-        echo "Succeed in retrieving website configuration for bucket: ". $bucket ."\n";
-    } catch (AwsException $e) {
-        // output error message if fails
-        echo $e->getMessage();
-        echo "\n";
-    }
-    // Setting a Bucket Website Configuration
-    $params = [
-        'Bucket' => $bucket,
-        'WebsiteConfiguration' => [
-            'ErrorDocument' => [
-                'Key' => 'foo',
-            ],
-            'IndexDocument' => [
-                'Suffix' => 'bar',
-            ],
-        ]
-    ];
-    try {
-        $resp = $s3Client->putBucketWebsite($params);
-        echo "Succeed in setting bucket website configuration.\n";
-    } catch (AwsException $e) {
-        // Display error message
-        echo $e->getMessage();
-        echo "\n";
-    }
-    // Deleting a Bucket Website Configuration
-    try {
-        $resp = $s3Client->deleteBucketWebsite([
-            'Bucket' => $bucket
-        ]);
-        echo "Succeed in deleting policy for bucket: ". $bucket ."\n";
-    } catch (AwsException $e) {
-        // output error message if fails
-        echo $e->getMessage();
-        echo "\n";
-    }
+.. literalinclude::  example_code/s3/s3WebHost.php
+   :lines: 16-19
+   :language: PHP
+
+**Code**
+
+.. literalinclude:: example_code/s3/s3WebHost.php
+   :lines: 21-72
+   :language: php

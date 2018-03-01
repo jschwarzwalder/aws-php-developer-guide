@@ -32,22 +32,18 @@ Before running the example code, configure your AWS credentials, as described in
 List Buckets
 ------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/s3/ListBuckets.php
+   :lines: 16-19
+   :language: PHP
 
-    //Create a S3Client
-    $s3Client = new S3Client([
-        'region' => 'us-west-2',
-        'version' => '2006-03-01'
-    ]);
-    //Listing all S3 Bucket
-    $buckets = $s3Client->listBuckets();
-    foreach ($buckets['Buckets'] as $bucket){
-    	echo $bucket['Name']."\n";
-    }
+**Code**
+
+.. literalinclude:: example_code/s3/ListBuckets.php
+   :lines: 28-38
+   :language: php
+
 
 Create a Bucket
 ---------------
@@ -55,7 +51,7 @@ Create a Bucket
 **Imports**
 
 .. literalinclude::  example_code/s3/CreateBucket.php
-   :lines: 16-20
+   :lines: 16-19
    :language: PHP
 
 **Code**
@@ -66,36 +62,14 @@ Create a Bucket
 
 Put an Object in a Bucket
 -------------------------
+**Imports**
 
-.. code-block:: php
+.. literalinclude::  example_code/s3/ListBuckets.php
+   :lines: 16-19
+   :language: PHP
 
-    require 'vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
+**Code**
 
-    $USAGE = "\n" .
-        "To run this example, supply the name of an S3 bucket and a file to\n" .
-        "upload to it.\n" .
-        "\n" .
-        "Ex: php PutObject.php <bucketname> <filename>\n";
-    if (count($argv) <= 2){
-        echo $USAGE;
-        exit();
-    }
-    $bucket = $argv[1];
-    $file_Path = $argv[2];
-    $key = basename($argv[2]);
-    try{
-        //Create a S3Client
-        $s3Client = new S3Client([
-            'region' => 'us-west-2',
-            'version' => '2006-03-01'
-        ]);
-        $result = $s3Client->putObject([
-            'Bucket'     => $bucket,
-            'Key'        => $key,
-            'SourceFile' => $file_Path,
-        ]);
-    } catch (S3Exception $e) {
-        echo $e->getMessage() . "\n";
-    }
+.. literalinclude:: example_code/s3/ListBuckets.php
+   :lines: 28-56
+   :language: php

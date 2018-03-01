@@ -33,59 +33,14 @@ Before running the example code, configure your AWS credentials, as described in
 Get and Set an Access Control List Policy
 -----------------------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\S3\S3Client;
-    use Aws\Exception\AwsException;
-    // Create a S3Client
-    $s3Client = new S3Client([
-        'region' => 'us-west-2',
-        'version' => '2006-03-01'
-    ]);
-    // Gets the access control policy for a bucket
-    $bucket = 'my-s3-bucket';
-    try {
-        $resp = $s3Client->getBucketAcl([
-            'Bucket' => $bucket
-        ]);
-        echo "Succeed in retrieving bucket ACL as follows: \n";
-        var_dump($resp);
-    } catch (AwsException $e) {
-        // output error message if fails
-        echo $e->getMessage();
-        echo "\n";
-    }
-    // Sets the permissions on a bucket using access control lists (ACL).
-    $params = [
-        'ACL' => 'public-read',
-        'AccessControlPolicy' => [
-            // Information can be retrieved from `getBucketAcl` response
-            'Grants' => [
-                [
-                    'Grantee' => [
-                        'DisplayName' => '<string>',
-                        'EmailAddress' => '<string>',
-                        'ID' => '<string>',
-                        'Type' => 'CanonicalUser',
-                        'URI' => '<string>',
-                    ],
-                    'Permission' => 'FULL_CONTROL',
-                ],
-                // ...
-            ],
-            'Owner' => [
-                'DisplayName' => '<string>',
-                'ID' => '<string>',
-            ],
-        ],
-        'Bucket' => $bucket,
-    ];
-    try {
-        $resp = $s3Client->putBucketAcl($params);
-        echo "Succeed in setting bucket ACL.\n";
-    } catch (AwsException $e) {
-        // Display error message
-        echo $e->getMessage();
-        echo "\n";
-    }
+.. literalinclude::  example_code/s3/s3BucketAcl.php
+   :lines: 16-19
+   :language: PHP
+
+**Code**
+
+.. literalinclude:: example_code/s3/s3BucketAcl.php
+   :lines: 21-74
+   :language: php
