@@ -34,84 +34,44 @@ Before running the example code, configure your AWS credentials, as described in
 Set Attributes on a Queue to Enable Long Polling
 ------------------------------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/sqs/LongPollingSetQueueAttributes.php
+   :lines: 15-18
+   :language: PHP
 
-    $queueUrl = "QUEUE_URL";
-    $client = new SqsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2012-11-05'
-    ]);
-    try {
-        $result = $client->setQueueAttributes(array(
-            'Attributes' => [
-                'ReceiveMessageWaitTimeSeconds' => 20
-            ],
-            'QueueUrl' => $queueUrl, // REQUIRED
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
 
+.. literalinclude:: example_code/sqs/LongPollingSetQueueAttributes.php
+   :lines: 27-46
+   :language: php
+   
 Retrieve Messages with Long Polling
 -----------------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/sqs/LongPollingRecieveMessage.php
+   :lines: 15-18
+   :language: PHP
 
-    $queueUrl = "QUEUE_URL";
-    $client = new SqsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2012-11-05'
-    ]);
-    try {
-        $result = $client->receiveMessage(array(
-            'AttributeNames' => ['SentTimestamp'],
-            'MaxNumberOfMessages' => 1,
-            'MessageAttributeNames' => ['All'],
-            'QueueUrl' => $queueUrl, // REQUIRED
-            'WaitTimeSeconds' => 20,
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/sqs/LongPollingRecieveMessage.php
+   :lines: 27-47
+   :language: php
 
 Create a Queue with Long Polling
 --------------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/sqs/LongPollingCreateQueue.php
+   :lines: 15-18
+   :language: PHP
 
-    $queueName = "QUEUE_NAME";
-    $client = new SqsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2012-11-05'
-    ]);
-    try {
-        $result = $client->createQueue(array(
-            'QueueName' => $queueName,
-            'Attributes' => array(
-                'ReceiveMessageWaitTimeSeconds' => 20
-            ),
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/sqs/LongPollingCreateQueue.php
+   :lines: 27-46
+   :language: php

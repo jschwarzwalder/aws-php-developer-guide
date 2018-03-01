@@ -34,77 +34,29 @@ Before running the example code, configure your AWS credentials, as described in
 Send a Message
 --------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/sqs/SendMessage.php
+   :lines: 15-18
+   :language: PHP
 
-    $client = new SqsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2012-11-05'
-    ]);
-    $params = [
-        'DelaySeconds' => 10,
-        'MessageAttributes' => [
-            "Title" => [
-                'DataType' => "String",
-                'StringValue' => "The Hitchhiker's Guide to the Galaxy"
-            ],
-            "Author" => [
-                'DataType' => "String",
-                'StringValue' => "Douglas Adams."
-            ],
-            "WeeksOn" => [
-                'DataType' => "Number",
-                'StringValue' => "6"
-            ]
-        ],
-        'MessageBody' => "Information about current NY Times fiction bestseller for week of 12/11/2016.",
-        'QueueUrl' => 'QUEUE_URL'
-    ];
-    try {
-        $result = $client->sendMessage($params);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
 
+.. literalinclude:: example_code/sqs/SendMessage.php
+   :lines: 27-59
+   :language: php
+   
 Receive and Delete Messages
 ---------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/sqs/ReceivedMessage.php
+   :lines: 15-18
+   :language: PHP
 
-    $queueUrl = "QUEUE_URL";
-    $client = new SqsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2012-11-05'
-    ]);
-    try {
-        $result = $client->receiveMessage(array(
-            'AttributeNames' => ['SentTimestamp'],
-            'MaxNumberOfMessages' => 1,
-            'MessageAttributeNames' => ['All'],
-            'QueueUrl' => $queueUrl, // REQUIRED
-            'WaitTimeSeconds' => 0,
-        ));
-        if (count($result->get('Messages')) > 0) {
-            var_dump($result->get('Messages')[0]);
-            $result = $client->deleteMessage([
-                'QueueUrl' => $queueUrl, // REQUIRED
-                'ReceiptHandle' => $result->get('Messages')[0]['ReceiptHandle'] // REQUIRED
-            ]);
-        } else {
-            echo "No messages in queue. \n";
-        }
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/sqs/ReceivedMessage.php
+   :lines: 27-55
+   :language: php

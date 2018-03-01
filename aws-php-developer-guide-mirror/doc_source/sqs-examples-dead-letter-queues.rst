@@ -34,27 +34,14 @@ Before running the example code, configure your AWS credentials, as described in
 Enable a Dead Letter Queue
 --------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/sqs/DeadLetterQueue.php
+   :lines: 15-18
+   :language: PHP
 
-    $queueUrl = "QUEUE_URL";
-    $client = new SqsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2012-11-05'
-    ]);
-    try {
-        $result = $client->setQueueAttributes([
-            'Attributes' => [
-                'RedrivePolicy' => "{\"deadLetterTargetArn\":\"DEAD_LETTER_QUEUE_ARN\",\"maxReceiveCount\":\"10\"}"
-            ],
-            'QueueUrl' => $queueUrl // REQUIRED
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/sqs/DeadLetterQueue.php
+   :lines: 27-46
+   :language: php

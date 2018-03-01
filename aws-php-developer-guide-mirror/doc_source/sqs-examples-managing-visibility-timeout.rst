@@ -32,44 +32,14 @@ Before running the example code, configure your AWS credentials, as described in
 Change the Visibility Timeout of Multiple Messages
 --------------------------------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/sqs/ChangeMessageVisibilityBatch.php
+   :lines: 15-18
+   :language: PHP
 
-    $queueUrl = "QUEUE_URL";
-    $client = new SqsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2012-11-05'
-    ]);
-    try {
-        $result = $client->receiveMessage(array(
-            'AttributeNames' => ['SentTimestamp'],
-            'MaxNumberOfMessages' => 10,
-            'MessageAttributeNames' => ['All'],
-            'QueueUrl' => $queueUrl, // REQUIRED
-        ));
-        $messages = $result->get('Messages');
-        if ($messages != null) {
-            $entries = array();
-            for ($i = 0; $i < count($messages); $i++) {
-                array_push($entries, [
-                    'Id' => 'unique_is_msg' . $i, // REQUIRED
-                    'ReceiptHandle' => $messages[$i]['ReceiptHandle'], // REQUIRED
-                    'VisibilityTimeout' => 36000
-                ]);
-            }
-            $result = $client->changeMessageVisibilityBatch([
-                'Entries' => $entries,
-                'QueueUrl' => $queueUrl
-            ]);
-            var_dump($result);
-        } else {
-            echo "No messages in queue \n";
-        }
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/sqs/ChangeMessageVisibilityBatch.php
+   :lines: 28-65
+   :language: php

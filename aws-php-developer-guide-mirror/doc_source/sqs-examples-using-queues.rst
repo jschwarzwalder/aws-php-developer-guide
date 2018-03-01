@@ -35,102 +35,60 @@ Before running the example code, configure your AWS credentials, as described in
 Return a List of Queues
 -----------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/sqs/ListQueues.php
+   :lines: 15-18
+   :language: PHP
 
-    $client = new SqsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2012-11-05'
-    ]);
-    try {
-        $result = $client->listQueues();
-        foreach ($result->get('QueueUrls') as $queueUrl) {
-            echo "$queueUrl\n";
-        }
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
 
+.. literalinclude:: example_code/sqs/ListQueues.php
+   :lines: 27-41
+   :language: php
+   
 Create a Queue
 --------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/sqs/CreateQueue.php
+   :lines: 15-18
+   :language: PHP
 
-    $queueName = "SQS_QUEUE_NAME";
-    $client = new SqsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2012-11-05'
-    ]);
-    try {
-        $result = $client->createQueue(array(
-            'QueueName' => $queueName,
-            'Attributes' => array(
-                'DelaySeconds' => 5,
-                'MaximumMessageSize' => 4096, // 4 KB
-            ),
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/sqs/CreateQueue.php
+   :lines: 27-47
+   :language: php
 
 Return the URL of a Queue
 -------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/sqs/GetQueueUrl.php
+   :lines: 15-18
+   :language: PHP
 
-    $queueName = "SQS_QUEUE_NAME";
-    $client = new SqsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2012-11-05'
-    ]);
-    try {
-        $result = $client->getQueueUrl([
-            'QueueName' => $queueName // REQUIRED
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
 
+.. literalinclude:: example_code/sqs/GetQueueUrl.php
+   :lines: 27-43
+   :language: php
+   
 Delete a Queue
 --------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Sqs\SqsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/sqs/DeleteQueue.php
+   :lines: 15-18
+   :language: PHP
 
-    $queueUrl = "SQS_QUEUE_URL";
-    $client = new SqsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2012-11-05'
-    ]);
-    try {
-        $result = $client->deleteQueue([
-            'QueueUrl' => $queueUrl // REQUIRED
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/sqs/DeleteQueue.php
+   :lines: 27-43
+   :language: php
+   
