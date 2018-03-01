@@ -34,57 +34,46 @@ Before running the example code, configure your AWS credentials, as described in
 Create a Key Pair
 -----------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/CreateKeyPair.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $keyPairName = 'my-keypair';
-    $result = $ec2Client->createKeyPair(array(
-        'KeyName' => $keyPairName
-    ));
-    // Save the private key
-    $saveKeyLocation = getenv('HOME') . "/.ssh/{$keyPairName}.pem";
-    file_put_contents($saveKeyLocation, $result['keyMaterial']);
-    // Update the key's permissions so it can be used with SSH
-    chmod($saveKeyLocation, 0600);
+**Code**
+
+.. literalinclude:: example_code/ec2/CreateKeyPair.php
+   :lines: 26-44
+   :language: php
+
 
 Delete a Key Pair
 -----------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/DeleteKeyPair.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $keyPairName = 'my-keypair';
-    $result = $ec2Client->deleteKeyPair(array(
-        'KeyName' => $keyPairName
-    ));
-    var_dump($result);
+**Code**
+
+.. literalinclude:: example_code/ec2/DeleteKeyPair.php
+   :lines: 26-39
+   :language: php
+
 
 Describe Key Pairs
 ------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/DescribeKeyPair.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $result = $ec2Client->describeKeyPairs();
-    var_dump($result);
+**Code**
+
+.. literalinclude:: example_code/ec2/DescribeKeyPair.php
+   :lines: 26-34
+   :language: php

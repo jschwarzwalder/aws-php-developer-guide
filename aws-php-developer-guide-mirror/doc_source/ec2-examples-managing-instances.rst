@@ -35,86 +35,60 @@ Before running the example code, configure your AWS credentials, as described in
 Describe Instances
 ------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/DescribeSecurityGroups.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $result = $ec2Client->describeInstances();
-    var_dump($result);
+**Code**
 
+.. literalinclude:: example_code/ec2/DescribeSecurityGroups.php
+   :lines: 26-34
+   :language: php
+   
 Enable and Disable Monitoring
 -----------------------------
 
-.. code-block:: php
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+**Imports**
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $instanceIds = array('InstanceID1', 'InstanceID2');
-    $monitorInstance = 'ON';
-    if ($monitorInstance == 'ON') {
-        $result = $ec2Client->monitorInstances(array(
-            'InstanceIds' => $instanceIds
-        ));
-    } else {
-        $result = $ec2Client->unmonitorInstances(array(
-            'InstanceIds' => $instanceIds
-        ));
-    }
-    var_dump($result);
+.. literalinclude::  example_code/ec2/InstanceMonitoring.php
+   :lines: 15-17
+   :language: PHP
+
+**Code**
+
+.. literalinclude:: example_code/ec2/InstanceMonitoring.php
+   :lines: 26-46
+   :language: php
 
 Start and Stop an Instance
 --------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/StartAndStopInstance.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $action = 'START';
-    $instanceIds = array('InstanceID1', 'InstanceID2');
-    if ($action == 'START') {
-        $result = $ec2Client->startInstances(array(
-            'InstanceIds' => $instanceIds,
-        ));
-    } else {
-        $result = $ec2Client->stopInstances(array(
-            'InstanceIds' => $instanceIds,
-        ));
-    }
-    var_dump($result);
+**Code**
+
+.. literalinclude:: example_code/ec2/StartAndStopInstance.php
+   :lines: 26-46
+   :language: php
 
 Reboot an Instances
 -------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/RebootInstances.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $instanceIds = array('InstanceID1', 'InstanceID2');
-    $result = $ec2Client->rebootInstances(array(
-        'InstanceIds' => $instanceIds
-    ));
-    var_dump($result);
+**Code**
+
+.. literalinclude:: example_code/ec2/RebootInstances.php
+   :lines: 26-38
+   :language: php

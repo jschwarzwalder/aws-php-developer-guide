@@ -33,31 +33,29 @@ Before running the example code, configure your AWS credentials, as described in
 Describe Availability Zones
 ---------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/DescribeAvailabilityZones.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $result = $ec2Client->describeAvailabilityZones();
-    var_dump($result);
+**Code**
+
+.. literalinclude:: example_code/ec2/DescribeAvailabilityZones.php
+   :lines: 26-34
+   :language: php
 
 Describe Regions
 ----------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/DescribeRegions.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $result = $ec2Client->describeRegions();
-    var_dump($result);
+**Code**
+
+.. literalinclude:: example_code/ec2/DescribeRegions.php
+   :lines: 26-34
+   :language: php

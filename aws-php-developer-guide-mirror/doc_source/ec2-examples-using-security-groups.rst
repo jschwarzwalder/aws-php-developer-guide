@@ -35,75 +35,61 @@ Before running the example code, configure your AWS credentials, as described in
 Describe Security Groups
 ------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/DescribeSecurityGroups.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $result = $ec2Client->describeSecurityGroups();
-    var_dump($result);
+**Code**
 
+.. literalinclude:: example_code/ec2/DescribeSecurityGroups.php
+   :lines: 26-34
+   :language: php
+   
 Add an Ingress Rule
 --------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/AuthorizeSecurityGroupIngress.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $result = $ec2Client->authorizeSecurityGroupIngress(array(
-        'GroupName' => 'string',
-        'SourceSecurityGroupName' => 'string'
-    ));
-    var_dump($result);
+**Code**
+
+.. literalinclude:: example_code/ec2/AuthorizeSecurityGroupIngress.php
+   :lines: 26-37
+   :language: php
+   
 
 Create a Security Group
 -----------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/CreateSecurityGroup.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    // Create the security group
-    $securityGroupName = 'my-security-group';
-    $result = $ec2Client->createSecurityGroup(array(
-        'GroupId' => $securityGroupName,
-    ));
-    // Get the security group ID (optional)
-    $securityGroupId = $result->get('GroupId');
-    echo "Security Group ID: " . $securityGroupId . '\n';
+**Code**
+
+.. literalinclude:: example_code/ec2/CreateSecurityGroup.php
+   :lines: 26-43
+   :language: php
 
 Delete a Security Group
 -----------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/DeleteSecurityGroup.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $securityGroupId = 'my-security-group-id';
-    $result = $ec2Client->deleteSecurityGroup(array(
-        'GroupId' => $securityGroupId
-    ));
-    var_dump($result);
+**Code**
+
+.. literalinclude:: example_code/ec2/DeleteSecurityGroup.php
+   :lines: 26-39
+   :language: php
+   

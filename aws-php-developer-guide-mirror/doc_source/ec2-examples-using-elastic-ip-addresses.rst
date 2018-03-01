@@ -35,63 +35,47 @@ Before running the example code, configure your AWS credentials, as described in
 Describe an Instance
 --------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/DescribeInstances.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $result = $ec2Client->describeInstances();
-    var_dump($result);
+**Code**
+
+.. literalinclude:: example_code/ec2/DescribeInstances.php
+   :lines: 26-34
+   :language: php
+
 
 Allocate and Associate an Address
 ---------------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/AllocateAddresses.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $instanceId = 'InstanceID';
-    $allocation = $ec2Client->allocateAddress(array(
-        'DryRun' => false,
-        'Domain' => 'vpc',
-    ));
-    $result = $ec2Client->associateAddress(array(
-        'DryRun' => false,
-        'InstanceId' => $instanceId,
-        'AllocationId' => $allocation->get('AllocationId')
-    ));
-    var_dump($result);
+**Code**
+
+.. literalinclude:: example_code/ec2/AllocateAddresses.php
+   :lines: 26-45
+   :language: php
+
 
 Release an Address
 ------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Ec2\Ec2Client;
+.. literalinclude::  example_code/ec2/ReleaseAddress.php
+   :lines: 15-17
+   :language: PHP
 
-    $ec2Client = new Ec2Client([
-        'region' => 'us-west-2',
-        'version' => '2016-11-15',
-        'profile' => 'default'
-    ]);
-    $associationID = 'AssociationID';
-    $allocationID = 'AllocationID';
-    $result = $ec2Client->disassociateAddress(array(
-        'AssociationId' => $associationID,
-    ));
-    $result = $ec2Client->releaseAddress(array(
-        'AllocationId' => $allocationID,
-    ));
-    var_dump($result);
+**Code**
+
+.. literalinclude:: example_code/ec2/ReleaseAddress.php
+   :lines: 26-44
+   :language: php
+
