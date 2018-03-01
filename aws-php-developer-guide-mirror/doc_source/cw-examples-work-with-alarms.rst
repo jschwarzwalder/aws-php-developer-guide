@@ -34,91 +34,42 @@ Before running the example code, configure your AWS credentials, as described in
 Describe Alarms
 ---------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/cloudwatch/DescribeAlarms.php
+   :lines: 15-19
+   :language: PHP
 
-    $client = new CloudWatchClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-08-01'
-    ]);
-    try {
-        $result = $client->describeAlarms([
-        ]);
-        foreach ($result['MetricAlarms'] as $alarm) {
-            echo $alarm['AlarmName'] . "\n";
-        }
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/cloudwatch/DescribeAlarms.php
+   :lines: 27-42
+   :language: php
+   
 
 Create an Alarm
 ---------------
 
-.. code-block:: php
+.. literalinclude::  example_code/cloudwatch/PutMetricAlarm.php
+   :lines: 15-19
+   :language: PHP
 
-    require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+**Code**
 
-    $client = new CloudWatchClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-08-01'
-    ]);
-    try {
-        $result = $client->putMetricAlarm(array(
-            // AlarmName is required
-            'AlarmName' => 'string',
-            // MetricName is required
-            'MetricName' => 'string',
-            // Namespace is required
-            'Namespace' => 'string',
-            // Statistic is required
-            //string: SampleCount | Average | Sum | Minimum | Maximum
-            'Statistic' => 'string',
-            // Period is required
-            'Period' => integer,
-            'Unit' => 'Count/Second',
-            // EvaluationPeriods is required
-            'EvaluationPeriods' => integer,
-            // Threshold is required
-            'Threshold' => interger,
-            // ComparisonOperator is required
-            // string: GreaterThanOrEqualToThreshold | GreaterThanThreshold | LessThanThreshold | LessThanOrEqualToThreshold
-            'ComparisonOperator' => 'string',
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
-
+.. literalinclude:: example_code/cloudwatch/PutMetricAlarm.php
+   :lines: 27-59
+   :language: php
+   
 Delete Alarms
 -------------
 
-.. code-block:: php
+.. literalinclude::  example_code/cloudwatch/DeleteAlarms.php
+   :lines: 15-19
+   :language: PHP
 
-    require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+**Code**
 
-    $alarmName = "<ALARM_NAME>";
-    $client = new CloudWatchClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-08-01'
-    ]);
-    try {
-        $result = $client->deleteAlarms([
-            'AlarmNames' => [$alarmName] // REQUIRED
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+.. literalinclude:: example_code/cloudwatch/DeleteAlarms.php
+   :lines: 27-43
+   :language: php
+   

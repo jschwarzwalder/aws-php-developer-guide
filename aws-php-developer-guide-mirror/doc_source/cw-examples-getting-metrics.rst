@@ -35,80 +35,46 @@ Before running the example code, configure your AWS credentials, as described in
 List Metrics
 ------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/cloudwatch/ListMetrics.php
+   :lines: 15-19
+   :language: PHP
 
-    $client = new CloudWatchClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-08-01'
-    ]);
-    try {
-        $result = $client->listMetrics();
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/cloudwatch/ListMetrics.php
+   :lines: 27-39
+   :language: php
+
 
 Retrieve Alarms for a Metric
 ----------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/cloudwatch/DescribeAlarmsForMetric.php
+   :lines: 15-19
+   :language: PHP
 
-    $client = new CloudWatchClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-08-01'
-    ]);
-    try {
-        $result = $client->describeAlarmsForMetric(array(
-            // MetricName is required
-            'MetricName' => 'ApproximateNumberOfMessagesVisible',
-            // Namespace is required
-            'Namespace' => 'AWS/SQS',
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/cloudwatch/DescribeAlarmsForMetric.php
+   :lines: 27-44
+   :language: php
 
 Get Metric Statistics
 ---------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/cloudwatch/GetMetricStatistics.php
+   :lines: 15-19
+   :language: PHP
 
-    $client = new CloudWatchClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-08-01'
-    ]);
-    try {
-        $result = $client->getMetricStatistics(array(
-            'Namespace' => 'string',
-            'MetricName' => 'CloudWatchTests',
-            //StartTime : mixed type: string (date format)|int (unix timestamp)|\DateTime
-            'StartTime' => strtotime('-1 days'),
-            //EndTime : mixed type: string (date format)|int (unix timestamp)|\DateTime
-            'EndTime' => strtotime('now'),
-            //The granularity, in seconds, of the returned datapoints. Period must be at least 60 seconds and must be a multiple of 60. The default value is 60
-            'Period' => 3000,
-            'Statistics' => array('Maximum', 'Minimum'),
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/cloudwatch/GetMetricStatistics.php
+   :lines: 27-49
+   :language: php
+

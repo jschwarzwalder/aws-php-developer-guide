@@ -8,6 +8,7 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
+
 ==========================================
 Sending Events to |CWElong|
 ==========================================
@@ -34,88 +35,44 @@ Before running the example code, configure your AWS credentials, as described in
 Create a Rule
 -------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\CloudWatchEvents\CloudWatchEventsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/cloudwatchEvents/PutRule.php
+   :lines: 15-19
+   :language: PHP
 
-    $client = new CloudWatchEventsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2015-10-07'
-    ]);
-    try {
-        $result = $client->putRule(array(
-            'Name' => 'DEMO_EVENT', // REQUIRED
-            'RoleArn' => 'IAM_ROLE_ARN',
-            'ScheduleExpression' => 'rate(5 minutes)',
-            'State' => 'ENABLED',
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/cloudwatchEvents/PutRule.php
+   :lines: 27-44
+   :language: php
 
 Add Targets to a Rule
 ---------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\CloudWatchEvents\CloudWatchEventsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/cloudwatchEvents/PutTargets.php
+   :lines: 15-19
+   :language: PHP
 
-    $client = new CloudWatchEventsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2015-10-07'
-    ]);
-    try {
-        $result = $client->putTargets([
-            'Rule' => 'DEMO_EVENT', // REQUIRED
-            'Targets' => [ // REQUIRED
-                [
-                    'Arn' => 'LAMBDA_FUNCTION_ARN', // REQUIRED
-                    'Id' => 'myCloudWatchEventsTarget' // REQUIRED
-                ],
-            ],
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/cloudwatchEvents/PutTargets.php
+   :lines: 27-47
+   :language: php
 
 Send Custom Events
 ------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\CloudWatchEvents\CloudWatchEventsClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/cloudwatchEvents/PutEvents.php
+   :lines: 15-19
+   :language: PHP
 
-    $client = new CloudWatchEventsClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2015-10-07'
-    ]);
-    try {
-        $result = $client->putEvents([
-            'Entries' => [ // REQUIRED
-                [
-                    'Detail' => '<string>',
-                    'DetailType' => '<string>',
-                    'Resources' => ['<string>'],
-                    'Source' => '<string>',
-                    'Time' => time()
-                ],
-            ],
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/cloudwatchEvents/PutEvents.php
+   :lines: 27-49
+   :language: php

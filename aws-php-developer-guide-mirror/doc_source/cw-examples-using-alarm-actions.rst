@@ -33,49 +33,30 @@ Before running the example code, configure your AWS credentials, as described in
 Enable Alarm Actions
 --------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/cloudwatch/EnableAlarmActions.php
+   :lines: 15-19
+   :language: PHP
 
-    $alarmName = "<ALARM_NAME>";
-    $client = new CloudWatchClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-08-01'
-    ]);
-    try {
-        $result = $client->enableAlarmActions([
-            'AlarmNames' => array($alarmName) //REQUIRED
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
 
+.. literalinclude:: example_code/cloudwatch/EnableAlarmActions.php
+   :lines: 27-43
+   :language: php
+   
 Disable Alarm Actions
 ---------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\CloudWatch\CloudWatchClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/cloudwatch/DisableAlarmActions.php
+   :lines: 15-19
+   :language: PHP
 
-    $alarmName = "<ALARM_NAME>";
-    $client = new CloudWatchClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-08-01'
-    ]);
-    try {
-        $result = $client->disableAlarmActions([
-            'AlarmNames' => array($alarmName) //REQUIRED
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/cloudwatch/DisableAlarmActions.php
+   :lines: 27-43
+   :language: php
+   
