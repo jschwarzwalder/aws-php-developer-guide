@@ -54,16 +54,17 @@ Creating a client
 You can create a client by passing an associative array of options to a
 client's constructor.
 
-.. code-block:: php
+**Imports**
 
-    <?php
-    // Include the SDK using the Composer autoloader
-    require 'vendor/autoload.php';
+.. literalinclude::  example_code/s3/CreateClient.php
+   :lines: 16-18
+   :language: PHP
 
-    $s3 = new Aws\S3\S3Client([
-        'version' => 'latest',
-        'region'  => 'us-east-1'
-    ]);
+**Code**
+
+.. literalinclude:: example_code/s3/CreateClient.php
+   :lines: 28-32
+   :language: php
 
 Notice that we did **not** explicitly provide credentials to the client. That's
 because the credentials should be detected by the SDK from either
@@ -82,7 +83,6 @@ custom client configuration options are described in the
 client.
 
 .. _sdk-class:
-
 Using the Sdk class
 -------------------
 
@@ -91,19 +91,17 @@ configuration options across multiple clients. The same options that can be
 provided to a specific client constructor can also be supplied to the
 ``Aws\Sdk`` class. These options are then applied to each client constructor.
 
-.. code-block:: php
+**Imports**
 
-    // Use the us-west-2 region and latest version of each client.
-    $sharedConfig = [
-        'region'  => 'us-west-2',
-        'version' => 'latest'
-    ];
+.. literalinclude::  example_code/s3/CreateClient.php
+   :lines: 16-18
+   :language: PHP
 
-    // Create an SDK class used to share configuration across clients.
-    $sdk = new Aws\Sdk($sharedConfig);
+**Code**
 
-    // Create an |S3| client using the shared configuration data.
-    $client = $sdk->createS3();
+.. literalinclude:: example_code/s3/CreateClient.php
+   :lines: 35-45
+   :language: php
 
 Options that are shared across all clients are placed in root-level key-value
 pairs. Service-specific configuration data can be provided in a key that is the
@@ -144,26 +142,17 @@ a client object. For example, to perform the |S3| `PutObject operation
 <http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html>`_, you must
 call the ``Aws\S3\S3Client::putObject()`` method.
 
-.. code-block:: php
+**Imports**
 
-    // Use an Aws\Sdk class to create the S3Client object.
-    $s3Client = $sdk->createS3();
+.. literalinclude::  example_code/s3/PutObjectServiceOperations.php
+   :lines: 16-18
+   :language: PHP
 
-    // Send a PutObject request and get the result object.
-    $result = $s3Client->putObject([
-        'Bucket' => 'my-bucket',
-        'Key'    => 'my-key',
-        'Body'   => 'this is the body!'
-    ]);
+**Code**
 
-    // Download the contents of the object.
-    $result = $s3Client->getObject([
-        'Bucket' => 'my-bucket',
-        'Key'    => 'my-key'
-    ]);
-
-    // Print the body of the result by indexing into the result object.
-    echo $result['Body'];
+.. literalinclude:: example_code/s3/PutObjectServiceOperations.php
+   :lines: 27-53
+   :language: php
 
 Operations available to a client and the structure of the input and output are
 defined at runtime based on a service description file. When creating a client,
@@ -207,11 +196,17 @@ exception on failure. This allows you to create multiple promises and
 have them send HTTP requests concurrently when the underlying HTTP handler
 transfers the requests.
 
-.. code-block:: php
+**Imports**
 
-    $promise = $s3Client->listBucketsAsync();
-    // Block until the result is ready.
-    $result = $promise->wait();
+.. literalinclude::  example_code/s3/ListBucketsAsync.php
+   :lines: 16-18
+   :language: PHP
+
+**Code**
+
+.. literalinclude:: example_code/s3/ListBucketsAsync.php
+   :lines: 27-39
+   :language: php
 
 You can force a promise to complete synchronously using the ``wait`` method of
 the promise. Forcing the promise to complete will also "unwrap" the state of
@@ -224,16 +219,22 @@ When using the SDK with an event loop library, you will not want to block on
 results, but rather use the ``then()`` method of a result to access a promise
 that is resolved or rejected when the operation completes.
 
-.. code-block:: php
+**Imports**
 
-    $promise = $s3Client->listBucketsAsync();
-    $promise
-        ->then(function ($result) {
-            echo 'Got a result: ' . var_export($result, true);
-        })
-        ->otherwise(function ($reason) {
-            echo 'Encountered an error: ' . $reason->getMessage();
-        });
+.. literalinclude::  example_code/s3/ListBucketsAsync.php
+   :lines: 16-18
+   :language: PHP
+
+**Code**
+
+.. literalinclude:: example_code/s3/ListBucketsAsync.php
+   :lines: 27-35
+   :language: php
+
+.. literalinclude:: example_code/s3/ListBucketsAsync.php
+   :lines: 41-49
+   :language: php
+
 
 .. _result_objects:
 
@@ -248,18 +249,19 @@ structure.
 
 You can access data from the result object like an associative PHP array.
 
-.. code-block:: php
+**Imports**
 
-    // Use an Aws\Sdk class to create the S3Client object.
-    $s3 = $sdk->createS3();
-    $result = $s3->listBuckets();
+.. literalinclude::  example_code/s3/ListBucketsResultObject.php
+   :lines: 16-18
+   :language: PHP
 
-    foreach ($result['Buckets'] as $bucket) {
-        echo $bucket['Name'] . "\n";
-    }
+**Code**
 
-    // Convert the result object to a PHP array
-    $array = $result->toArray();
+.. literalinclude:: example_code/s3/ListBucketsResultObject.php
+   :lines: 27-45
+   :language: php
+
+
 
 The contents of the result object depends on the operation that was executed
 and the version of a service. The result structure of each API operation is
@@ -271,12 +273,17 @@ manipulate JSON data, or PHP arrays, in our case. The result object contains a
 ``search()`` method that allows you to more declaratively extract data from the
 result.
 
-.. code-block:: php
+**Code**
 
-    $s3 = $sdk->createS3();
-    $result = $s3Client->listBuckets();
-    // Get the name of each bucket
-    $results = $result->search('Buckets[].Name');
+.. literalinclude:: example_code/s3/ListBucketsResultObject.php
+   :lines: 37-39
+   :language: php
+
+.. literalinclude:: example_code/s3/ListBucketsResultObject.php
+  :lines: 47-48
+  :language: php
+
+
 
 Handling errors
 ---------------
@@ -295,23 +302,19 @@ All service specific exceptions thrown by the SDK extend from the
 ``Aws\Exception\AwsException`` class. This class contains useful information
 about the failure, including the request-id, error code, and error type.
 
-.. code-block:: php
 
-    use Aws\Exception\AwsException;
-    use Aws\S3\Exception\S3Exception;
+**Imports**
 
-    try {
-        $s3Client->createBucket(['Bucket' => 'my-bucket']);
-    } catch (S3Exception $e) {
-        // Catch an S3 specific exception.
-        echo $e->getMessage();
-    } catch (AwsException $e) {
-        // This catches the more generic AwsException. You can grab information
-        // from the exception using methods of the exception object.
-        echo $e->getAwsRequestId() . "\n";
-        echo $e->getAwsErrorType() . "\n";
-        echo $e->getAwsErrorCode() . "\n";
-    }
+.. literalinclude::  example_code/s3/ErrorHandling.php
+   :lines: 16-20
+   :language: PHP
+
+**Code**
+
+.. literalinclude:: example_code/s3/ErrorHandling.php
+   :lines: 27-45
+   :language: php
+
 
 Async Error Handling
 ~~~~~~~~~~~~~~~~~~~~
@@ -320,29 +323,33 @@ Exceptions are not thrown when sending asynchronous requests. Instead, you must
 use the ``then()`` or ``otherwise()`` methods of the returned promise to
 receive the result or error.
 
-.. code-block:: php
+**Imports**
 
-    $promise = $s3Client->createBucketAsync(['Bucket' => 'my-bucket']);
+.. literalinclude::  example_code/s3/ErrorHandling.php
+   :lines: 16-20
+   :language: PHP
 
-    $promise->otherwise(function ($reason) {
-        var_dump($reason);
-    });
+**Code**
 
-    // This does the same thing as the "otherwise" function.
-    $promise->then(null, function ($reason) {
-        var_dump($reason);
-    });
+.. literalinclude:: example_code/s3/ErrorHandling.php
+   :lines: 52-61
+   :language: php
+
 
 You can "unwrap" the promise and cause the exception to be thrown instead.
 
-.. code-block:: php
+**Imports**
 
-    use Aws\S3\Exception\S3Exception;
+.. literalinclude::  example_code/s3/ErrorHandling.php
+   :lines: 16-20
+   :language: PHP
 
-    $promise = $s3Client->createBucketAsync(['Bucket' => 'my-bucket']);
+**Code**
 
-    try {
-        $result = $promise->wait();
-    } catch (S3Exception $e) {
-        echo $e->getMessage();
-    }
+.. literalinclude:: example_code/s3/ErrorHandling.php
+   :lines: 52
+   :language: php
+
+.. literalinclude:: example_code/s3/ErrorHandling.php
+  :lines: 64-68
+  :language: php
