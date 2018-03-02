@@ -18,12 +18,12 @@ Managing |EC2| Instances
 
 The examples below show how to:
 
-* Describe EC2 instances using `DescribeInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#describeinstances>`_.
-* Enable detailed monitoring for a running instance using `MonitorInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#monitorinstances>`_.
-* Disable monitoring for a running instance using `UnmonitorInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#unmonitorinstances>`_.
-* Start an |EBS|-backed AMI that you've previously stopped, using `StartInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#startinstances>`_.
-* Stop an |EBS|-backed instance using `StopInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#stopinstances>`_.
-* Request a reboot of one or more instances using `RebootInstances <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#rebootinstances>`_.
+* Describe EC2 instances using :aws-php-class:`DescribeInstances </api-ec2-2016-11-15.html#describeinstances>`_.
+* Enable detailed monitoring for a running instance using :aws-php-class:`MonitorInstances </api-ec2-2016-11-15.html#monitorinstances>`_.
+* Disable monitoring for a running instance using :aws-php-class:`UnmonitorInstances </api-ec2-2016-11-15.html#unmonitorinstances>`_.
+* Start an |EBS|-backed AMI that you've previously stopped, using :aws-php-class:`StartInstances </api-ec2-2016-11-15.html#startinstances>`_.
+* Stop an |EBS|-backed instance using :aws-php-class:`StopInstances </api-ec2-2016-11-15.html#stopinstances>`_.
+* Request a reboot of one or more instances using :aws-php-class:`RebootInstances </api-ec2-2016-11-15.html#rebootinstances>`_.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

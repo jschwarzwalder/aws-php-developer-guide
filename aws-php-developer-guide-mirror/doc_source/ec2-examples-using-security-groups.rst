@@ -20,10 +20,10 @@ An |EC2| security group acts as a virtual firewall that controls the traffic for
 
 The examples below show how to:
 
-* Describe one or more of your security groups using `DescribeSecurityGroups <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#describesecuritygroups>`_.
-* Add an ingress rule to a security group using `AuthorizeSecurityGroupIngress <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#authorizesecuritygroupingress>`_.
-* Create a security group using `CreateSecurityGroup <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#createsecuritygroup>`_.
-* Delete a security group using `DeleteSecurityGroup <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ec2-2016-11-15.html#deletesecuritygroup>`_.
+* Describe one or more of your security groups using :aws-php-class:`DescribeSecurityGroups </api-ec2-2016-11-15.html#describesecuritygroups>`_.
+* Add an ingress rule to a security group using :aws-php-class:`AuthorizeSecurityGroupIngress </api-ec2-2016-11-15.html#authorizesecuritygroupingress>`_.
+* Create a security group using :aws-php-class:`CreateSecurityGroup </api-ec2-2016-11-15.html#createsecuritygroup>`_.
+* Delete a security group using :aws-php-class:`DeleteSecurityGroup </api-ec2-2016-11-15.html#deletesecuritygroup>`_.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

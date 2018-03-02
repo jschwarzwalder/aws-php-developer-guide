@@ -381,7 +381,7 @@ if 'extlinks' not in vars():
     extlinks = {}
 
 # These URLs make maintaining the extlinks easier.
-aws_php_api_url = 'https://docs.aws.amazon.com/AWSPHPSDK/latest/phpdoc/'
+aws_php_api_url = 'https://docs.aws.amazon.com/aws-sdk-php/v3/api/'
 phpse_api_url = 'https://docs.oracle.com/phpse/8/docs/api/'
 phpdoc_f = 'index.html?%s.html' # phpdoc link + frames
 phpdoc_nf = '%s.html' # phpdoc link - frames

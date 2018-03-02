@@ -20,10 +20,10 @@ You grant permissions to a user by creating a policy, which is a document that l
 
 The examples below show how to:
 
-* Create a managed policy using `CreatePolicy <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#createpolicy>`_.
-* Attach a policy to a role using `AttachRolePolicy <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#attachrolepolicy>`_.
-* Attach a policy to a user using `AttachUserPolicy <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#attachuserpolicy>`_.
-* Remove a user policy using `DetachUserPolicy <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#detachuserpolicy>`_.
+* Create a managed policy using :aws-php-class:`CreatePolicy </api-iam-2010-05-08.html#createpolicy>`_.
+* Attach a policy to a role using :aws-php-class:`AttachRolePolicy </api-iam-2010-05-08.html#attachrolepolicy>`_.
+* Attach a policy to a user using :aws-php-class:`AttachUserPolicy </api-iam-2010-05-08.html#attachuserpolicy>`_.
+* Remove a user policy using :aws-php-class:`DetachUserPolicy </api-iam-2010-05-08.html#detachuserpolicy>`_.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

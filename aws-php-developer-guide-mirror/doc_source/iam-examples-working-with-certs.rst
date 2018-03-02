@@ -20,10 +20,10 @@ To enable HTTPS connections to your website or application on AWS, you need an S
 
 The examples below show how to:
 
-* List the certificates stored in |IAM| using `ListServerCertificates <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#listservercertificates>`_.
-* Retrieve information about a certificate using `GetServerCertificate <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#getservercertificate>`_.
-* Update a certificate using `UpdateServerCertificate <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#updateservercertificate>`_.
-* Delete a certificate using `DeleteServerCertificate <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-iam-2010-05-08.html#deleteservercertificate>`_.
+* List the certificates stored in |IAM| using :aws-php-class:`ListServerCertificates </api-iam-2010-05-08.html#listservercertificates>`_.
+* Retrieve information about a certificate using :aws-php-class:`GetServerCertificate </api-iam-2010-05-08.html#getservercertificate>`_.
+* Update a certificate using :aws-php-class:`UpdateServerCertificate </api-iam-2010-05-08.html#updateservercertificate>`_.
+* Delete a certificate using :aws-php-class:`DeleteServerCertificate </api-iam-2010-05-08.html#deleteservercertificate>`_.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

@@ -20,10 +20,10 @@ To learn about |SQS| queues, see `How |SQS| Queues Work <http://docs.aws.amazon.
 
 The examples below show how to:
 
-* Return a list of your queues using `ListQueues <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#listqueues>`_.
-* Create a new queue using `CreateQueue <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#createqueue>`_.
-* Return the URL of an existing queue using `GetQueueUrl <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#getqueueurl>`_.
-* Delete a specified queue using `DeleteQueue <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#deletequeue>`_.
+* Return a list of your queues using :aws-php-class:`ListQueues </api-sqs-2012-11-05.html#listqueues>`_.
+* Create a new queue using :aws-php-class:`CreateQueue </api-sqs-2012-11-05.html#createqueue>`_.
+* Return the URL of an existing queue using :aws-php-class:`GetQueueUrl </api-sqs-2012-11-05.html#getqueueurl>`_.
+* Delete a specified queue using :aws-php-class:`DeleteQueue </api-sqs-2012-11-05.html#deletequeue>`_.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

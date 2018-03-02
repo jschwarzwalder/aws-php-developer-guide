@@ -20,8 +20,8 @@ Access control lists (ACLs) are one of the resource-based access policy options 
 
 The example below shows how to:
 
-* Get the access control policy for a bucket using `GetBucketAcl <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#getbucketacl>`_.
-* Set the permissions on a bucket using access control lists, using `PutBucketAcl <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#putbucketacl>`_.
+* Get the access control policy for a bucket using :aws-php-class:`GetBucketAcl </api-s3-2006-03-01.html#getbucketacl>`_.
+* Set the permissions on a bucket using access control lists, using :aws-php-class:`PutBucketAcl </api-s3-2006-03-01.html#putbucketacl>`_.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

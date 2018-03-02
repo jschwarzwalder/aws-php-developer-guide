@@ -20,9 +20,9 @@ To learn about |SQS| messages, see `Sending a Message to an |SQS| Queue <http://
 
 The examples below show how to:
 
-* Deliver a message to a specified queue using `SendMessage <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#sendmessage>`_.
-* Retrieve one or more messages (up to 10) from a specified queue using `ReceiveMessage <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#receivemessage>`_.
-* Delete a message from a queue using `DeleteMessage <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#deletemessage>`_.
+* Deliver a message to a specified queue using :aws-php-class:`SendMessage </api-sqs-2012-11-05.html#sendmessage>`_.
+* Retrieve one or more messages (up to 10) from a specified queue using :aws-php-class:`ReceiveMessage </api-sqs-2012-11-05.html#receivemessage>`_.
+* Delete a message from a queue using :aws-php-class:`DeleteMessage </api-sqs-2012-11-05.html#deletemessage>`_.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

@@ -22,7 +22,7 @@ To learn more, see `Using |SQS| Dead Letter Queues <http://docs.aws.amazon.com/A
 
 The example below shows how to:
 
-* Enable a dead letter queue using `SetQueueAttributes <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sqs-2012-11-05.html#setqueueattributes>`_.
+* Enable a dead letter queue using :aws-php-class:`SetQueueAttributes </api-sqs-2012-11-05.html#setqueueattributes>`_.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

@@ -21,9 +21,9 @@ Sending Events to |CWElong|
 
 The examples below show how to:
 
-* Create a rule using `PutRule <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-events-2015-10-07.html#putrule>`_.
-* Add targets to a rule using `PutTargets <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-events-2015-10-07.html#puttargets>`_.
-* Send custom events to |CWE| using `PutEvents <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-events-2015-10-07.html#putevents>`_.
+* Create a rule using :aws-php-class:`PutRule </api-events-2015-10-07.html#putrule>`_.
+* Add targets to a rule using :aws-php-class:`PutTargets </api-events-2015-10-07.html#puttargets>`_.
+* Send custom events to |CWE| using :aws-php-class:`PutEvents </api-events-2015-10-07.html#putevents>`_.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

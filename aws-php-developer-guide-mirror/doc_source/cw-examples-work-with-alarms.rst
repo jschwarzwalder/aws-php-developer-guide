@@ -20,9 +20,9 @@ An |CWlong| alarm watches a single metric over a time period you specify, and pe
 
 The examples below show how to:
 
-* Describe an alarm using `DescribeAlarms <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-monitoring-2010-08-01.html#describealarms>`_.
-* Create an alarm using `PutMetricAlarm <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-monitoring-2010-08-01.html#putmetricalarm>`_.
-* Delete an alarm using `DeleteAlarms <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-monitoring-2010-08-01.html#deletealarms>`_.
+* Describe an alarm using :aws-php-class:`DescribeAlarms </api-monitoring-2010-08-01.html#describealarms>`_.
+* Create an alarm using :aws-php-class:`PutMetricAlarm </api-monitoring-2010-08-01.html#putmetricalarm>`_.
+* Delete an alarm using :aws-php-class:`DeleteAlarms </api-monitoring-2010-08-01.html#deletealarms>`_.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
