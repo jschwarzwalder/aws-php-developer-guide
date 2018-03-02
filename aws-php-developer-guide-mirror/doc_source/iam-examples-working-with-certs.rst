@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-====================================
+======================================
 Working with |IAM| Server Certificates
-====================================
+======================================
 
 .. meta::
    :description: List, update, and get information about certificates using IAM.
@@ -20,10 +20,10 @@ To enable HTTPS connections to your website or application on AWS, you need an S
 
 The examples below show how to:
 
-* List the certificates stored in |IAM| using :aws-php-class:`ListServerCertificates </api-iam-2010-05-08.html#listservercertificates>`_.
-* Retrieve information about a certificate using :aws-php-class:`GetServerCertificate </api-iam-2010-05-08.html#getservercertificate>`_.
-* Update a certificate using :aws-php-class:`UpdateServerCertificate </api-iam-2010-05-08.html#updateservercertificate>`_.
-* Delete a certificate using :aws-php-class:`DeleteServerCertificate </api-iam-2010-05-08.html#deleteservercertificate>`_.
+* List the certificates stored in |IAM| using :aws-php-class:`ListServerCertificates <api-iam-2010-05-08.html#listservercertificates>`.
+* Retrieve information about a certificate using :aws-php-class:`GetServerCertificate <api-iam-2010-05-08.html#getservercertificate>`.
+* Update a certificate using :aws-php-class:`UpdateServerCertificate <api-iam-2010-05-08.html#updateservercertificate>`.
+* Delete a certificate using :aws-php-class:`DeleteServerCertificate <api-iam-2010-05-08.html#deleteservercertificate>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

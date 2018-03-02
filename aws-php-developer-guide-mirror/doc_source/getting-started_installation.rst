@@ -81,7 +81,7 @@ Each release of the |sdk-php| ships with a zip file containing all of the
 classes and dependencies you need to run the SDK. Additionally, the zip file
 includes a class autoloader for the |sdk-php| and all of its dependencies.
 
-To get started, you must `download the zip file <|sdk-PHP-dl|`_,
+To get started, you must `download the zip file <|sdk-PHP-dl|>`_,
 unzip it into your project to a location of your choosing, and include the
 autoloader::
 

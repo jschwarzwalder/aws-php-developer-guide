@@ -16,13 +16,15 @@ Sending and Receiving Messages in |SQS|
    :description: Deliver, delete, or retrieve messages using |SQS|.
    :keywords: |SQS|, |sdk-php| examples
 
-To learn about |SQS| messages, see `Sending a Message to an |SQS| Queue <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-send-message.html>`_ and `Receiving and Deleting a Message from an |SQS| Queue <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-receive-delete-message.html>`_ in the Amazon Simple Queue Service Developer Guide.
+To learn about |SQS| messages, see `Sending a Message to an |SQS| Queue <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-send-message.html>`_
+and `Receiving and Deleting a Message from an |SQS| Queue <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-receive-delete-message.html>`_
+in the Amazon Simple Queue Service Developer Guide.
 
 The examples below show how to:
 
-* Deliver a message to a specified queue using :aws-php-class:`SendMessage </api-sqs-2012-11-05.html#sendmessage>`_.
-* Retrieve one or more messages (up to 10) from a specified queue using :aws-php-class:`ReceiveMessage </api-sqs-2012-11-05.html#receivemessage>`_.
-* Delete a message from a queue using :aws-php-class:`DeleteMessage </api-sqs-2012-11-05.html#deletemessage>`_.
+* Deliver a message to a specified queue using :aws-php-class:`SendMessage <api-sqs-2012-11-05.html#sendmessage>`.
+* Retrieve one or more messages (up to 10) from a specified queue using :aws-php-class:`ReceiveMessage <api-sqs-2012-11-05.html#receivemessage>`.
+* Delete a message from a queue using :aws-php-class:`DeleteMessage <api-sqs-2012-11-05.html#deletemessage>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-=======
+=========
 AWS |IAM|
-=======
+=========
 
 |IAMlong|  (|IAM|) is a web service that enables |AWSlong| (AWS) customers to manage users and user permissions in AWS. The service is targeted at organizations with multiple users or systems in the cloud that use AWS products. With |IAM|, you can centrally manage users, security credentials such as access keys, and permissions that control which AWS resources users can access.
 

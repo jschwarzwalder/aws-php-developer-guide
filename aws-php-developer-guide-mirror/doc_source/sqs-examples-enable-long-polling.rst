@@ -20,9 +20,9 @@ Long polling reduces the number of empty responses by allowing |SQS| to wait a s
 
 The examples below show how to:
 
-* Set attributes on an SQS queue to enable long polling, using :aws-php-class:`SetQueueAttributes </api-sqs-2012-11-05.html#setqueueattributes>`_.
-* Retrieve one or more messages with long polling using :aws-php-class:`ReceiveMessage </api-sqs-2012-11-05.html#receivemessage>`_.
-* Create a long polling queue using :aws-php-class:`CreateQueue </api-sqs-2012-11-05.html#createqueue>`_.
+* Set attributes on an SQS queue to enable long polling, using :aws-php-class:`SetQueueAttributes <api-sqs-2012-11-05.html#setqueueattributes>`.
+* Retrieve one or more messages with long polling using :aws-php-class:`ReceiveMessage <api-sqs-2012-11-05.html#receivemessage>`.
+* Create a long polling queue using :aws-php-class:`CreateQueue <api-sqs-2012-11-05.html#createqueue>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

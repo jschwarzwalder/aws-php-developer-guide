@@ -14,11 +14,11 @@ Streams
 
 As part of its integration of the `PSR-7 <http://www.php-fig.org/psr/psr-7/>`_
 HTTP message standard, the |sdk-php| uses the :aws-php-class:`PSR-7 StreamInterface
-</class-Psr.Http.Message.StreamInterface.html>`_
+</class-Psr.Http.Message.StreamInterface.html>`
 internally as its abstraction over `PHP streams
 <http://php.net/manual/en/intro.stream.php>`_. Any command with an input field
 defined as a blob, such as the ``Body`` parameter on an :aws-php-class:`S3::PutObject command
-</api-s3-2006-03-01.html#putobject>`_,
+</api-s3-2006-03-01.html#putobject>`,
 can be satisfied with a string, a PHP stream resource, or an instance of
 ``Psr\Http\Message\StreamInterface``.
 
@@ -47,7 +47,7 @@ found on the `GuzzleHttp\Psr7 repository <https://github.com/guzzle/psr7>`_.
 AppendStream
 ~~~~~~~~~~~~
 
-:aws-php-class:`GuzzleHttp\\Psr7\\AppendStream </class-GuzzleHttp.Psr7.AppendStream.html>`_
+:aws-php-class:`GuzzleHttp\\Psr7\\AppendStream </class-GuzzleHttp.Psr7.AppendStream.html>`
 
 Reads from multiple streams, one after the other.
 
@@ -66,7 +66,7 @@ Reads from multiple streams, one after the other.
 CachingStream
 ~~~~~~~~~~~~~
 
-:aws-php-class:`GuzzleHttp\\Psr7\\CachingStream </class-GuzzleHttp.Psr7.CachingStream.html>`_
+:aws-php-class:`GuzzleHttp\\Psr7\\CachingStream </class-GuzzleHttp.Psr7.CachingStream.html>`
 
 The CachingStream is used to allow seeking over previously read bytes on
 non-seekable streams. This can be useful when transferring a non-seekable
@@ -93,7 +93,7 @@ then on disk.
 InflateStream
 ~~~~~~~~~~~~~
 
-:aws-php-class:`GuzzleHttp\\Psr7\\InflateStream </class-GuzzleHttp.Psr7.InflateStream.html>`_
+:aws-php-class:`GuzzleHttp\\Psr7\\InflateStream </class-GuzzleHttp.Psr7.InflateStream.html>`
 
 Uses PHP's zlib.inflate filter to inflate deflate or gzipped content.
 
@@ -105,7 +105,7 @@ to a Guzzle stream resource to be used as a Guzzle stream.
 LazyOpenStream
 ~~~~~~~~~~~~~~
 
-:aws-php-class:`GuzzleHttp\\Psr7\\LazyOpenStream </class-GuzzleHttp.Psr7.LazyOpenStream.html>`_
+:aws-php-class:`GuzzleHttp\\Psr7\\LazyOpenStream </class-GuzzleHttp.Psr7.LazyOpenStream.html>`
 
 Lazily reads or writes to a file that is opened only after an IO operation
 take place on the stream.
@@ -123,7 +123,7 @@ take place on the stream.
 LimitStream
 ~~~~~~~~~~~
 
-:aws-php-class:`GuzzleHttp\\Psr7\\LimitStream </class-GuzzleHttp.Psr7.LimitStream.html>`_
+:aws-php-class:`GuzzleHttp\\Psr7\\LimitStream </class-GuzzleHttp.Psr7.LimitStream.html>`
 
 LimitStream can be used to read a subset or slice of an existing stream object.
 This can be useful for breaking a large file into smaller pieces to be sent in
@@ -147,7 +147,7 @@ chunks (e.g. |S3|'s multipart upload API).
 NoSeekStream
 ~~~~~~~~~~~~
 
-:aws-php-class:`GuzzleHttp\\Psr7\\NoSeekStream </class-GuzzleHttp.Psr7.NoSeekStream.html>`_
+:aws-php-class:`GuzzleHttp\\Psr7\\NoSeekStream </class-GuzzleHttp.Psr7.NoSeekStream.html>`
 
 NoSeekStream wraps a stream and does not allow seeking.
 
@@ -169,7 +169,7 @@ NoSeekStream wraps a stream and does not allow seeking.
 PumpStream
 ~~~~~~~~~~
 
-:aws-php-class:`GuzzleHttp\\Psr7\\PumpStream </class-GuzzleHttp.Psr7.PumpStream.html>`_
+:aws-php-class:`GuzzleHttp\\Psr7\\PumpStream </class-GuzzleHttp.Psr7.PumpStream.html>`
 
 Provides a read only stream that pumps data from a PHP callable.
 
@@ -185,7 +185,7 @@ Implementing stream decorators
 
 Creating a stream decorator is very easy thanks to the
 :aws-php-class:`GuzzleHttp\\Psr7\\StreamDecoratorTrait
-</class-GuzzleHttp.Psr7.StreamDecoratorTrait.html>`_.
+</class-GuzzleHttp.Psr7.StreamDecoratorTrait.html>`.
 This trait provides methods that implement ``Psr\Http\Message\StreamInterface``
 by proxying to an underlying stream. Just ``use`` the ``StreamDecoratorTrait``
 and implement your custom methods.

@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-==================
+====================
 Managing |IAM| Users
-==================
+====================
 
 .. meta::
    :description: Create, list, update, or retrieve info about |IAM| users.
@@ -20,11 +20,11 @@ An |IAM| user is an entity that you create in AWS to represent the person or ser
 
 The examples below show how to:
 
-* Create a new |IAM| user using :aws-php-class:`CreateUser </api-iam-2010-05-08.html#createuser>`_.
-* List |IAM| users using :aws-php-class:`ListUsers </api-iam-2010-05-08.html#listusers>`_.
-* Update an |IAM| user using :aws-php-class:`UpdateUser </api-iam-2010-05-08.html#updateuser>`_.
-* Retrieve info about an |IAM| user using :aws-php-class:`GetUser </api-iam-2010-05-08.html#getuser>`_.
-* Delete an |IAM| user using :aws-php-class:`DeleteUser </api-iam-2010-05-08.html#deleteuser>`_.
+* Create a new |IAM| user using :aws-php-class:`CreateUser </api-iam-2010-05-08.html#createuser>`.
+* List |IAM| users using :aws-php-class:`ListUsers </api-iam-2010-05-08.html#listusers>`.
+* Update an |IAM| user using :aws-php-class:`UpdateUser </api-iam-2010-05-08.html#updateuser>`.
+* Retrieve info about an |IAM| user using :aws-php-class:`GetUser </api-iam-2010-05-08.html#getuser>`.
+* Delete an |IAM| user using :aws-php-class:`DeleteUser </api-iam-2010-05-08.html#deleteuser>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
@@ -34,7 +34,7 @@ Credentials
 Before running the example code, configure your AWS credentials, as described in :doc:`guide_credentials`.
 
 Create an |IAM| User
-------------------
+--------------------
 
 **Imports**
 
@@ -50,7 +50,7 @@ Create an |IAM| User
 
 
 List |IAM| Users
---------------
+----------------
 
 **Imports**
 
@@ -65,7 +65,7 @@ List |IAM| Users
    :language: php
 
 Update an |IAM| User
-------------------
+--------------------
 
 
 **Imports**
@@ -81,7 +81,7 @@ Update an |IAM| User
    :language: php
 
 Get Info about an |IAM| User
---------------------------
+----------------------------
 
 **Imports**
 
@@ -96,7 +96,7 @@ Get Info about an |IAM| User
    :language: php
 
 Delete an |IAM| User
-------------------
+--------------------
 
 **Imports**
 

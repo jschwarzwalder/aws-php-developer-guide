@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-=========================
+===========================
 Working with |IAM| Policies
-=========================
+===========================
 
 .. meta::
    :description: Create, attach, or remove |IAM| user policies.
@@ -20,10 +20,10 @@ You grant permissions to a user by creating a policy, which is a document that l
 
 The examples below show how to:
 
-* Create a managed policy using :aws-php-class:`CreatePolicy </api-iam-2010-05-08.html#createpolicy>`_.
-* Attach a policy to a role using :aws-php-class:`AttachRolePolicy </api-iam-2010-05-08.html#attachrolepolicy>`_.
-* Attach a policy to a user using :aws-php-class:`AttachUserPolicy </api-iam-2010-05-08.html#attachuserpolicy>`_.
-* Remove a user policy using :aws-php-class:`DetachUserPolicy </api-iam-2010-05-08.html#detachuserpolicy>`_.
+* Create a managed policy using :aws-php-class:`CreatePolicy <api-iam-2010-05-08.html#createpolicy>`.
+* Attach a policy to a role using :aws-php-class:`AttachRolePolicy <api-iam-2010-05-08.html#attachrolepolicy>`.
+* Attach a policy to a user using :aws-php-class:`AttachUserPolicy <api-iam-2010-05-08.html#attachuserpolicy>`.
+* Remove a user policy using :aws-php-class:`DetachUserPolicy <api-iam-2010-05-08.html#detachuserpolicy>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

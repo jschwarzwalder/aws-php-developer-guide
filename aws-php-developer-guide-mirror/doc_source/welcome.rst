@@ -19,7 +19,7 @@ SDK through Composer — by requiring the ``aws/aws-sdk-php`` package — or by
 downloading the standalone `aws.zip <|sdk-PHP-dl|>`_
 or `aws.phar <|sdk-PHP-phar|>`_ files.
 
-External links: :aws-php-class:`API Docs <index.html>`_
+External links: :aws-php-class:`API Docs <index.html>`
 | `GitHub <https://github.com/aws/aws-sdk-php>`_
 | `Twitter <https://twitter.com/awsforphp>`_
 | `Gitter <https://gitter.im/aws/aws-sdk-php>`_

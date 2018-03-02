@@ -9,10 +9,10 @@
    limitations under the License.
 
 =========================================
-Signing Custom |CS|Domain Requests
+Signing Custom |CS| Domain Requests
 =========================================
 
-|CS|Domain requests can be customized beyond what is supported by the AWS
+|CS| Domain requests can be customized beyond what is supported by the AWS
 SDK for PHP. In cases where you need to make custom requests to domains
 protected by IAM authentication, you can use the SDK's credential providers and
 signers to sign any `PSR-7 request

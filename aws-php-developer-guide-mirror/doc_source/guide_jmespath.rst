@@ -15,7 +15,7 @@ JMESPath Expressions in the SDK
 `JMESPath <http://jmespath.org/>`_ allows you to declaratively specify how to
 extract elements from a JSON document. The |sdk-php| has a dependency on
 `jmespath.php <https://github.com/jmespath/jmespath.php>`_ to power some of the
-high-level abstractions like :ref:`guide_paginators` and :ref:`guide_waiters`, but also
+high-level abstractions like :doc:`guide_paginators` and :doc:`guide_waiters`, but also
 exposes JMESPath searching on ``Aws\ResultInterface`` and
 ``Aws\ResultPaginator``.
 
@@ -246,7 +246,7 @@ filter projection.
 Extracting data from paginators
 -------------------------------
 
-As you know from the :ref:`guide_paginators` guide, ``Aws\ResultPaginator`` objects
+As you know from the :doc:`guide_paginators` guide, ``Aws\ResultPaginator`` objects
 are used to yield results from a pageable API operation. The SDK allows you to
 extract and iterate over filtered data from ``Aws\ResultPaginator`` objects
 essentially implementing a `flat-map <http://martinfowler.com/articles/collection-pipeline/flat-map.html>`_

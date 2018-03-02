@@ -16,12 +16,13 @@ Managing |S3| Bucket Access Permissions
    :description: Get ACLs and set permissions for |S3| buckets.
    :keywords: |S3|, |sdk-php| examples
 
-Access control lists (ACLs) are one of the resource-based access policy options you can use to manage access to your buckets and objects. You can use ACLs to grant basic read/write permissions to other AWS accounts. To learn more, see `Managing Access with ACLs <http://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html>`_.
+Access control lists (ACLs) are one of the resource-based access policy options you can use to manage access to your buckets and objects.
+You can use ACLs to grant basic read/write permissions to other AWS accounts. To learn more, see `Managing Access with ACLs <http://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html>`_.
 
 The example below shows how to:
 
-* Get the access control policy for a bucket using :aws-php-class:`GetBucketAcl </api-s3-2006-03-01.html#getbucketacl>`_.
-* Set the permissions on a bucket using access control lists, using :aws-php-class:`PutBucketAcl </api-s3-2006-03-01.html#putbucketacl>`_.
+* Get the access control policy for a bucket using :aws-php-class:`GetBucketAcl <api-s3-2006-03-01.html#getbucketacl>`.
+* Set the permissions on a bucket using access control lists, using :aws-php-class:`PutBucketAcl <api-s3-2006-03-01.html#putbucketacl>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

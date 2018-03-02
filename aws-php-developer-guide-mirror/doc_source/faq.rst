@@ -8,7 +8,7 @@ What methods are available on a client?
 The |sdk-php| utilizes service descriptions and dynamic
 `magic __call() methods <http://www.php.net/manual/en/language.oop5.overloading.php#object.call>`_
 to execute API operations. You can find a full list of methods available for a
-web service client in the :aws-php-class:`API documentation </index.html>`_
+web service client in the :aws-php-class:`API documentation </index.html>`
 of the client.
 
 What do I do about a cURL SSL certificate error?
@@ -28,7 +28,7 @@ What API versions are available for a client?
 ---------------------------------------------
 
 A ``version`` option is required when creating a client. A list of available
-API versions can be found on each client's API documentation page 
+API versions can be found on each client's API documentation page
 ::aws-php-class:<index.html>. If you are unable to
 load a specific API version, then you may need to update your copy of the SDK.
 
@@ -244,11 +244,11 @@ How to handle exception with Error code?
 ----------------------------------------
 
 Besides SDK customized Exception classes, each Aws Service Client has its own exception class that
-inherits from :aws-php-class:`Aws\Exception\AwsException </class-Aws.Exception.AwsException.html>`_.
+inherits from :aws-php-class:`Aws\Exception\AwsException </class-Aws.Exception.AwsException.html>`.
 You can determine more specific error types to catch with the API specific errors listed under the
 ``Errors`` section of each method.
 
-Error Code information is available with :aws-php-class:`getAwsErrorCode() </class-Aws.Exception.AwsException.html#_getAwsErrorCode>`_
+Error Code information is available with :aws-php-class:`getAwsErrorCode() </class-Aws.Exception.AwsException.html#_getAwsErrorCode>`
 from ``Aws\Exception\AwsException``.
 
 .. code-block:: php

@@ -20,9 +20,9 @@ You can use a bucket policy to grant permission to your |S3| resources. To learn
 
 The example below shows how to:
 
-* Return the policy for a specified bucket using :aws-php-class:`GetBucketPolicy </api-s3-2006-03-01.html#getbucketpolicy>`_.
-* Replace a policy on a bucket using :aws-php-class:`PutBucketPolicy </api-s3-2006-03-01.html#putbucketpolicy>`_.
-* Delete a policy from a bucket using :aws-php-class:`DeleteBucketPolicy </api-s3-2006-03-01.html#deletebucketpolicy>`_.
+* Return the policy for a specified bucket using :aws-php-class:`GetBucketPolicy <api-s3-2006-03-01.html#getbucketpolicy>`.
+* Replace a policy on a bucket using :aws-php-class:`PutBucketPolicy <api-s3-2006-03-01.html#putbucketpolicy>`.
+* Delete a policy from a bucket using :aws-php-class:`DeleteBucketPolicy <api-s3-2006-03-01.html#deletebucketpolicy>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-========================
+==========================
 Managing |IAM| Access Keys
-========================
+==========================
 
 .. meta::
    :description: Create, delete, and get information about |IAM| access keys.
@@ -20,11 +20,11 @@ Users need their own access keys to make programmatic calls to AWS. To fill this
 
 The examples below show how to:
 
-* Create a secret access key and corresponding access key ID using :aws-php-class:`CreateAccessKey </api-iam-2010-05-08.html#createaccesskey>`_.
-* Return information about the access key IDs associated with an |IAM| user using :aws-php-class:`ListAccessKeys </api-iam-2010-05-08.html#listaccesskeys>`_.
-* Retrieve information about when an access key was last used using :aws-php-class:`GetAccessKeyLastUsed </api-iam-2010-05-08.html#getaccesskeylastused>`_.
-* Change the status of an access key from Active to Inactive, or vice versa, using :aws-php-class:`UpdateAccessKey </api-iam-2010-05-08.html#updateaccesskey>`_.
-* Delete an access key pair associated with an |IAM| user using :aws-php-class:`DeleteAccessKey </api-iam-2010-05-08.html#deleteaccesskey>`_.
+* Create a secret access key and corresponding access key ID using :aws-php-class:`CreateAccessKey <api-iam-2010-05-08.html#createaccesskey>`.
+* Return information about the access key IDs associated with an |IAM| user using :aws-php-class:`ListAccessKeys <api-iam-2010-05-08.html#listaccesskeys>`.
+* Retrieve information about when an access key was last used using :aws-php-class:`GetAccessKeyLastUsed <api-iam-2010-05-08.html#getaccesskeylastused>`.
+* Change the status of an access key from Active to Inactive, or vice versa, using :aws-php-class:`UpdateAccessKey <api-iam-2010-05-08.html#updateaccesskey>`.
+* Delete an access key pair associated with an |IAM| user using :aws-php-class:`DeleteAccessKey <api-iam-2010-05-08.html#deleteaccesskey>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-=========================
+===========================
 Using |IAM| Account Aliases
-=========================
+===========================
 
 .. meta::
    :description: Create, list, and delete aliases for AWS accout IDs using |IAM|.
@@ -20,9 +20,9 @@ If you want the URL for your sign-in page to contain your company name or other 
 
 The examples below show how to:
 
-* Create an alias using :aws-php-class:`CreateAccountAlias </api-iam-2010-05-08.html#createaccountalias>`_.
-* List the alias associated with the AWS account using :aws-php-class:`ListAccountAliases </api-iam-2010-05-08.html#listaccountaliases>`_.
-* Delete an alias using :aws-php-class:`DeleteAccountAlias </api-iam-2010-05-08.html#deleteaccountalias>`_.
+* Create an alias using :aws-php-class:`CreateAccountAlias </api-iam-2010-05-08.html#createaccountalias>`.
+* List the alias associated with the AWS account using :aws-php-class:`ListAccountAliases </api-iam-2010-05-08.html#listaccountaliases>`.
+* Delete an alias using :aws-php-class:`DeleteAccountAlias </api-iam-2010-05-08.html#deleteaccountalias>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

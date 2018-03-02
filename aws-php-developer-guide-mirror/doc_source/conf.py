@@ -381,21 +381,14 @@ if 'extlinks' not in vars():
     extlinks = {}
 
 # These URLs make maintaining the extlinks easier.
-aws_php_api_url = 'https://docs.aws.amazon.com/aws-sdk-php/v3/api/'
-phpse_api_url = 'https://docs.oracle.com/phpse/8/docs/api/'
-phpdoc_f = 'index.html?%s.html' # phpdoc link + frames
-phpdoc_nf = '%s.html' # phpdoc link - frames
+aws_php_api_url = 'https://docs.aws.amazon.com/aws-sdk-php/v3/api'
 # extlinks['role'] = (url_string, term_prepended_by)
 
 # a generic link to the AWS SDK reference docs. Doesn't work well in a frame.
-extlinks['aws-php-ref'] = (aws_php_api_url + 'com/amazonaws/%s', '')
+extlinks['aws-php-ref'] = (aws_php_api_url + '/%s', '')
 
 # a link to a class within the AWS SDK -- can use frames.
-extlinks['aws-php-class'] = (aws_php_api_url + (phpdoc_f % 'com/amazonaws/%s'), '')
-
-# links to the PHP SE documentation.
-extlinks['phpse-ref'] = (phpse_api_url + phpdoc_f, '')
-extlinks['phpse-ref-nf'] = (phpse_api_url + phpdoc_nf, '')
+extlinks['aws-php-class'] = (aws_php_api_url + '/%s', '')
 
 # links to examples for a particular service (ex: :sdk-examples-php-s3:`ListTables.php`)
 samples_url = 'https://github.com/awsdocs/aws-doc-sdk-examples/'
@@ -409,12 +402,12 @@ for svc in [
         'sqs',
     ]:
     extlinks['sdk-examples-php-%s' % svc] = (samples_url +
-        'blob/master/php/example_code/{svc}/src/main/php/aws/example/{svc}/'.format(svc=svc) +
+        'blob/master/php/example_code/{svc}/'.format(svc=svc) +
         '%s', '')
 
 for svc in [
         'pinpoint'
     ]:
     extlinks['sdk-examples-php-%s' % svc] = (samples_url +
-        'blob/master/php/example_code/{svc}/src/main/php/com/example/{svc}/'.format(svc=svc) +
+        'blob/master/php/example_code/{svc}'.format(svc=svc) +
         '%s', '')
