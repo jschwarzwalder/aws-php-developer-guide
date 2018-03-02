@@ -34,71 +34,44 @@ Before running the example code, configure your AWS credentials, as described in
 Create an Alias
 ---------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/CreateAccountAlias.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->createAccountAlias(array(
-            // AccountAlias is required
-            'AccountAlias' => 'string',
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/CreateAccountAlias.php
+   :lines: 27-42
+   :language: php
 
 List Account Aliases
 --------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/ListAccountAliases.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->listAccountAliases();
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/ListAccountAliases.php
+   :lines: 27-39
+   :language: php
 
 Delete an Alias
 ---------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/DeleteAccountAlias.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->deleteAccountAlias(array(
-            // AccountAlias is required
-            'AccountAlias' => 'string',
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/DeleteAccountAlias.php
+   :lines: 27-42
+   :language: php

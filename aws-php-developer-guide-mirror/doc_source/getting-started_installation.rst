@@ -41,6 +41,7 @@ into your project.
 
        <?php
        require 'vendor/autoload.php';
+       ?>
 
 You can find out more on how to install Composer, configure autoloading, and
 other best-practices for defining dependencies at
@@ -49,7 +50,7 @@ other best-practices for defining dependencies at
 Installing via Phar
 -------------------
 
-You can `download the packaged phar <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.phar>`_
+You can `download the packaged phar <|sdk-PHP-phar|>`_
 and simply include it in your scripts to get started:
 
 .. code-block:: php
@@ -80,7 +81,7 @@ Each release of the |sdk-php| ships with a zip file containing all of the
 classes and dependencies you need to run the SDK. Additionally, the zip file
 includes a class autoloader for the |sdk-php| and all of its dependencies.
 
-To get started, you must `download the zip file <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.zip>`_,
+To get started, you must `download the zip file <|sdk-PHP-dl|`_,
 unzip it into your project to a location of your choosing, and include the
 autoloader::
 

@@ -45,18 +45,18 @@ Send a Message
 .. literalinclude:: example_code/sqs/SendMessage.php
    :lines: 27-59
    :language: php
-   
+
 Receive and Delete Messages
 ---------------------------
 
 **Imports**
 
-.. literalinclude::  example_code/sqs/ReceivedMessage.php
+.. literalinclude::  example_code/sqs/ReceiveMessage.php
    :lines: 15-18
    :language: PHP
 
 **Code**
 
-.. literalinclude:: example_code/sqs/ReceivedMessage.php
+.. literalinclude:: example_code/sqs/ReceiveMessage.php
    :lines: 27-55
    :language: php

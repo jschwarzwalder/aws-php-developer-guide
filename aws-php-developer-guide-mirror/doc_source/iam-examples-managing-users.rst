@@ -36,121 +36,76 @@ Before running the example code, configure your AWS credentials, as described in
 Create an |IAM| User
 ------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/CreateUser.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->createUser(array(
-            // UserName is required
-            'UserName' => 'string',
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/CreateUser.php
+   :lines: 27-42
+   :language: php
+
 
 List |IAM| Users
 --------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/ListUsers.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->listUsers();
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/ListUsers.php
+   :lines: 27-39
+   :language: php
 
 Update an |IAM| User
 ------------------
 
-.. code-block:: php
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+**Imports**
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->updateUser(array(
-            // UserName is required
-            'UserName' => 'string1',
-            'NewUserName' => 'string'
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+.. literalinclude::  example_code/iam/UpdateUser.php
+   :lines: 15-18
+   :language: php
+
+**Code**
+
+.. literalinclude:: example_code/iam/UpdateUser.php
+   :lines: 27-43
+   :language: php
 
 Get Info about an |IAM| User
 --------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/GetUser.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->getUser(array(
-            'UserName' => 'string',
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/GetUser.php
+   :lines: 27-41
+   :language: php
 
 Delete an |IAM| User
 ------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/DeleteUser.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->deleteUser(array(
-            // UserName is required
-            'UserName' => 'string'
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/DeleteUser.php
+   :lines: 27-42
+   :language: php

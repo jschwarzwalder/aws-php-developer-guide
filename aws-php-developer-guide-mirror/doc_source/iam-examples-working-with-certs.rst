@@ -35,97 +35,62 @@ Before running the example code, configure your AWS credentials, as described in
 List Server Certificates
 ------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/ListServerCertificates.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->listServerCertificates();
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/ListServerCertificates.php
+   :lines: 27-39
+   :language: php
+
 
 Retrieve a Server Certificate
 -----------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/GetServerCertificate.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->getServerCertificate(array(
-            // ServerCertificateName is required
-            'ServerCertificateName' => 'string',
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/GetServerCertificate.php
+   :lines: 27-42
+   :language: php
+
 
 Update a Server Certificate
 ---------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/UpdateServerCertificate.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->updateServerCertificate(array(
-            // ServerCertificateName is required
-            'ServerCertificateName' => 'string',
-            'NewServerCertificateName' => 'string',
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/UpdateServerCertificate.php
+   :lines: 27-42
+   :language: php
+
 
 Delete a Server Certificate
 ---------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/DeleteServerCertificate.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->deleteServerCertificate(array(
-            // ServerCertificateName is required
-            'ServerCertificateName' => 'string',
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/DeleteServerCertificate.php
+   :lines: 27-42
+   :language: php

@@ -36,120 +36,77 @@ Before running the example code, configure your AWS credentials, as described in
 Create an Access Key
 --------------------
 
-.. code-block:: php
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+**Imports**
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->createAccessKey([
-            'UserName' => 'IAM_USER_NAME',
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+.. literalinclude::  example_code/iam/CreateAccessKey.php
+   :lines: 15-18
+   :language: php
+
+**Code**
+
+.. literalinclude:: example_code/iam/CreateAccessKey.php
+   :lines: 27-41
+   :language: php
+
 
 List Access Keys
 ----------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/ListAccessKeys.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->listAccessKeys();
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/ListAccessKeys.php
+   :lines: 27-39
+   :language: php
+
 
 Get Info about Access Key's Last Usage
 --------------------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/GetAccessKeyLastUsed.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->getAccessKeyLastUsed([
-            'AccessKeyId' => 'ACCESS_KEY_ID', // REQUIRED
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/GetAccessKeyLastUsed.php
+   :lines: 27-41
+   :language: php
 
 Update an Access Key
 --------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/UpdateAccessKey.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->updateAccessKey([
-            'AccessKeyId' => 'ACCESS_KEY_ID', // REQUIRED
-            'Status' => 'Inactive', // REQUIRED
-            'UserName' => 'IAM_USER_NAME',
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/UpdateAccessKey.php
+   :lines: 27-43
+   :language: php
 
 Delete an Access Key
 --------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/DeleteAccessKey.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->deleteAccessKey([
-            'AccessKeyId' => 'ACCESS_KEY_ID', // REQUIRED
-            'UserName' => 'IAM_USER_NAME',
-        ]);
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/DeleteAccessKey.php
+   :lines: 27-42
+   :language: php

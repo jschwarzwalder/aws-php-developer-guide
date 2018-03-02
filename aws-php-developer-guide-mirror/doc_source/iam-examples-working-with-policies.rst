@@ -35,156 +35,59 @@ Before running the example code, configure your AWS credentials, as described in
 Create a Policy
 ---------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/CreatePolicy.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    $myManagedPolicy = '{
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Effect": "Allow",
-                "Action": "logs:CreateLogGroup",
-                "Resource": "RESOURCE_ARN"
-            },
-            {
-                "Effect": "Allow",
-                "Action": [
-                "dynamodb:DeleteItem",
-                "dynamodb:GetItem",
-                "dynamodb:PutItem",
-                "dynamodb:Scan",
-                "dynamodb:UpdateItem"
-            ],
-                "Resource": "RESOURCE_ARN"
-            }
-        ]
-    }';
-    try {
-        $result = $client->createPolicy(array(
-            // PolicyName is required
-            'PolicyName' => 'myDynamoDBPolicy',
-            // PolicyDocument is required
-            'PolicyDocument' => $myManagedPolicy
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/CreatePolicy.php
+   :lines: 27-66
+   :language: php
 
 Attach a Policy to a Role
 -------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/AttachRolePolicy.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    $roleName = 'ROLE_NAME';
-    $policyName = 'AmazonDynamoDBFullAccess';
-    $policyArn = 'arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess';
-    try {
-        $attachedRolePolicies = $client->getIterator('ListAttachedRolePolicies', ([
-            'RoleName' => $roleName,
-        ]));
-        if (count($attachedRolePolicies) > 0) {
-            foreach ($attachedRolePolicies as $attachedRolePolicy) {
-                if ($attachedRolePolicy['PolicyName'] == $policyName) {
-                    echo $policyName . " is already attached to this role. \n";
-                    exit();
-                }
-            }
-        }
-        $result = $client->attachRolePolicy(array(
-            // RoleName is required
-            'RoleName' => $roleName,
-            // PolicyArn is required
-            'PolicyArn' => $policyArn
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/AttachRolePolicy.php
+   :lines: 27-61
+   :language: php
 
 Attach a Policy to a User
 -------------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/AttachUserPolicy.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    $userName = 'USER_NAME';
-    $policyName = 'AmazonDynamoDBFullAccess';
-    $policyArn = 'arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess';
-    try {
-        $attachedUserPolicies = $client->getIterator('ListAttachedUserPolicies', ([
-            'UserName' => $userName,
-        ]));
-        if (count($attachedUserPolicies) > 0) {
-            foreach ($attachedUserPolicies as $attachedUserPolicy) {
-                if ($attachedUserPolicy['PolicyName'] == $policyName) {
-                    echo $policyName . " is already attached to this role. \n";
-                    exit();
-                }
-            }
-        }
-        $result = $client->attachUserPolicy(array(
-            // UserName is required
-            'UserName' => $userName,
-            // PolicyArn is required
-            'PolicyArn' => $policyArn,
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/AttachUserPolicy.php
+   :lines: 27-61
+   :language: php
 
 Detach a User Policy
 --------------------
 
-.. code-block:: php
+**Imports**
 
-    require 'vendor/autoload.php';
-    use Aws\Iam\IamClient;
-    use Aws\Exception\AwsException;
+.. literalinclude::  example_code/iam/DetachUserPolicy.php
+   :lines: 15-18
+   :language: php
 
-    $client = new IamClient([
-        'profile' => 'default',
-        'region' => 'us-west-2',
-        'version' => '2010-05-08'
-    ]);
-    try {
-        $result = $client->detachUserPolicy(array(
-            // UserName is required
-            'UserName' => 'string',
-            // PolicyArn is required
-            'PolicyArn' => 'string',
-        ));
-        var_dump($result);
-    } catch (AwsException $e) {
-        // output error message if fails
-        error_log($e->getMessage());
-    }
+**Code**
+
+.. literalinclude:: example_code/iam/DetachUserPolicy.php
+   :lines: 27-44
+   :language: php

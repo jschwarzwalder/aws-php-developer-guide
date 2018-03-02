@@ -45,19 +45,19 @@ Set Attributes on a Queue to Enable Long Polling
 .. literalinclude:: example_code/sqs/LongPollingSetQueueAttributes.php
    :lines: 27-46
    :language: php
-   
+
 Retrieve Messages with Long Polling
 -----------------------------------
 
 **Imports**
 
-.. literalinclude::  example_code/sqs/LongPollingRecieveMessage.php
+.. literalinclude::  example_code/sqs/LongPollingReceiveMessage.php
    :lines: 15-18
    :language: PHP
 
 **Code**
 
-.. literalinclude:: example_code/sqs/LongPollingRecieveMessage.php
+.. literalinclude:: example_code/sqs/LongPollingReceiveMessage.php
    :lines: 27-47
    :language: php
 
