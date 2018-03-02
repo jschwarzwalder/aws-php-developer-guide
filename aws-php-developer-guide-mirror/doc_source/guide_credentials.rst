@@ -98,7 +98,7 @@ provide credentials to EC2 instances.
 
 Instead of creating and distributing your AWS credentials to the containers or
 using the EC2 instance’s role, you can associate an |IAM| role with an ECS task definition or
-``RunTask`` `API <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-ecs-2014-11-13.html#runtask>`_ operation.
+``RunTask`` :aws-php-class:`API </api-ecs-2014-11-13.html#runtask>`_ operation.
 
 .. note::
 
@@ -118,7 +118,7 @@ Using ``Aws\Credentials\AssumeRoleCredentialProvider`` to create credentials by 
 you would need to provide ``'client'`` information with a ``StsClient`` object and
 ``'assume_role_params'`` details.
 
-For more information regarding ``'assume_role_params'``, see `AssumeRole <http://docs.aws.amazon.com/aws-sdk-php/v3/api/api-sts-2011-06-15.html#assumerole>`_.
+For more information regarding ``'assume_role_params'``, see :aws-php-class:`AssumeRole </api-sts-2011-06-15.html#assumerole>`_.
 
 .. code-block:: php
 
