@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-================
-Service Features
-================
+=====================
+Working with Services
+=====================
 
 Some of the services supported by the |sdk-php| include additional
 features beyond executing operations on an API. This guide documents there
@@ -21,6 +21,7 @@ higher level features per service.
 
     service_cloudsearch-custom-requests
     service_cloudfront-signed-url
+	cloud9
     service_dynamodb-session-handler
     service_es-data-plane
     s3-multipart-upload

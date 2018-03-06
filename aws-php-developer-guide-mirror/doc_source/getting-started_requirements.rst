@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-============
-Requirements
-============
+==============
+Prerequisites
+==============
 
 Aside from a baseline understanding of object-oriented programming in PHP
 (including PHP namespaces and autoloading), there are a few minimum system
