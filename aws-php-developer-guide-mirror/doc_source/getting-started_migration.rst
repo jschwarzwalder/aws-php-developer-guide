@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-===============
-Migration Guide
-===============
+==============================
+Upgrading from Version 2
+==============================
 
 This guide shows how to migrate your code to use Version 3 of the |sdk-php|
 and how the new version differs from the Version 2 of the SDK.
