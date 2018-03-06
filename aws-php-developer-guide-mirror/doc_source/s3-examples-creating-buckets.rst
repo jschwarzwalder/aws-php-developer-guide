@@ -32,6 +32,8 @@ Before running the example code, configure your AWS credentials, as described in
 List Buckets
 ------------
 
+Create a php file with following code. First create an AWS.S3 client service specifying the region and version, then call the listBuckets method which will return all |s3| buckets owned by the sender of the request as an array of Bucket structures.   
+
 **Imports**
 
 .. literalinclude::  example_code/s3/ListBuckets.php
@@ -48,6 +50,8 @@ List Buckets
 Create a Bucket
 ---------------
 
+Create a php file with following code. First create an AWS.S3 client service specifying the region and version, then call the createBucket method with an array as the parameter. The only required field is the key 'Bucket' with a string value for bucket name you want to create, but you can specify the region with the 'CreateBucketConfiguration' field.  If successful this method will return the 'Location' of the bucket.  
+
 **Imports**
 
 .. literalinclude::  example_code/s3/CreateBucket.php
@@ -62,14 +66,15 @@ Create a Bucket
 
 Put an Object in a Bucket
 -------------------------
+
 **Imports**
 
-.. literalinclude::  example_code/s3/ListBuckets.php
+.. literalinclude::  example_code/s3//PutObject.php
    :lines: 16-19
    :language: PHP
 
 **Code**
 
-.. literalinclude:: example_code/s3/ListBuckets.php
+.. literalinclude:: example_code/s3//PutObject.php
    :lines: 28-56
    :language: php

@@ -35,6 +35,9 @@ Before running the example code, configure your AWS credentials, as described in
 Get the CORS Configuration
 --------------------------
 
+Create a php file with following code. First create an AWS.S3 client service, then call the getBucketCors method  and specify the bucket whose CORS configuration you want. 
+
+The only parameter required is the name of the selected bucket. If the bucket currently has a CORS configuration, that configuration is returned by Amazon S3 as a `CORSRules object <https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#shape-corsrule>`_. 
 
 **Imports**
 
@@ -50,6 +53,8 @@ Get the CORS Configuration
 
 Set the CORS Configuration
 --------------------------
+
+Create a php file with following code. First create an AWS.S3 client service, then call the putBucketCors method and specify the bucket whose CORS configuration you want to set, and the CORSConfiguration as a `CORSRules JSON object <https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#shape-corsrule>`_.  
 
 **Imports**
 
