@@ -13,11 +13,14 @@
 ===============
 
 The **|sdk-php|** enables PHP developers to use
-`Amazon Web Services <http://aws.amazon.com/>`_ from their PHP code, and build
+`Amazon Web Services <http://aws.amazon.com/>`_ in their PHP code, and build
 robust applications and software using services like |S3|, |DDBlong|, |GL|, etc. You can get started in minutes by installing the
 SDK through Composer — by requiring the ``aws/aws-sdk-php`` package — or by
 downloading the standalone `aws.zip <|sdk-PHP-dl|>`_
 or `aws.phar <|sdk-PHP-phar|>`_ files.
+
+Not all services are immediately available in the SDK. To find out which services are currently supported by the |sdk-php|, see . 
+For information about the |sdk-php| on GitHub, see :doc:`Additional Resources <resources>`.
 
 External links: :aws-php-class:`API Docs <index.html>`
 | `GitHub <https://github.com/aws/aws-sdk-php>`_
@@ -30,14 +33,15 @@ External links: :aws-php-class:`API Docs <index.html>`
 .. note::
 
     Are you migrating your project's code from using Version 2 of the SDK to
-    Version 3? If so, you should read our :doc:`guide_migration`.
+    Version 3? If so, you should read our :doc:`getting-started_migration`.
 
 Getting Started
 ---------------
 
-1. :doc:`getting-started_requirements`
-2. :doc:`getting-started_installation`
-3. :doc:`getting-started_basic-usage`
+*  :doc:`getting-started_requirements`
+*  :doc:`getting-started_installation`
+*  :doc:`getting-started_basic-usage`
+*  :doc:`getting-started_migration`
 
 SDK Guides
 ----------
@@ -51,13 +55,14 @@ SDK Guides
 * :doc:`guide_paginators`
 * :doc:`guide_waiters`
 * :doc:`guide_jmespath`
-* :doc:`guide_migration`
+
 
 Service-Specific Features
 -------------------------
 
 * :doc:`service_cloudsearch-custom-requests`
 * :doc:`service_cloudfront-signed-url`
+* :doc:`cloud9`
 * :doc:`service_dynamodb-session-handler`
 * :doc:`service_es-data-plane`
 * :doc:`s3-multipart-upload`
