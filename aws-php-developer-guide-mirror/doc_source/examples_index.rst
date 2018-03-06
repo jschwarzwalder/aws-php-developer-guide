@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-=============
-Code Examples
-=============
+=========================
+SDK for PHP Code Examples
+=========================
 
 This chapter includes code examples that demonstrate common Amazon Web Services scenarios using the |sdk-php|.
 
