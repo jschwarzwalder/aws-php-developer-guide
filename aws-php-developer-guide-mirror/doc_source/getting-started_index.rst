@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-===============
-Getting Started
-===============
+==========================
+Setting up the SDK for PHP
+==========================
 
 This chapter is dedicated to getting you up and running with the |sdk-php|.
 
@@ -20,3 +20,4 @@ This chapter is dedicated to getting you up and running with the |sdk-php|.
     getting-started_requirements
     getting-started_installation
     getting-started_basic-usage
+	getting-started_migration
