@@ -21,3 +21,4 @@
     examples_index
     faq
     glossary
+	resources
