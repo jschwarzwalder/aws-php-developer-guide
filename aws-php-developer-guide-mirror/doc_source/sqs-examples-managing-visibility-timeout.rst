@@ -20,7 +20,7 @@ A visibility timeout is a period of time during which |SQS| prevents other consu
 
 The example below shows how to:
 
-* Change the visibility timeout of specified messages in a queue to new values, using :aws-php-class:`ChangeMessageVisibilityBatch <api-sqs-2012-11-05.html#changemessagevisibilitybatch>`.
+* Change the visibility timeout of specified messages in a queue to new values, using :sdk-php-api-v3:`ChangeMessageVisibilityBatch <api-sqs-2012-11-05.html#changemessagevisibilitybatch>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

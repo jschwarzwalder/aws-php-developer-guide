@@ -22,8 +22,8 @@ For more information about using CORS configuration with an |S3| bucket, see `Cr
 
 The examples below show how to:
 
-* Get the CORS configuration for a bucket using :aws-php-class:`GetBucketCors <api-s3-2006-03-01.html#getbucketcors>`.
-* Set the CORS configuration for a bucket using :aws-php-class:`PutBucketCors <api-s3-2006-03-01.html#putbucketcors>`.
+* Get the CORS configuration for a bucket using :sdk-php-api-v3:`GetBucketCors <api-s3-2006-03-01.html#getbucketcors>`.
+* Set the CORS configuration for a bucket using :sdk-php-api-v3:`PutBucketCors <api-s3-2006-03-01.html#putbucketcors>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

@@ -22,9 +22,9 @@ in the Amazon Simple Queue Service Developer Guide.
 
 The examples below show how to:
 
-* Deliver a message to a specified queue using :aws-php-class:`SendMessage <api-sqs-2012-11-05.html#sendmessage>`.
-* Retrieve one or more messages (up to 10) from a specified queue using :aws-php-class:`ReceiveMessage <api-sqs-2012-11-05.html#receivemessage>`.
-* Delete a message from a queue using :aws-php-class:`DeleteMessage <api-sqs-2012-11-05.html#deletemessage>`.
+* Deliver a message to a specified queue using :sdk-php-api-v3:`SendMessage <api-sqs-2012-11-05.html#sendmessage>`.
+* Retrieve one or more messages (up to 10) from a specified queue using :sdk-php-api-v3:`ReceiveMessage <api-sqs-2012-11-05.html#receivemessage>`.
+* Delete a message from a queue using :sdk-php-api-v3:`DeleteMessage <api-sqs-2012-11-05.html#deletemessage>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

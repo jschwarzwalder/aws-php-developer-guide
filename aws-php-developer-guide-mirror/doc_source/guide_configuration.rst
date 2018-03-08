@@ -914,7 +914,7 @@ service. For example, when using |S3|, you can lock your API version to
     ]);
 
 A list of available API versions can be found on each client's API
-documentation page: :aws-php-class:<index.html>.
+documentation page: :sdk-php-api-v3:<index.html>.
 If you are unable to load a specific API version, then you may need to update
 your copy of the SDK.
 

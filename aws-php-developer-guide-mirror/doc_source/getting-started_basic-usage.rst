@@ -164,7 +164,7 @@ Operation methods like ``putObject()`` all accept a single argument -- an
 associative array representing the parameters of the operation. The structure
 of this array (and the structure of the result object) is defined for each
 operation in the SDK's API Documentation (e.g., see the API docs for
-:aws-php-class:`putObject operation </api-s3-2006-03-01.html#putobject>`).
+:sdk-php-api-v3:`putObject operation </api-s3-2006-03-01.html#putobject>`).
 
 HTTP Handler Options
 ~~~~~~~~~~~~~~~~~~~~

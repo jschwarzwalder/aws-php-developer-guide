@@ -18,9 +18,9 @@ Creating and Using |S3| Buckets
 
 The examples below show how to:
 
-* Return a list of buckets owned by the authenticated sender of the request using :aws-php-class:`ListBuckets <api-s3-2006-03-01.html#listbuckets>`.
-* Create a new bucket using :aws-php-class:`CreateBucket <api-s3-2006-03-01.html#createbucket>`.
-* Add an object to a bucket using :aws-php-class:`PutObject <api-s3-2006-03-01.html#putobject>`.
+* Return a list of buckets owned by the authenticated sender of the request using :sdk-php-api-v3:`ListBuckets <api-s3-2006-03-01.html#listbuckets>`.
+* Create a new bucket using :sdk-php-api-v3:`CreateBucket <api-s3-2006-03-01.html#createbucket>`.
+* Add an object to a bucket using :sdk-php-api-v3:`PutObject <api-s3-2006-03-01.html#putobject>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

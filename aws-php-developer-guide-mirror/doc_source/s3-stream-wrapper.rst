@@ -223,7 +223,7 @@ rename()        Rename an object by copying the object then deleting the
 
     While ``copy`` will generally work with the S3 stream wrapper, some errors
     may not be properly reported due to the internals of the ``copy`` function
-    in PHP. It is recommended that you use an instance of :aws-php-class:`Aws\S3\ObjectCopier
+    in PHP. It is recommended that you use an instance of :sdk-php-api-v3:`Aws\S3\ObjectCopier
     </class-Aws.S3.ObjectCopier.html>`
     instead.
 

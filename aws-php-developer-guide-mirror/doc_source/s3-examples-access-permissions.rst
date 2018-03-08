@@ -21,8 +21,8 @@ You can use ACLs to grant basic read/write permissions to other AWS accounts. To
 
 The example below shows how to:
 
-* Get the access control policy for a bucket using :aws-php-class:`GetBucketAcl <api-s3-2006-03-01.html#getbucketacl>`.
-* Set the permissions on a bucket using access control lists, using :aws-php-class:`PutBucketAcl <api-s3-2006-03-01.html#putbucketacl>`.
+* Get the access control policy for a bucket using :sdk-php-api-v3:`GetBucketAcl <api-s3-2006-03-01.html#getbucketacl>`.
+* Set the permissions on a bucket using access control lists, using :sdk-php-api-v3:`PutBucketAcl <api-s3-2006-03-01.html#putbucketacl>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

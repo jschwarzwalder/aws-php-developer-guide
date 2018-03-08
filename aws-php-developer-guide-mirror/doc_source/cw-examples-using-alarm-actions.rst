@@ -20,8 +20,8 @@ Using alarm actions, you can create alarms that automatically stop, terminate, r
 
 The examples below show how to:
 
-* Enable actions for specified alarms using :aws-php-class:`EnableAlarmActions </api-monitoring-2010-08-01.html#enablealarmactions>`.
-* Disable actions for specified alarms using :aws-php-class:`DisableAlarmActions </api-monitoring-2010-08-01.html#disablealarmactions>`.
+* Enable actions for specified alarms using :sdk-php-api-v3:`EnableAlarmActions </api-monitoring-2010-08-01.html#enablealarmactions>`.
+* Disable actions for specified alarms using :sdk-php-api-v3:`DisableAlarmActions </api-monitoring-2010-08-01.html#disablealarmactions>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
