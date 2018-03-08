@@ -21,9 +21,9 @@ Metrics are data about the performance of your systems. You can enable detailed 
 
 The examples below show how to:
 
-* List metrics using :sdk-php-api-v3:`ListMetrics </api-monitoring-2010-08-01.html#listmetrics>`.
-* Retrieve alarms for a metric using :sdk-php-api-v3:`DescribeAlarmsForMetric </api-monitoring-2010-08-01.html#describealarmsformetric>`.
-* Get statistics for a specified metric using :sdk-php-api-v3:`GetMetricStatistics </api-monitoring-2010-08-01.html#getmetricstatistics>`.
+* List metrics using :sdk-php-api-v3:`ListMetrics <ListMetrics>`.
+* Retrieve alarms for a metric using :sdk-php-api-v3:`DescribeAlarmsForMetric <DescribeAlarmsForMetric>`.
+* Get statistics for a specified metric using :sdk-php-api-v3:`GetMetricStatistics <GetMetricStatistics>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
