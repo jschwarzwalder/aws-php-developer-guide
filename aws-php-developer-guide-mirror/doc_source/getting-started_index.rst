@@ -20,4 +20,4 @@ This chapter is dedicated to getting you up and running with the |sdk-php|.
     getting-started_requirements
     getting-started_installation
     getting-started_basic-usage
-	getting-started_migration
+    getting-started_migration

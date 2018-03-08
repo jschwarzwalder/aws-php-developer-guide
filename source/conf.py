@@ -51,7 +51,7 @@ show_lang_selector = True
 
 # The link to the top of the doc source tree on GitHub. This allows generation
 # of per-page "Edit on GitHub" links.
-github_doc_url = 'https://github.com/awsdocs/aws-java-developer-guide/tree/master/doc_source'
+github_doc_url = 'https://github.com/awsdocs/aws-php-developer-guide/tree/master/doc_source'
 
 #
 # Version Information
@@ -123,6 +123,17 @@ guide_path_slug = 'developer-guide'
 
 # default code language for syntax highlighting
 highlight_language = 'php'
+
+# These URLs make maintaining the extlinks easier.
+aws_php_api_url = 'https://docs.aws.amazon.com/aws-sdk-php/v3/api'
+# extlinks['role'] = (url_string, term_prepended_by)
+
+# a generic link to the AWS SDK reference docs. Doesn't work well in a frame.
+extlinks['aws-php-ref'] = (aws_php_api_url + '/%s', '')
+
+# a link to a class within the AWS SDK -- can use frames.
+extlinks['aws-php-class'] = (aws_php_api_url + '/%s', '')
+
 
 if 'extlinks' not in vars():
     extlinks = {}

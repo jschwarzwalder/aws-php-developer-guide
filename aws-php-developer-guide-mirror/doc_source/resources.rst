@@ -31,6 +31,6 @@ There are several repos on GitHub for the AWS SDK for PHP\.
 * The sample code included in this guide is available in the `SDK sample code repo <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_\.
 
 PHP SDK on Gitter
----------------
+-----------------
 
 You can also find questions and discussions about the SDK for PHP in the `PHP SDK community <https://gitter.im/aws/aws-sdk-php>`_ on Gitter\.

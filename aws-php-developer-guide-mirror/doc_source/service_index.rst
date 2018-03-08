@@ -21,7 +21,7 @@ higher level features per service.
 
     service_cloudsearch-custom-requests
     service_cloudfront-signed-url
-	cloud9
+    cloud9
     service_dynamodb-session-handler
     service_es-data-plane
     s3-multipart-upload
