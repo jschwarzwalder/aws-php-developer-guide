@@ -20,10 +20,10 @@ An Elastic IP address is a static IP address designed for dynamic cloud computin
 
 The examples below show how to:
 
-* Describes one or more of your instances using :sdk-php-api-v3:`DescribeInstances </api-ec2-2016-11-15.html#describeinstances>`.
-* Acquires an Elastic IP address using :sdk-php-api-v3:`AllocateAddress </api-ec2-2016-11-15.html#allocateaddress>`.
-* Associate an Elastic IP address with an instance using :sdk-php-api-v3:`AssociateAddress </api-ec2-2016-11-15.html#associateaddress>`.
-* Release an Elastic IP address using :sdk-php-api-v3:`ReleaseAddress </api-ec2-2016-11-15.html#releaseaddress>`.
+* Describes one or more of your instances using :aws-php-class:`DescribeInstances </api-ec2-2016-11-15.html#describeinstances>`.
+* Acquires an Elastic IP address using :aws-php-class:`AllocateAddress </api-ec2-2016-11-15.html#allocateaddress>`.
+* Associate an Elastic IP address with an instance using :aws-php-class:`AssociateAddress </api-ec2-2016-11-15.html#associateaddress>`.
+* Release an Elastic IP address using :aws-php-class:`ReleaseAddress </api-ec2-2016-11-15.html#releaseaddress>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

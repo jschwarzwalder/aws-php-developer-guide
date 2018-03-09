@@ -401,7 +401,7 @@ even been removed.
       have changed slightly.
     * The ``Aws\DynamoDb\Model\BatchRequest`` namespace has been replaced by
       ``Aws\DynamoDb\WriteRequestBatch``. See the docs for
-      :sdk-php-api-v3:`DynamoDB WriteRequestBatch </class-Aws.DynamoDb.WriteRequestBatch.html>`.
+      :aws-php-class:`DynamoDB WriteRequestBatch </class-Aws.DynamoDb.WriteRequestBatch.html>`.
 
 * Removed:
     * DynamoDB ``Item``, ``Attribute``, and ``ItemIterator`` classes - These

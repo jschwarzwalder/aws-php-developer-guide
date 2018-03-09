@@ -20,9 +20,9 @@ You can host a static website on |S3|. To learn more, see `Hosting a Static Webs
 
 The example below shows how to:
 
-* Get the website configuration for a bucket using :sdk-php-api-v3:`GetBucketWebsite <api-s3-2006-03-01.html#getbucketwebsite>`.
-* Set the website configuration for a bucket using :sdk-php-api-v3:`PutBucketWebsite <api-s3-2006-03-01.html#putbucketwebsite>`.
-* Remove the website configuration from a bucket using :sdk-php-api-v3:`DeleteBucketWebsite <api-s3-2006-03-01.html#deletebucketwebsite>`.
+* Get the website configuration for a bucket using :aws-php-class:`GetBucketWebsite <api-s3-2006-03-01.html#getbucketwebsite>`.
+* Set the website configuration for a bucket using :aws-php-class:`PutBucketWebsite <api-s3-2006-03-01.html#putbucketwebsite>`.
+* Remove the website configuration from a bucket using :aws-php-class:`DeleteBucketWebsite <api-s3-2006-03-01.html#deletebucketwebsite>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

@@ -20,8 +20,8 @@ Using Regions and Availability Zones
 
 The examples below show how to:
 
-* Describe the Availability Zones that are available to you using :sdk-php-api-v3:`DescribeAvailabilityZones </api-ec2-2016-11-15.html#describeavailabilityzones>`.
-* Describe regions that are currently available to you using :sdk-php-api-v3:`DescribeRegions </api-ec2-2016-11-15.html#describeregions>`.
+* Describe the Availability Zones that are available to you using :aws-php-class:`DescribeAvailabilityZones </api-ec2-2016-11-15.html#describeavailabilityzones>`.
+* Describe regions that are currently available to you using :aws-php-class:`DescribeRegions </api-ec2-2016-11-15.html#describeregions>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

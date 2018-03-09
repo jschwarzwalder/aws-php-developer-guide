@@ -20,11 +20,11 @@ An |IAM| user is an entity that you create in AWS to represent the person or ser
 
 The examples below show how to:
 
-* Create a new |IAM| user using :sdk-php-api-v3:`CreateUser </api-iam-2010-05-08.html#createuser>`.
-* List |IAM| users using :sdk-php-api-v3:`ListUsers </api-iam-2010-05-08.html#listusers>`.
-* Update an |IAM| user using :sdk-php-api-v3:`UpdateUser </api-iam-2010-05-08.html#updateuser>`.
-* Retrieve info about an |IAM| user using :sdk-php-api-v3:`GetUser </api-iam-2010-05-08.html#getuser>`.
-* Delete an |IAM| user using :sdk-php-api-v3:`DeleteUser </api-iam-2010-05-08.html#deleteuser>`.
+* Create a new |IAM| user using :aws-php-class:`CreateUser </api-iam-2010-05-08.html#createuser>`.
+* List |IAM| users using :aws-php-class:`ListUsers </api-iam-2010-05-08.html#listusers>`.
+* Update an |IAM| user using :aws-php-class:`UpdateUser </api-iam-2010-05-08.html#updateuser>`.
+* Retrieve info about an |IAM| user using :aws-php-class:`GetUser </api-iam-2010-05-08.html#getuser>`.
+* Delete an |IAM| user using :aws-php-class:`DeleteUser </api-iam-2010-05-08.html#deleteuser>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

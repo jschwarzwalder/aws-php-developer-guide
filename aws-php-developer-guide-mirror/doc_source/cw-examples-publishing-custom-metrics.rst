@@ -20,8 +20,8 @@ Metrics are data about the performance of your systems. An alarm watches a singl
 
 The examples below show how to:
 
-* Publish metric data using :sdk-php-api-v3:`PutMetricData </api-monitoring-2010-08-01.html#putmetricdata>`.
-* Create an alarm using :sdk-php-api-v3:`PutMetricAlarm </api-monitoring-2010-08-01.html#putmetricalarm>`.
+* Publish metric data using :aws-php-class:`PutMetricData </api-monitoring-2010-08-01.html#putmetricdata>`.
+* Create an alarm using :aws-php-class:`PutMetricAlarm </api-monitoring-2010-08-01.html#putmetricalarm>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

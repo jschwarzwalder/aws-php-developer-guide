@@ -20,9 +20,9 @@ Working with |EC2| Key Pairs
 
 The examples below show how to:
 
-* Create a 2048-bit RSA key pair using :sdk-php-api-v3:`CreateKeyPair </api-ec2-2016-11-15.html#createkeypair>`.
-* Delete a specified key pair using :sdk-php-api-v3:`DeleteKeyPair </api-ec2-2016-11-15.html#deletekeypair>`.
-* Describe one or more of your key pairs using :sdk-php-api-v3:`DescribeKeyPairs </api-ec2-2016-11-15.html#describekeypairs>`.
+* Create a 2048-bit RSA key pair using :aws-php-class:`CreateKeyPair </api-ec2-2016-11-15.html#createkeypair>`.
+* Delete a specified key pair using :aws-php-class:`DeleteKeyPair </api-ec2-2016-11-15.html#deletekeypair>`.
+* Describe one or more of your key pairs using :aws-php-class:`DescribeKeyPairs </api-ec2-2016-11-15.html#describekeypairs>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 

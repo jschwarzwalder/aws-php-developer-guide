@@ -18,9 +18,9 @@ Creating and Using |S3| Buckets
 
 The examples below show how to:
 
-* Return a list of buckets owned by the authenticated sender of the request using :sdk-php-api-v3:`ListBuckets <ListBuckets>`.
-* Create a new bucket using :sdk-php-api-v3:`CreateBucket <CreateBucket>`.
-* Add an object to a bucket using :sdk-php-api-v3:`PutObject <PutObject>`.
+* Return a list of buckets owned by the authenticated sender of the request using :sdk-php-api-v3:`class-AWS.S3.ListBuckets`.
+* Create a new bucket using :sdk-php-api-v3:`CreateBucket <s3-CreateBucket>`.
+* Add an object to a bucket using :sdk-php-api-v3:`PutObject <s3-PutObject>`.
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
@@ -32,7 +32,7 @@ Before running the example code, configure your AWS credentials, as described in
 List Buckets
 ------------
 
-Create a php file with following code. First create an AWS.S3 client service specifying the region and version, then call the listBuckets method which will return all |s3| buckets owned by the sender of the request as an array of Bucket structures.   
+Create a php file with following code. First create an AWS.S3 client service specifying the region and version, then call the listBuckets method which will return all |s3| buckets owned by the sender of the request as an array of Bucket structures.
 
 **Imports**
 
@@ -50,7 +50,7 @@ Create a php file with following code. First create an AWS.S3 client service spe
 Create a Bucket
 ---------------
 
-Create a php file with following code. First create an AWS.S3 client service specifying the region and version, then call the createBucket method with an array as the parameter. The only required field is the key 'Bucket' with a string value for bucket name you want to create, but you can specify the region with the 'CreateBucketConfiguration' field.  If successful this method will return the 'Location' of the bucket.  
+Create a php file with following code. First create an AWS.S3 client service specifying the region and version, then call the createBucket method with an array as the parameter. The only required field is the key 'Bucket' with a string value for bucket name you want to create, but you can specify the region with the 'CreateBucketConfiguration' field.  If successful this method will return the 'Location' of the bucket.
 
 **Imports**
 
