@@ -8,80 +8,37 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-==============
-Prerequisites
-==============
+================================
+Requirements and Recommendations
+================================
 
-Aside from a baseline understanding of object-oriented programming in PHP
-(including PHP namespaces and autoloading), there are a few minimum system
-requirements to start using the |sdk-php|.
+For best results with |sdk-php|, make sure your environment supports the following requirements and recommendations.
 
-Minimum requirements
---------------------
+Requirements
+------------
 
-* PHP >= 5.5.0
+To use the |sdk-php|, you must be using PHP version 5.5.0 or later. If you need to sign private Amazon CloudWatch URLs, you
+also need the `OpenSSL PHP extension <http://php.net/manual/en/book.openssl.php>`_.
 
-Optional requirements
----------------------
+Recommendations
+---------------
 
-* `OpenSSL PHP extension <http://php.net/manual/en/book.openssl.php>`_
+In addition to the minimum requirements, we recommend you also use the following:
 
-  You must have the OpenSSL PHP extension to sign private |CFlong|
-  URLs.
+| Install `cURL <http://php.net/manual/en/book.curl.php>`_  7.16.2 or later | Use a recent version of cURL compiled with OpenSSL/NSS and zlib. If cURL is not installed on your system and you don't configure a custom http_handler for your client, the SDK will use the PHP stream wrapper. |
+| Use `OPCache <http://php.net/manual/en/book.opcache.php>`_  | Use the OPcache extension to improve PHP performance by storing precompiled script bytecode in shared memory. This removes the need for PHP to load and parse scripts on each request. This extension is typically enabled by default.
 
-.. _optimal-settings:
+When running Amazon Linux, you need to install the php56-opcache or php55-opcache yum package to use the OPCache extension. |
+| Uninstall  `Xdebug <http://xdebug.org/>`_ | Xdebug can help identify performance bottlenecks. However, if performance is critical to your application, don't install the Xdebug extension in your production environment. Loading the extension slows SDK performance considerably. |
+| Use a `Composer <http://getcomposer.org>`_ classmap autoloader | Autoloaders load classes as they are required by a PHP script. Composer generates an autoloader that can autoload the PHP scripts of your application as well as all other PHP scripts required by your application including the SDK for PHP.
 
-Optimal settings
-----------------
+For production environmnents, we recommended you use a classmap autoloader to improve autoloader performance. You can generate a classmap autoloader by passing the -o or --optimize-autoloader option to Composer's install command. |
+----
 
-* `cURL <http://php.net/manual/en/book.curl.php>`_ >= 7.16.2
-
-  While not required, we recommend installing a recent version of cURL compiled
-  with OpenSSL/NSS and zlib. If cURL is not installed on your system and you do
-  not configure a custom ``http_handler`` for your client, then the SDK will
-  use the PHP stream wrapper (a very underpowered HTTP client).
-
-* `OPCache <http://php.net/manual/en/book.opcache.php>`_
-
-  Using the OPcache extension improves PHP performance by storing precompiled
-  script bytecode in shared memory, thereby removing the need for PHP to load
-  and parse scripts on each request. This extension is typically enabled by
-  default.
-
-  When running on Amazon Linux, you need to install the ``php56-opcache`` or
-  ``php55-opcache`` yum package to utilize the OPCache extension.
-
-* Uninstall `Xdebug <http://xdebug.org/>`_
-
-  Xdebug is an amazing tool that can be used to identify performance
-  bottlenecks. However, if performance is critical to your application, do not
-  install the Xdebug extension on your production environment. Simply loading
-  the extension will greatly slow down the SDK.
-
-* Use a `Composer <http://getcomposer.org>`_ classmap autoloader
-
-  Autoloaders are used to lazily load classes as they are required by a PHP
-  script. Composer will generate an autoloader that is able to autoload the PHP
-  scripts of your application and all of the PHP scripts of the vendors
-  required by your application (i.e. the |sdk-php|). When running in
-  production, it is highly recommended that you use a classmap autoloader to
-  improve the autoloader's speed. You can generate a classmap autoloader by
-  passing the ``-o`` or ``--optimize-autoloader`` option to Composer's
-  `install command <http://getcomposer.org/doc/03-cli.md#install>`_.
 
 Compatibility test
 ------------------
 
-Run the `compatibility-test.php` file in the SDK to quickly check if your
-system is capable of running the SDK. In addition to meeting the minimum system
-requirements of the SDK, the compatibility test checks for optional settings
-and makes recommendations that can help you to improve the performance of the
-SDK. The compatibility test can output text for the command line or a web
-browser. When running in a browser, successful checks appear in green, warnings
-in purple, and failures in red. When running from the CLI, the result of a
-check will appear on each line.
+Run the compatibility-test.php file in the SDK to verify your system can run the SDK. In addition to meeting the minimum system requirements of the SDK, the compatibility test checks for optional settings and makes recommendations that can help improve performance. The compatibility test outputs results either to the command line or a web browser. When reviewing test results in a browser, successful checks appear in green, warnings in purple, and failures in red. When running from the command line, the result of a check appears on a separate line.
 
-When reporting an issue with the SDK, it is often helpful to share information
-about your system. Supplying the output of the compatibility test in forum
-posts or GitHub issues can help to streamline the process of identifying the
-root cause of an issue.
+When reporting an issue with the SDK, sharing the output of the compatibility test helps identify the underlying cause.
