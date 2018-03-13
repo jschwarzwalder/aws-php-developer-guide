@@ -25,16 +25,31 @@ Recommendations
 
 In addition to the minimum requirements, we recommend you also use the following:
 
-| Install `cURL <http://php.net/manual/en/book.curl.php>`_  7.16.2 or later | Use a recent version of cURL compiled with OpenSSL/NSS and zlib. If cURL is not installed on your system and you don't configure a custom http_handler for your client, the SDK will use the PHP stream wrapper. |
-| Use `OPCache <http://php.net/manual/en/book.opcache.php>`_  | Use the OPcache extension to improve PHP performance by storing precompiled script bytecode in shared memory. This removes the need for PHP to load and parse scripts on each request. This extension is typically enabled by default.
+.. list-table::
+   :widths: 2 4
+   :header-rows: 0
 
-When running Amazon Linux, you need to install the php56-opcache or php55-opcache yum package to use the OPCache extension. |
-| Uninstall  `Xdebug <http://xdebug.org/>`_ | Xdebug can help identify performance bottlenecks. However, if performance is critical to your application, don't install the Xdebug extension in your production environment. Loading the extension slows SDK performance considerably. |
-| Use a `Composer <http://getcomposer.org>`_ classmap autoloader | Autoloaders load classes as they are required by a PHP script. Composer generates an autoloader that can autoload the PHP scripts of your application as well as all other PHP scripts required by your application including the SDK for PHP.
+   * - Install `cURL <http://php.net/manual/en/book.curl.php>`_  7.16.2 or later
+     - Use a recent version of cURL compiled with OpenSSL/NSS and zlib. If cURL is not installed on your    
+       system and you don't configure a custom http_handler for your client, the SDK will use the PHP stream
+       wrapper.  
 
-For production environmnents, we recommended you use a classmap autoloader to improve autoloader performance. You can generate a classmap autoloader by passing the -o or --optimize-autoloader option to Composer's install command. |
-----
+   * - Use `OPCache <http://php.net/manual/en/book.opcache.php>`_  
+     - Use the OPcache extension to improve PHP performance by storing precompiled script bytecode in shared memory. 
+       This removes the need for PHP to load and parse scripts on each request. This extension is typically enabled by default.
 
+       When running Amazon Linux, you need to install the php56-opcache or php55-opcache yum package to use the OPCache extension. 
+
+   * - Uninstall  `Xdebug <http://xdebug.org/>`_ 
+     - Xdebug can help identify performance bottlenecks. However, if performance is critical to your application, don't install the Xdebug extension in your production environment. 
+       Loading the extension slows SDK performance considerably.   
+
+   * - Use a `Composer <http://getcomposer.org>`_ classmap autoloader
+     - Autoloaders load classes as they are required by a PHP script. Composer generates an autoloader that can autoload the PHP scripts of your application as well as all other 
+       PHP scripts required by your application including the SDK for PHP.
+
+       For production environments, we recommended you use a classmap autoloader to improve autoloader performance. You can generate a classmap autoloader by passing the 
+       -o or --optimize-autoloader option to Composer's install command. 
 
 Compatibility test
 ------------------
