@@ -108,3 +108,5 @@ Waiter
     resource enters into a particular state by sleeping and polling the
     resource's status. Waiters are accessed using the ``waitUntil()`` method of
     the client. See the :doc:`guide_waiters` guide for more details.
+	
+For the latest AWS terminology, see the :AWS-gr:`AWS Glossary <glos-chap>` in the AWS General Reference.
