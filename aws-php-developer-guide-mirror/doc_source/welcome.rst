@@ -12,12 +12,15 @@
 |sdk-php|
 ===============
 
-The **|sdk-php|** enables PHP developers to use
+The |sdk-php| enables PHP developers to use
 `Amazon Web Services <http://aws.amazon.com/>`_ in their PHP code, and build
 robust applications and software using services like |S3|, |DDBlong|, |GL|, etc. You can get started in minutes by installing the
 SDK through Composer — by requiring the ``aws/aws-sdk-php`` package — or by
-downloading the standalone `aws.zip <|sdk-PHP-dl|>`_
-or `aws.phar <|sdk-PHP-phar|>`_ files.
+downloading the standalone `aws.zip <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.zip>`_
+or `aws.phar <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.phar>`_ files.
+
+.. image:: images/php-sdk-overview.png
+   :alt: Diagram that provides an overview of how AWS SDK for works
 
 Not all services are immediately available in the SDK. To find out which services are currently supported by the |sdk-php|, see . 
 For information about the |sdk-php| on GitHub, see :doc:`Additional Resources <resources>`.
@@ -94,4 +97,4 @@ Reference
 API Documentation
 -----------------
 
-API documentation for the SDK can be found at _sdk-php-api-v3.
+API documentation for the SDK can be found at  http://docs.aws.amazon.com/aws-sdk-php/v3/api/.
