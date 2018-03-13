@@ -73,12 +73,12 @@ and include it in your scripts.
 
     ::
 
-    ``suhosin.executor.include.whitelist = phar``
+    suhosin.executor.include.whitelist = phar
 
 Installing via Zip
 ------------------
 
-The |sdk-php| ncludes a zip file containing all the classes and dependencies you need to run the SDK.
+The |sdk-php| includes a zip file containing all the classes and dependencies you need to run the SDK.
 Additionally, the zip file includes a class autoloader for the SDK for PHP and its dependencies.
 
 To install the SDK,  `download the zip file <|sdk-PHP-dl|>`_,
