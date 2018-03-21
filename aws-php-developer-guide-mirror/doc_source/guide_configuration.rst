@@ -297,7 +297,7 @@ endpoint
 
 The full URI of the webservice. This is only required when connecting to a
 custom endpoint (e.g., a local version of |S3| or
-`|DDBlong| Local <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tools.DynamoDBLocal.html>`_).
+:DDB-dg:`Amazon DynamoDB Local <Tools.DynamoDBLoca>`).
 
 Here's an example of connecting to |DDBlong| Local:
 

@@ -15,7 +15,7 @@
 Introduction
 ------------
 
-The **|DDB| Session Handler** is a custom session handler for PHP that
+The |DDB| Session Handler is a custom session handler for PHP that
 allows developers to use |DDBlong| as a session store. Using DynamoDB
 for session storage alleviates issues that occur with session handling in a
 distributed web application by moving sessions off of the local file system and

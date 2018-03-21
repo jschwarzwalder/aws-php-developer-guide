@@ -95,7 +95,7 @@ To find code examples for the |sdk-php|, use the :guilabel:`Environment` window 
 :file:`ENVIRONMENT_NAME\aws-doc-sdk-examples\php\example_code` directory,
 where :file:`ENVIRONMENT_NAME` is the name of your development environment.
 
-To learn how to work with these and other code examples, see `Code Examples <examples_index>`_.
+To learn how to work with these and other code examples, see :doc:`Code Examples <examples_index>`.
 
 .. _cloud9-php-run:
 
@@ -103,7 +103,7 @@ Step 5: Run and Debug Example Code
 ==================================
 
 To run code in your |AC9| development environment, see
-`Run Your Code <https://docs.aws.amazon.com/cloud9/latest/user-guide/build-run-debug.html#build-run-debug-run>`_ in the |AC9-ug|.
+:AC9-ug:`Run Your Code <build-run-debug>` in the |AC9-ug|.
 
 To debug code, see
-`Debug Your Code <https://docs.aws.amazon.com/cloud9/latest/user-guide/build-run-debug.html#build-run-debug-debug>`_ in the |AC9-ug|.
+:AC9-ug:`Debug Your Code <build-run-debug>` in the |AC9-ug|.
