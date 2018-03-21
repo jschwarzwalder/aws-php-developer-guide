@@ -63,7 +63,7 @@ credentials from your environment in the following order:
 
 1. Load credentials from :ref:`environment variables <environment_credentials>`
 2. Load credentials from a :ref:`credentials ini file <credential_profiles>`
-3. Load credentials from an :ref:`|IAM| instance profile <instance_profile_credentials>`.
+3. Load credentials from an :ref:`IAM instance profile <instance_profile_credentials>`.
 
 You can provide an associative array of "key", "secret", and "token" key value
 pairs to use :ref:`hardcoded credentials <hardcoded_credentials>`.

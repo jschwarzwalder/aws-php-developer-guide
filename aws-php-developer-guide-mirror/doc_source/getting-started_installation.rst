@@ -54,7 +54,7 @@ Each release of the |sdk-php| includes a pre-packaged phar (PHP archive) contain
 and dependencies you need to run the SDK. Additionally, the phar automatically registers a class
 autoloader for the SDK for PHP and all its dependencies.
 
-You can `download the packaged phar <|sdk-PHP-phar|>`_
+You can `download the packaged phar <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.phar>`_
 and include it in your scripts.
 
 .. code-block:: php
@@ -81,7 +81,7 @@ Installing via Zip
 The |sdk-php| includes a zip file containing all the classes and dependencies you need to run the SDK.
 Additionally, the zip file includes a class autoloader for the SDK for PHP and its dependencies.
 
-To install the SDK,  `download the zip file <|sdk-PHP-dl|>`_,
+To install the SDK,  `download the zip file <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.zip>`_,
 hen unzip it into your project at a location of your choice. Then include the autoloader as follows in your scripts.
 
 ::

@@ -17,18 +17,18 @@ encryption, data is encrypted and decrypted directly in your environment. This
 means that this data is encrypted before it's transferred to |S3|, and you
 don’t rely on an external service to handle encryption for you.
 
-The |sdk-php| implements `envelope encryption <http://docs.aws.amazon.com/kms/latest/developerguide/workflow.html>`_
+The |sdk-php| implements :KMS-dg:`envelope encryption <workflow>`
 and utilizes `OpenSSL <https://www.openssl.org/>`_ for its encrypting and
-decrypting. The implementation is interoperable with `other SDKs that match its feature support <http://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html>`_.
-It's also compatible with `the SDK’s promise based asynchronous workflow <https://docs.aws.amazon.com/aws-sdk-php/v3/guide/guide/promises.html>`_.
+decrypting. The implementation is interoperable with :AWS-gr:`other SDKs that match its feature support <aws_sdk_cryptography>`.
+It's also compatible with :doc: `the SDK’s promise based asynchronous workflow <guide_promises>`.
 
 Setup
 -----
 
 To get started with client-side encryption, you need the following:
 
-* An `AWS KMS encryption key <http://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html>`_
-* An `|S3| bucket <http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html>`_
+* An :KMS-dg:`AWS KMS encryption key <create-keys>`
+* An :S3-gsg:`S3 bucket <CreatingABucket>`
 
 Encryption
 ----------

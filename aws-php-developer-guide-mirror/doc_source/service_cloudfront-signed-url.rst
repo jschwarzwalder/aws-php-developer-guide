@@ -20,9 +20,8 @@ URL includes additional information (e.g., expiration time) that gives you more
 control over access to your content. This additional information appears in a
 policy statement, which is based on either a canned policy or a custom policy.
 For information about how to set up private distributions and why you need to
-sign URLs, please read the `Serving Private Content through |CF| section
-<http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html>`_
-of the |CF| Developer Guide.
+sign URLs, please read the :CF-dg:`Serving Private Content through Amazon Cloud Front section
+<PrivateContent>` of the |CF| Developer Guide.
 
 .. note:
 

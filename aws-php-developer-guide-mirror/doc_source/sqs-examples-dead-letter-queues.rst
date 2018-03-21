@@ -16,9 +16,11 @@ Using Dead Letter Queues in |SQS|
    :description: Enable dead letter queues with |SQS|.
    :keywords: |SQS|, |sdk-php| examples
 
-A dead letter queue is one that other (source) queues can target for messages that can't be processed successfully. You can set aside and isolate these messages in the dead letter queue to determine why their processing did not succeed. You must individually configure each source queue that sends messages to a dead letter queue. Multiple queues can target a single dead letter queue.
+A dead letter queue is one that other (source) queues can target for messages that can't be processed successfully. You can set aside and isolate these messages 
+in the dead letter queue to determine why their processing did not succeed. You must individually configure each source queue that sends messages to a dead letter 
+queue. Multiple queues can target a single dead letter queue.
 
-To learn more, see `Using |SQS| Dead Letter Queues <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html>`_.
+To learn more, see :SQS-dg:`Using SQS Dead Letter Queues <sqs-dead-letter-queues>`.
 
 The example below shows how to:
 

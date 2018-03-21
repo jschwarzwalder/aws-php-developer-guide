@@ -16,7 +16,7 @@ Using an |S3| Bucket as a Static Web Host
    :description: Get, set, and remove website configuration for an |S3| bucket.
    :keywords: |S3|, |sdk-php| examples
 
-You can host a static website on |S3|. To learn more, see `Hosting a Static Website on |S3| <http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html>`_.
+You can host a static website on |S3|. To learn more, see :S3-dg:`Hosting a Static Website on S3 <WebsiteHosting>`.
 
 The example below shows how to:
 

@@ -16,8 +16,8 @@ Sending and Receiving Messages in |SQS|
    :description: Deliver, delete, or retrieve messages using |SQS|.
    :keywords: |SQS|, |sdk-php| examples
 
-To learn about |SQS| messages, see `Sending a Message to an |SQS| Queue <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-send-message.html>`_
-and `Receiving and Deleting a Message from an |SQS| Queue <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-receive-delete-message.html>`_
+To learn about |SQS| messages, see :SQS-dg:`Sending a Message to an SQS Queue <sqs-send-message>`
+and :SQS-dg:`Receiving and Deleting a Message from an SQS Queue <sqs-receive-delete-message.html>`
 in the Amazon Simple Queue Service Developer Guide.
 
 The examples below show how to:

@@ -16,7 +16,7 @@ Using Queues in |SQS|
    :description: Create or delete |SQS| queues, and return lists and URLs for queues.
    :keywords: |SQS|, |sdk-php| examples
 
-To learn about |SQS| queues, see `How |SQS| Queues Work <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html>`_.
+To learn about |SQS| queues, see :SQS-dg:`How SQS Queues Work <sqs-how-it-works>`.
 
 The examples below show how to:
 

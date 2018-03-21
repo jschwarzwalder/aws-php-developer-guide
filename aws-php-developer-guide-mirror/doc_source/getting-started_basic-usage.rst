@@ -12,7 +12,7 @@
 Basic SDK Usage
 ===============
 
-This guide focuses on basic usage patterns of the **|sdk-php|**. This
+This guide focuses on basic usage patterns of the |sdk-php|. This
 guide assumes that you have already :doc:`downloaded and installed the SDK
 <getting-started_installation>` and retrieved your `AWS access keys
 <http://aws.amazon.com/developers/access-keys/>`_.

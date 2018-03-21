@@ -29,7 +29,7 @@ session locking and garbage collection which are a part of PHP's default
 session handler.
 
 For more information on the |DDBlong| service, please visit the
-`|DDBlong| homepage <http://aws.amazon.com/dynamodb>`_.
+:DDB:`Amazon DynamoDB homepage <index>`.
 
 Basic Usage
 -----------
@@ -54,7 +54,7 @@ The first step is to instantiate and register the session handler.
 
 Before you can actually use the session handler, you need to create a table in
 which to store the sessions. This can be done ahead of time through the
-`AWS Console for |DDBlong| <https://console.aws.amazon.com/dynamodb/home>`_,
+`AWS Console for Amazon DynamoDB <https://console.aws.amazon.com/dynamodb/home>`_,
 or using the SDK.
 
 3. Use PHP sessions like normal
@@ -103,8 +103,8 @@ what the defaults are.
     Whether or not to use session locking. This defaults to ``false``.
 
 ``batch_config``
-    Configuration used to batch deletes during garbage collection. These options are passed directly into `DynamoDB
-    WriteRequestBatch <http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.DynamoDb.WriteRequestBatch.html>`_ objects.
+    Configuration used to batch deletes during garbage collection. These options are passed directly into 
+    :aws-php-class:`DynamoDB WriteRequestBatch <class-Aws.DynamoDb.WriteRequestBatch.html>` objects.
     You must manually trigger garbage collection via ``SessionHandler::garbageCollect()``.
 
 ``max_lock_wait_time``
@@ -140,8 +140,8 @@ Pricing
 -------
 
 Aside from data storage and data transfer fees, the costs associated with using |DDBlong| are calculated based on
-the provisioned throughput capacity of your table (see the `|DDBlong| pricing details
-<http://aws.amazon.com/dynamodb/pricing/>`_). Throughput is measured in units of Write Capacity and Read Capacity. The
+the provisioned throughput capacity of your table (see the :DDB:`Amazon DynamoDB pricing details
+<pricing>`). Throughput is measured in units of Write Capacity and Read Capacity. The
 |DDBlong| homepage says:
 
     A unit of read capacity represents one strongly consistent read per second (or two eventually consistent reads per
@@ -253,11 +253,11 @@ Best Practices
 Required IAM Permissions
 ------------------------
 
-To use the |DDB| session handler, your `configured credentials <https://docs.aws.amazon.com/aws-sdk-php/v3/guide/guide/credentials.html>`_
-must have permission to use the |DDB| table that `you created in a previous step <https://docs.aws.amazon.com/aws-sdk-php/v3/guide/service/dynamodb-session-handler.html#create-a-table-for-storing-your-sessions>`_.
+To use the |DDB| session handler, your :doc: `configured credentials <guide_credentials>`
+must have permission to use the |DDB| table that :ref: `you created in a previous step <create-a-table-for-storing-your-sessions>`.
 The following IAM policy contains the minimum permissions that you need. To use this policy, replace the Resource value
 with the |arnlong| (ARN) of the table that you created previously. For more information about creating and
-attaching IAM policies, see `Managing IAM Policies <https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage.html>`_
+attaching IAM policies, see :iam-ug:`Managing IAM Policies <access_policies_manage>`
 in the *AWS Identity and Access Management User Guide*.
 
 .. code-block:: js

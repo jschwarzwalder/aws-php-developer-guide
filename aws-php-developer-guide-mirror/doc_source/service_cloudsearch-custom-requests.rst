@@ -15,13 +15,10 @@ Signing Custom |CS| Domain Requests
 |CS| Domain requests can be customized beyond what is supported by the AWS
 SDK for PHP. In cases where you need to make custom requests to domains
 protected by IAM authentication, you can use the SDK's credential providers and
-signers to sign any `PSR-7 request
-<http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Psr.Http.Message.RequestInterface.html>`_.
+signers to sign any :aws-php-class:`PSR-7 request <class-Psr.Http.Message.RequestInterface.html>`.
 
-For example, if you're following `|CS|'s Getting Started guide
-<http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-started.html>`_
-and want to use an IAM-protected domain for `Step 3
-<http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-started-search.html>`_,
+For example, if you're following :CS-dg:`Cloud Search's Getting Started guide <getting-started>`
+and want to use an IAM-protected domain for :CS-dg:`Step 3 <getting-started-search>`,
 you would need to sign and execute your request as follows:
 
 .. code-block:: php
