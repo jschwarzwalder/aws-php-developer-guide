@@ -8,19 +8,16 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-=======
-Waiters
-=======
-
-Introduction
-------------
+========================
+Waiters in the |sdk-php|
+========================
 
 Waiters help make it easier to work with *eventually consistent* systems by
 providing an abstracted way to wait until a resource enters into a particular
 state by polling the resource. You can find a list of the waiters supported by
-a client by viewing the API Documentation of a service client.
+a client by viewing the API documentation of a service client.
 
-In the following example, the |S3| Client is used to create a bucket. Then
+In the following example, the |S3| client is used to create a bucket. Then
 the waiter is used to wait until the bucket exists.
 
 .. code-block:: php
@@ -47,7 +44,7 @@ You can modify waiter configuration options by passing an associative array of
 
 .. code-block:: php
 
-    // Providing custom waiter configuration options to a waiter.
+    // Providing custom waiter configuration options to a waiter
     $s3Client->waitUntil('BucketExists', [
         'Bucket'  => 'my-bucket',
         '@waiter' => [
@@ -56,24 +53,24 @@ You can modify waiter configuration options by passing an associative array of
         ]
     ]);
 
-delay
-    (int) Number of seconds to delay between polling attempts. Each waiter has
-    a default ``delay`` configuration value, but you may need to modify this
+delay (int)
+    Number of seconds to delay between polling attempts. Each waiter has
+    a default ``delay`` configuration value, but you might need to modify this
     setting for specific use cases.
 
-maxAttempts
-    (int) Maximum number of polling attempts to issue before failing the
-    waiter. This option ensures that you will not wait on a resource
+maxAttempts (int)
+    Maximum number of polling attempts to issue before failing the
+    waiter. This option ensures that you do not wait on a resource
     indefinitely. Each waiter has a default ``maxAttempts`` configuration
-    value, but you may need to modify this setting for specific use cases.
+    value, but you might need to modify this setting for specific use cases.
 
-initDelay
-    (int) Amount of time in seconds to wait before the first polling attempt.
-    This might be useful when waiting on a resource that you know will take a
-    while to enter into the desired state.
+initDelay (int)
+    Amount of time in seconds to wait before the first polling attempt.
+    This might be useful when waiting on a resource that you know will take
+    awhile to enter into the desired state.
 
-before
-    (callable) A PHP callable function that is invoked before each attempt. The
+before (callable)
+    A PHP callable function that is invoked before each attempt. The
     callable is invoked with the ``Aws\CommandInterface`` command that is about
     to be executed and the number of attempts that have been executed so far.
     Uses of the ``before`` callable might be to modify commands before they are
@@ -101,7 +98,7 @@ before
 Waiting Asynchronously
 ----------------------
 
-In addition to wait synchronously, you can invoke a waiter to wait
+In addition to waiting synchronously, you can invoke a waiter to wait
 asynchronously while sending other requests or waiting on multiple resources
 at once.
 
@@ -118,10 +115,10 @@ with a ``RuntimeException`` on error.
     $waiterName = 'BucketExists';
     $waiterOptions = ['Bucket' => 'my-bucket'];
 
-    // Create a waiter promise.
+    // Create a waiter promise
     $waiter = $s3Client->getWaiter($waiterName, $waiterOptions);
 
-    // Initiate the waiter and retrieve a promise.
+    // Initiate the waiter and retrieve a promise
     $promise = $waiter->promise();
 
     // Call methods when the promise is resolved.
@@ -137,7 +134,7 @@ with a ``RuntimeException`` on error.
     // a \RuntimeException if the waiter fails.
     $promise->wait();
 
-Exposing a promise based waiters API allows for some powerful and relatively
+Exposing a promise-based waiters API allows for some powerful and relatively
 low overhead use cases. For example, what if you wanted to wait on multiple
 resources, and do something with the first waiter that successfully resolved?
 
@@ -145,7 +142,7 @@ resources, and do something with the first waiter that successfully resolved?
 
     use Aws\CommandInterface;
 
-    // Create an array of waiter promises.
+    // Create an array of waiter promises
     $promises = [
         $s3Client->getWaiter('BucketExists', ['Bucket' => 'a'])->promise(),
         $s3Client->getWaiter('BucketExists', ['Bucket' => 'b'])->promise(),
@@ -153,7 +150,7 @@ resources, and do something with the first waiter that successfully resolved?
     ];
 
     // Initiate a race between the waiters, fulfilling the promise with the
-    // first waiter to complete (or the first bucket to become available).
+    // first waiter to complete (or the first bucket to become available)
     $any = Promise\any($promises)
         ->then(function (CommandInterface $command) {
             // This is invoked with the command that succeeded in polling the
@@ -161,5 +158,5 @@ resources, and do something with the first waiter that successfully resolved?
             echo "The {$command['Bucket']} waiter completed first!\n";
         });
 
-    // Force the promise to complete.
+    // Force the promise to complete
     $any->wait();

@@ -51,9 +51,12 @@ After you create the environment, |AC9| opens the IDE for that environment.
 
 See `Creating an Environment in AWS Cloud9 <https://docs.aws.amazon.com/cloud9/latest/user-guide/create-environment.html>`_ in the |AC9-ug| for details.
 
-.. note:: As you create your environment in the console for the first time, we recommend that you choose the option to :guilabel:`Create a new instance for environment (EC2)`.
-   This option tells |AC9| to create an environment, launch an |EC2| instance, and then connect the new instance to the new environment. This is the fastest way
-   to begin using |AC9|.
+.. note::
+
+      As you create your environment in the console for the first time, we recommend that you choose the option
+      to :guilabel:`Create a new instance for environment (EC2)`.
+      This option tells |AC9| to create an environment, launch an |EC2| instance, and then connect the new
+      instance to the new environment. This is the fastest way to begin using |AC9|.
 
 .. _cloud9-php-sdk:
 

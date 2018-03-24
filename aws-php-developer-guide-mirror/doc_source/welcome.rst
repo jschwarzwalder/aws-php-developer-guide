@@ -8,21 +8,22 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-===============
+=========
 |sdk-php|
-===============
+=========
 
 The |sdk-php| enables PHP developers to use
 `Amazon Web Services <http://aws.amazon.com/>`_ in their PHP code, and build
-robust applications and software using services like |S3|, |DDBlong|, |GL|, etc. You can get started in minutes by installing the
+robust applications and software using services like |S3|, |DDBlong|, |GL|, etc.
+You can get started in minutes by installing the
 SDK through Composer — by requiring the ``aws/aws-sdk-php`` package — or by
 downloading the standalone `aws.zip <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.zip>`_
-or `aws.phar <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.phar>`_ files.
+or `aws.phar <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.phar>`_ file.
 
 .. image:: images/php-sdk-overview.png
-   :alt: Diagram that provides an overview of how AWS SDK for works
+   :alt: Diagram that provides an overview of how AWS SDK for PHP works
 
-Not all services are immediately available in the SDK. To find out which services are currently supported by the |sdk-php|, see . 
+Not all services are immediately available in the SDK. To find out which services are currently supported by the |sdk-php|, see .
 For information about the |sdk-php| on GitHub, see :doc:`Additional Resources <resources>`.
 
 External links: :aws-php-class:`API Docs <index.html>`
@@ -35,8 +36,8 @@ External links: :aws-php-class:`API Docs <index.html>`
 
 .. note::
 
-    Are you migrating your project's code from using Version 2 of the SDK to
-    Version 3? If so, you should read our :doc:`getting-started_migration`.
+    If you're migrating your project's code from using Version 2 of the SDK to
+    Version 3, be sure to read :doc:`getting-started_migration`.
 
 Getting Started
 ---------------
@@ -97,4 +98,4 @@ Reference
 API Documentation
 -----------------
 
-API documentation for the SDK can be found at  http://docs.aws.amazon.com/aws-sdk-php/v3/api/.
+Find API documentation for the SDK at  http://docs.aws.amazon.com/aws-sdk-php/v3/api/.

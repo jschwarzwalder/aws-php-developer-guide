@@ -8,28 +8,27 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-===========================
-|S3| Multipart Uploads
-===========================
+============================
+Using |S3| Multipart Uploads
+============================
 
 With a single ``PutObject`` operation, you can upload objects up to 5 GB in
 size. However, by using the multipart uploads (e.g., ``CreateMultipartUpload``,
 ``UploadPart``, ``CompleteMultipartUpload``, ``AbortMultipartUpload``), you can
-upload object up to 5 TB in size.
+upload objects from 5 MB to 5 TB in size.
 
 Multipart uploads are designed to improve the upload experience for larger
-objects. With it you can upload objects in parts that can be uploaded
-independently, in any order, and in parallel. You can use a multipart upload
-for objects from 5 MB to 5 TB in size.
+objects. They enable you to upload objects in parts
+independently, in any order, and in parallel.
 
 |S3| customers are encouraged to use multipart uploads for objects greater
 than 100 MB.
 
-The MultipartUploader object
-----------------------------
+MultipartUploader Object
+------------------------
 
-The SDK has a special ``MultipartUploader`` object to make the multipart upload
-process as easy as possible.
+The SDK has a special ``MultipartUploader`` object that simplifies the multipart upload
+process.
 
 .. code-block:: php
 
@@ -48,16 +47,16 @@ process as easy as possible.
         echo $e->getMessage() . "\n";
     }
 
-The uploader creates a generator of part data based on the provided source and
+The uploader creates a generator of part data, based on the provided source and
 configuration, and attempts to upload all parts. If some part uploads fail, the
-uploader keeps track of it and continues to upload later parts until the entire
-source data has been read. It then either completes the upload or throws an
-exception that contains information about the parts that failed to be uploaded.
+uploader keeps track of them and continues to upload later parts until the entire
+source data is read. It then either completes the upload or throws an
+exception that contains information about the parts that failed to upload.
 
-Customizing a multipart upload
+Customizing a Multipart Upload
 ------------------------------
 
-Custom options can be set on the ``CreateMultipartUpload``, ``UploadPart``, and
+You can set custom options on the ``CreateMultipartUpload``, ``UploadPart``, and
 ``CompleteMultipartUpload`` operations executed by the multipart uploader via
 callbacks passed to its constructor.
 
@@ -81,7 +80,7 @@ callbacks passed to its constructor.
         },
     ]);
 
-Recovering from errors
+Recovering from Errors
 ----------------------
 
 When an error occurs during the multipart upload process, a
@@ -110,19 +109,19 @@ complete.
 
 Resuming an upload from an ``UploadState`` will only attempt to upload parts
 that are not already uploaded. The state object keeps track of missing parts,
-even if they are not consecutive. The uploader will read/seek through the
-provided source file to the byte ranges belonging to the parts that still need
+even if they are not consecutive. The uploader reads or seeks through the
+provided source file to the byte ranges that belong to the parts that still need
 to be uploaded.
 
-``UploadState`` objects are serializable, so it's also possible to resume an
-upload in a different process. You can also get the ``UploadState`` object even
-when you are not handling an exception by calling ``$uploader->getState()``.
+``UploadState`` objects are serializable, so you can also resume an
+upload in a different process. You can also get the ``UploadState`` object, even
+when you're not handling an exception, by calling ``$uploader->getState()``.
 
 .. important::
 
-    Streams passed in as a source to a ``MultipartUploader`` will not be
-    automatically rewound before uploading. If you are using a stream instead of a
-    file path in a loop similar to the above example, you will need to reset the
+    Streams passed in as a source to a ``MultipartUploader`` are not
+    automatically rewound before uploading. If you're using a stream instead of a
+    file path in a loop similar to the previous example, you need to reset the
     ``$source`` variable inside of the ``catch`` block.
 
     .. code-block:: php
@@ -144,10 +143,10 @@ when you are not handling an exception by calling ``$uploader->getState()``.
             }
         } while (!isset($result));
 
-Aborting a multipart upload
+Aborting a Multipart Upload
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Sometimes, you may not want to resume an upload though, and would rather just
+Sometimes, you might not want to resume an upload, and would rather
 abort the the whole thing when an error occurs. This is also easy using the
 data contained in the ``UploadState`` object.
 
@@ -161,11 +160,11 @@ data contained in the ``UploadState`` object.
         $result = $s3Client->abortMultipartUpload($params);
     }
 
-Asynchronous multipart uploads
+Asynchronous Multipart Uploads
 ------------------------------
 
 Calling ``upload()`` on the ``MultipartUploader`` is a blocking request. If you are
-working in an asynchronous context, you can get a :doc:`Promise <guide_promises>`
+working in an asynchronous context, you can get a :doc:`promise <guide_promises>`
 for the multipart upload.
 
 .. code-block:: php
@@ -188,9 +187,9 @@ The ``MultipartUploader`` object constructor accepts the following arguments:
     This should be an instance of ``Aws\S3\S3Client``.
 
 ``$source``
-    The source data being uploaded. This can be a path or URL to a (e.g.,
+    The source data being uploaded. This can be a path or URL (e.g.,
     ``/path/to/file.jpg``), a resource handle (e.g., ``fopen('/path/to/file.jpg', 'r)``),
-    or an instance of a :aws-php-class:`PSR-7 stream </class-Psr.Http.Message.StreamInterface.html>`
+    or an instance of a :aws-php-class:`PSR-7 stream </class-Psr.Http.Message.StreamInterface.html>`.
 
 ``$config``
     An associative array of configuration options for the multipart upload.
@@ -198,7 +197,7 @@ The ``MultipartUploader`` object constructor accepts the following arguments:
 The following configuration options are valid:
 
 **acl**
-    (``string``) ACL to set on the object being upload. Objects are private by
+    (``string``) Access control list (ACL) to set on the object being upload. Objects are private by
     default.
 **before_complete**
     (``callable``) Callback to invoke before the ``CompleteMultipartUpload``
@@ -231,9 +230,9 @@ The following configuration options are valid:
 Multipart Copies
 ----------------
 
-The SDK also includes a ``MultipartCopy`` object that is used in a similar manner
-to the ``MultipartUploader`` but is designed for copying objects between 5GB and
-5TB in size within S3.
+The |sdk-php| also includes a ``MultipartCopy`` object that is used in a similar way
+to the ``MultipartUploader``, but is designed for copying objects between 5 GB and
+5 TB in size within |S3|.
 
 .. code-block:: php
 

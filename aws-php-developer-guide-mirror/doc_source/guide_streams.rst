@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-=======
-Streams
-=======
+========================
+Streams in the |sdk-php|
+========================
 
 As part of its integration of the `PSR-7 <http://www.php-fig.org/psr/psr-7/>`_
 HTTP message standard, the |sdk-php| uses the :aws-php-class:`PSR-7 StreamInterface
@@ -38,9 +38,9 @@ can be satisfied with a string, a PHP stream resource, or an instance of
 Stream Decorators
 -----------------
 
-Guzzle provides several stream decorators that can be used to control how the
+Guzzle provides several stream decorators that you can use to control how the
 SDK and Guzzle interact with the streaming resource provided as an input
-parameter to a command. These decorators can modify how handlers will be able
+parameter to a command. These decorators can modify how handlers are able
 to read and seek on a given stream. The following is a partial list; more can be
 found on the `GuzzleHttp\Psr7 repository <https://github.com/guzzle/psr7>`_.
 
@@ -68,7 +68,7 @@ CachingStream
 
 :aws-php-class:`GuzzleHttp\\Psr7\\CachingStream </class-GuzzleHttp.Psr7.CachingStream.html>`
 
-The CachingStream is used to allow seeking over previously read bytes on
+Used to allow seeking over previously read bytes on
 non-seekable streams. This can be useful when transferring a non-seekable
 entity body fails due to needing to rewind the stream (for example, resulting
 from a redirect). Data that is read from the remote stream will be buffered in
@@ -95,11 +95,11 @@ InflateStream
 
 :aws-php-class:`GuzzleHttp\\Psr7\\InflateStream </class-GuzzleHttp.Psr7.InflateStream.html>`
 
-Uses PHP's zlib.inflate filter to inflate deflate or gzipped content.
+Uses PHP's zlib.inflate filter to inflate or deflate gzipped content.
 
 This stream decorator skips the first 10 bytes of the given stream to remove
 the gzip header, converts the provided stream to a PHP stream resource,
-then appends the zlib.inflate filter. The stream is then converted back
+and then appends the zlib.inflate filter. The stream is then converted back
 to a Guzzle stream resource to be used as a Guzzle stream.
 
 LazyOpenStream
@@ -107,8 +107,8 @@ LazyOpenStream
 
 :aws-php-class:`GuzzleHttp\\Psr7\\LazyOpenStream </class-GuzzleHttp.Psr7.LazyOpenStream.html>`
 
-Lazily reads or writes to a file that is opened only after an IO operation
-take place on the stream.
+Lazily reads or writes to a file that is opened only after an I/O operation
+takes place on the stream.
 
 .. code-block:: php
 
@@ -125,9 +125,9 @@ LimitStream
 
 :aws-php-class:`GuzzleHttp\\Psr7\\LimitStream </class-GuzzleHttp.Psr7.LimitStream.html>`
 
-LimitStream can be used to read a subset or slice of an existing stream object.
+Used to read a subset or slice of an existing stream object.
 This can be useful for breaking a large file into smaller pieces to be sent in
-chunks (e.g. |S3|'s multipart upload API).
+chunks (e.g., the |S3| Multipart Upload API).
 
 .. code-block:: php
 
@@ -149,7 +149,7 @@ NoSeekStream
 
 :aws-php-class:`GuzzleHttp\\Psr7\\NoSeekStream </class-GuzzleHttp.Psr7.NoSeekStream.html>`
 
-NoSeekStream wraps a stream and does not allow seeking.
+Wraps a stream and does not allow seeking.
 
 .. code-block:: php
 
@@ -171,7 +171,7 @@ PumpStream
 
 :aws-php-class:`GuzzleHttp\\Psr7\\PumpStream </class-GuzzleHttp.Psr7.PumpStream.html>`
 
-Provides a read only stream that pumps data from a PHP callable.
+Provides a read-only stream that pumps data from a PHP callable.
 
 When invoking the provided callable, the PumpStream will pass the amount of
 data requested to read to the callable. The callable can choose to ignore
@@ -180,7 +180,7 @@ returned by the provided callable is buffered internally until drained using
 the read() function of the PumpStream. The provided callable MUST return
 false when there is no more data to read.
 
-Implementing stream decorators
+Implementing Stream Decorators
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Creating a stream decorator is very easy thanks to the
@@ -215,7 +215,7 @@ byte is read from a stream. This could be implemented by overriding the
         {
             $result = $this->stream->read($length);
 
-            // Invoke the callback when EOF is hit.
+            // Invoke the callback when EOF is hit
             if ($this->eof()) {
                 call_user_func($this->callback);
             }
@@ -224,7 +224,7 @@ byte is read from a stream. This could be implemented by overriding the
         }
     }
 
-This decorator could be added to any existing stream and used like so:
+This decorator could be added to any existing stream and used like this.
 
 .. code-block:: php
 

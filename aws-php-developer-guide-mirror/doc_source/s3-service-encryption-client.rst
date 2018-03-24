@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-================================
+===========================
 |S3| Client Side Encryption
-================================
+===========================
 
 The |sdk-php| provides an ``S3EncryptionClient``. With client-side
 encryption, data is encrypted and decrypted directly in your environment. This
@@ -18,9 +18,9 @@ means that this data is encrypted before it's transferred to |S3|, and you
 don’t rely on an external service to handle encryption for you.
 
 The |sdk-php| implements :KMS-dg:`envelope encryption <workflow>`
-and utilizes `OpenSSL <https://www.openssl.org/>`_ for its encrypting and
+and uses `OpenSSL <https://www.openssl.org/>`_ for its encrypting and
 decrypting. The implementation is interoperable with :AWS-gr:`other SDKs that match its feature support <aws_sdk_cryptography>`.
-It's also compatible with :doc: `the SDK’s promise based asynchronous workflow <guide_promises>`.
+It's also compatible with :doc: `the SDK’s promise-based asynchronous workflow <guide_promises>`.
 
 Setup
 -----
@@ -33,7 +33,7 @@ To get started with client-side encryption, you need the following:
 Encryption
 ----------
 
-Uploading an encrypted object through the PutObject operation takes a similar
+Uploading an encrypted object through the ``PutObject`` operation takes a similar
 interface and requires two new parameters.
 
 .. code-block:: php
@@ -75,7 +75,7 @@ interface and requires two new parameters.
 
 .. note::
 
-    In addition to the |S3| and AWS KMS based service errors, you may
+    In addition to the |S3| and |KMS|-based service errors, you might
     receive thrown ``InvalidArgumentException`` objects if your
     ``'@CipherOptions'`` are not correctly configured.
 
@@ -83,7 +83,7 @@ Decryption
 ----------
 
 Downloading and decrypting an object requires only one additional parameter on
-top of GetObject, and the client will detect the basic cipher options for you.
+top of ``GetObject``, and the client will detect the basic cipher options for you.
 Additional configuration options are passed through for decryption.
 
 .. code-block:: php
@@ -99,7 +99,7 @@ Additional configuration options are passed through for decryption.
 
 .. note::
 
-    In addition to the |S3| and AWS KMS based service errors, you may
+    In addition to the |S3| and |KMS|-based service errors, you might
     receive thrown ``InvalidArgumentException`` objects if your
     ``'@CipherOptions'`` are not correctly configured.
 
@@ -107,26 +107,26 @@ Cipher Configuration
 --------------------
 
 ``'Cipher'`` (string)
-    This is the cipher method that the encryption client will use while
+    Cipher method that the encryption client uses while
     encrypting. Only 'gcm' and 'cbc' are supported at this time.
 
 .. important::
 
-    PHP `updated in version 7.1 <http://php.net/manual/en/migration71.new-features.php>`_
+    PHP is `updated in version 7.1 <http://php.net/manual/en/migration71.new-features.php>`_
     to include the extra parameters necessary to `encrypt <http://php.net/manual/en/function.openssl-encrypt.php>`_
     and `decrypt <http://php.net/manual/en/function.openssl-decrypt.php>`_
-    using OpenSSL for GCM encryption. As such, using GCM with your
-    ``Aws\S3\Crypto\S3EncryptionClient`` is only available on PHP 7.1 or higher.
+    using OpenSSL for GCM encryption. As a result, using GCM with your
+    ``Aws\S3\Crypto\S3EncryptionClient`` is only available on PHP 7.1 or later.
 
 ``'KeySize'`` (int)
-    This specifies the length of the content encryption key to be generated for
+    The length of the content encryption key to generate for
     encrypting. Defaults to 256 bits. Valid configuration options are 256,
     192, and 128.
 
 ``'Aad'`` (string)
-    Optional 'Additional authentication data' to be included with your
-    encrypted payload. This information is validated on decryption. Aad is only
-    available when using the 'gcm' cipher.
+    Optional 'Additional authentication data' to include with your
+    encrypted payload. This information is validated on decryption. ``Aad`` is
+    available only when using the 'gcm' cipher.
 
 Metadata Strategies
 -------------------
@@ -136,7 +136,7 @@ the ``Aws\Crypto\MetadataStrategyInterface``. This simple interface handles
 saving and loading the ``Aws\Crypto\MetadataEnvelope`` that contains your
 envelope encryption materials. The SDK provides two classes that implement
 this: ``Aws\S3\Crypto\HeadersMetadataStrategy`` and
-``Aws\S3\Crypto\InstructionFileMetadataStrategy``. The ``HeadersMetadataStrategy``
+``Aws\S3\Crypto\InstructionFileMetadataStrategy``. ``HeadersMetadataStrategy``
 is used by default.
 
 .. code-block:: php
@@ -172,7 +172,7 @@ Class name constants for the ``HeadersMetadataStrategy`` and
 
 .. note::
 
-    If there is a failure after an instruction file has been uploaded, it will
+    If there is a failure after an instruction file is uploaded, it will
     not be automatically deleted.
 
 Multipart Uploads
@@ -224,6 +224,6 @@ configurations.
 
 .. note::
 
-    In addition to the |S3| and AWS KMS based service errors, you may
+    In addition to the |S3| and |KMS|-based service errors, you might
     receive thrown ``InvalidArgumentException`` objects if your
     ``'@CipherOptions'`` are not correctly configured.

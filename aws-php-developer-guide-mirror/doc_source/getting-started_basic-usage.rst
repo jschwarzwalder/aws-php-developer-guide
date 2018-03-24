@@ -8,47 +8,47 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-===============
-Basic SDK Usage
-===============
+==========================
+Basic Use of the |sdk-php|
+==========================
 
 This guide focuses on basic usage patterns of the |sdk-php|. This
 guide assumes that you have already :doc:`downloaded and installed the SDK
 <getting-started_installation>` and retrieved your `AWS access keys
 <http://aws.amazon.com/developers/access-keys/>`_.
 
-Including the SDK
------------------
+Including the SDK in Your Code
+------------------------------
 
-No matter which technique you have used to to install the SDK, you can include
-the SDK into your code with just a single ``require`` statement. Please refer to
+No matter which technique you used to to install the SDK, you can include
+the SDK in your code with just a single ``require`` statement. See
 the following table for the PHP code that best fits your installation technique.
-Please replace any instances of ``/path/to/`` with the actual path on your system.
+Replace any instances of ``/path/to/`` with the actual path on your system.
 
 ========================== =====================================================
 Installation Technique     Require Statement
 ========================== =====================================================
 Using Composer             ``require '/path/to/vendor/autoload.php';``
 -------------------------- -----------------------------------------------------
-Using the Phar             ``require '/path/to/aws.phar';``
+Using the phar             ``require '/path/to/aws.phar';``
 -------------------------- -----------------------------------------------------
-Using the Zip              ``require '/path/to/aws-autoloader.php';``
+Using the ZIP              ``require '/path/to/aws-autoloader.php';``
 ========================== =====================================================
 
-For the remainder of this guide, we will show examples that assume the Composer
-installation method. If you are using a different installation method, then you
-can refer back to this section to substitute in the proper ``require`` code.
+In this guide, we show examples that assume the Composer
+installation method. If you're using a different installation method, you
+can refer back to this section to find the correct ``require`` code to use.
 
 Usage Summary
 -------------
 
 The basic usage pattern of the SDK is that you instantiate a **Client** object
 for the AWS service you want to interact with. Client objects have methods that
-correspond one-to-one with operations in the service's API. To execute a
-particular operation, you call its corresponding method, which either returns an
+correspond one to one with operations in the service's API. To execute a
+particular operation, you call its corresponding method. This method either returns an
 array-like **Result** object on success, or throws an **Exception** on failure.
 
-Creating a client
+Creating a Client
 -----------------
 
 You can create a client by passing an associative array of options to a
@@ -67,7 +67,7 @@ client's constructor.
    :language: php
 
 Notice that we did **not** explicitly provide credentials to the client. That's
-because the credentials should be detected by the SDK from either
+because the SDK should detect the credentials from
 :ref:`environment variables <environment_credentials>` (via
 ``AWS_ACCESS_KEY_ID`` and ``AWS_SECRET_ACCESS_KEY``), an
 :ref:`AWS credentials INI file <credential_profiles>` in your HOME
@@ -77,14 +77,14 @@ directory, |IAMlong| (IAM)
 
 All of the general client configuration options are described in detail in
 the :doc:`configuration guide <guide_configuration>`. The array of options
-provided to a client may vary based on which client you are creating. These
+provided to a client can vary based on which client you're creating. These
 custom client configuration options are described in the
-`API documentation <http://docs.aws.amazon.com/aws-sdk-php/latest/>`_ of each
+`API documentation <http://docs.aws.amazon.com/aws-sdk-php/latest/>`_ for each
 client.
 
 .. _sdk-class:
 
-Using the Sdk class
+Using the Sdk Class
 -------------------
 
 The ``Aws\Sdk`` class acts as a client factory and is used to manage shared
@@ -118,24 +118,24 @@ same as the namespace of a service (e.g., "S3", "DynamoDb", etc.).
         ]
     ]);
 
-    // Creating a DynamoDb client will use the "eu-central-1" region.
+    // Creating an Amazon DynamoDb client will use the "eu-central-1" AWS Region
     $client = $sdk->createDynamoDb();
 
 Service-specific configuration values are a union of the service-specific
 values and the root-level values (i.e., service-specific values are
-shallow-merged onto root level values).
+shallow-merged onto root-level values).
 
 .. tip::
 
-    It is highly recommended that you use the ``Sdk`` class to create clients
-    if you are utilizing multiple client instances in your application. The
-    ``Sdk`` class will automatically utilize the same HTTP client for each SDK
-    client, allowing SDK clients for different services to perform non-blocking
-    HTTP requests. If the SDK clients do not use the same HTTP client, then
-    HTTP requests sent by the SDK client may cause inter-service promise
+    We highly recommended that you use the ``Sdk`` class to create clients
+    if you're using multiple client instances in your application. The
+    ``Sdk`` class automatically uses the same HTTP client for each SDK
+    client, allowing SDK clients for different services to perform nonblocking
+    HTTP requests. If the SDK clients don't use the same HTTP client, then
+    HTTP requests sent by the SDK client might cause inter-service promise
     orchestration to block.
 
-Executing service operations
+Executing Service Operations
 ----------------------------
 
 You can execute a service operation by calling the method of the same name on
@@ -157,11 +157,11 @@ call the ``Aws\S3\S3Client::putObject()`` method.
 
 Operations available to a client and the structure of the input and output are
 defined at runtime based on a service description file. When creating a client,
-you must provide a version (e.g., `"2006-03-01"` or `"latest"`). The SDK will
-find the corresponding configuration file based on the provided version.
+you must provide a version (e.g., `"2006-03-01"` or `"latest"`). The SDK
+finds the corresponding configuration file based on the provided version.
 
-Operation methods like ``putObject()`` all accept a single argument -- an
-associative array representing the parameters of the operation. The structure
+Operation methods like ``putObject()`` all accept a single argument, an
+associative array that represents the parameters of the operation. The structure
 of this array (and the structure of the result object) is defined for each
 operation in the SDK's API Documentation (e.g., see the API docs for
 :aws-php-class:`putObject operation </api-s3-2006-03-01.html#putobject>`).
@@ -169,14 +169,14 @@ operation in the SDK's API Documentation (e.g., see the API docs for
 HTTP Handler Options
 ~~~~~~~~~~~~~~~~~~~~
 
-It's also possible to fine tune how the underlying HTTP handler executes the
+You can also fine-tune how the underlying HTTP handler executes the
 request by using the special ``@http`` parameter. The options you can include
 in the ``@http`` parameter are the same as the ones you can set when you
 instantiate the client with the :ref:`"http" client option <config_http>`.
 
 .. code-block:: php
 
-    // Send the request through a proxy.
+    // Send the request through a proxy
     $result = $s3Client->putObject([
         'Bucket' => 'my-bucket',
         'Key'    => 'my-key',
@@ -191,9 +191,9 @@ Asynchronous Requests
 
 You can send commands concurrently using the asynchronous features of the SDK.
 You can send requests asynchronously by suffixing an operation name with
-``Async``. This will initiate the request and return a promise. The promise
-will be fulfilled with the result object on success or rejected with an
-exception on failure. This allows you to create multiple promises and
+``Async``. This initiates the request and returns a promise. The promise
+is fulfilled with the result object on success or rejected with an
+exception on failure. This enables you to create multiple promises and
 have them send HTTP requests concurrently when the underlying HTTP handler
 transfers the requests.
 
@@ -209,15 +209,15 @@ transfers the requests.
    :lines: 27-39
    :language: php
 
-You can force a promise to complete synchronously using the ``wait`` method of
-the promise. Forcing the promise to complete will also "unwrap" the state of
+You can force a promise to complete synchronously by using the ``wait`` method of
+the promise. Forcing the promise to complete also "unwraps" the state of
 the promise by default, meaning it will either return the result of the promise
 or throw the exception that was encountered. When calling ``wait()`` on a
-promise, the process will block until the HTTP request has completed and the
-result has been populated or an exception is thrown.
+promise, the process blocks until the HTTP request is completed and the
+result is populated or an exception is thrown.
 
-When using the SDK with an event loop library, you will not want to block on
-results, but rather use the ``then()`` method of a result to access a promise
+When using the SDK with an event loop library, don't block on
+results. Instead, use the ``then()`` method of a result to access a promise
 that is resolved or rejected when the operation completes.
 
 **Imports**
@@ -239,12 +239,12 @@ that is resolved or rejected when the operation completes.
 
 .. _result_objects:
 
-Working with Result objects
+Working with Result Objects
 ---------------------------
 
-Executing an successful operation will return an ``Aws\Result`` object. Instead
+Executing a successful operation returns an ``Aws\Result`` object. Instead
 of returning the raw XML or JSON data of a service, the SDK coerces the response
-data into an associative array structure and normalizes some aspects of the data
+data into an associative array structure. It normalizes some aspects of the data
 based on its knowledge of the specific service and the underlying response
 structure.
 
@@ -264,14 +264,14 @@ You can access data from the result object like an associative PHP array.
 
 
 
-The contents of the result object depends on the operation that was executed
+The contents of the result object depend on the operation that was executed
 and the version of a service. The result structure of each API operation is
 documented in the API docs for each operation.
 
 The SDK is integrated with `JMESPath <http://jmespath.org/>`_, a `DSL
-<http://en.wikipedia.org/wiki/Domain-specific_language>`_ use to search and
-manipulate JSON data, or PHP arrays, in our case. The result object contains a
-``search()`` method that allows you to more declaratively extract data from the
+<http://en.wikipedia.org/wiki/Domain-specific_language>`_ used to search and
+manipulate JSON data or, in our case, PHP arrays. The result object contains a
+``search()`` method you can use to more declaratively extract data from the
 result.
 
 **Code**
@@ -286,20 +286,20 @@ result.
 
 
 
-Handling errors
+Handling Errors
 ---------------
 
 Synchronous Error Handling
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If an error occurs while performing an operation, then an exception is thrown.
-For this reason, you should use ``try``/``catch`` blocks around your operations
-if you need to handle errors in your code. The SDK throws service-specific
+If an error occurs while performing an operation, an exception is thrown.
+For this reason, if you need to handle errors in your code, you should use
+``try``/``catch`` blocks around your operations. The SDK throws service-specific
 exceptions when an error occurs.
 
-In the following example, the ``Aws\S3\S3Client`` is used. If there is an
+The following example uses the ``Aws\S3\S3Client``. If there is an
 error, the exception thrown will be of the type ``Aws\S3\Exception\S3Exception``.
-All service specific exceptions thrown by the SDK extend from the
+All service-specific exceptions that the SDK throws extend from the
 ``Aws\Exception\AwsException`` class. This class contains useful information
 about the failure, including the request-id, error code, and error type.
 
@@ -321,7 +321,7 @@ Async Error Handling
 ~~~~~~~~~~~~~~~~~~~~
 
 Exceptions are not thrown when sending asynchronous requests. Instead, you must
-use the ``then()`` or ``otherwise()`` methods of the returned promise to
+use the ``then()`` or ``otherwise()`` method of the returned promise to
 receive the result or error.
 
 **Imports**

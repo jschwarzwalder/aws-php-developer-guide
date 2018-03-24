@@ -8,13 +8,13 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-=============
-Configuration
-=============
+===============================
+Configuration for the |sdk-php|
+===============================
 
 This guide describes client constructor options. These options can be provided
-in a client constructor or to the ``Aws\Sdk`` class. The array of options
-provided to a specific type of client may vary based on which client you are
+in a client constructor or provided to the ``Aws\Sdk`` class. The array of options
+provided to a specific type of client can vary, based on which client you are
 creating. These custom client configuration options are described in the
 `API documentation <http://docs.aws.amazon.com/aws-sdk-php/latest/>`_ of each
 client.
@@ -38,8 +38,8 @@ constructor.
 
     $s3Client = new S3Client($options);
 
-Refer to the :doc:`basic usage guide <getting-started_basic-usage>` for more
-information on constructing clients.
+See the :doc:`basic usage guide <getting-started_basic-usage>` for more
+information about constructing clients.
 
 api_provider
 ~~~~~~~~~~~~
@@ -50,7 +50,7 @@ A PHP callable that accepts a type, service, and version argument, and returns
 an array of corresponding configuration data. The type value can be one of
 ``api``, ``waiter``, or ``paginator``.
 
-By default, the SDK will use an instance of ``Aws\Api\FileSystemApiProvider``
+By default, the SDK uses an instance of ``Aws\Api\FileSystemApiProvider``
 that loads API files from the ``src/data`` folder of the SDK.
 
 credentials
@@ -58,19 +58,19 @@ credentials
 
 :Type: ``array|Aws\CacheInterface|Aws\Credentials\CredentialsInterface|bool|callable``
 
-If you do not provide a ``credentials`` option, the SDK will attempt to load
+If you don't provide a ``credentials`` option, the SDK attempts to load
 credentials from your environment in the following order:
 
-1. Load credentials from :ref:`environment variables <environment_credentials>`
-2. Load credentials from a :ref:`credentials ini file <credential_profiles>`
+1. Load credentials from :ref:`environment variables <environment_credentials>`.
+2. Load credentials from a :ref:`credentials ini file <credential_profiles>`.
 3. Load credentials from an :ref:`IAM instance profile <instance_profile_credentials>`.
 
-You can provide an associative array of "key", "secret", and "token" key value
+You can provide an associative array of "key", "secret", and "token" key-value
 pairs to use :ref:`hardcoded credentials <hardcoded_credentials>`.
 
 .. code-block:: php
 
-    // Hardcoded credentials.
+    // Hardcoded credentials
     $s3 = new Aws\S3\S3Client([
         'version'     => 'latest',
         'region'      => 'us-west-2',
@@ -93,7 +93,7 @@ credentials instance.
         'credentials' => $credentials
     ]);
 
-Pass `false` to utilize null credentials and not sign requests.
+Pass ``false`` to use null credentials and not sign requests.
 
 .. code-block:: php
 
@@ -110,7 +110,7 @@ create credentials using a function.
 
     use Aws\Credentials\CredentialProvider;
 
-    // Only load credentials from environment variables.
+    // Only load credentials from environment variables
     $provider = CredentialProvider::env();
 
     $s3 = new Aws\S3\S3Client([
@@ -148,7 +148,7 @@ debug
 
 Outputs debug information about each transfer. Debug information contains
 information about each state change of a transaction as it is prepared and sent
-over the wire. Also included in the debug output is information of the specific
+over the wire. Also included in the debug output is information about the specific
 HTTP handler used by a client (e.g., debug cURL output).
 
 Set to ``true`` to display debug information when sending requests.
@@ -161,36 +161,36 @@ Set to ``true`` to display debug information when sending requests.
         'debug'   => true
     ]);
 
-    // Perform an operation to see the debug output.
+    // Perform an operation to see the debug output
     $s3->listBuckets();
 
-Alternatively, you can provide an associative array with the following keys:
+Alternatively, you can provide an associative array with the following keys.
 
 logfn (callable)
     Function that is invoked with log messages. By default, PHP's ``echo``
-    function will be utilized.
+    function is used.
 
 stream_size (int)
-    When the size of a stream is greater than this number, the stream data will
-    not be logged. Set to ``0`` to not log any stream data.
+    When the size of a stream is greater than this number, the stream data is
+    not logged. Set to ``0`` to not log any stream data.
 
 scrub_auth (bool)
     Set to ``false`` to disable the scrubbing of auth data from the logged
-    messages (meaning your AWS Access Key ID and signature will be passed
+    messages (meaning your AWS access key ID and signature will be passed
     through to the ``logfn``).
 
 http (bool)
-    Set to ``false`` to disable the "debug" feature of lower level HTTP
-    handlers (e.g., verbose curl output).
+    Set to ``false`` to disable the "debug" feature of lower-level HTTP
+    handlers (e.g., verbose cURL output).
 
 auth_headers (array)
-    Set to a key-value mapping of headers you would like to replace mapped to
-    the value you would like to replace them with. These values are not used
+    Set to a key-value mapping of headers you want to replace mapped to
+    the value you want to replace them with. These values are not used
     unless ``scrub_auth`` is set to ``true``.
 
 auth_strings (array)
-    Set to a key-value mapping of regular expressions to mapped to their
-    replacements. These values will be used by the authentication data scrubber
+    Set to a key-value mapping of regular expressions to map to their
+    replacements. These values are used by the authentication data scrubber
     if ``scrub_auth`` is set to ``true``.
 
 .. code-block:: php
@@ -212,13 +212,13 @@ auth_strings (array)
         ]
     ]);
 
-    // Perform an operation to see the debug output.
+    // Perform an operation to see the debug output
     $s3->listBuckets();
 
 .. tip::
 
-    The debug output is extremely useful when diagnosing issues in the AWS
-    SDK for PHP. Please provide the debug output for an isolated failure case
+    The debug output is extremely useful when diagnosing issues in the |sdk-php|.
+    Please provide the debug output for an isolated failure case
     when opening issues on the SDK.
 
 .. _config_stats:
@@ -240,19 +240,19 @@ Set to ``true`` to gather transfer statistics on requests sent.
         'stats'   => true
     ]);
 
-    // Perform an operation.
+    // Perform an operation
     $result = $s3->listBuckets();
-    // Inspect the stats.
+    // Inspect the stats
     $stats = $result['@metadata']['transferStats'];
 
-Alternatively, you can provide an associative array with the following keys:
+Alternatively, you can provide an associative array with the following keys.
 
 retries (bool)
     Set to ``true`` to enable reporting on retries attempted. Retry statistics
-    are collected by default and returned
+    are collected by default and returned.
 
 http (bool)
-    Set to ``true`` to enable collecting statistics from lower level HTTP
+    Set to ``true`` to enable collecting statistics from lower-level HTTP
     adapters (e.g., values returned in GuzzleHttp\TransferStats). HTTP handlers
     must support an __on_transfer_stats option for this to have an effect. HTTP
     stats are returned as an indexed array of associative arrays; each
@@ -260,10 +260,10 @@ http (bool)
     client's HTTP handler. Disabled by default.
 
     If a request was retried, each request's transfer
-    stats will be returned, with
+    stats are returned, with
     ``$result['@metadata']['transferStats']['http'][0]`` containing the stats
     for the first request, ``$result['@metadata']['transferStats']['http'][1]``
-    containing the statistics for the second request, etc.
+    containing the statistics for the second request, and so on.
 
 timer (bool)
     Set to ``true`` to enable a command timer that reports the total wall clock
@@ -281,13 +281,13 @@ timer (bool)
         ]
     ]);
 
-    // Perform an operation.
+    // Perform an operation
     $result = $s3->listBuckets();
-    // Inspect the HTTP transfer stats.
+    // Inspect the HTTP transfer stats
     $stats = $result['@metadata']['transferStats']['http'];
-    // Inspect the number of retries attempted.
+    // Inspect the number of retries attempted
     $stats = $result['@metadata']['transferStats']['retries_attempted'];
-    // Inspect the total backoff delay inserted between retries.
+    // Inspect the total backoff delay inserted between retries
     $stats = $result['@metadata']['transferStats']['total_retry_delay'];
 
 endpoint
@@ -295,7 +295,7 @@ endpoint
 
 :Type: ``string``
 
-The full URI of the webservice. This is only required when connecting to a
+The full URI of the web service. This is only required when connecting to a
 custom endpoint (e.g., a local version of |S3| or
 :DDB-dg:`Amazon DynamoDB Local <Tools.DynamoDBLoca>`).
 
@@ -309,19 +309,19 @@ Here's an example of connecting to |DDBlong| Local:
         'endpoint' => 'http://localhost:8000'
     ]);
 
-See http://docs.aws.amazon.com/general/latest/gr/rande.html for a list of
-available regions and endpoints.
+See the `AWS General Reference <http://docs.aws.amazon.com/general/latest/gr/rande.html>`_ for a list of
+available AWS Regions and endpoints.
 
 endpoint_provider
 ~~~~~~~~~~~~~~~~~
 
 :Type: ``callable``
 
-An optional PHP callable that accepts a hash of options including a "service"
-and "region" key and returns ``NULL`` or a hash of endpoint data, of which the
+An optional PHP callable that accepts a hash of options, including a "service"
+and "region" key. It returns ``NULL`` or a hash of endpoint data, of which the
 "endpoint" key is required.
 
-Here's an example of how to create a minimal endpoint provider:
+Here's an example of how to create a minimal endpoint provider.
 
 .. code-block:: php
 
@@ -329,7 +329,7 @@ Here's an example of how to create a minimal endpoint provider:
         if ($params['service'] == 'foo') {
             return ['endpoint' => $params['region'] . '.example.com'];
         }
-        // Return null when the provider cannot handle the parameters.
+        // Return null when the provider cannot handle the parameters
         return null;
     });
 
@@ -338,12 +338,12 @@ handler
 
 :Type: ``callable``
 
-A handler that accepts a command object, request object and returns a promise
+A handler that accepts a command object and request object, and that returns a promise
 (``GuzzleHttp\Promise\PromiseInterface``) that is fulfilled with an
 ``Aws\ResultInterface`` object or rejected with an
 ``Aws\Exception\AwsException``. A handler does not accept a next handler as it
 is terminal and expected to fulfill a command. If no handler is provided, a
-default Guzzle handler will be utilized.
+default Guzzle handler is used.
 
 You can use the ``Aws\MockHandler`` to return mocked results or throw mock
 exceptions. You enqueue results or exceptions, and the MockHandler will dequeue
@@ -360,15 +360,15 @@ them in FIFO order.
 
     $mock = new MockHandler();
 
-    // Return a mocked result.
+    // Return a mocked result
     $mock->append(new Result(['foo' => 'bar']));
 
-    // You can provide a function to invoke. Here we throw a mock exception.
+    // You can provide a function to invoke; here we throw a mock exception
     $mock->append(function (CommandInterface $cmd, RequestInterface $req) {
         return new AwsException('Mock exception', $cmd);
     });
 
-    // Create a client with the mock handler.
+    // Create a client with the mock handler
     $client = new DynamoDbClient([
         'region'  => 'us-west-2',
         'version' => 'latest',
@@ -405,7 +405,7 @@ server. Use ``0`` to wait indefinitely (the default behavior).
 
     use Aws\DynamoDb\DynamoDbClient;
 
-    // Timeout after attempting to connect for 5 seconds.
+    // Timeout after attempting to connect for 5 seconds
     $client = new DynamoDbClient([
         'region'  => 'us-west-2',
         'version' => 'latest',
@@ -436,14 +436,14 @@ decode_content
 :Type: ``bool``
 
 Instructs the underlying HTTP handler to inflate the body of compressed
-responses. When not enabled, compressed response bodies may be inflated with a
+responses. When not enabled, compressed response bodies might be inflated with a
 ``GuzzleHttp\Psr7\InflateStream``.
 
 .. note::
 
-    Content decoding is enabled by default in the SDK's default HTTP handler,
-    and for backwards compatibility reasons this default cannot be changed. If
-    you store compressed files in S3, it is recommended that you disable content
+    Content decoding is enabled by default in the SDK's default HTTP handler.
+    For backward compatibility reasons, this default cannot be changed. If
+    you store compressed files in |S3|, we recommend that you disable content
     decoding at the S3 client level.
 
     .. code-block:: php
@@ -462,8 +462,8 @@ responses. When not enabled, compressed response bodies may be inflated with a
             'Key'    => 'massize_gzipped_file.tgz'
         ]);
 
-        $compressedBody = $result['Body']; // This content is still gzipped.
-        $inflatedBody = new InflateStream($result['Body']); // This is now readable.
+        $compressedBody = $result['Body']; // This content is still gzipped
+        $inflatedBody = new InflateStream($result['Body']); // This is now readable
 
 .. _http_delay:
 
@@ -500,7 +500,7 @@ accepts the following arguments:
     ]);
 
     // Apply the http option to a specific command using the "@http"
-    // command parameter.
+    // command parameter
     $result = $client->getObject([
         'Bucket' => 'my-bucket',
         'Key'    => 'large.mov',
@@ -524,10 +524,10 @@ proxy
 
 :Type: ``string|array``
 
-You can connect to an AWS service through a proxy using the ``proxy`` option.
+You can connect to an AWS service through a proxy by using the ``proxy`` option.
 
 * Provide a string value to connect to a proxy for all types of URIs. The proxy
-  string value can contain a scheme, username, and password. For example,
+  string value can contain a scheme, user name, and password. For example,
   ``"http://username:password@192.168.16.1:10"``.
 
 * Provide an associative array of proxy settings where the key is the
@@ -538,7 +538,7 @@ You can connect to an AWS service through a proxy using the ``proxy`` option.
 
     use Aws\DynamoDb\DynamoDbClient;
 
-    // Send requests through a single proxy.
+    // Send requests through a single proxy
     $client = new DynamoDbClient([
         'region'  => 'us-west-2',
         'version' => 'latest',
@@ -547,7 +547,7 @@ You can connect to an AWS service through a proxy using the ``proxy`` option.
         ]
     ]);
 
-    // Send requests through a a different proxy per/scheme
+    // Send requests through a different proxy per/scheme
     $client = new DynamoDbClient([
         'region'  => 'us-west-2',
         'version' => 'latest',
@@ -560,7 +560,7 @@ You can connect to an AWS service through a proxy using the ``proxy`` option.
     ]);
 
 You can use the ``HTTP_PROXY`` environment variable to configure an "http"
-protocol specific proxy, and the ``HTTPS_PROXY`` environment variable to
+protocol-specific proxy, and the ``HTTPS_PROXY`` environment variable to
 configure an "https" specific proxy.
 
 .. _http_sink:
@@ -582,9 +582,9 @@ downloaded to.
 
 .. note::
 
-    The SDK will download the response body to a PHP temp stream by default.
-    This means that the data will stay in memory until the size of the body
-    reaches 2MB, at which point the data will be written to a temporary file on
+    The SDK downloads the response body to a PHP temp stream by default.
+    This means that the data stays in memory until the size of the body
+    reaches 2 MB, at which point the data is written to a temporary file on
     disk.
 
 .. _http_sync:
@@ -595,7 +595,7 @@ synchronous
 :Type: ``bool``
 
 The ``synchronous`` option informs the underlying HTTP handler that you intend
-on blocking on the result.
+to block the result.
 
 .. _http_stream:
 
@@ -604,9 +604,9 @@ stream
 
 :Type: ``bool``
 
-Set to ``true`` to tell the underlying HTTP handler that you wish to stream the
-response body of a response from the web service rather than download it all
-up-front. For example, this option is relied upon in the |S3| stream
+Set to ``true`` to tell the underlying HTTP handler that you want to stream the
+response body of a response from the web service, rather than download it all
+up front. For example, this option is relied on in the |S3| stream
 wrapper class to ensure that the data is streamed.
 
 .. _http_timeout:
@@ -623,7 +623,7 @@ indefinitely (the default behavior).
 
     use Aws\DynamoDb\DynamoDbClient;
 
-    // Timeout after 5 seconds.
+    // Timeout after 5 seconds
     $client = new DynamoDbClient([
         'region'  => 'us-west-2',
         'version' => 'latest',
@@ -640,30 +640,30 @@ verify
 :Type: ``bool|string``
 
 You can customize the peer SSL/TLS certificate verification behavior of the SDK
-using the ``verify`` http option.
+using the ``verify`` ``http`` option.
 
 * Set to ``true`` to enable SSL/TLS peer certificate verification and use the
-  default CA bundle provided by operating system.
-* Set to ``false`` to disable peer certificate verification (this is
-  insecure!).
+  default CA bundle provided by the operating system.
+* Set to ``false`` to disable peer certificate verification. (This is
+  insecure!)
 * Set to a string to provide the path to a CA cert bundle to enable
   verification using a custom CA bundle.
 
 If the CA bundle cannot be found for your system and you receive an error,
-then you will need to provide the path to a CA bundle to the SDK. If you do not
-need a specific CA bundle, then Mozilla provides a commonly used CA bundle
-which can be downloaded `here <https://raw.githubusercontent.com/bagder/ca-bundle/master/ca-bundle.crt>`_
+you must provide the path to a CA bundle to the SDK. If you do not
+need a specific CA bundle, Mozilla provides a commonly used CA bundle
+which you can download `here <https://raw.githubusercontent.com/bagder/ca-bundle/master/ca-bundle.crt>`_
 (this is maintained by the maintainer of cURL). Once you have a CA bundle
 available on disk, you can set the ``openssl.cafile`` PHP ini setting to point
 to the path to the file, allowing you to omit the ``verify`` request option.
-Much more detail on SSL certificates can be found on the
+You can find much more detail on SSL certificates on the
 `cURL website <http://curl.haxx.se/docs/sslcerts.html>`_.
 
 .. code-block:: php
 
     use Aws\DynamoDb\DynamoDbClient;
 
-    // Use a custom CA bundle.
+    // Use a custom CA bundle
     $client = new DynamoDbClient([
         'region'  => 'us-west-2',
         'version' => 'latest',
@@ -672,7 +672,7 @@ Much more detail on SSL certificates can be found on the
         ]
     ]);
 
-    // Disable SSL/TLS verification.
+    // Disable SSL/TLS verification
     $client = new DynamoDbClient([
         'region'  => 'us-west-2',
         'version' => 'latest',
@@ -693,14 +693,14 @@ applied to the command, and returns a ``GuzzleHttp\Promise\PromiseInterface``
 object that is fulfilled with a ``Psr\Http\Message\ResponseInterface`` object
 or rejected with an array of the following exception data:
 
-* ``exception``: (``\Exception``) the exception that was encountered.
-* ``response``: (``Psr\Http\Message\ResponseInterface``) the response that was
+* ``exception`` - (``\Exception``) the exception that was encountered.
+* ``response`` - (``Psr\Http\Message\ResponseInterface``) the response that was
   received (if any).
-* ``connection_error``: (bool) set to ``true`` to mark the error as a
-  connection error. Setting this value to ``true`` will also allow the SDK to
-  automatically retry the operation if needed.
+* ``connection_error`` - (bool) set to ``true`` to mark the error as a
+  connection error. Setting this value to ``true`` also allows the SDK to
+  automatically retry the operation, if needed.
 
-The SDK will automatically convert the given ``http_handler`` into a normal
+The SDK automatically converts the given ``http_handler`` into a normal
 ``handler`` option by wrapping the provided ``http_handler`` with a
 ``Aws\WrappedHttpHandler`` object.
 
@@ -713,21 +713,24 @@ profile
 
 :Type: ``string``
 
-Allows you to specify which profile to use when credentials are created from
+Enables you to specify which profile to use when credentials are created from
 the AWS credentials file in your HOME directory. This setting overrides the
-``AWS_PROFILE`` environment variable. Note: Specifying "profile" will cause
-the "credentials" key to be ignored.
+``AWS_PROFILE`` environment variable.
+
+.. note::
+
+    Specifying "profile" will cause the "credentials" key to be ignored.
 
 .. code-block:: php
 
-    // Use the "production" profile from your credentials file.
+    // Use the "production" profile from your credentials file
     $ec2 = new Aws\Ec2\Ec2Client([
         'version' => '2014-10-01',
         'region'  => 'us-west-2',
         'profile' => 'production'
     ]);
 
-See :doc:`guide_credentials` for more information on configuring credentials and the
+See :doc:`guide_credentials` for more information about configuring credentials and the
 INI file format.
 
 .. _cfg_region:
@@ -738,12 +741,12 @@ region
 :Type: ``string``
 :Required: true
 
-Region to connect to. See http://docs.aws.amazon.com/general/latest/gr/rande.html
-for a list of available regions.
+AWS Region to connect to. See the `AWS General Reference <http://docs.aws.amazon.com/general/latest/gr/rande.html>`_
+for a list of available Regions.
 
 .. code-block:: php
 
-    // Set the region to the EU (Frankfurt) region.
+    // Set the Region to the EU (Frankfurt) Region
     $s3 = new Aws\S3\S3Client([
         'region'  => 'eu-central-1',
         'version' => '2006-03-01'
@@ -777,8 +780,8 @@ scheme
 :Type: ``string``
 :Default: ``string(5) "https"``
 
-URI scheme to use when connecting connect. The SDK will utilize "https"
-endpoints (i.e., utilize SSL/TLS connections) by default. You can attempt to
+URI scheme to use when connecting connect. The SDK uses "https"
+endpoints (i.e., uses SSL/TLS connections) by default. You can attempt to
 connect to a service over an unencrypted "http" endpoint by setting ``scheme``
 to "http".
 
@@ -790,8 +793,8 @@ to "http".
         'scheme'  => 'http'
     ]);
 
-See http://docs.aws.amazon.com/general/latest/gr/rande.html for a list of
-endpoints whether or not a service supports the ``http`` scheme.
+See the `AWS General Reference <http://docs.aws.amazon.com/general/latest/gr/rande.html>`_ for a list of
+endpoints and whether a service supports the ``http`` scheme.
 
 service
 ~~~~~~~
@@ -799,10 +802,10 @@ service
 :Type: ``string``
 :Required: true
 
-Name of the service to utilize. This value will be supplied by default when
+Name of the service to use. This value is supplied by default when
 using a client provided by the SDK (i.e., ``Aws\S3\S3Client``). This option
 is useful when testing a service that has not yet been published in the SDK
-but you have available on disk.
+but that you have available on disk.
 
 signature_provider
 ~~~~~~~~~~~~~~~~~~
@@ -810,9 +813,9 @@ signature_provider
 :Type: ``callable``
 
 A callable that accepts a signature version name (e.g., ``v4``), a
-service name, and region, and returns a ``Aws\Signature\SignatureInterface``
+service name, and AWS Region and returns a ``Aws\Signature\SignatureInterface``
 object or ``NULL`` if the provider is able to create a signer for the given
-parameters. This provider is used to create signers utilized by the client.
+parameters. This provider is used to create signers used by the client.
 
 There are various functions provided by the SDK in the
 ``Aws\Signature\SignatureProvider`` class that can be used to create customized
@@ -825,14 +828,14 @@ signature_version
 
 A string representing a custom signature version to use with a service
 (e.g., ``v4``, etc.). Per/operation signature version MAY override this
-requested signature version if needed.
+requested signature version, if needed.
 
 The following examples show how to configure an |S3| client to use
 `signature version 4 <http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html>`_:
 
 .. code-block:: php
 
-    // Set a preferred signature version.
+    // Set a preferred signature version
     $s3 = new Aws\S3\S3Client([
         'version'           => '2006-03-01',
         'region'            => 'us-west-2',
@@ -852,7 +855,7 @@ ua_append
 :Type: ``string|string[]``
 :Default: ``[]``
 
-A string or array of strings that will be added to the user-agent string passed
+A string or array of strings that are added to the user-agent string passed
 to the HTTP handler.
 
 validate
@@ -861,13 +864,13 @@ validate
 :Type: ``bool|array``
 :Default: ``bool(true)``
 
-Set to false to disable client-side parameter validation. You may find that
+Set to ``false`` to disable client-side parameter validation. You might find that
 turning validation off will slightly improve client performance, but the
 difference is negligible.
 
 .. code-block:: php
 
-    // Disable client-side validation.
+    // Disable client-side validation
     $s3 = new Aws\S3\S3Client([
         'version'  => '2006-03-01',
         'region'   => 'eu-west-1',
@@ -884,7 +887,7 @@ constraints:
 
 .. code-block:: php
 
-    // Validate only that required values are present.
+    // Validate only that required values are present
     $s3 = new Aws\S3\S3Client([
         'version'  => '2006-03-01',
         'region'   => 'eu-west-1',
@@ -899,7 +902,7 @@ version
 :Type: ``string``
 :Required: true
 
-The version of the web service to utilize (e.g., ``2006-03-01``).
+The version of the web service to use (e.g., ``2006-03-01``).
 
 A "version" configuration value is required. Specifying a version constraint
 ensures that your code will not be affected by a breaking change made to the
@@ -915,17 +918,17 @@ service. For example, when using |S3|, you can lock your API version to
 
 A list of available API versions can be found on each client's API
 documentation page: :aws-php-class:<index.html>.
-If you are unable to load a specific API version, then you may need to update
+If you are unable to load a specific API version, you might need to update
 your copy of the SDK.
 
-You may provide the string ``latest`` to the "version" configuration value to
-utilize the most recent available API version that your client's API provider
-can find (the default api_provider will scan the ``src/data`` directory of the
+You can provide the string ``latest`` to the "version" configuration value to
+use the most recent available API version that your client's API provider
+can find (the default api_provider scans the ``src/data`` directory of the
 SDK for API models).
 
 .. code-block:: php
 
-    // Use the latest version available.
+    // Use the latest version available
     $s3 = new Aws\S3\S3Client([
         'version' => 'latest',
         'region'  => 'us-east-1'
@@ -933,6 +936,6 @@ SDK for API models).
 
 .. warning::
 
-    Using ``latest`` in a production application is not recommended because
+    We do not recommend Using ``latest`` in a production application because
     pulling in a new minor version of the SDK that includes an API update could
     break your production application.

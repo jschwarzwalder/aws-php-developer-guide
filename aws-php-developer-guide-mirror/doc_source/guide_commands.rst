@@ -8,23 +8,23 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-===============
-Command Objects
-===============
+================================
+Command Objects in the |sdk-php|
+================================
 
-The SDK uses the `command pattern <http://en.wikipedia.org/wiki/Command_pattern>`_
+The |sdk-php| uses the `command pattern <http://en.wikipedia.org/wiki/Command_pattern>`_
 to encapsulate the parameters and handler that will be used to transfer an HTTP
 request at a later point in time.
 
-Implicit use of commands
+Implicit Use of Commands
 ------------------------
 
-If you examine any client class, you will see that the methods corresponding to
-API operations do not actually exist. They are implemented using the
+If you examine any client class, you can see that the methods corresponding to
+API operations don't actually exist. They are implemented using the
 ``__call()`` magic method. These pseudo-methods are actually shortcuts that
 encapsulate the SDK's use of command objects.
 
-You do not typically need to interact with command objects directly. When you
+You don't typically need to interact with command objects directly. When you
 call methods like ``Aws\S3\S3Client::putObject()``, the SDK actually creates an
 ``Aws\CommandInterface`` object based on the provided parameters, executes the
 command, and returns a populated ``Aws\ResultInterface`` object (or throws an
@@ -33,7 +33,7 @@ methods of a client (e.g., ``Aws\S3\S3Client::putObjectAsync()``): the client
 creates a command based on the provided parameters, serializes an HTTP request,
 initiates the request, and returns a promise.
 
-The following examples are functionally equivalent:
+The following examples are functionally equivalent.
 
 .. code-block:: php
 
@@ -48,14 +48,14 @@ The following examples are functionally equivalent:
         'Body'   => 'bar'
     ];
 
-    // Using operation methods creates command implicitly.
+    // Using operation methods creates a command implicitly
     $result = $s3Client->putObject($params);
 
-    // Using commands explicitly.
+    // Using commands explicitly
     $command = $s3Client->getCommand('PutObject', $params);
     $result = $s3Client->execute($command);
 
-Command parameters
+Command Parameters
 ------------------
 
 All commands support a few special parameters that are not part of a service's
@@ -64,14 +64,14 @@ API but instead control the SDK's behavior.
 ``@http``
 ~~~~~~~~~
 
-Using this parameter, it's possible to fine tune how the underlying HTTP handler
+Using this parameter, it's possible to fine-tune how the underlying HTTP handler
 executes the request. The options you can include in the ``@http`` parameter are
 the same as the ones you can set when you instantiate the client with the
 :ref:`"http" client option <config_http>`.
 
 .. code-block:: php
 
-    // Configures the command to be delayed by 500 milliseconds.
+    // Configures the command to be delayed by 500 milliseconds
     $command['@http'] = [
         'delay' => 500,
     ];
@@ -80,21 +80,23 @@ the same as the ones you can set when you instantiate the client with the
 ~~~~~~~~~~~~
 
 Like the :ref:`"retries" client option <config_retries>`, ``@retries`` controls
-how many times a command may be retried before it is considered to have failed.
-Set to ``0`` to disable retries.
+how many times a command can be retried before it is considered to have failed.
+Set it to ``0`` to disable retries.
 
 .. code-block:: php
 
     // Disable retries
     $command['@retries'] = 0;
 
-NB: If you have disabled retries on a client, you cannot selectively enable them
-on individual commands passed to that client.
+.. note::
 
-Creating command objects
+     If you have disabled retries on a client, you cannot selectively enable them
+     on individual commands passed to that client.
+
+Creating Command Objects
 ------------------------
 
-You can create a command using a client's ``getCommand()`` method. It does not
+You can create a command using a client's ``getCommand()`` method. It doesn't
 immediately execute or transfer an HTTP request, but is only executed when it is
 passed to the ``execute()`` method of the client. This gives you the opportunity
 to modify the command object before executing the command.
@@ -118,11 +120,11 @@ Command HandlerList
 -------------------
 
 When a command is created from a client, it is given a clone of the client's
-``Aws\HandlerList`` object. The command is a given of a **clone** of the
-client's handler list to allow a command to utilize custom middlewares and
-handlers that do not affect other commands executed by the client.
+``Aws\HandlerList`` object. The command is given a **clone** of the
+client's handler list to allow a command to use custom middlewares and
+handlers that do not affect other commands that the client executes.
 
-What this means is that you can use a different HTTP client per/command
+This means that you can use a different HTTP client per/command
 (e.g., ``Aws\MockHandler``) and add custom behavior per/command through
 middleware. The following example uses a ``MockHandler`` to create mock results
 instead of sending actual HTTP requests.
@@ -132,21 +134,21 @@ instead of sending actual HTTP requests.
     use Aws\Result;
     use Aws\MockHandler;
 
-    // Create a mock handler.
+    // Create a mock handler
     $mock = new MockHandler();
-    // Enqueue a mock result to the handler.
+    // Enqueue a mock result to the handler
     $mock->append(new Result(['foo' => 'bar']));
-    // Create a "ListObjects" command.
+    // Create a "ListObjects" command
     $command = $s3Client->getCommand('ListObjects');
-    // Associate the mock handler with the command.
+    // Associate the mock handler with the command
     $command->getHandlerList()->setHandler($mock);
     // Executing the command will use the mock handler, which will return the
-    // mocked result object.
+    // mocked result object
     $result = $client->execute($command);
 
     echo $result['foo']; // Outputs 'bar'
 
-In addition to changing the handler used by the command, you can also inject
+In addition to changing the handler that the command uses, you can also inject
 custom middleware to the command. The following example uses the ``tap``
 middleware, which functions as an observer in the handler list.
 
@@ -160,7 +162,7 @@ middleware, which functions as an observer in the handler list.
     $list = $command->getHandlerList();
 
     // Create a middleware that just dumps the command and request that is
-    // about to be sent.
+    // about to be sent
     $middleware = Middleware::tap(
         function (CommandInterface $command, RequestInterface $request) {
             var_dump($command->toArray());
@@ -172,7 +174,7 @@ middleware, which functions as an observer in the handler list.
     // step is the last step before transferring an HTTP request.
     $list->append('sign', $middleware);
 
-    // Now transfer the command and see the var_dump data.
+    // Now transfer the command and see the var_dump data
     $s3Client->execute($command);
 
 .. _command_pool:
@@ -180,7 +182,7 @@ middleware, which functions as an observer in the handler list.
 CommandPool
 -----------
 
-The ``Aws\CommandPool`` allows you to execute commands concurrently using a
+The ``Aws\CommandPool`` enables you to execute commands concurrently using an
 iterator that yields ``Aws\CommandInterface`` objects. The ``CommandPool``
 ensures that a constant number of commands are executed concurrently while
 iterating over the commands in the pool (as commands complete, more are
@@ -194,7 +196,7 @@ Here's a very simple example of just sending a few commands using a
     use Aws\S3\S3Client;
     use Aws\CommandPool;
 
-    // Create the client.
+    // Create the client
     $client = new S3Client([
         'region'  => 'us-standard',
         'version' => '2006-03-01'
@@ -235,7 +237,7 @@ objects, so we will need to map over the ``SplFileInfo`` objects to return
     use Aws\ResultInterface;
     use GuzzleHttp\Promise\PromiseInterface;
 
-    // Create the client.
+    // Create the client
     $client = new S3Client([
         'region'  => 'us-standard',
         'version' => '2006-03-01'
@@ -244,7 +246,7 @@ objects, so we will need to map over the ``SplFileInfo`` objects to return
     $fromDir = '/path/to/dir';
     $toBucket = 'my-bucket';
 
-    // Create an iterator that yields files from a directory.
+    // Create an iterator that yields files from a directory
     $files = new DirectoryIterator($fromDir);
 
     // Create a generator that converts the SplFileInfo objects into
@@ -252,12 +254,12 @@ objects, so we will need to map over the ``SplFileInfo`` objects to return
     // yields files and the name of the bucket to upload the files to.
     $commandGenerator = function (\Iterator $files, $bucket) use ($client) {
         foreach ($files as $file) {
-            // Skip "." and ".." files.
+            // Skip "." and ".." files
             if ($file->isDot()) {
                 continue;
             }
             $filename = $file->getPath() . '/' . $file->getFilename();
-            // Yield a command that will be executed by the pool.
+            // Yield a command that will be executed by the pool
             yield $client->getCommand('PutObject', [
                 'Bucket' => $bucket,
                 'Key'    => $file->getBaseName(),
@@ -266,19 +268,19 @@ objects, so we will need to map over the ``SplFileInfo`` objects to return
         }
     };
 
-    // Now create the generator using the files iterator.
+    // Now create the generator using the files iterator
     $commands = $commandGenerator($files, $toBucket);
 
-    // Create a pool and provide an optional array of configuration.
+    // Create a pool and provide an optional array of configuration
     $pool = new CommandPool($client, $commands, [
-        // Only send 5 files at a time (this is set to 25 by default).
+        // Only send 5 files at a time (this is set to 25 by default)
         'concurrency' => 5,
-        // Invoke this function before executing each command.
+        // Invoke this function before executing each command
         'before' => function (CommandInterface $cmd, $iterKey) {
             echo "About to send {$iterKey}: "
                 . print_r($cmd->toArray(), true) . "\n";
         },
-        // Invoke this function for each successful transfer.
+        // Invoke this function for each successful transfer
         'fulfilled' => function (
             ResultInterface $result,
             $iterKey,
@@ -286,7 +288,7 @@ objects, so we will need to map over the ``SplFileInfo`` objects to return
         ) {
             echo "Completed {$iterKey}: {$result}\n";
         },
-        // Invoke this function for each failed transfer.
+        // Invoke this function for each failed transfer
         'rejected' => function (
             AwsException $reason,
             $iterKey,
@@ -302,34 +304,34 @@ objects, so we will need to map over the ``SplFileInfo`` objects to return
     // Force the pool to complete synchronously
     $promise->wait();
 
-    // Or you can chain then calls off of the pool
+    // Or you can chain the calls off of the pool
     $promise->then(function() { echo "Done\n"; });
 
-CommandPool configuration
+CommandPool Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The ``Aws\CommandPool`` constructor accepts various configuration options.
 
-concurrency
-    (callable|int) Maximum number of commands to execute concurrently.
+concurrency (callable|int)
+    Maximum number of commands to execute concurrently.
     Provide a function to resize the pool dynamically. The function will be
     provided the current number of pending requests and is expected to return
     an integer representing the new pool size limit.
 
-before
-    (callable) function to invoke before sending each command. The before
+before (callable)
+    Function to invoke before sending each command. The ``before``
     function accepts the command and the key of the iterator of the command.
-    You can mutate the command as needed in the before function before sending
+    You can mutate the command as needed in the ``before`` function before sending
     the command.
 
-fulfilled
-    (callable) Function to invoke when a promise is fulfilled. The function is
-    provided the result object, id of the iterator that the result came from,
-    and the aggregate promise that can be resolved/rejected if you need to
+fulfilled (callable)
+    Function to invoke when a promise is fulfilled. The function is
+    provided the result object, ID of the iterator that the result came from,
+    and the aggregate promise that can be resolved or rejected if you need to
     short-circuit the pool.
 
-rejected
-    (callable) Function to invoke when a promise is rejected. The function is
-    provided an AwsException object, id of the iterator that the exception came
-    from, and the aggregate promise that can be resolved/rejected if you need
+rejected (callable)
+    Function to invoke when a promise is rejected. The function is
+    provided an ``AwsException`` object, ID of the iterator that the exception came
+    from, and the aggregate promise that can be resolved or rejected if you need
     to short-circuit the pool.

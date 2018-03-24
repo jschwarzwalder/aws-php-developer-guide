@@ -13,20 +13,20 @@
 =============================
 
 The |sdk-php| provides a generic multi-region client that can be used with
-any service, which allows users to specify to which region to send a command by
+any service. This enables users to specify which AWS Region to send a command to by
 providing an ``@region`` input parameter to any command. In addition, the SDK
 provides a multi-region client for |S3| that responds intelligently to
-specific S3 errors and reroutes commands accordingly. This allows users to use
-the same client to talk to multiple regions -- a particularly useful feature for
-users of the :doc:`s3-stream-wrapper` whose buckets reside in multiple
-regions.
+specific S3 errors and reroutes commands accordingly. This enables users to use
+the same client to talk to multiple Regions. This is a particularly useful feature for
+users of the :doc:`s3-stream-wrapper`, whose buckets reside in multiple
+Regions.
 
 Basic Usage
 -----------
 
 The basic usage pattern of an |S3| client is the same whether using a
 standard S3 client or its multi-region counterpart. The only usage difference at
-the command level is that a region may be specified using the ``@region`` input
+the command level is that an AWS Region can be specified using the ``@region`` input
 parameter.
 
 .. code-block:: php
@@ -37,15 +37,15 @@ parameter.
     // You can also use the client constructor
     $s3Client = new \Aws\S3\S3MultiRegionClient([
         'version' => 'latest',
-        // Any region specified while creating the client will be used as the
-        // default region
+        // Any Region specified while creating the client will be used as the
+        // default Region
         'region' => 'us-west-2',
     ]);
 
     // Get the contents of a bucket
     $objects = $s3Client->listObjects(['Bucket' => $bucketName]);
 
-    // If you would like to specify the region to which to send a command, do so
+    // If you would like to specify the Region to which to send a command, do so
     // by providing an @region parameter
     $objects = $s3Client->listObjects([
         'Bucket' => $bucketName,
@@ -57,13 +57,13 @@ parameter.
     When using the multi-region S3 client, you will not encounter any permanent
     redirect exceptions. A standard S3 client will throw an instance of
     ``Aws\S3\Exception\PermanentRedirectException`` when a command is sent to
-    the wrong region; a multi-region client will instead redispatch the command
-    to the correct region.
+    the wrong Region. A multi-region client will instead redispatch the command
+    to the correct Region.
 
 Bucket Region Cache
 -------------------
 
-|S3| multi-region clients maintain an internal cache of the regions in
+|S3| multi-region clients maintain an internal cache of the AWS Regions in
 which given buckets reside. By default, each client has its own in-memory cache.
 To share a cache between clients or processes, supply an instance of
 ``Aws\CacheInterface`` as the ``bucket_region_cache`` option to your

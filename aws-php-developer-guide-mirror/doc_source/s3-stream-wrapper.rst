@@ -8,18 +8,15 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-========================
+===================
 |S3| Stream Wrapper
-========================
+===================
 
-Introduction
-------------
+The |S3| stream wrapper enables you to store and retrieve data from |S3|
+using built-in PHP functions, such as ``file_get_contents``, ``fopen``,
+``copy``, ``rename``, ``unlink``, ``mkdir``, and ``rmdir``.
 
-The |S3| stream wrapper allows you to store and retrieve data from Amazon
-S3 using built-in PHP functions like ``file_get_contents``, ``fopen``,
-``copy``, ``rename``, ``unlink``, ``mkdir``, ``rmdir``, etc.
-
-You need to register the |S3| stream wrapper in order to use it:
+You need to register the |S3| stream wrapper to use it.
 
 .. code-block:: php
 
@@ -28,8 +25,8 @@ You need to register the |S3| stream wrapper in order to use it:
     // Register the stream wrapper from an S3Client object
     $client->registerStreamWrapper();
 
-This allows you to access buckets and objects stored in |S3| using the
-``s3://`` protocol. The "s3" stream wrapper accepts strings that contain a
+This enables you to access buckets and objects stored in |S3| using the
+``s3://`` protocol. The |S3| stream wrapper accepts strings that contain a
 bucket name followed by a forward slash and an optional object key or prefix:
 ``s3://<bucket>[/<key-or-prefix>]``.
 
@@ -38,15 +35,15 @@ bucket name followed by a forward slash and an optional object key or prefix:
     The stream wrapper is designed for working with objects and buckets on which
     you have at least read permission. This means that your user should have
     permission to execute ``ListBucket`` on any buckets and ``GetObject`` on any
-    object with which you need to interact. For use cases where you do not have
-    this permission level, it is recommended that you use S3 client operations
+    object with which you need to interact. For use cases where you don't have
+    this permission level, we recommended that you use S3 client operations
     directly.
 
-Downloading data
+Downloading Data
 ----------------
 
-You can grab the contents of an object using ``file_get_contents``. Be careful
-with this function though; it loads the entire contents of the object into
+You can grab the contents of an object by using ``file_get_contents``. However, be careful
+with this function; it loads the entire contents of the object into
 memory.
 
 .. code-block:: php
@@ -63,7 +60,7 @@ from |S3|.
     if ($stream = fopen('s3://bucket/key', 'r')) {
         // While the stream is still open
         while (!feof($stream)) {
-            // Read 1024 bytes from the stream
+            // Read 1,024 bytes from the stream
             echo fread($stream, 1024);
         }
         // Be sure to close the stream resource when you're done with it
@@ -72,14 +69,18 @@ from |S3|.
 
 .. note::
 
-    File write errors are only returned when a call to ``fflush`` is made. These errors are not returned when an un-flushed ``fclose`` is called. The return value for ``fclose`` will be true if it closes the stream, regardless of any errors in response to its internal ``fflush``. These errors are also not returned when calling ``file_put_contents`` due to how it is implemented by PHP.
+    File write errors are only returned when a call to ``fflush`` is made.
+    These errors are not returned when an unflushed ``fclose`` is called.
+    The return value for ``fclose`` will be ``true`` if it closes the stream,
+    regardless of any errors in response to its internal ``fflush``. These errors are also not
+    returned when calling ``file_put_contents`` because of how PHP implements it.
 
-Opening Seekable streams
+Opening Seekable Streams
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Streams opened in "r" mode only allow data to be read from the stream, and are
 not seekable by default. This is so that data can be downloaded from |S3|
-in a truly streaming manner where previously read bytes do not need to be
+in a truly streaming manner, where previously read bytes do not need to be
 buffered into memory. If you need a stream to be seekable, you can pass
 ``seekable`` into the `stream context options <http://www.php.net/manual/en/function.stream-context-create.php>`_
 of a function.
@@ -100,18 +101,18 @@ of a function.
         fclose($stream);
     }
 
-Opening seekable streams allows you to seek only to bytes that were previously
-read. You cannot skip ahead to bytes that have not yet been read from the
-remote server. In order to allow previously read data to recalled, data is
+Opening seekable streams enables you to seek only to bytes that were previously
+read. You can't skip ahead to bytes that have not yet been read from the
+remote server. To allow previously read data to recalled, data is
 buffered in a PHP temp stream using a stream decorator. When the amount of
-cached data exceed 2MB, the data in the temp stream will transfer from memory
+cached data exceeds 2 MB, the data in the temp stream transfers from memory
 to disk. Keep this in mind when downloading large files from |S3| using
 the ``seekable`` stream context setting.
 
-Uploading data
+Uploading Data
 --------------
 
-Data can be uploaded to |S3| using ``file_put_contents()``.
+You can upload data to |S3| using ``file_put_contents()``.
 
 .. code-block:: php
 
@@ -120,7 +121,7 @@ Data can be uploaded to |S3| using ``file_put_contents()``.
 You can upload larger files by streaming data using ``fopen()`` and a "w", "x",
 or "a" stream access mode. The |S3| stream wrapper does **not** support
 simultaneous read and write streams (e.g. "r+", "w+", etc). This is because the
-HTTP protocol does not allow simultaneous reading and writing.
+HTTP protocol doesn't allow simultaneous reading and writing.
 
 .. code-block:: php
 
@@ -130,39 +131,43 @@ HTTP protocol does not allow simultaneous reading and writing.
 
 .. note::
 
-    Because |S3| requires a Content-Length header to be specified before
-    the payload of a request is sent, the data to be uploaded in a PutObject
+    |S3| requires a Content-Length header to be specified before
+    the payload of a request is sent. Therefore, the data to be uploaded in a ``PutObject``
     operation is internally buffered using a PHP temp stream until the stream
     is flushed or closed.
 
 .. note::
 
-    File write errors are only returned when a call to ``fflush`` is made. These errors are not returned when an un-flushed ``fclose`` is called. The return value for ``fclose`` will be true if it closes the stream, regardless of any errors in response to its internal ``fflush``. These errors are also not returned when calling ``file_put_contents`` due to how it is implemented by PHP.
+    File write errors are returned only when a call to ``fflush`` is made.
+    These errors are not returned when an unflushed ``fclose`` is called.
+    The return value for ``fclose`` will be ``true`` if it closes the stream,
+    regardless of any errors in response to its internal ``fflush``.
+    These errors are also not returned when calling ``file_put_contents`` because of how PHP implements it.
 
-fopen modes
+fopen Modes
 -----------
 
 PHP's `fopen() <http://php.net/manual/en/function.fopen.php>`_ function
-requires that a ``$mode`` option is specified. The mode option specifies
-whether or not data can be read or written to a stream and if the file must
+requires that you specify a ``$mode`` option. The mode option specifies
+whether data can be read or written to a stream, and whether the file must
 exist when opening a stream. The |S3| stream wrapper supports the
-following modes:
+following modes.
 
 = =============================================================================
-r A read only stream where the file must already exist.
-w A write only stream. If the file already exists it will be overwritten.
-a A write only stream. If the file already exists, it will be downloaded to a
+r A read-only stream where the file must already exist.
+w A write-only stream. If the file already exists, it will be overwritten.
+a A write-only stream. If the file already exists, it will be downloaded to a
   temporary stream and any writes to
   the stream will be appended to any previously uploaded data.
-x A write only stream. An error is raised if the file does not already exist.
+x A write-only stream. An error is raised if the file does not already exist.
 = =============================================================================
 
-Other object functions
+Other Object Functions
 ----------------------
 
 Stream wrappers allow many different built-in PHP functions to work with a
-custom system like |S3|. Here are some of the functions that the |S3|
-stream wrapper allows you to perform with objects stored in |S3|.
+custom system such as |S3|. Here are some of the functions that the |S3|
+stream wrapper enables you to perform with objects stored in |S3|.
 
 =============== ================================================================
 unlink()        Delete an object from a bucket.
@@ -221,19 +226,19 @@ rename()        Rename an object by copying the object then deleting the
 
 .. note::
 
-    While ``copy`` will generally work with the S3 stream wrapper, some errors
-    may not be properly reported due to the internals of the ``copy`` function
-    in PHP. It is recommended that you use an instance of :aws-php-class:`Aws\S3\ObjectCopier
+    Although ``copy`` will generally work with the |S3| stream wrapper, some errors
+    might not be properly reported due to the internals of the ``copy`` function
+    in PHP. We recommend that you use an instance of :aws-php-class:`Aws\S3\ObjectCopier
     </class-Aws.S3.ObjectCopier.html>`
     instead.
 
-Working with buckets
+Working with Buckets
 --------------------
 
-You can modify and browse |S3| buckets similar to how PHP allows the
-modification and traversal of directories on your filesystem.
+You can modify and browse |S3| buckets similarly to how PHP allows the
+modification and traversal of directories on your file system.
 
-Here's an example of creating a bucket:
+Here's an example of creating a bucket.
 
 .. code-block:: php
 
@@ -246,7 +251,7 @@ operation.
 
 .. code-block:: php
 
-    // Create a bucket in the EU region
+    // Create a bucket in the EU (Ireland) Region
     mkdir('s3://bucket', stream_context_create([
         's3' => ['LocationConstraint' => 'eu-west-1']
     ]);
@@ -262,14 +267,14 @@ You can delete buckets using the ``rmdir()`` function.
 
     A bucket can only be deleted if it is empty.
 
-Listing the contents of a bucket
+Listing the Contents of a Bucket
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `opendir() <http://www.php.net/manual/en/function.opendir.php>`_,
+You can use the `opendir() <http://www.php.net/manual/en/function.opendir.php>`_,
 `readdir() <http://www.php.net/manual/en/function.readdir.php>`_,
 `rewinddir() <http://www.php.net/manual/en/function.rewinddir.php>`_, and
 `closedir() <http://php.net/manual/en/function.closedir.php>`_ PHP functions
-can be used with the |S3| stream wrapper to traverse the contents of a
+with the |S3| stream wrapper to traverse the contents of a
 bucket. You can pass in parameters available to the
 `ListObjects <http://docs.aws.amazon.com/aws-sdk-php/latest/class-Aws.S3.S3Client.html#_listObjects>`_
 operation as custom stream context options to the ``opendir()`` function to
@@ -299,7 +304,7 @@ You can recursively list each object and prefix in a bucket using PHP's
     }
 
 Another way to list the contents of a bucket recursively that incurs fewer
-HTTP requests, is to use the ``Aws\recursive_dir_iterator($path, $context = null)``
+HTTP requests is to use the ``Aws\recursive_dir_iterator($path, $context = null)``
 function.
 
 .. code-block:: php
@@ -312,19 +317,19 @@ function.
         echo $filename . "\n";
     }
 
-Stream context options
+Stream Context Options
 ----------------------
 
-You can customize the client used by the stream wrapper or the cache used to
-cache previously loaded information about buckets and keys by passing in custom
+You can customize the client used by the stream wrapper, or the cache used to
+cache previously loaded information about buckets and keys, by passing in custom
 stream context options.
 
 The stream wrapper supports the following stream context options on every
-operation:
+operation.
 
 ``client``
     The ``Aws\AwsClientInterface`` object to use to execute commands.
 
 ``cache``
     An instance of ``Aws\CacheInterface`` to use to cache previously obtained
-    file stats. The stream wrapper will use an in-memory LRU cache by default.
+    file stats. By default, the stream wrapper will use an in-memory LRU cache.

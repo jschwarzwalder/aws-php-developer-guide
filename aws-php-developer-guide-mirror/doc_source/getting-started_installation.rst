@@ -8,18 +8,18 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-===============================
-Installing the AWS SDK for PHP
-===============================
+========================
+Installing the |sdk-php|
+========================
 
-You can use any of the following methods to install the  |sdk-php|.
+You can install the |sdk-php| by using:
 
-* Using Composer
-* Using the Phar
-* Using the Zip File
+* Composer
+* The prepackaged phar in the SDK
+* The ZIP file in the SDK
 
-Installing with Composer
------------------------
+Installing by Using Composer
+----------------------------
 
 `Composer <http://getcomposer.org>`_ is the recommended way to install
 the |sdk-php|. Composer is a tool for PHP that manages and installs the dependencies of your project.
@@ -47,12 +47,12 @@ the |sdk-php|. Composer is a tool for PHP that manages and installs the dependen
 For more information on how to install Composer, configure autoloading, and follow other best
 practices for defining dependencies, see `getcomposer.org <http://getcomposer.org>`_.
 
-Installing with the Packaged Phar
----------------------------------
+Installing by Using the Packaged Phar
+-------------------------------------
 
-Each release of the |sdk-php| includes a pre-packaged phar (PHP archive) containing all the classes
+Each release of the |sdk-php| includes a prepackaged phar (PHP archive) that contains all the classes
 and dependencies you need to run the SDK. Additionally, the phar automatically registers a class
-autoloader for the SDK for PHP and all its dependencies.
+autoloader for the |sdk-php| and all its dependencies.
 
 You can `download the packaged phar <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.phar>`_
 and include it in your scripts.
@@ -66,23 +66,23 @@ and include it in your scripts.
 
 .. note::
 
-    Using PHP with the Suhosin patch is not recommended, but common on Ubuntu and Debian distributions.
-    In this case, you may need to enable the use of phars in the suhosin.ini. Without doing this,
+    Using PHP with the Suhosin patch is not recommended, but is common on Ubuntu and Debian distributions.
+    In this case, you might need to enable the use of phars in the suhosin.ini. If you don't do this,
     including a phar file in your code will cause a silent failure. To modify suhosin.ini, add the
     following line.
 
     ::
 
-    suhosin.executor.include.whitelist = phar
+        suhosin.executor.include.whitelist = phar
 
-Installing via Zip
-------------------
+Installing by Using the ZIP file
+--------------------------------
 
-The |sdk-php| includes a zip file containing all the classes and dependencies you need to run the SDK.
-Additionally, the zip file includes a class autoloader for the SDK for PHP and its dependencies.
+The |sdk-php| includes a ZIP file containing all the classes and dependencies you need to run the SDK.
+Additionally, the ZIP file includes a class autoloader for the |sdk-php| and its dependencies.
 
-To install the SDK,  `download the zip file <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.zip>`_,
-hen unzip it into your project at a location of your choice. Then include the autoloader as follows in your scripts.
+To install the SDK, `download the .zip file <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.zip>`_,
+and then extract it into your project at a location you choose. Then include the autoloader in your scripts, as follows.
 
 ::
 

@@ -8,13 +8,13 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-=====================
-Working with Services
-=====================
+=============================================
+Working with AWS Services Using the |sdk-php|
+=============================================
 
-Some of the services supported by the |sdk-php| include additional
-features beyond executing operations on an API. This guide documents there
-higher level features per service.
+Some of the AWS services supported by the |sdk-php| include additional
+features beyond executing operations on an API. This guide documents these
+higher-level features per service.
 
 .. toctree::
     :maxdepth: 2

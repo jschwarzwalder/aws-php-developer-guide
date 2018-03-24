@@ -8,18 +8,18 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-=========================================
-Signing Custom |CS| Domain Requests
-=========================================
+=======================================
+Signing Custom |CSlong| Domain Requests
+=======================================
 
-|CS| Domain requests can be customized beyond what is supported by the AWS
-SDK for PHP. In cases where you need to make custom requests to domains
-protected by IAM authentication, you can use the SDK's credential providers and
+|CS| domain requests can be customized beyond what is supported by the |sdk-php|.
+In cases where you need to make custom requests to domains
+protected by |IAM| authentication, you can use the SDK's credential providers and
 signers to sign any :aws-php-class:`PSR-7 request <class-Psr.Http.Message.RequestInterface.html>`.
 
 For example, if you're following :CS-dg:`Cloud Search's Getting Started guide <getting-started>`
 and want to use an IAM-protected domain for :CS-dg:`Step 3 <getting-started-search>`,
-you would need to sign and execute your request as follows:
+you would need to sign and execute your request as follows.
 
 .. code-block:: php
 
@@ -28,7 +28,7 @@ you would need to sign and execute your request as follows:
     use GuzzleHttp\Client;
     use GuzzleHttp\Psr7\Request;
 
-    // Prepare a |CS|Domain request
+    // Prepare a CloudSearch domain request
     $request = new Request(
         'GET',
         'https://<your-domain>.<region-of-domain>.cloudsearch.amazonaws.com/2013-01-01/search?q=star+wars&return=title'

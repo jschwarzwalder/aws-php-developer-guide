@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-========================
+===================
 |S3| Pre-Signed URL
-========================
+===================
 
 You can authenticate certain types of requests by passing the required
 information as query-string parameters instead of using the Authorization HTTP
@@ -20,16 +20,16 @@ a "pre-signed" request and encode it as a URL that an end-user's browser can
 retrieve. Additionally, you can limit a pre-signed request by specifying an
 expiration time.
 
-Creating a presigned request
-----------------------------
+Creating a Pre-Signed Request
+-----------------------------
 
-You can get the pre-signed URL to an |S3| object using the
+You can get the pre-signed URL to an |S3| object by using the
 ``Aws\S3\S3Client::createPresignedRequest()`` method. This method accepts an
 ``Aws\CommandInterface`` object and expires timestamp and returns a pre-signed
 ``Psr\Http\Message\RequestInterface`` object. You can retrieve the pre-signed
 URL of the object using the ``getUri()`` method of the request.
 
-The most common scenario is creating a pre-signed URL to GET an object:
+The most common scenario is creating a pre-signed URL to GET an object.
 
 .. code-block:: php
 
@@ -45,11 +45,11 @@ The most common scenario is creating a pre-signed URL to GET an object:
 
     $request = $s3Client->createPresignedRequest($cmd, '+20 minutes');
 
-Creating a presigned URL
-------------------------
+Creating a Pre-Signed URL
+-------------------------
 
 You can create pre-signed URLs for any |S3| operation using the
-``getCommand`` method for creating a command object and then calling the
+``getCommand`` method for creating a command object, and then calling the
 ``createPresignedRequest()`` method with the command. When ultimately sending
 the request, be sure to use the same method and the same headers as the
 returned request.
@@ -66,11 +66,11 @@ returned request.
     // Get the actual presigned-url
     $presignedUrl = (string) $request->getUri();
 
-Getting the URL to an object
+Getting the URL to an Object
 ----------------------------
 
 If you only need the public URL to an object stored in an |S3| bucket,
-then you can use the ``Aws\S3\S3Client::getObjectUrl()`` method. This method
+you can use the ``Aws\S3\S3Client::getObjectUrl()`` method. This method
 returns an unsigned URL to the given bucket and key.
 
 .. code-block:: php

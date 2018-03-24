@@ -8,36 +8,33 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-========================
-|DDB| Session Handler
-========================
-
-Introduction
-------------
+===============================
+Using the |DDB| Session Handler
+===============================
 
 The |DDB| Session Handler is a custom session handler for PHP that
-allows developers to use |DDBlong| as a session store. Using DynamoDB
+enables developers to use |DDBlong| as a session store. Using |DDB|
 for session storage alleviates issues that occur with session handling in a
 distributed web application by moving sessions off of the local file system and
-into a shared location. |DDB| is fast, scalable, easy to setup, and handles
+into a shared location. |DDB| is fast, scalable, easy to set up, and handles
 replication of your data automatically.
 
 The |DDB| Session Handler uses the ``session_set_save_handler()`` function
 to hook |DDB| operations into PHP's `native session functions <http://www.php.net/manual/en/ref.session.php>`_
-to allow for a true drop in replacement. This includes support for features like
-session locking and garbage collection which are a part of PHP's default
+to allow for a true drop in replacement. This includes support for features such as
+session locking and garbage collection, which are a part of PHP's default
 session handler.
 
-For more information on the |DDBlong| service, please visit the
+For more information about the |DDB| service, see the
 :DDB:`Amazon DynamoDB homepage <index>`.
 
 Basic Usage
 -----------
 
-1. Register the handler
-~~~~~~~~~~~~~~~~~~~~~~~
+Step 1: Register the Handler
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step is to instantiate and register the session handler.
+First, instantiate and register the session handler.
 
 .. code-block:: php
 
@@ -49,21 +46,21 @@ The first step is to instantiate and register the session handler.
 
     $sessionHandler->register();
 
-2. Create a table for storing your sessions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 2. Create a Table to Store Your Sessions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Before you can actually use the session handler, you need to create a table in
-which to store the sessions. This can be done ahead of time through the
+which to store the sessions. You can this ahead of time by using the
 `AWS Console for Amazon DynamoDB <https://console.aws.amazon.com/dynamodb/home>`_,
-or using the SDK.
+or by using the |sdk-php|.
 
-3. Use PHP sessions like normal
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3. Use PHP Sessions as You Normally Would
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once the session handler is registered and the table exists, you can write to
 and read from the session using the ``$_SESSION`` superglobal, just like you
 normally do with PHP's default session handler. The |DDB| Session Handler
-encapsulates and abstracts the interactions with |DDBlong| and enables
+encapsulates and abstracts the interactions with |DDB| and enables
 you to simply use PHP's native session functions and interface.
 
 .. code-block:: php
@@ -81,8 +78,8 @@ you to simply use PHP's native session functions and interface.
 Configuration
 -------------
 
-You may configure the behavior of the session handler using the following
-options. All options are optional, but you should make sure to understand
+You can configure the behavior of the session handler using the following
+options. All options are optional, but you should be sure to understand
 what the defaults are.
 
 ``table_name``
@@ -92,32 +89,32 @@ what the defaults are.
     The name of the hash key in the |DDB| sessions table. This defaults to ``'id'``.
 
 ``session_lifetime``
-    The lifetime of an inactive session before it should be garbage collected. If it is not  provided, then the actual
+    The lifetime of an inactive session before it should be garbage collected. If it isn't provided, the actual
     lifetime value that will be used is ``ini_get('session.gc_maxlifetime')``.
 
 ``consistent_read``
-    Whether or not the session handler should use consistent reads for the ``GetItem`` operation. This defaults
-    to ``true``.
+    Whether the session handler should use consistent reads for the ``GetItem`` operation. The default
+    is ``true``.
 
 ``locking``
-    Whether or not to use session locking. This defaults to ``false``.
+    Whether to use session locking. The default is ``false``.
 
 ``batch_config``
-    Configuration used to batch deletes during garbage collection. These options are passed directly into 
+    Configuration used to batch deletes during garbage collection. These options are passed directly into
     :aws-php-class:`DynamoDB WriteRequestBatch <class-Aws.DynamoDb.WriteRequestBatch.html>` objects.
     You must manually trigger garbage collection via ``SessionHandler::garbageCollect()``.
 
 ``max_lock_wait_time``
-    Maximum time (in seconds) that the session handler should wait to acquire a lock before giving up. This defaults
-    to ``10`` and is only used with session locking.
+    Maximum time (in seconds) that the session handler should wait to acquire a lock before giving up. The default
+    to is ``10`` and is only used with session locking.
 
 ``min_lock_retry_microtime``
-    Minimum time (in microseconds) that the session handler should wait between attempts to acquire a lock. This
-    defaults to ``10000`` and is only used with session locking.
+    Minimum time (in microseconds) that the session handler should wait between attempts to acquire a lock. The
+    default is ``10000`` and is only used with session locking.
 
 ``max_lock_retry_microtime``
-    Maximum time (in microseconds) that the session handler should wait between attempts to acquire a lock. This
-    defaults to ``50000`` and is only used with session locking.
+    Maximum time (in microseconds) that the session handler should wait between attempts to acquire a lock. The
+    default is ``50000`` and is only used with session locking.
 
 To configure the Session Handler, you must specify the configuration options when you instantiate the handler. The
 following code is an example with all of the configuration options specified.
@@ -139,16 +136,16 @@ following code is an example with all of the configuration options specified.
 Pricing
 -------
 
-Aside from data storage and data transfer fees, the costs associated with using |DDBlong| are calculated based on
+Aside from data storage and data transfer fees, the costs associated with using |DDB| are calculated based on
 the provisioned throughput capacity of your table (see the :DDB:`Amazon DynamoDB pricing details
-<pricing>`). Throughput is measured in units of Write Capacity and Read Capacity. The
+<pricing>`). Throughput is measured in units of write capacity and read capacity. The
 |DDBlong| homepage says:
 
     A unit of read capacity represents one strongly consistent read per second (or two eventually consistent reads per
     second) for items as large as 4 KB. A unit of write capacity represents one write per second for items as large as
     1 KB.
 
-Ultimately, the throughput and the costs required for your sessions table is going to correlate with your expected
+Ultimately, the throughput and the costs required for your sessions table will correlate with your expected
 traffic and session size. The following table explains the amount of read and write operations that are performed on
 your |DDB| table for each of the session functions.
 
@@ -175,10 +172,10 @@ your |DDB| table for each of the session functions.
 Session Locking
 ---------------
 
-The |DDB| Session Handler supports pessimistic session locking in order to mimic the behavior of PHP's default
-session handler. By default the |DDB| Session Handler has this feature *turned off* since it can become a performance
-bottleneck and drive up costs, especially when an application accesses the session when using ajax requests or iframes.
-You should carefully consider whether or not your application requires session locking or not before enabling it.
+The |DDB| Session Handler supports pessimistic session locking to mimic the behavior of PHP's default
+session handler. By default, the |DDB| Session Handler has this feature *turned off* because it can become a performance
+bottleneck and drive up costs, especially when an application accesses the session when using Ajax requests or iframes.
+Carefully consider whether your application requires session locking before enabling it.
 
 To enable session locking, set the ``'locking'`` option to ``true`` when you instantiate the ``SessionHandler``.
 
@@ -195,13 +192,13 @@ Garbage Collection
 ------------------
 
 The |DDB| Session Handler supports session garbage collection by using a series of ``Scan`` and ``BatchWriteItem``
-operations. Due to the nature of how the ``Scan`` operation works and in order to find all of the expired sessions and
+operations. Due to the nature of how the ``Scan`` operation works, and to find all of the expired sessions and
 delete them, the garbage collection process can require a lot of provisioned throughput.
 
-For this reason, we do not support automated garbage collection . A better practice is to schedule the garbage
-collection to occur during an off-peak time where a burst of consumed throughput will not disrupt the rest of the
+For this reason, we do not support automated garbage collection. A better practice is to schedule the garbage
+collection to occur during an off-peak time when a burst of consumed throughput will not disrupt the rest of the
 application. For example, you could have a nightly cron job trigger a script to run the garbage collection. This script
-would need to do something like the following:
+would need to do something like the following.
 
 .. code-block:: php
 
@@ -219,7 +216,7 @@ would need to do something like the following:
 
 You can also use the ``'before'`` option within ``'batch_config'`` to introduce delays on the ``BatchWriteItem``
 operations that are performed by the garbage collection process. This will increase the amount of time it takes the
-garbage collection to complete, but it can help you spread out the requests made by the session handler in order to
+garbage collection to complete, but it can help you spread out the requests made by the |DDB| Session Handler to
 help you stay close to or within your provisioned throughput capacity during garbage collection.
 
 .. code-block:: php
@@ -238,13 +235,13 @@ help you stay close to or within your provisioned throughput capacity during gar
 Best Practices
 --------------
 
-#. Create your sessions table in a region that is geographically closest to or in the same region as your application
-   servers. This will ensure the lowest latency between your application and |DDB| database.
-#. Choose the provisioned throughput capacity of your sessions table carefully, taking into account the expected traffic
+#. Create your sessions table in an AWS Region that is geographically closest to or in the same Region as your application
+   servers. This ensures the lowest latency between your application and |DDB| database.
+#. Choose the provisioned throughput capacity of your sessions table carefully. Take into account the expected traffic
    to your application and the expected size of your sessions.
-#. Monitor your consumed throughput through the AWS Management Console or with |CWlong| and adjust your
+#. Monitor your consumed throughput through the AWS Management Console or with |CWlong|, and adjust your
    throughput settings as needed to meet the demands of your application.
-#. Keep the size of your sessions small (ideally less than 1 KB). Small sessions will perform better and require less
+#. Keep the size of your sessions small (ideally less than 1 KB). Small sessions perform better and require less
    provisioned throughput capacity.
 #. Do not use session locking unless your application requires it.
 #. Instead of using PHP's built-in session garbage collection triggers, schedule your garbage collection via a cron job,
@@ -253,12 +250,12 @@ Best Practices
 Required IAM Permissions
 ------------------------
 
-To use the |DDB| session handler, your :doc: `configured credentials <guide_credentials>`
+To use the |DDB| SessionHhandler, your :doc: `configured credentials <guide_credentials>`
 must have permission to use the |DDB| table that :ref: `you created in a previous step <create-a-table-for-storing-your-sessions>`.
 The following IAM policy contains the minimum permissions that you need. To use this policy, replace the Resource value
 with the |arnlong| (ARN) of the table that you created previously. For more information about creating and
 attaching IAM policies, see :iam-ug:`Managing IAM Policies <access_policies_manage>`
-in the *AWS Identity and Access Management User Guide*.
+in the |IAM-ug|.
 
 .. code-block:: js
 

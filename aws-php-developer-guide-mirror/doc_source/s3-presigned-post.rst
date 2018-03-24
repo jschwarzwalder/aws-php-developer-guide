@@ -8,19 +8,20 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-=========================
-|S3| Presigned POSTs
-=========================
+=====================
+|S3| Pre-Signed POSTs
+=====================
 
-Much like pre-signed URLs, pre-signed POSTs allow you to give write access to a
-user without giving them AWS credentials. Presigned POST forms can be created
+Much like pre-signed URLs, pre-signed POSTs enable you to give write access to a
+user without giving them AWS credentials. Pre-signed POST forms can be created
 with the help of an instance of :aws-php-class:`Aws\S3\PostObjectV4 </class-Aws.S3.PostObjectV4.html>`.
 
 To create an instance of ``PostObjectV4``, you must provide an instance of
 ``Aws\S3\S3Client``, a bucket, an associative array of form input fields,
-an array of policy conditions referred in `POST policy document
+an array of policy conditions (see `Policy Construction
 <http://docs.aws.amazon.com/AmazonS3/latest/dev/HTTPPOSTForms.html#HTTPPOSTConstructPolicy>`_
-and expiration time string for the policy(optional, 1 hour by default):
+in the |S3-dg|)
+and an expiration time string for the policy (optional, one hour by default).
 
 .. code-block:: php
 
@@ -55,6 +56,6 @@ and expiration time string for the policy(optional, 1 hour by default):
     $formAttributes = $postObject->getFormAttributes();
 
     // Get form input fields. This will include anything set as a form input in
-    // the constructor, the provided JSON policy, your AWS Access Key ID, and an
+    // the constructor, the provided JSON policy, your AWS access key ID, and an
     // auth signature.
     $formInputs = $postObject->getFormInputs();
