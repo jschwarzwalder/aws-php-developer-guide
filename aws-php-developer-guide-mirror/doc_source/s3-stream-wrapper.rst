@@ -245,8 +245,8 @@ Here's an example of creating a bucket.
     mkdir('s3://bucket');
 
 You can pass in stream context options to the ``mkdir()`` method to modify how
-the bucket is created using the parameters available to the `CreateBucket
-<http://docs.aws.amazon.com/aws-sdk-php/latest/class-Aws.S3.S3Client.html#_createBucket>`_
+the bucket is created using the parameters available to the :aws-php-class: `CreateBucket
+</class-Aws.S3.S3Client.html#_createBucket>`
 operation.
 
 .. code-block:: php
@@ -275,8 +275,8 @@ You can use the `opendir() <http://www.php.net/manual/en/function.opendir.php>`_
 `rewinddir() <http://www.php.net/manual/en/function.rewinddir.php>`_, and
 `closedir() <http://php.net/manual/en/function.closedir.php>`_ PHP functions
 with the |S3| stream wrapper to traverse the contents of a
-bucket. You can pass in parameters available to the
-`ListObjects <http://docs.aws.amazon.com/aws-sdk-php/latest/class-Aws.S3.S3Client.html#_listObjects>`_
+bucket. You can pass in parameters available to the :aws-php-class:
+`ListObjects <class-Aws.S3.S3Client.html#_listObjects>`
 operation as custom stream context options to the ``opendir()`` function to
 modify how objects are listed.
 

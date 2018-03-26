@@ -24,19 +24,18 @@ built-in credential providers and signers of the |sdk-php|.
 Signing an |ES| Request
 -----------------------
 
-|ES| uses `Signature Version 4 <http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html>`_.
+|ES| uses :AWS-gr:`Signature Version 4 <signature-version-4>`.
 This means that you need to sign requests against the service's signing
 name (``es``, in this case) and the AWS Region of your |ES| domain. A full list
-of Regions supported by |ES| can be found `on the AWS Regions and Endpoints
-page <http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticsearch-service-regions>`_ in the |AWS-gr|.
+of Regions supported by |ES| can be found :AWS-gr:`on the AWS Regions and Endpoints
+page <rande>` in the |AWS-gr|.
 However, in this example, we'll sign requests against an |ES| domain in the
 ``us-west-2`` region.
 
 You'll need to provide credentials, which you can do either with the SDK's
 default provider chain or with any form of credentials described in
-:doc:`guide_credentials`. You'll also need a `PSR-7 request
-<http://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Psr.Http.Message.RequestInterface.html>`_
-(assumed in the code below to be named ``$psr7Request``).
+:doc:`guide_credentials`. You'll also need a :aws-php-class:`PSR-7 request
+</class-Psr.Http.Message.RequestInterface.html>` (assumed in the code below to be named ``$psr7Request``).
 
 .. code-block:: php
 

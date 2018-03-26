@@ -39,7 +39,7 @@ Start to use |AC9| by signing in to the |AC9| console as an |IAMlong| (|IAM|) en
 has access permissions for |AC9|.
 
 To set up an |IAM| entity in your AWS account to access |AC9|, and to sign in to the |AC9| console, see
-`Team Setup for AWS Cloud9 <https://docs.aws.amazon.com/cloud9/latest/user-guide/setup.html>`_ in the |AC9-ug|.
+:AC9-ug: `Team Setup for AWS Cloud9 <setup>` in the |AC9-ug|.
 
 .. _cloud9-php-environment:
 
@@ -49,7 +49,7 @@ Step 2: Set up Your |AC9| Development Environment
 After you sign in to the |AC9| console, use the console to create an |AC9| development environment.
 After you create the environment, |AC9| opens the IDE for that environment.
 
-See `Creating an Environment in AWS Cloud9 <https://docs.aws.amazon.com/cloud9/latest/user-guide/create-environment.html>`_ in the |AC9-ug| for details.
+See :AC9-ug: `Creating an Environment in AWS Cloud9 <create-environment>` in the |AC9-ug| for details.
 
 .. note::
 

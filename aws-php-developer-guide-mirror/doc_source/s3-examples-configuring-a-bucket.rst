@@ -18,7 +18,7 @@ Configuring |S3| Buckets
 
 Cross-origin resource sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain. With CORS support in |S3|, you can build rich client-side web applications with |S3| and selectively allow cross-origin access to your |S3| resources.
 
-For more information about using CORS configuration with an |S3| bucket, see `Cross-Origin Resource Sharing (CORS) <http://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html>`_.
+For more information about using CORS configuration with an |S3| bucket, see :S3-dg:`Cross-Origin Resource Sharing (CORS) <cors>`.
 
 The examples below show how to:
 
@@ -37,7 +37,8 @@ Get the CORS Configuration
 
 Create a php file with following code. First create an AWS.S3 client service, then call the getBucketCors method  and specify the bucket whose CORS configuration you want. 
 
-The only parameter required is the name of the selected bucket. If the bucket currently has a CORS configuration, that configuration is returned by Amazon S3 as a `CORSRules object <https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#shape-corsrule>`_. 
+The only parameter required is the name of the selected bucket. If the bucket currently has a CORS configuration, that configuration is returned by Amazon S3 as a 
+:aws-php-class: `CORSRules object </api-s3-2006-03-01.html#shape-corsrule>`. 
 
 **Imports**
 
@@ -54,7 +55,7 @@ The only parameter required is the name of the selected bucket. If the bucket cu
 Set the CORS Configuration
 --------------------------
 
-Create a php file with following code. First create an AWS.S3 client service, then call the putBucketCors method and specify the bucket whose CORS configuration you want to set, and the CORSConfiguration as a `CORSRules JSON object <https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-s3-2006-03-01.html#shape-corsrule>`_.  
+Create a php file with following code. First create an AWS.S3 client service, then call the putBucketCors method and specify the bucket whose CORS configuration you want to set, and the CORSConfiguration as a :aws-php-class: `CORSRules JSON object </api-s3-2006-03-01.html#shape-corsrule>`.  
 
 **Imports**
 

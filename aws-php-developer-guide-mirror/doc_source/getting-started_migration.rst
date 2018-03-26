@@ -104,8 +104,7 @@ changes until you are ready to explicitly update your configuration.
     code.
 
     Not all services are available in all AWS Regions. You can find a list of
-    available Regions using the `Regions and Endpoints
-    <http://docs.aws.amazon.com/general/latest/gr/rande.html>`_ reference.
+    available Regions using the :AWS-gr:`Regions and Endpoints <rande>` reference.
 
     For services that are available only via a single, global endpoint (e.g., |R53long|,
     |IAMlong|, and |CFLong|), you should instantiate clients with their configured
@@ -182,7 +181,7 @@ To provide consistency in how the SDK parses the result of an API
 operation, |ELClong|, |RDS|, and |RSlong| now have an
 additional wrapping element on some API responses.
 
-For example, calling the |RDS| `DescribeEngineDefaultParameters <http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultParameters.html>`_
+For example, calling the |RDS| :RDS-api:`DescribeEngineDefaultParameters <API_DescribeEngineDefaultParameters>`
 result in version 3 now includes a wrapping "EngineDefaults" element. In
 version 2, this element was not present.
 

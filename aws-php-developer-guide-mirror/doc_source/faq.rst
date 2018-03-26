@@ -47,9 +47,8 @@ What Region versions are available for a client?
 -------------------------------------------------
 
 A ``region`` option is required when creating a client, and is specified using
-a string value. For a list of available AWS Regions and endpoints, see
-`AWS Regions and Endpoints <http://docs.aws.amazon.com/general/latest/gr/rande.html>`_
-in the |AWS-gr|.
+a string value. For a list of available AWS Regions and endpoints, see 
+:AWS-gr:`AWS Regions and Endpoints <rande>` in the |AWS-gr|.
 
 .. code-block:: php
 
@@ -104,10 +103,8 @@ See :ref:`map-request` for more information.
 How can I sign an arbitrary request?
 ------------------------------------
 
-You can sign an arbitrary `PSR-7 request
-<https://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Psr.Http.Message.RequestInterface.html>`_
-using the SDK's `SignatureV4 class
-<https://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.Signature.SignatureV4.html>`_.
+You can sign an arbitrary :aws-php-class: `PSR-7 request </class-Psr.Http.Message.RequestInterface.html>`
+using the SDK's :aws-php-class: `SignatureV4 class </class-Aws.Signature.SignatureV4.html>`.
 
 See :doc:`service_cloudsearch-custom-requests` for a full example of how to do
 this.
@@ -159,7 +156,7 @@ How do I disable SSL?
 
 You can disable SSL by setting the ``scheme`` parameter in a client factory
 method to 'http'. It is important to note that not all services support
-``http`` access. See `AWS Regions and Endpoints <http://docs.aws.amazon.com/general/latest/gr/rande.html>`_
+``http`` access. See :AWS-gr:`AWS Regions and Endpoints <rande>`
 in the |AWS-gr| for a list of regions, endpoints, and the supported schemes.
 
 .. code-block:: php

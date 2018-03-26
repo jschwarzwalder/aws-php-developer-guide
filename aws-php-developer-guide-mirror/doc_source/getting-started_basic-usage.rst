@@ -139,8 +139,8 @@ Executing Service Operations
 ----------------------------
 
 You can execute a service operation by calling the method of the same name on
-a client object. For example, to perform the |S3| `PutObject operation
-<http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html>`_, you must
+a client object. For example, to perform the |S3| :S3-api:`PutObject operation
+<RESTObjectPUT>`, you must
 call the ``Aws\S3\S3Client::putObject()`` method.
 
 **Imports**

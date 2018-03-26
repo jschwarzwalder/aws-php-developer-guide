@@ -18,9 +18,7 @@ with the help of an instance of :aws-php-class:`Aws\S3\PostObjectV4 </class-Aws.
 
 To create an instance of ``PostObjectV4``, you must provide an instance of
 ``Aws\S3\S3Client``, a bucket, an associative array of form input fields,
-an array of policy conditions (see `Policy Construction
-<http://docs.aws.amazon.com/AmazonS3/latest/dev/HTTPPOSTForms.html#HTTPPOSTConstructPolicy>`_
-in the |S3-dg|)
+an array of policy conditions (see :s3-dg:`Policy Construction <HTTPPOSTForms>` in the |S3-dg|)
 and an expiration time string for the policy (optional, one hour by default).
 
 .. code-block:: php

@@ -309,7 +309,7 @@ Here's an example of connecting to |DDBlong| Local:
         'endpoint' => 'http://localhost:8000'
     ]);
 
-See the `AWS General Reference <http://docs.aws.amazon.com/general/latest/gr/rande.html>`_ for a list of
+See the :AWS-gr:`AWS General Reference <rande>` for a list of
 available AWS Regions and endpoints.
 
 endpoint_provider
@@ -741,7 +741,7 @@ region
 :Type: ``string``
 :Required: true
 
-AWS Region to connect to. See the `AWS General Reference <http://docs.aws.amazon.com/general/latest/gr/rande.html>`_
+AWS Region to connect to. See the :AWS-gr:`AWS General Reference <rande>`
 for a list of available Regions.
 
 .. code-block:: php
@@ -793,7 +793,7 @@ to "http".
         'scheme'  => 'http'
     ]);
 
-See the `AWS General Reference <http://docs.aws.amazon.com/general/latest/gr/rande.html>`_ for a list of
+See the :AWS-gr:`AWS General Reference <rande>` for a list of
 endpoints and whether a service supports the ``http`` scheme.
 
 service
@@ -830,8 +830,8 @@ A string representing a custom signature version to use with a service
 (e.g., ``v4``, etc.). Per/operation signature version MAY override this
 requested signature version, if needed.
 
-The following examples show how to configure an |S3| client to use
-`signature version 4 <http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html>`_:
+The following examples show how to configure an |S3| client to use :AWS-gr:`signature version 4 <signature-version-4>`
+signature-version-4:
 
 .. code-block:: php
 
