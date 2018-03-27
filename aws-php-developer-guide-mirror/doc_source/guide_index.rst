@@ -13,7 +13,7 @@ Configuring the |sdk-php|
 =========================
 
 The |sdk-php| consists of various features and components. Each of the
-following guides describe the components that are used in the SDK.
+following topics describe the components that are used in the SDK.
 
 .. toctree::
     :maxdepth: 1

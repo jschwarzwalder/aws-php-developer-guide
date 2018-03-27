@@ -12,10 +12,13 @@
 Basic Use of the |sdk-php|
 ==========================
 
-This guide focuses on basic usage patterns of the |sdk-php|. This
-guide assumes that you have already :doc:`downloaded and installed the SDK
-<getting-started_installation>` and retrieved your `AWS access keys
-<http://aws.amazon.com/developers/access-keys/>`_.
+This topic focuses on basic usage patterns of the |sdk-php|.
+
+Prerequisites
+-------------
+
+-  :doc:`Download and installed the SDK <getting-started_installation>` 
+-  Retrieve your `AWS access keys <http://aws.amazon.com/developers/access-keys/>`_.
 
 Including the SDK in Your Code
 ------------------------------
@@ -35,15 +38,15 @@ Using the phar             ``require '/path/to/aws.phar';``
 Using the ZIP              ``require '/path/to/aws-autoloader.php';``
 ========================== =====================================================
 
-In this guide, we show examples that assume the Composer
+In this topic, we show examples that assume the Composer
 installation method. If you're using a different installation method, you
 can refer back to this section to find the correct ``require`` code to use.
 
 Usage Summary
 -------------
 
-The basic usage pattern of the SDK is that you instantiate a **Client** object
-for the AWS service you want to interact with. Client objects have methods that
+To use the SDK to interact with an AWS service, instantiate a **Client** object. 
+Client objects have methods that
 correspond one to one with operations in the service's API. To execute a
 particular operation, you call its corresponding method. This method either returns an
 array-like **Result** object on success, or throws an **Exception** on failure.
@@ -132,8 +135,7 @@ shallow-merged onto root-level values).
     ``Sdk`` class automatically uses the same HTTP client for each SDK
     client, allowing SDK clients for different services to perform nonblocking
     HTTP requests. If the SDK clients don't use the same HTTP client, then
-    HTTP requests sent by the SDK client might cause inter-service promise
-    orchestration to block.
+    HTTP requests sent by the SDK client might block promise orchestration between services.
 
 Executing Service Operations
 ----------------------------
@@ -248,7 +250,7 @@ data into an associative array structure. It normalizes some aspects of the data
 based on its knowledge of the specific service and the underlying response
 structure.
 
-You can access data from the result object like an associative PHP array.
+You can access data from the AWS\Result object like an associative PHP array.
 
 **Imports**
 
@@ -317,8 +319,8 @@ about the failure, including the request-id, error code, and error type.
    :language: php
 
 
-Async Error Handling
-~~~~~~~~~~~~~~~~~~~~
+Asynchronous Error Handling
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Exceptions are not thrown when sending asynchronous requests. Instead, you must
 use the ``then()`` or ``otherwise()`` method of the returned promise to

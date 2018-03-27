@@ -58,7 +58,7 @@ Paginator
     results. For example, |S3|'s ``ListObjects`` operation only returns up
     to 1000 objects at a time. Operations like these require making subsequent
     requests with token (or marker) parameters to retrieve the entire set of
-    results. Paginators are a feature of the SDK that act as an abstraction over
+    results. paginators are a feature of the SDK that act as an abstraction over
     this process to make it easier for developers to use paginated APIs. They
     are accessed via the ``getPaginator()`` method of the client. See the
     :doc:`guide_paginators` guide for more details.

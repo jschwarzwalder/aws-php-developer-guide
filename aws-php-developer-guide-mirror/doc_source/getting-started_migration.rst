@@ -9,10 +9,10 @@
    limitations under the License.
 
 =========================================
-Upgrading from Version 2 of the |sdk-php|
+Migrating from Version 2 of the |sdk-php|
 =========================================
 
-This guide shows how to migrate your code to use version 3 of the |sdk-php|
+This topic shows how to migrate your code to use version 3 of the |sdk-php|
 and how the new version differs from version 2 of the SDK.
 
 .. note::
@@ -29,27 +29,34 @@ dependencies, improve performance, and adopt the latest PHP standards.
 
 What's New in Version 3?
 ------------------------
+Version 3 of the |sdk-php| follows the `PSR-4 and PSR-7 standards <http://php-fig.org>`_ and 
+will follow the `SemVer <http://semver.org/>`_ standard going forward. 
 
-- Follows the `PSR-4 and PSR-7 standards <http://php-fig.org>`_
-- Decoupled HTTP layer
-
-  - `Guzzle 6 <http://guzzlephp.org>`_ is used by default to send requests, but
-    Guzzle 5 is also supported out of the box.
-  - The SDK will work in environments where cURL is not available.
-  - Custom HTTP handlers are also supported.
-
-- Asynchronous requests
-
-  - Features like *waiters* and *multipart uploaders* can also be used
-    asynchronously.
-  - Asynchronous workflows can be created using *promises* and *coroutines*.
-  - Performance of concurrent or batched requests is improved.
+Other new features include 
 
 - Middleware system for customizing service client behavior
 - Flexible *paginators* for iterating through paginated results
 - Ability to query data from *result* and *paginator* objects with *JMESPath*
 - Easy debugging via the ``'debug'`` configuration option
-- Strictly follows the `SemVer <http://semver.org/>`_ standard going forward
+
+
+ Decoupled HTTP layer
+ ~~~~~~~~~~~~~~~~~~~~
+
+- `Guzzle 6 <http://guzzlephp.org>`_ is used by default to send requests, but
+  Guzzle 5 is also supported.
+- The SDK will work in environments where cURL is not available.
+- Custom HTTP handlers are also supported.
+
+Asynchronous requests
+~~~~~~~~~~~~~~~~~~~~~
+
+- Features like *waiters* and *multipart uploaders* can also be used
+  asynchronously.
+- Asynchronous workflows can be created using *promises* and *coroutines*.
+- Performance of concurrent or batched requests is improved.
+
+
 
 What's Different from Version 2?
 --------------------------------
@@ -72,7 +79,7 @@ The dependencies of the SDK have changed in this version.
   with other PSR-7 compliant packages.
 - Guzzle's PSR-7 implementation (``guzzlehttp/psr7``) provides an implementation
   of the interfaces in PSR-7, and several helpful classes and
-  functions to go along with it. Both the SDK and Guzzle 6 rely on this package
+  functions. Both the SDK and Guzzle 6 rely on this package
   heavily.
 - Guzzle's `Promises/A+ <https://promisesaplus.com>`_ implementation
   (``guzzlehttp/promises``) is used throughout the SDK and Guzzle to provide
@@ -151,9 +158,9 @@ The client configuration options in version 3 of the |sdk-php| have changed a li
 from version 2. See the :doc:`guide_configuration` page for a description of all
 supported options.
 
-.. note::
+.. important::
 
-    One important change is that ``'key'`` and ``'secret'`` are no longer valid
+    In version 3, ``'key'`` and ``'secret'`` are no longer valid
     options at the root level, but you can pass them in as part of the
     ``'credentials'`` option. One reason we made this was to discourage
     developers from hard-coding their AWS credentials into their projects.
@@ -166,7 +173,7 @@ Version 3 of the |sdk-php| introduces the ``Aws\Sdk`` object as a replacement to
 to manage shared configuration options across multiple clients.
 
 Although the ``Aws`` class in version 2 of the SDK worked like a service locator (it always
-returned the same instance of a client), the ``Sdk`` class returns a new
+returned the same instance of a client), the ``Sdk`` class in version 3 returns a new
 instance of a client every time it's used.
 
 The ``Sdk`` object also doesn't support the same configuration file format from version 2 of
@@ -327,21 +334,21 @@ stopped documenting it over a year ago. In version 3, this feature is removed
 completely. You should retrieve your client objects from the ``Aws\Sdk`` object
 and use them as object instances, not static classes.
 
-Paginators Supersede Iterators
+Paginators Supersede  iterators
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Version 2 of the |sdk-php| had a feature named *Iterators*. These were objects that
+Version 2 of the |sdk-php| had a feature named * iterators*. These were objects that
 were used for iterating over paginated results. One complaint we had about these
 was that they were not flexible enough, because the iterator only emitted
 specific values from each result. If there were other values you needed from
 the results, you could only retrieve them via event listeners.
 
-In version 3, Iterators have been replaced with :doc:`Paginators <guide_paginators>`.
-Their purpose is similar, but Paginators are more flexible. This is because they
+In version 3,  iterators have been replaced with :doc:`Paginators <guide_paginators>`.
+Their purpose is similar, but paginators are more flexible. This is because they
 yield result objects instead of values from a response.
 
-The following examples show how Paginators are different from Iterators,
-by demonstrating how to retrieve paginated results for the S3 ListObjects operation
+The following examples show how paginators are different from  iterators,
+by demonstrating how to retrieve paginated results for the ``S3 ListObjects`` operation
 in both version 2 and version 3.
 
 .. code-block:: php
@@ -376,8 +383,8 @@ expressions to extract data more easily from the result set.
 .. note::
 
     The ``getIterator()`` method is still supported to allow for a smooth
-    transition to version 3, but we encourage you to upgrade your code to use
-    Paginators.
+    transition to version 3, but we encourage you to migrate your code to use
+    paginators.
 
 Many Higher-Level Abstractions Have Changed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

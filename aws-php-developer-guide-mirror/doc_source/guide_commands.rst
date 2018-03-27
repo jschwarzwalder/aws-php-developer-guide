@@ -121,11 +121,11 @@ Command HandlerList
 
 When a command is created from a client, it is given a clone of the client's
 ``Aws\HandlerList`` object. The command is given a **clone** of the
-client's handler list to allow a command to use custom middlewares and
+client's handler list to allow a command to use custom middleware and
 handlers that do not affect other commands that the client executes.
 
-This means that you can use a different HTTP client per/command
-(e.g., ``Aws\MockHandler``) and add custom behavior per/command through
+This means that you can use a different HTTP client per command
+(e.g., ``Aws\MockHandler``) and add custom behavior per command through
 middleware. The following example uses a ``MockHandler`` to create mock results
 instead of sending actual HTTP requests.
 
@@ -332,6 +332,6 @@ fulfilled (callable)
 
 rejected (callable)
     Function to invoke when a promise is rejected. The function is
-    provided an ``AwsException`` object, ID of the iterator that the exception came
+    provided an ``Aws\Exception`` object, ID of the iterator that the exception came
     from, and the aggregate promise that can be resolved or rejected if you need
     to short-circuit the pool.

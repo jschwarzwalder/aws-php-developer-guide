@@ -243,7 +243,7 @@ filter projection.
 
     $data = $result->search('Volumes[?starts_with(AvailabilityZone, 'us-') == `true`]');
 
-Extracting Data from Paginators
+Extracting Data from paginators
 -------------------------------
 
 As you know from the :doc:`guide_paginators` guide, ``Aws\ResultPaginator`` objects
@@ -253,7 +253,7 @@ essentially implementing a `flat-map <http://martinfowler.com/articles/collectio
 over the iterator in which the result of a JMESPath expression is the map
 function.
 
-Let's say you want to create an ``Iterator`` that yields only objects from a
+Let's say you want to create an `` iterator`` that yields only objects from a
 bucket that are larger than 1 MB. This can be achieved by first creating a
 ``ListObjects`` paginator and then applying a ``search()`` function to the
 paginator, creating a flat-mapped iterator over the paginated data.

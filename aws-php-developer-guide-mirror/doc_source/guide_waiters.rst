@@ -155,7 +155,7 @@ resources, and do something with the first waiter that successfully resolved?
     $any = Promise\any($promises)
         ->then(function (CommandInterface $command) {
             // This is invoked with the command that succeeded in polling the
-            // resource. Here was can know which bucket won the race.
+            // resource. Here we can know which bucket won the race.
             echo "The {$command['Bucket']} waiter completed first!\n";
         });
 

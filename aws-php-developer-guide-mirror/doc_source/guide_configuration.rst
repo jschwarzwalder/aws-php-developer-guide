@@ -62,7 +62,7 @@ If you don't provide a ``credentials`` option, the SDK attempts to load
 credentials from your environment in the following order:
 
 1. Load credentials from :ref:`environment variables <environment_credentials>`.
-2. Load credentials from a :ref:`credentials ini file <credential_profiles>`.
+2. Load credentials from a :ref:`credentials .ini file <credential_profiles>`.
 3. Load credentials from an :ref:`IAM instance profile <instance_profile_credentials>`.
 
 You can provide an associative array of "key", "secret", and "token" key-value
@@ -309,7 +309,7 @@ Here's an example of connecting to |DDBlong| Local:
         'endpoint' => 'http://localhost:8000'
     ]);
 
-See the :AWS-gr:`AWS General Reference <rande>` for a list of
+See the `AWS General Reference <http://docs.aws.amazon.com/general/latest/gr/rande.html>`_ for a list of
 available AWS Regions and endpoints.
 
 endpoint_provider
@@ -547,7 +547,7 @@ You can connect to an AWS service through a proxy by using the ``proxy`` option.
         ]
     ]);
 
-    // Send requests through a different proxy per/scheme
+    // Send requests through a different proxy per scheme
     $client = new DynamoDbClient([
         'region'  => 'us-west-2',
         'version' => 'latest',
@@ -645,7 +645,7 @@ using the ``verify`` ``http`` option.
 * Set to ``true`` to enable SSL/TLS peer certificate verification and use the
   default CA bundle provided by the operating system.
 * Set to ``false`` to disable peer certificate verification. (This is
-  insecure!)
+  not secure!)
 * Set to a string to provide the path to a CA cert bundle to enable
   verification using a custom CA bundle.
 
@@ -654,7 +654,7 @@ you must provide the path to a CA bundle to the SDK. If you do not
 need a specific CA bundle, Mozilla provides a commonly used CA bundle
 which you can download `here <https://raw.githubusercontent.com/bagder/ca-bundle/master/ca-bundle.crt>`_
 (this is maintained by the maintainer of cURL). Once you have a CA bundle
-available on disk, you can set the ``openssl.cafile`` PHP ini setting to point
+available on disk, you can set the ``openssl.cafile`` PHP .ini setting to point
 to the path to the file, allowing you to omit the ``verify`` request option.
 You can find much more detail on SSL certificates on the
 `cURL website <http://curl.haxx.se/docs/sslcerts.html>`_.
@@ -731,7 +731,7 @@ the AWS credentials file in your HOME directory. This setting overrides the
     ]);
 
 See :doc:`guide_credentials` for more information about configuring credentials and the
-INI file format.
+.ini file format.
 
 .. _cfg_region:
 
@@ -741,7 +741,7 @@ region
 :Type: ``string``
 :Required: true
 
-AWS Region to connect to. See the :AWS-gr:`AWS General Reference <rande>`
+AWS Region to connect to. See the `AWS General Reference <http://docs.aws.amazon.com/general/latest/gr/rande.html>`_
 for a list of available Regions.
 
 .. code-block:: php
@@ -780,7 +780,7 @@ scheme
 :Type: ``string``
 :Default: ``string(5) "https"``
 
-URI scheme to use when connecting connect. The SDK uses "https"
+URI scheme to use when connecting. The SDK uses "https"
 endpoints (i.e., uses SSL/TLS connections) by default. You can attempt to
 connect to a service over an unencrypted "http" endpoint by setting ``scheme``
 to "http".
@@ -793,7 +793,7 @@ to "http".
         'scheme'  => 'http'
     ]);
 
-See the :AWS-gr:`AWS General Reference <rande>` for a list of
+See the `AWS General Reference <http://docs.aws.amazon.com/general/latest/gr/rande.html>`_ for a list of
 endpoints and whether a service supports the ``http`` scheme.
 
 service
@@ -827,11 +827,11 @@ signature_version
 :Type: ``string``
 
 A string representing a custom signature version to use with a service
-(e.g., ``v4``, etc.). Per/operation signature version MAY override this
+(e.g., ``v4``, etc.). Per operation signature version MAY override this
 requested signature version, if needed.
 
-The following examples show how to configure an |S3| client to use :AWS-gr:`signature version 4 <signature-version-4>`
-signature-version-4:
+The following examples show how to configure an |S3| client to use
+`signature version 4 <http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html>`_:
 
 .. code-block:: php
 

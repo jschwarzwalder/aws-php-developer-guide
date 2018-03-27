@@ -23,7 +23,7 @@ or `aws.phar <http://docs.aws.amazon.com/aws-sdk-php/v3/download/aws.phar>`_ fil
 .. image:: images/php-sdk-overview.png
    :alt: Diagram that provides an overview of how AWS SDK for PHP works
 
-Not all services are immediately available in the SDK. To find out which services are currently supported by the |sdk-php|, see .
+Not all services are immediately available in the SDK. To find out which services are currently supported by the |sdk-php|, see :aws-php-class:`Service Name and API Version <index.html>`.
 For information about the |sdk-php| on GitHub, see :doc:`Additional Resources <resources>`.
 
 External links: :aws-php-class:`API Docs <index.html>`

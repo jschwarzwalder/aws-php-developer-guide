@@ -23,7 +23,7 @@ Handlers
 
 A handler is a function that performs the actual transformation of a command
 and request into a result. A handler typically sends HTTP requests. Handlers
-can be composed with middlewares to augment their behavior. A handler is a
+can be composed with middleware to augment their behavior. A handler is a
 function that accepts an ``Aws\CommandInterface`` and a
 ``Psr\Http\Message\RequestInterface`` and returns a promise that is fulfilled
 with an ``Aws\ResultInterface`` or rejected with an
@@ -144,20 +144,20 @@ A middleware then invokes the next handle in the chain or can choose to
 short-circuit the next handler and return a promise. The promise that is
 created by invoking the next handler can then be augmented using the ``then``
 method of the promise to modify the eventual result or error before
-returning the promise back up the stack of middlewares.
+returning the promise back up the stack of middleware.
 
 HandlerList
 ~~~~~~~~~~~
 
-The SDK uses an ``Aws\HandlerList`` to manage the middlewares and handlers used
+The SDK uses an ``Aws\HandlerList`` to manage the middleware and handlers used
 when executing a command. Each SDK client owns a ``HandlerList``, and this
 ``HandlerList`` is cloned and added to each command that a client creates.
 You can attach a middleware and default handler to use for each command
 created by a client by adding a middleware to the client's ``HandlerList``.
-You can add and remove middlewares from specific commands by modifying the
+You can add and remove middleware from specific commands by modifying the
 ``HandlerList`` owned by a specific command.
 
-A ``HandlerList`` represents a stack of middlewares that are used to wrap a
+A ``HandlerList`` represents a stack of middleware that are used to wrap a
 **handler**. To help manage the list of middleware and the order in which they
 wrap a handler, the ``HandlerList`` breaks the middleware stack into named
 steps that represents part of the lifecycle of transferring a command:
@@ -266,7 +266,7 @@ sign
 Available Middleware
 ~~~~~~~~~~~~~~~~~~~~
 
-The SDK provides several middlewares that you can use to augment the behavior
+The SDK provides several middleware that you can use to augment the behavior
 of a client or to observe the execution of a command.
 
 .. _map-command:
@@ -421,15 +421,15 @@ the history middleware.
     }
 
     // You can get the last Aws\CommandInterface that was executed. This method
-    // will throw if no commands have been executed.
+    // will throw an exception if no commands have been executed.
     $command = $history->getLastCommand();
 
-    // You can get the last request that was serialized. This method will throw
+    // You can get the last request that was serialized. This method will throw an exception
     // if no requests have been serialized.
     $request = $history->getLastRequest();
 
     // You can get the last return value (an Aws\ResultInterface or Exception).
-    // The method will throw if no value has been returned for the last
+    // The method will throw an exception if no value has been returned for the last
     // executed operation (e.g., an async request has not completed).
     $result = $history->getLastReturn();
 
@@ -440,7 +440,7 @@ tap
 ^^^
 
 The ``tap`` middleware is used as an observer. You can use this middleware to
-invoke functions when sending commands through the chain of middlewares. The
+invoke functions when sending commands through the chain of middleware. The
 ``tap`` function accepts a callable that accepts the ``Aws\CommandInterface``
 and an optional ``Psr\Http\Message\RequestInterface`` that is being executed.
 

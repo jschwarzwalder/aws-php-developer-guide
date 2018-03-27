@@ -31,8 +31,8 @@ loop.
 
 .. note::
 
-    HTTP requests sent concurrently in the |sdk-php| are done so using a
-    single thread in which non-blocking calls are used to transfer one or more
+    HTTP requests are sent concurrently in the |sdk-php| using a
+    single thread, in which non-blocking calls are used to transfer one or more
     HTTP requests while reacting to state changes (e.g., fulfilling or
     rejecting promises).
 

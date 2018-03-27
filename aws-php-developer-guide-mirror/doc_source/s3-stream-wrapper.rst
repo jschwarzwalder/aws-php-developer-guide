@@ -35,7 +35,7 @@ bucket name followed by a forward slash and an optional object key or prefix:
     The stream wrapper is designed for working with objects and buckets on which
     you have at least read permission. This means that your user should have
     permission to execute ``ListBucket`` on any buckets and ``GetObject`` on any
-    object with which you need to interact. For use cases where you don't have
+    object with which the user needs to interact. For use cases where you don't have
     this permission level, we recommended that you use S3 client operations
     directly.
 
@@ -101,7 +101,7 @@ of a function.
         fclose($stream);
     }
 
-Opening seekable streams enables you to seek only to bytes that were previously
+Opening seekable streams enables you to seek bytes that were previously
 read. You can't skip ahead to bytes that have not yet been read from the
 remote server. To allow previously read data to recalled, data is
 buffered in a PHP temp stream using a stream decorator. When the amount of

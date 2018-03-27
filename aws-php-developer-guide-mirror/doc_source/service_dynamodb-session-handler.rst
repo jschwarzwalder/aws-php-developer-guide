@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-===============================
-Using the |DDB| Session Handler
-===============================
+===============================================
+Using the |DDB| Session Handler with |sdk-php|
+===============================================
 
 The |DDB| Session Handler is a custom session handler for PHP that
 enables developers to use |DDBlong| as a session store. Using |DDB|

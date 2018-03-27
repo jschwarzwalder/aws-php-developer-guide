@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-============================
-Credentials for the |sdk-php
-============================
+=============================
+Credentials for the |sdk-php|
+=============================
 
 To authenticate requests, AWS services require you to provide your
 :iam-ug:`AWS access keys <id_credentials_access-keys>`, also known
