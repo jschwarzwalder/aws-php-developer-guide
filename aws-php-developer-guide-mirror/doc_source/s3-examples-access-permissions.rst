@@ -37,11 +37,11 @@ Get and Set an Access Control List Policy
 **Imports**
 
 .. literalinclude::  example_code/s3/s3BucketAcl.php
-   :lines: 16-19
+   :lines: 20-23
    :language: PHP
 
 **Code**
 
 .. literalinclude:: example_code/s3/s3BucketAcl.php
-   :lines: 21-74
+   :lines: 25-78
    :language: php

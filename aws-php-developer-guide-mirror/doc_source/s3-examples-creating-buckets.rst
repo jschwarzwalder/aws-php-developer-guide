@@ -11,9 +11,9 @@
 ====================================
 Creating and Using |S3| Buckets
 ====================================
-
+       
 .. meta::
-   :description:
+   :description: Describes how to use |S3| buckets with the |sdk-php|.
    :keywords: |S3|, |sdk-php| examples
 
 The examples below show how to:
@@ -37,13 +37,13 @@ Create a php file with following code. First create an AWS.S3 client service spe
 **Imports**
 
 .. literalinclude::  example_code/s3/ListBuckets.php
-   :lines: 16-19
+   :lines: 19-22
    :language: PHP
 
 **Code**
 
 .. literalinclude:: example_code/s3/ListBuckets.php
-   :lines: 28-38
+   :lines: 32-42
    :language: php
 
 
@@ -55,13 +55,13 @@ Create a php file with following code. First create an AWS.S3 client service spe
 **Imports**
 
 .. literalinclude::  example_code/s3/CreateBucket.php
-   :lines: 16-19
+   :lines: 19-22
    :language: PHP
 
 **Code**
 
 .. literalinclude:: example_code/s3/CreateBucket.php
-   :lines: 28-45
+   :lines: 31-49
    :language: php
 
 Put an Object in a Bucket
@@ -70,11 +70,11 @@ Put an Object in a Bucket
 **Imports**
 
 .. literalinclude::  example_code/s3//PutObject.php
-   :lines: 16-19
+   :lines: 19-22
    :language: PHP
 
 **Code**
 
 .. literalinclude:: example_code/s3//PutObject.php
-   :lines: 28-56
+   :lines: 31-60
    :language: php

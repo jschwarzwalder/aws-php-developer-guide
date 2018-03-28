@@ -12,6 +12,10 @@
 Basic Use of the |sdk-php|
 ==========================
 
+.. meta::
+   :description: Describes the basic usage pattern of the |sdk-php|.
+   :keywords: |sdk-php|, create a client, asynchronous requests, getting started with |sdk-php|
+
 This topic focuses on basic usage patterns of the |sdk-php|.
 
 Prerequisites
@@ -141,7 +145,7 @@ Executing Service Operations
 ----------------------------
 
 You can execute a service operation by calling the method of the same name on
-a client object. For example, to perform the |S3| :S3-api:`PutObject operation
+a client object. For example, to perform the |S3|  :S3-api:`PutObject operation
 <RESTObjectPUT>`, you must
 call the ``Aws\S3\S3Client::putObject()`` method.
 

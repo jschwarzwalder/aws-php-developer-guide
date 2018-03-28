@@ -12,6 +12,10 @@
 Signing an |ESlong| Search Request
 ==================================
 
+.. meta::
+   :description: Sign and use |ESlong| with the |sdk-php|.
+   :keywords: |sdk-php| Elasticsearch, |ESlong| for PHP
+
 |ESlong| (|ES|) is a managed service that makes it easy
 to deploy, operate, and scale Elasticsearch, a popular open-source search and
 analytics engine. |ES| offers direct access to the Elasticsearch API. This

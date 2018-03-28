@@ -12,6 +12,10 @@
 Promises in the |sdk-php|
 =========================
 
+.. meta::
+   :description: Set up asynchronous work flow for |sdk-php|.
+   :keywords: |sdk-php| promises, asynchronous |sdk-php| 
+
 The |sdk-php| uses **promises** to allow for asynchronous workflows, and
 this asynchronicity allows HTTP requests to be sent concurrently. The promise
 specification used by the SDK is `Promises/A+ <https://promisesaplus.com/>`_.
@@ -249,7 +253,7 @@ workflows. The ``guzzlehttp/promise`` package contains various functions that
 you can use to combine promises.
 
 You can find the API documentation for all of the promise collection functions
-at :aws-php-class:</namespace-GuzzleHttp.Promise.html>.
+at :aws-php-class:`namespace-GuzzleHttp.Promise </namespace-GuzzleHttp.Promise.html>`.
 
 each and each_limit
 ~~~~~~~~~~~~~~~~~~~

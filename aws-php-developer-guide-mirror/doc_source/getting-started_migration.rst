@@ -12,6 +12,10 @@
 Migrating from Version 2 of the |sdk-php|
 =========================================
 
+.. meta::
+   :description: Shows how to migrate to |sdk-php| version 3 from version 2.
+   :keywords: |sdk-php| version 2, |sdk-php| v2, |sdk-php| 2, migrate to version 3
+
 This topic shows how to migrate your code to use version 3 of the |sdk-php|
 and how the new version differs from version 2 of the SDK.
 
@@ -212,7 +216,7 @@ version 2, this element was not present.
 The following operations are affected and now contain a wrapping element in the
 output of the result (provided below in parentheses):
 
-- **|ELClong|**
+- |ELClong|
 
   - AuthorizeCacheSecurityGroupIngress (CacheSecurityGroup)
   - CopySnapshot (Snapshot)
@@ -233,7 +237,7 @@ output of the result (provided below in parentheses):
   - RebootCacheCluster (CacheCluster)
   - RevokeCacheSecurityGroupIngress (CacheSecurityGroup)
 
-- **|RDS|**
+- |RDS|
 
   - AddSourceIdentifierToSubscription (EventSubscription)
   - AuthorizeDBSecurityGroupIngress (DBSecurityGroup)
@@ -264,7 +268,7 @@ output of the result (provided below in parentheses):
   - RestoreDBInstanceToPointInTime (DBInstance)
   - RevokeDBSecurityGroupIngress (DBSecurityGroup)
 
-- **|RSlong|**
+- |RSlong|
 
   - AuthorizeClusterSecurityGroupIngress (ClusterSecurityGroup)
   - AuthorizeSnapshotAccess (Snapshot)

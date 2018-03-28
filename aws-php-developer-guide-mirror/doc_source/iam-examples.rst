@@ -12,7 +12,14 @@
 AWS |IAM|
 =========
 
+.. meta::
+   :description: Programing |IAM| using the |sdk-php|.
+   :keywords: |IAM|, |sdk-php| examples, |IAM| for PHP code examples
+
+
 |IAMlong|  (|IAM|) is a web service that enables |AWSlong| (AWS) customers to manage users and user permissions in AWS. The service is targeted at organizations with multiple users or systems in the cloud that use AWS products. With |IAM|, you can centrally manage users, security credentials such as access keys, and permissions that control which AWS resources users can access.
+
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 .. toctree::
     :maxdepth: 1

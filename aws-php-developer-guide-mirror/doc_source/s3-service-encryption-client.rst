@@ -12,6 +12,10 @@
 |S3| Client Side Encryption
 ===========================
 
+.. meta::
+   :description: Client-side encryption for the |sdk-php| |S3| client.
+   :keywords: |sdk-php| constructor, |sdk-php| client configuration
+
 The |sdk-php| provides an ``S3EncryptionClient``. With client-side
 encryption, data is encrypted and decrypted directly in your environment. This
 means that this data is encrypted before it's transferred to |S3|, and you
@@ -20,7 +24,7 @@ don’t rely on an external service to handle encryption for you.
 The |sdk-php| implements :KMS-dg:`envelope encryption <workflow>`
 and uses `OpenSSL <https://www.openssl.org/>`_ for its encrypting and
 decrypting. The implementation is interoperable with :AWS-gr:`other SDKs that match its feature support <aws_sdk_cryptography>`.
-It's also compatible with :doc: `the SDK’s promise-based asynchronous workflow <guide_promises>`.
+It's also compatible with :doc:`the SDK’s promise-based asynchronous workflow <guide_promises>`.
 
 Setup
 -----

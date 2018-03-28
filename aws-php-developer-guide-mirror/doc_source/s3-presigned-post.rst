@@ -12,6 +12,10 @@
 |S3| Pre-Signed POSTs
 =====================
 
+.. meta::
+   :description: Create write access to private |S3| data using the |sdk-php|.
+   :keywords: |S3|, |sdk-php| examples, |S3| for PHP code examples
+
 Much like pre-signed URLs, pre-signed POSTs enable you to give write access to a
 user without giving them AWS credentials. Pre-signed POST forms can be created
 with the help of an instance of :aws-php-class:`Aws\S3\PostObjectV4 </class-Aws.S3.PostObjectV4.html>`.

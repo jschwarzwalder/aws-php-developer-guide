@@ -12,6 +12,10 @@
 Configuration for the |sdk-php|
 ===============================
 
+.. meta::
+   :description: Custom client configuration options for the |sdk-php| client.
+   :keywords: |sdk-php| constructor, |sdk-php| client configuration
+
 This guide describes client constructor options. These options can be provided
 in a client constructor or provided to the ``Aws\Sdk`` class. The array of options
 provided to a specific type of client can vary, based on which client you are
@@ -58,28 +62,6 @@ credentials
 
 :Type: ``array|Aws\CacheInterface|Aws\Credentials\CredentialsInterface|bool|callable``
 
-If you don't provide a ``credentials`` option, the SDK attempts to load
-credentials from your environment in the following order:
-
-1. Load credentials from :ref:`environment variables <environment_credentials>`.
-2. Load credentials from a :ref:`credentials .ini file <credential_profiles>`.
-3. Load credentials from an :ref:`IAM instance profile <instance_profile_credentials>`.
-
-You can provide an associative array of "key", "secret", and "token" key-value
-pairs to use :ref:`hardcoded credentials <hardcoded_credentials>`.
-
-.. code-block:: php
-
-    // Hardcoded credentials
-    $s3 = new Aws\S3\S3Client([
-        'version'     => 'latest',
-        'region'      => 'us-west-2',
-        'credentials' => [
-            'key'    => 'abc',
-            'secret' => '123'
-        ]
-    ]);
-
 Pass an ``Aws\Credentials\CredentialsInterface`` object to use a specific
 credentials instance.
 
@@ -92,6 +74,13 @@ credentials instance.
         'region'      => 'us-west-2',
         'credentials' => $credentials
     ]);
+
+If you don't provide a ``credentials`` option, the SDK attempts to load
+credentials from your environment in the following order:
+
+1. Load credentials from :ref:`environment variables <environment_credentials>`.
+2. Load credentials from a :ref:`credentials .ini file <credential_profiles>`.
+3. Load credentials from an :ref:`IAM instance profile <instance_profile_credentials>`.
 
 Pass ``false`` to use null credentials and not sign requests.
 
@@ -915,9 +904,9 @@ service. For example, when using |S3|, you can lock your API version to
         'version' => '2006-03-01',
         'region'  => 'us-east-1'
     ]);
+	
 
-A list of available API versions can be found on each client's API
-documentation page: :aws-php-class:<index.html>.
+A list of available API versions can be found on each client's :aws-php-class:`API documentation page <index.html>`.
 If you are unable to load a specific API version, you might need to update
 your copy of the SDK.
 

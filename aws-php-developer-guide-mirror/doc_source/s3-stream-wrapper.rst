@@ -12,6 +12,10 @@
 |S3| Stream Wrapper
 ===================
 
+.. meta::
+   :description: Store and retrieve data from |S3| with the |sdk-php|.
+   :keywords: |S3| with |sdk-php|, |S3| steam wrapper, |S3| files
+
 The |S3| stream wrapper enables you to store and retrieve data from |S3|
 using built-in PHP functions, such as ``file_get_contents``, ``fopen``,
 ``copy``, ``rename``, ``unlink``, ``mkdir``, and ``rmdir``.
@@ -245,7 +249,7 @@ Here's an example of creating a bucket.
     mkdir('s3://bucket');
 
 You can pass in stream context options to the ``mkdir()`` method to modify how
-the bucket is created using the parameters available to the :aws-php-class: `CreateBucket
+the bucket is created using the parameters available to the :aws-php-class:`CreateBucket
 </class-Aws.S3.S3Client.html#_createBucket>`
 operation.
 
@@ -275,8 +279,7 @@ You can use the `opendir() <http://www.php.net/manual/en/function.opendir.php>`_
 `rewinddir() <http://www.php.net/manual/en/function.rewinddir.php>`_, and
 `closedir() <http://php.net/manual/en/function.closedir.php>`_ PHP functions
 with the |S3| stream wrapper to traverse the contents of a
-bucket. You can pass in parameters available to the :aws-php-class:
-`ListObjects <class-Aws.S3.S3Client.html#_listObjects>`
+bucket. You can pass in parameters available to the :aws-php-class:`ListObjects <class-Aws.S3.S3Client.html#_listObjects>`
 operation as custom stream context options to the ``opendir()`` function to
 modify how objects are listed.
 

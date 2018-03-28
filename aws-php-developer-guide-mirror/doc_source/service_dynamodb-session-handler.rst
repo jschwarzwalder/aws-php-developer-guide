@@ -12,6 +12,11 @@
 Using the |DDB| Session Handler with |sdk-php|
 ===============================================
 
+.. meta::
+   :description: Programing |DDB| using the |sdk-php|.
+   :keywords: |DDB|, |sdk-php| examples, |DDBlong| for PHP code examples
+
+
 The |DDB| Session Handler is a custom session handler for PHP that
 enables developers to use |DDBlong| as a session store. Using |DDB|
 for session storage alleviates issues that occur with session handling in a
@@ -250,8 +255,8 @@ Best Practices
 Required IAM Permissions
 ------------------------
 
-To use the |DDB| SessionHhandler, your :doc: `configured credentials <guide_credentials>`
-must have permission to use the |DDB| table that :ref: `you created in a previous step <create-a-table-for-storing-your-sessions>`.
+To use the |DDB| SessionHhandler, your :doc:`configured credentials <guide_credentials>`
+must have permission to use the |DDB| table that :ref:`you created in a previous step <create-a-table-for-storing-your-sessions>`.
 The following IAM policy contains the minimum permissions that you need. To use this policy, replace the Resource value
 with the |arnlong| (ARN) of the table that you created previously. For more information about creating and
 attaching IAM policies, see :iam-ug:`Managing IAM Policies <access_policies_manage>`

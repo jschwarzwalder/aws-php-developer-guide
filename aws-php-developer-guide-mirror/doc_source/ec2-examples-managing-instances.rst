@@ -13,7 +13,7 @@ Managing |EC2| Instances
 =============================
 
 .. meta::
-   :description:
+   :description: Engaging with |EC2| instances using the |sdk-php|
    :keywords: |EC2|, |sdk-php| examples
 
 The examples below show how to:

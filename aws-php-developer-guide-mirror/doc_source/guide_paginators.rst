@@ -12,6 +12,11 @@
 Paginators in the |sdk-php|
 ===========================
 
+.. meta::
+   :description: Processing paginated results from the |sdk-php|.
+   :keywords: |sdk-php|, paginators, iterate through results, PHP for AWS
+
+
 Some AWS service operations are paginated and respond with truncated results.
 For example, the |S3| ``ListObjects`` operation only returns up to 1,000
 objects at a time. Operations like these (typically prefixed with "list" or

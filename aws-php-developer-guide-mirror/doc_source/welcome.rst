@@ -12,6 +12,10 @@
 |sdk-php|
 =========
 
+.. meta::
+   :description: |sdk-php| enables PHP developers to use Amazon Web Services in their PHP code.
+   :keywords: |sdk-php| , AWS for PHP, Amazon PHP, 
+
 The |sdk-php| enables PHP developers to use
 `Amazon Web Services <http://aws.amazon.com/>`_ in their PHP code, and build
 robust applications and software using services like |S3|, |DDBlong|, |GL|, etc.

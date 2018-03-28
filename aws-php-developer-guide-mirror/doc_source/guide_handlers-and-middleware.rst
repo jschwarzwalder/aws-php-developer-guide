@@ -12,6 +12,10 @@
 Handlers and Middleware in the |sdk-php|
 ========================================
 
+.. meta::
+   :description: Extend the |sdk-php| with handlers and middleware.
+   :keywords: |sdk-php|, php handler, php middleware
+
 The primary mechanism for extending the |sdk-php| is through **handlers** and
 **middleware**. Each SDK client class owns an ``Aws\HandlerList`` instance that
 is accessible through the ``getHandlerList()`` method of a client. You can

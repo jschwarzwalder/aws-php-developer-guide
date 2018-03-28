@@ -12,6 +12,11 @@
 Signing |CFlong| URLs
 =====================
 
+.. meta::
+   :description: Programing |CF| using the |sdk-php|.
+   :keywords: |CF|, |sdk-php| examples, |CF| for PHP code examples
+
+
 Signing |CF| URLs for Private Distributions
 -------------------------------------------
 

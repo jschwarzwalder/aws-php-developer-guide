@@ -12,6 +12,10 @@
 Waiters in the |sdk-php|
 ========================
 
+.. meta::
+   :description: Set up asynchronous work flow for |sdk-php|.
+   :keywords: |sdk-php| waiters, asynchronous |sdk-php| 
+
 Waiters help make it easier to work with *eventually consistent* systems by
 providing an abstracted way to wait until a resource enters into a particular
 state by polling the resource. You can find a list of the waiters supported by

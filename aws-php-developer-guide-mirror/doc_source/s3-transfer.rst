@@ -12,6 +12,11 @@
 |S3| Transfer Manager
 =====================
 
+.. meta::
+   :description: Upload, copy, or download files and directories to an |S3| bucket using the |sdk-php|.
+   :keywords: |S3|, |sdk-php| examples, |S3| for PHP code examples, |S3| transfer
+
+
 The |sdk-php| |S3| transfer manager is used to upload entire directories to
 an |S3| bucket and download entire buckets to a local directory.
 

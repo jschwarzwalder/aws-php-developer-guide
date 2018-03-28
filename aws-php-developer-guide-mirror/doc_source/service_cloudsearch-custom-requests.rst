@@ -12,6 +12,11 @@
 Signing Custom |CSlong| Domain Requests
 =======================================
 
+.. meta::
+   :description: Making a |CS| domain request using the |sdk-php|.
+   :keywords: |CSlong|, |sdk-php| examples, |CS| for PHP code examples
+
+
 |CS| domain requests can be customized beyond what is supported by the |sdk-php|.
 In cases where you need to make custom requests to domains
 protected by |IAM| authentication, you can use the SDK's credential providers and

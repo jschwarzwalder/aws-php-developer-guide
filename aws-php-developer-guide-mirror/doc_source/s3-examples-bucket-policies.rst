@@ -37,11 +37,11 @@ Get, Delete, and Replace a Policy on a Bucket
 **Imports**
 
 .. literalinclude::  example_code/s3/s3BucketPolicy.php
-   :lines: 16-19
+   :lines: 20-24
    :language: PHP
 
 **Code**
 
 .. literalinclude:: example_code/s3/s3BucketPolicy.php
-   :lines: 21-66
+   :lines: 25-70
    :language: php

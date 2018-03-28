@@ -12,7 +12,13 @@
 SDK for PHP Code Examples
 =========================
 
+.. meta::
+   :description: Code examples for |sdk-php|.
+   :keywords: |sdk-php| constructor, |sdk-php| examples
+
 This chapter includes code examples that demonstrate common Amazon Web Services scenarios using the |sdk-php|.
+
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 .. toctree::
     :maxdepth: 2

@@ -37,19 +37,19 @@ Get the CORS Configuration
 
 Create a php file with following code. First create an AWS.S3 client service, then call the getBucketCors method  and specify the bucket whose CORS configuration you want. 
 
-The only parameter required is the name of the selected bucket. If the bucket currently has a CORS configuration, that configuration is returned by Amazon S3 as a 
-:aws-php-class: `CORSRules object </api-s3-2006-03-01.html#shape-corsrule>`. 
+The only parameter required is the name of the selected bucket. If the bucket currently has a CORS configuration, that configuration is returned by |S3| as a 
+:aws-php-class:`CORSRules object </api-s3-2006-03-01.html#shape-corsrule>`. 
 
 **Imports**
 
 .. literalinclude::  example_code/s3/GetBucketCors.php
-   :lines: 16-19
+   :lines: 19-23
    :language: PHP
 
 **Code**
 
 .. literalinclude:: example_code/s3/GetBucketCors.php
-   :lines: 27-42
+   :lines: 31-46
    :language: php
 
 Set the CORS Configuration
@@ -60,11 +60,11 @@ Create a php file with following code. First create an AWS.S3 client service, th
 **Imports**
 
 .. literalinclude::  example_code/s3/PutBucketCors.php
-   :lines: 16-19
+   :lines: 19-23
    :language: PHP
 
 **Code**
 
 .. literalinclude:: example_code/s3/PutBucketCors.php
-   :lines: 27-53
+   :lines: 31-57
    :language: php

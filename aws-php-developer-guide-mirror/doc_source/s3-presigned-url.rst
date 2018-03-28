@@ -12,6 +12,10 @@
 |S3| Pre-Signed URL
 ===================
 
+.. meta::
+   :description: Create direct browser access to private |S3| data using the |sdk-php|.
+   :keywords: |S3|, |sdk-php| examples, |S3| for PHP code examples
+
 You can authenticate certain types of requests by passing the required
 information as query-string parameters instead of using the Authorization HTTP
 header. This is useful for enabling direct third-party browser access to your

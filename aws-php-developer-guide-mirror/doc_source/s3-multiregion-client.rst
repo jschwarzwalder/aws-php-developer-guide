@@ -12,6 +12,11 @@
 |S3| Multi-Region Client
 =============================
 
+.. meta::
+   :description: Create a multi-region |S3| client using the |sdk-php|.
+   :keywords: |S3|, |sdk-php| examples, |S3| for PHP code examples
+
+
 The |sdk-php| provides a generic multi-region client that can be used with
 any service. This enables users to specify which AWS Region to send a command to by
 providing an ``@region`` input parameter to any command. In addition, the SDK

@@ -13,7 +13,7 @@ Using an |S3| Bucket as a Static Web Host
 ==============================================
 
 .. meta::
-   :description: Get, set, and remove website configuration for an |S3| bucket.
+   :description: Get, set, and remove website configuration for an |S3| bucket with |sdk-php|.
    :keywords: |S3|, |sdk-php| examples
 
 You can host a static website on |S3|. To learn more, see :S3-dg:`Hosting a Static Website on S3 <WebsiteHosting>`.
@@ -37,11 +37,11 @@ Get, Set, and Delete the Website Configuration for a Bucket
 **Imports**
 
 .. literalinclude::  example_code/s3/s3WebHost.php
-   :lines: 16-19
+   :lines: 19-24
    :language: PHP
 
 **Code**
 
 .. literalinclude:: example_code/s3/s3WebHost.php
-   :lines: 21-72
+   :lines: 25-76
    :language: php

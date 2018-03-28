@@ -12,6 +12,10 @@
 Credentials for the |sdk-php|
 =============================
 
+.. meta::
+   :description: Connect the |sdk-php| to AWS services with AWS access keys. 
+   :keywords: |sdk-php| credentials, |sdk-php| access keys, iam profile for |sdk-php|
+
 To authenticate requests, AWS services require you to provide your
 :iam-ug:`AWS access keys <id_credentials_access-keys>`, also known
 as your AWS **access key ID** and **secret access key**. In the |sdk-php|,
@@ -19,14 +23,14 @@ these access keys are often referred to collectively as your
 **credentials**. This guide demonstrates how to provide your credentials to the
 |sdk-php| using one of the following methods:
 
-#. :ref:`credential_profiles`
-#. :ref:`credential_provider`
-#. :ref:`instance_profile_credentials`
-#. :ref:`ecs_credentials`
-#. :ref:`environment_credentials`
-#. :ref:`temporary_credentials`
-#. :ref:`assume_role_credentials`
-#. :ref:`hardcoded_credentials`
+- :ref:`credential_profiles`
+- :ref:`credential_provider`
+- :ref:`instance_profile_credentials`
+- :ref:`ecs_credentials`
+- :ref:`environment_credentials`
+- :ref:`temporary_credentials`
+- :ref:`assume_role_credentials`
+- :ref:`hardcoded_credentials`
 
 In general, we recommend that you use |IAM| roles when running your
 application on |EC2|, and use credential profiles or environment variables
@@ -641,13 +645,21 @@ For more information regarding ``'assume_role_params'``, see :aws-php-class:`Ass
 Using Hard-Coded Credentials
 ----------------------------
 
-You can provide hard-coded credentials to an SDK client by providing the "key",
+.. warning::
+
+    Hard-coding your credentials can be dangerous, because it's easy to
+    accidentally commit your credentials into an SCM repository. This can potentially
+    expose your credentials to more people than you intend. It can also make it
+    difficult to rotate credentials in the future.
+
+If you decide to hard-coded credentials to an SDK client, provide an associative array of "key",
 "secret", and optional "token" key-value pairs to the "credentials" option of
 a client constructor.
 
 .. code-block:: php
 
-    $s3Client = new S3Client([
+    // Hardcoded credentials
+	$s3Client = new S3Client([
         'version'     => 'latest',
         'region'      => 'us-west-2',
         'credentials' => [
@@ -656,9 +668,4 @@ a client constructor.
         ],
     ]);
 
-.. warning::
 
-    Hard-coding your credentials can be dangerous, because it's easy to
-    accidentally commit your credentials into an SCM repository. This can potentially
-    expose your credentials to more people than you intend. It can also make it
-    difficult to rotate credentials in the future.

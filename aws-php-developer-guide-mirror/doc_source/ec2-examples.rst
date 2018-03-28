@@ -12,7 +12,14 @@
 |EC2|
 ==========
 
+.. meta::
+   :description: Programing |EC2| using the |sdk-php|.
+   :keywords: |EC2|, |sdk-php| examples, |EC2| for PHP code examples
+
+
 |EC2long| (|EC2|) is a web service that provides virtual server hosting in the cloud. It's designed to make web-scale cloud computing easier for developers by providing resizeable compute capacity.
+
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 .. toctree::
     :maxdepth: 1

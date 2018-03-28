@@ -12,6 +12,10 @@
 Additional Resources
 =====================
 
+.. meta::
+   :description: Other resources to use if you do not find your answer in the |sdk-php| developer or API guide.
+   :keywords: |sdk-php| 
+
 The following links provide additional resources you can use with the SDK for PHP \.
 
 PHP SDK Forum

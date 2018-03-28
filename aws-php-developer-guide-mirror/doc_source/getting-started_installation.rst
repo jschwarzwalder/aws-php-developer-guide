@@ -12,6 +12,10 @@
 Installing the |sdk-php|
 ========================
 
+.. meta::
+   :description:  Install the |sdk-php|. 
+   :keywords: |sdk-php|, php for aws, install |sdk-php|
+   
 You can install the |sdk-php| by using:
 
 * Composer

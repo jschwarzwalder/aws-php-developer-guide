@@ -15,7 +15,7 @@ Sending Events to |CWElong|
 
 .. meta::
    :description: Create rules and add targets to them, and send custom events to |CWE|.
-   :keywords: |CWlong|, |sdk-php| examples
+   :keywords: |CWElong|, |sdk-php| examples
 
 |CWE| delivers a near real-time stream of system events that describe changes in Amazon Web Services (AWS) resources to any of various targets. Using simple rules, you can match events and route them to one or more target functions or streams.
 

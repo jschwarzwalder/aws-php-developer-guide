@@ -12,7 +12,14 @@
 |CWlong|
 =================
 
+.. meta::
+   :description: |CW| code examples for |sdk-php|.
+   :keywords: |CW| PHP examples , |sdk-php| examples. |CW|
+
 |CWlong| (|CW|) is a web service that monitors your |AWSlong| (AWS) resources and the applications you run on AWS in real time. You can use |CW| to collect and track metrics, which are variables you can measure for your resources and applications. |CW| alarms send notifications or automatically make changes to the resources you are monitoring based on rules that you define.
+
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+
 
 .. toctree::
     :maxdepth: 1

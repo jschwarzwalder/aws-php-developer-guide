@@ -12,7 +12,13 @@
 |S3|
 =========
 
+.. meta::
+   :description: |S3| code examples for |sdk-php|.
+   :keywords: |S3| PHP examples , |sdk-php| examples, |S3long| for PHP code examples
+
 |S3long|  (|S3|) is a web service that provides highly scalable cloud storage. |S3| provides easy to use object storage, with a simple web service interface to store and retrieve any amount of data from anywhere on the web.
+
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
 .. toctree::
     :maxdepth: 1

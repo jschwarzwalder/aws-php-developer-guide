@@ -12,6 +12,11 @@
 Using |S3| Multipart Uploads
 ============================
 
+.. meta::
+   :description: Break larger files into smaller parts when you upload to |S3| using the |sdk-php|.
+   :keywords: |S3|, |sdk-php| examples, |S3| for PHP code examples
+
+
 With a single ``PutObject`` operation, you can upload objects up to 5 GB in
 size. However, by using the multipart upload methods (e.g., ``CreateMultipartUpload``,
 ``UploadPart``, ``CompleteMultipartUpload``, ``AbortMultipartUpload``), you can

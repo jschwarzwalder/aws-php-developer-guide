@@ -12,6 +12,10 @@
 Requirements and Recommendations for the |sdk-php|
 ==================================================
 
+.. meta::
+   :description:  Set up your environment to use the |sdk-php|. 
+   :keywords: |sdk-php|, php for aws
+
 For best results with |sdk-php|, ensure your environment supports the following requirements and recommendations.
 
 Requirements
