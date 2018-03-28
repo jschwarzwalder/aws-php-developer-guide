@@ -25,6 +25,6 @@ All the example code for the |sdk-php| is available `here on GitHub <https://git
 
     s3-examples-creating-buckets.rst
     s3-examples-access-permissions.rst
-	s3-examples-configuring-a-bucket.rst
+    s3-examples-configuring-a-bucket.rst
     s3-examples-static-web-host.rst
     s3-examples-bucket-policies.rst
