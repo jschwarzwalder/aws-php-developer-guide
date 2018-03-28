@@ -21,7 +21,7 @@ Using |AC9long| with the |sdk-php|
 
 You can use |AC9long| with the |sdk-php| to write, run, and debug your PHP code using just a browser. |AC9| includes tools such as a
 code editor, debugger, and terminal. Because the |AC9| IDE is cloud based, you can work on your projects from your office, home,
-or anywhere using an internet-connected machine. For general information about |AC9|, see the |AC9-ug|.
+or anywhere using an internet-connected machine. For general information about |AC9|, see the |AC9-ug|_.
 
 Follow these instructions to set up |AC9| with the |sdk-php|:
 
@@ -40,7 +40,7 @@ Start to use |AC9| by signing in to the |AC9| console as an |IAMlong| (|IAM|) en
 has access permissions for |AC9|.
 
 To set up an |IAM| entity in your AWS account to access |AC9|, and to sign in to the |AC9| console, see
-:AC9-ug:`Team Setup for AWS Cloud9 <setup>` in the |AC9-ug|.
+:AC9-ug:`Team Setup for AWS Cloud9 <setup>` in the |AC9-ug|_.
 
 .. _cloud9-php-environment:
 
@@ -50,7 +50,7 @@ Step 2: Set up Your |AC9| Development Environment
 After you sign in to the |AC9| console, use the console to create an |AC9| development environment.
 After you create the environment, |AC9| opens the IDE for that environment.
 
-See :AC9-ug:`Creating an Environment in AWS Cloud9 <create-environment>` in the |AC9-ug| for details.
+See :AC9-ug:`Creating an Environment in AWS Cloud9 <create-environment>` in the |AC9-ug|_ for details.
 
 .. note::
 
@@ -107,7 +107,7 @@ Step 5: Run and Debug Example Code
 ==================================
 
 To run code in your |AC9| development environment, see
-:AC9-ug:`Run Your Code <build-run-debug>` in the |AC9-ug|.
+:AC9-ug:`Run Your Code <build-run-debug>` in the |AC9-ug|_.
 
 To debug code, see
-:AC9-ug:`Debug Your Code <build-run-debug>` in the |AC9-ug|.
+:AC9-ug:`Debug Your Code <build-run-debug>` in the |AC9-ug|_.
