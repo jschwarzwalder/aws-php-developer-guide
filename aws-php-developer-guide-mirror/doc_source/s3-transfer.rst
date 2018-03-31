@@ -27,25 +27,18 @@ The ``Aws\S3\Transfer`` object is used to perform transfers. The following
 example shows how to recursively upload a local directory of files to an
 |S3| bucket.
 
-.. code-block:: php
 
-    // Create an S3 client
-    $client = new \Aws\S3\S3Client([
-        'region'  => 'us-west-2',
-        'version' => '2006-03-01',
-    ]);
+**Sample Code**
 
-    // Where the files will be source from
-    $source = '/path/to/source/files';
+.. literalinclude:: example_code/s3/PresignedPost.php
+   :lines: 25-29
+   :language: php
+   
+.. literalinclude:: example_code/s3/PresignedPost.php
+   :lines: 34-44
+   :language: php
 
-    // Where the files will be transferred to
-    $dest = 's3://bucket';
 
-    // Create a transfer object
-    $manager = new \Aws\S3\Transfer($client, $source, $dest);
-
-    // Perform the transfer synchronously
-    $manager->transfer();
 
 In this example, we created an |S3| client, created a ``Transfer`` object,
 and performed transfer synchronously. Using the previous example demonstrates the
@@ -58,12 +51,6 @@ providing a key prefix in the ``s3://`` URI. The following example uploads the
 local files on disk to the ``bucket`` bucket and stores the files under the
 ``foo`` key prefix.
 
-.. code-block:: php
-
-    $source = '/path/to/source/files';
-    $dest = 's3://bucket/foo';
-    $manager = new \Aws\S3\Transfer($client, $source, $dest);
-    $manager->transfer();
 
 Downloading an |S3| Bucket
 --------------------------
@@ -73,16 +60,16 @@ by specifying the ``$source`` argument as an |S3| URI
 (e.g., ``s3://bucket``) and the ``$dest`` argument as the path to a local
 directory.
 
-.. code-block:: php
+**Sample Code**
 
-    // Where the files will be sourced from
-    $source = 's3://bucket';
+.. literalinclude:: example_code/s3/PresignedPost.php
+   :lines: 49-54
+   :language: php
+   
+.. literalinclude:: example_code/s3/PresignedPost.php
+   :lines: 43-44
+   :language: php
 
-    // Where the files will be transferred to
-    $dest = '/path/to/destination/dir';
-
-    $manager = new \Aws\S3\Transfer($client, $source, $dest);
-    $manager->transfer();
 
 .. note::
 
@@ -93,12 +80,6 @@ You can include a key prefix in the |S3| URI after the bucket to download
 only objects stored under a "pseudo-folder". The following example downloads
 only files stored under the "/foo" key prefix of the given bucket.
 
-.. code-block:: php
-
-    $source = 's3://bucket/foo';
-    $dest = '/path/to/destination/dir';
-    $manager = new \Aws\S3\Transfer($client, $source, $dest);
-    $manager->transfer();
 
 Configuration
 -------------
