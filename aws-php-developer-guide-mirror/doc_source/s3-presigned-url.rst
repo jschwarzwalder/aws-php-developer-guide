@@ -66,7 +66,7 @@ returns an unsigned URL to the given bucket and key.
 **Sample Code**
 
 .. literalinclude:: example_code/s3/PresignedURL.php
-   :lines: 51-50
+   :lines: 49-50
    :language: php
 
 .. important::

@@ -30,11 +30,11 @@ example shows how to recursively upload a local directory of files to an
 
 **Sample Code**
 
-.. literalinclude:: example_code/s3/Transfermanager.php
+.. literalinclude:: example_code/s3/TransferManager.php
    :lines: 25-29
    :language: php
    
-.. literalinclude:: example_code/s3/Transfermanager.php
+.. literalinclude:: example_code/s3/TransferManager.php
    :lines: 34-44
    :language: php
 
@@ -62,11 +62,11 @@ directory.
 
 **Sample Code**
 
-.. literalinclude:: example_code/s3/Transfermanager.php
+.. literalinclude:: example_code/s3/TransferManager.php
    :lines: 49-54
    :language: php
    
-.. literalinclude:: example_code/s3/Transfermanager.php
+.. literalinclude:: example_code/s3/TransferManager.php
    :lines: 43-44
    :language: php
 
@@ -168,11 +168,11 @@ object.
 
 **Sample Code**
 
-.. literalinclude:: example_code/s3/Transfermanager.php
+.. literalinclude:: example_code/s3/TransferManager.php
    :lines: 50-54
    :language: php
    
-.. literalinclude:: example_code/s3/Transfermanager.php
+.. literalinclude:: example_code/s3/TransferManager.php
    :lines: 58-64
    :language: php
    :dedent: 4
