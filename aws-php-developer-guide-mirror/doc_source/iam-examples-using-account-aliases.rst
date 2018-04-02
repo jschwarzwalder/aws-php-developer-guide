@@ -40,7 +40,7 @@ Create an Alias
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/CreateAccountAlias.php
    :lines: 31-46
@@ -55,7 +55,7 @@ List Account Aliases
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/ListAccountAliases.php
    :lines: 31-43
@@ -70,7 +70,7 @@ Delete an Alias
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/DeleteAccountAlias.php
    :lines: 31-46

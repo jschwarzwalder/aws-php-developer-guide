@@ -40,7 +40,7 @@ Create a Key Pair
    :lines: 19-21
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/CreateKeyPair.php
    :lines: 30-47
@@ -56,7 +56,7 @@ Delete a Key Pair
    :lines: 19-21
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/DeleteKeypair.php
    :lines: 30-43
@@ -72,7 +72,7 @@ Describe Key Pairs
    :lines: 19-21
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/DescribeKeyPairs.php
    :lines: 30-38

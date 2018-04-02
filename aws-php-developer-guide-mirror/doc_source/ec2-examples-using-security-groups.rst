@@ -41,7 +41,7 @@ Describe Security Groups
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/DescribeSecurityGroups.php
    :lines: 30-38
@@ -56,7 +56,7 @@ Add an Ingress Rule
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/AuthorizeSecurityGroupIngress.php
    :lines: 30-41
@@ -72,7 +72,7 @@ Create a Security Group
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/CreateSecurityGroup.php
    :lines: 30-47
@@ -87,7 +87,7 @@ Delete a Security Group
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/DeleteSecurityGroup.php
    :lines: 30-42

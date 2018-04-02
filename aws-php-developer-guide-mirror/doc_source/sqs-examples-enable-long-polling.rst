@@ -42,7 +42,7 @@ Set Attributes on a Queue to Enable Long Polling
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/sqs/LongPollingSetQueueAttributes.php
    :lines: 31-50
@@ -57,7 +57,7 @@ Retrieve Messages with Long Polling
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/sqs/LongPollingReceiveMessage.php
    :lines: 31-51
@@ -72,7 +72,7 @@ Create a Queue with Long Polling
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/sqs/LongPollingCreateQueue.php
    :lines: 31-50

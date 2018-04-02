@@ -41,7 +41,7 @@ Create a Policy
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/CreatePolicy.php
    :lines: 31-70
@@ -56,7 +56,7 @@ Attach a Policy to a Role
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/AttachRolePolicy.php
    :lines: 31-65
@@ -71,7 +71,7 @@ Attach a Policy to a User
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/AttachUserPolicy.php
    :lines: 31-65
@@ -86,7 +86,7 @@ Detach a User Policy
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/DetachUserPolicy.php
    :lines: 31-49

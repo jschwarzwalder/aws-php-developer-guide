@@ -152,19 +152,6 @@ The ``Transfer`` object is an instance of
 occur asynchronously and is initiated by calling the ``promise`` method of the
 object.
 
-.. code-block:: php
-
-    $source = '/path/to/source/files';
-    $dest = 's3://bucket';
-    $manager = new \Aws\S3\Transfer($client, $source, $dest);
-
-    // Initiate the transfer and get a promise
-    $promise = $manager->promise();
-
-    // Do something when the transfer is complete using the then() method
-    $promise->then(function () {
-        echo 'Done!';
-    });
 
 **Sample Code**
 
@@ -177,9 +164,6 @@ object.
    :language: php
    :dedent: 4
 
-
-	
-	
 
 The promise will be rejected if any of the files fail to transfer. You can
 handle the failed transfer asynchronously using the ``otherwise`` method of the

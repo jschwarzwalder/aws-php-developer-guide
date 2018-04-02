@@ -42,7 +42,7 @@ Enable a Dead Letter Queue
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/sqs/DeadLetterQueue.php
    :lines: 31-50

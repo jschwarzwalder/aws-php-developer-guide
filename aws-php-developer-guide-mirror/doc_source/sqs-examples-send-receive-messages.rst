@@ -42,7 +42,7 @@ Send a Message
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/sqs/SendMessage.php
    :lines: 31-63
@@ -57,7 +57,7 @@ Receive and Delete Messages
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/sqs/ReceiveMessage.php
    :lines: 31-59

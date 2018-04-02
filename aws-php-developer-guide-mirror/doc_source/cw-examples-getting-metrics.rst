@@ -41,7 +41,7 @@ List Metrics
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatch/ListMetrics.php
    :lines: 31-43
@@ -57,7 +57,7 @@ Retrieve Alarms for a Metric
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatch/DescribeAlarmsForMetric.php
    :lines: 31-48
@@ -72,7 +72,7 @@ Get Metric Statistics
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatch/GetMetricStatistics.php
    :lines: 31-53

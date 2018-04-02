@@ -39,7 +39,7 @@ Describe Availability Zones
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/DescribeAvailabilityZones.php
    :lines: 30-38
@@ -54,7 +54,7 @@ Describe Regions
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/DescribeRegions.php
    :lines: 30-38

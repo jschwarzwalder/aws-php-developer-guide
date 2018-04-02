@@ -42,7 +42,7 @@ Create an |IAM| User
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/CreateUser.php
    :lines: 31-46
@@ -58,7 +58,7 @@ List |IAM| Users
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/ListUsers.php
    :lines: 31-43
@@ -74,7 +74,7 @@ Update an |IAM| User
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/UpdateUser.php
    :lines: 31-47
@@ -89,7 +89,7 @@ Get Info about an |IAM| User
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/GetUser.php
    :lines: 31-45
@@ -104,7 +104,7 @@ Delete an |IAM| User
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/DeleteUser.php
    :lines: 31-46

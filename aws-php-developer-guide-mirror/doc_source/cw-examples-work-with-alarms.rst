@@ -40,7 +40,7 @@ Describe Alarms
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatch/DescribeAlarms.php
    :lines: 31-46
@@ -56,10 +56,10 @@ Create an Alarm
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatch/PutMetricAlarm.php
-   :lines: 31-56
+   :lines: 31-63
    :language: php
 
 Delete Alarms
@@ -71,7 +71,7 @@ Delete Alarms
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatch/DeleteAlarms.php
    :lines: 31-47

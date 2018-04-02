@@ -41,7 +41,7 @@ Describe an Instance
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/DescribeInstances.php
    :lines: 30-38
@@ -57,7 +57,7 @@ Allocate and Associate an Address
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/AllocateAddresses.php
    :lines: 30-49
@@ -73,7 +73,7 @@ Release an Address
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/ReleaseAddress.php
    :lines: 30-48

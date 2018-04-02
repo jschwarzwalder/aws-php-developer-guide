@@ -41,7 +41,7 @@ Create a Rule
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatchEvents/PutRule.php
    :lines: 31-48
@@ -56,7 +56,7 @@ Add Targets to a Rule
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatchEvents/PutTargets.php
    :lines: 31-51
@@ -71,7 +71,7 @@ Send Custom Events
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatchEvents/PutEvents.php
    :lines: 31-53

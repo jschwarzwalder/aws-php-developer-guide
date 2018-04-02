@@ -41,7 +41,7 @@ Return a List of Queues
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/sqs/ListQueues.php
    :lines: 31-45
@@ -56,7 +56,7 @@ Create a Queue
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/sqs/CreateQueue.php
    :lines: 31-51
@@ -71,7 +71,7 @@ Return the URL of a Queue
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/sqs/GetQueueUrl.php
    :lines: 31-47
@@ -86,7 +86,7 @@ Delete a Queue
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/sqs/DeleteQueue.php
    :lines: 31-47

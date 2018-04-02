@@ -39,7 +39,7 @@ Enable Alarm Actions
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatch/EnableAlarmActions.php
    :lines: 31-47
@@ -54,7 +54,7 @@ Disable Alarm Actions
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatch/DisableAlarmActions.php
    :lines: 31-47

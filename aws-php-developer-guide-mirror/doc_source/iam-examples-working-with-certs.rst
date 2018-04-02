@@ -41,7 +41,7 @@ List Server Certificates
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/ListServerCertificates.php
    :lines: 31-43
@@ -57,7 +57,7 @@ Retrieve a Server Certificate
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/GetServerCertificate.php
    :lines: 31-46
@@ -73,7 +73,7 @@ Update a Server Certificate
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/UpdateServerCertificate.php
    :lines: 31-47
@@ -89,7 +89,7 @@ Delete a Server Certificate
    :lines: 19-22
    :language: php
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/iam/DeleteServerCertificate.php
    :lines: 31-46

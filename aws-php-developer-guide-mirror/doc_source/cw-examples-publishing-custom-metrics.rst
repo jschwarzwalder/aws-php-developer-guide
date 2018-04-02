@@ -39,7 +39,7 @@ Publish Metric Data
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatch/PutMetricData.php
    :lines: 31-54
@@ -54,7 +54,7 @@ Create an Alarm
    :lines: 19-22
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/cloudwatch/PutMetricAlarm.php
    :lines: 31-63

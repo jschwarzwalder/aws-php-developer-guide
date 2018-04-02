@@ -41,7 +41,7 @@ Describe Instances
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/DescribeInstances.php
    :lines: 30-38
@@ -58,7 +58,7 @@ Enable and Disable Monitoring
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/InstanceMonitoring.php
    :lines: 30-50
@@ -73,7 +73,7 @@ Start and Stop an Instance
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/StartAndStopInstance.php
    :lines: 30-50
@@ -88,7 +88,7 @@ Reboot an Instances
    :lines: 19-21
    :language: PHP
 
-**Code**
+**Sample Code**
 
 .. literalinclude:: example_code/ec2/RebootInstances.php
    :lines: 30-42
