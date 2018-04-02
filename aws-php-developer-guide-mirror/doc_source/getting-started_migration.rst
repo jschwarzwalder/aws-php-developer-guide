@@ -427,7 +427,7 @@ Comparing Code Samples from Both Versions of the SDK
 ----------------------------------------------------
 
 The following examples show some of the ways in which using version 3 of
-the |skd-php| might differ from version 2.
+the |sdk-php| might differ from version 2.
 
 Example: |S3| ListObjects Operation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
