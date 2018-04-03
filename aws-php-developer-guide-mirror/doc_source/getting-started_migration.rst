@@ -44,8 +44,8 @@ Other new features include
 - Easy debugging via the ``'debug'`` configuration option
 
 
- Decoupled HTTP layer
- ~~~~~~~~~~~~~~~~~~~~
+Decoupled HTTP layer
+~~~~~~~~~~~~~~~~~~~~
 
 - `Guzzle 6 <http://guzzlephp.org>`_ is used by default to send requests, but
   Guzzle 5 is also supported.

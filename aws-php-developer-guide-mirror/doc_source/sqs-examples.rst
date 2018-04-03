@@ -13,11 +13,15 @@
 ==========
 
 .. meta::
-   :description: |SQS| code examples for |sdk-php|.
-   :keywords: |SQS| PHP examples , |sdk-php| examples, |SQS| for PHP code examples
+   :description: Amazon SQS code examples for AWS SDK for PHP.
+   :keywords: Amazon SQS PHP examples , AWS SDK for PHP examples, Amazon SQS for PHP code examples
 
    
-|SQSlong| (SQS) is a fast, reliable, scalable, fully managed message queuing service. |SQS| lets you decouple the components of a cloud application. |SQS| includes standard queues with high throughput and at-least-once processing, and FIFO queues that provide FIFO (first-in, first-out) delivery and exactly-once processing.
+|SQSlong| (SQS) is a fast, reliable, scalable, fully managed message queuing service. |SQS| lets you decouple the components of a cloud application. |SQS| includes standard queues with high throughput and at-least-once processing, 
+and FIFO queues that provide FIFO (first-in, first-out) delivery and exactly-once processing.
+
+.. image:: images/code-samples-sqs.png
+   :alt: Diagram that provides an overview of how AWS SDK for PHP connects to Amazon SQS
 
 All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
 
