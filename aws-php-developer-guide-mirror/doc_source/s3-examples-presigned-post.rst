@@ -17,16 +17,19 @@
    :keywords: |S3|, |sdk-php| examples, |S3| for PHP code examples
 
 Much like pre-signed URLs, pre-signed POSTs enable you to give write access to a
-user without giving them AWS credentials. Pre-signed POST forms can be created
-with the help of an instance of :aws-php-class:`Aws\S3\PostObjectV4 </class-Aws.S3.PostObjectV4.html>`.
+user without giving them AWS credentials. 
 
-To create an instance of ``PostObjectV4``, you must provide the following: 
+The examples below show how to:
 
-- instance of ``Aws\S3\S3Client``
-- bucket
-- associative array of form input fields
-- array of policy conditions (see :s3-dg:`Policy Construction <HTTPPOSTForms>` in the |S3-dg|)
-- expiration time string for the policy (optional, one hour by default).
+* Create an Presigned POST forms that is an instance of :aws-php-class:`Aws\S3\PostObjectV4 </class-Aws.S3.PostObjectV4.html>`.
+
+
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+
+Credentials
+-----------
+
+Before running the example code, configure your AWS credentials, as described in :doc:`guide_credentials` and import the |sdk-php|.
 
 **Sample Code**
 

@@ -1,7 +1,7 @@
 .. Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
-   International License (the "License"). You may not use this file except in compliance with the
+   International License (the "License"). You may not use this file except inS compliance with the
    License. A copy of the License is located at http://creativecommons.org/licenses/by-nc-sa/4.0/.
 
    This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
@@ -19,21 +19,31 @@
 You can authenticate certain types of requests by passing the required
 information as query-string parameters instead of using the Authorization HTTP
 header. This is useful for enabling direct third-party browser access to your
-private |S3| data, without proxying the request. The idea is to construct
-a "pre-signed" request and encode it as a URL that an end-user's browser can
-retrieve. Additionally, you can limit a pre-signed request by specifying an
-expiration time.
+private |S3| data, without proxying the request. 
+
+
+The examples below show how to:
+
+* Get a "pre-signed" request and encode it as a URL using :aws-php-class:`CreatePresignedRequest <class-Aws.S3.S3Client.html#_createPresignedRequest>`.
+* Encode a URL for an |S3| object from a "pre-signed" request so an end-user's browser can retrieve it.
+* Limit access to URL by specifying an expiration time when you :aws-php-class:`CreatePresignedRequest <class-Aws.S3.S3Client.html#_createPresignedRequest>`.
+* Retrieve the public URL for an |S3| object using :aws-php-class:`GetObjectUrl <class-Aws.S3.S3Client.html#_getObjectUrl>`.
+
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+
+Credentials
+-----------
+
+Before running the example code, configure your AWS credentials, as described in :doc:`guide_credentials` and import the |sdk-php|.
 
 Creating a Pre-Signed Request
 -----------------------------
 
-You can get the pre-signed URL to an |S3| object by using the
-``Aws\S3\S3Client::createPresignedRequest()`` method. This method accepts an
-``Aws\CommandInterface`` object and expired timestamp and returns a pre-signed
-``Psr\Http\Message\RequestInterface`` object. You can retrieve the pre-signed
-URL of the object using the ``getUri()`` method of the request.
-
-The most common scenario is creating a pre-signed URL to GET an object.
+You can create pre-signed URLs for any |S3| operation using the
+``getCommand`` method for creating a command object, and then calling the
+``createPresignedRequest()`` method with the command. When ultimately sending
+the request, be sure to use the same method and the same headers as the
+returned request.
 
 **Sample Code**
 
@@ -44,11 +54,9 @@ The most common scenario is creating a pre-signed URL to GET an object.
 Creating a Pre-Signed URL
 -------------------------
 
-You can create pre-signed URLs for any |S3| operation using the
-``getCommand`` method for creating a command object, and then calling the
-``createPresignedRequest()`` method with the command. When ultimately sending
-the request, be sure to use the same method and the same headers as the
-returned request.
+
+The most common scenario to enable third party browser access to your private |S3| object is to create a pre-signed URL to 
+GET an object. You can retrieve the pre-signed URL of the object using the getUri() method of the request.
 
 **Sample Code**
 

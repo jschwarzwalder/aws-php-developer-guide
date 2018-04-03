@@ -20,6 +20,18 @@
 The |sdk-php| |S3| transfer manager is used to upload entire directories to
 an |S3| bucket and download entire buckets to a local directory.
 
+The examples below show how to:
+
+* Upload directories and download buckets using :aws-php-class:`Transfer <class-Aws.S3.Transfer.html>`.
+* Transfer asynchronously with :aws-php-class:`Promises <class-Aws.S3.Transfer.html#_promise>`.
+
+All the example code for the |sdk-php| is available `here on GitHub <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/php/example_code>`_.
+
+Credentials
+-----------
+
+Before running the example code, configure your AWS credentials, as described in :doc:`guide_credentials` and import the |sdk-php|.
+
 Uploading a Local Directory to |S3|
 -----------------------------------
 
