@@ -13,8 +13,8 @@ Credentials for the |sdk-php|
 =============================
 
 .. meta::
-   :description: Connect the |sdk-php| to AWS services with AWS access keys. 
-   :keywords: |sdk-php| credentials, |sdk-php| access keys, iam profile for |sdk-php|
+   :description: Connect the AWS SDK for PHP to AWS services with AWS access keys. 
+   :keywords: AWS SDK for PHP credentials, AWS SDK for PHP access keys, iam profile for AWS SDK for PHP
 
 To authenticate requests, AWS services require you to provide your
 :iam-ug:`AWS access keys <id_credentials_access-keys>`, also known

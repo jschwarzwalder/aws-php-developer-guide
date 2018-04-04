@@ -13,8 +13,8 @@ Migrating from Version 2 of the |sdk-php|
 =========================================
 
 .. meta::
-   :description: Shows how to migrate to |sdk-php| version 3 from version 2.
-   :keywords: |sdk-php| version 2, |sdk-php| v2, |sdk-php| 2, migrate to version 3
+   :description: Shows how to migrate to AWS SDK for PHP version 3 from version 2.
+   :keywords: AWS SDK for PHP version 2, AWS SDK for PHP v2, AWS SDK for PHP 2, migrate to version 3
 
 This topic shows how to migrate your code to use version 3 of the |sdk-php|
 and how the new version differs from version 2 of the SDK.

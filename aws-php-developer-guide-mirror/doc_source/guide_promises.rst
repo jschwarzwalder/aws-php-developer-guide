@@ -13,8 +13,8 @@ Promises in the |sdk-php|
 =========================
 
 .. meta::
-   :description: Set up asynchronous work flow for |sdk-php|.
-   :keywords: |sdk-php| promises, asynchronous |sdk-php| 
+   :description: Set up asynchronous work flow for AWS SDK for PHP.
+   :keywords: AWS SDK for PHP promises, asynchronous AWS SDK for PHP 
 
 The |sdk-php| uses **promises** to allow for asynchronous workflows, and
 this asynchronicity allows HTTP requests to be sent concurrently. The promise
