@@ -13,8 +13,8 @@
 =====================
 
 .. meta::
-   :description: Upload, copy, or download files and directories to an |S3| bucket using the |sdk-php|.
-   :keywords: |S3|, |sdk-php| examples, |S3| for PHP code examples, |S3| transfer
+   :description: Upload, copy, or download files and directories to an Amazon S3 bucket using the AWS SDK for PHP.
+   :keywords: Amazon S3 code examples for PHP
 
 
 The |sdk-php| |S3| transfer manager is used to upload entire directories to
@@ -30,10 +30,10 @@ All the example code for the |sdk-php| is available `here on GitHub <https://git
 Credentials
 -----------
 
-Before running the example code, configure your AWS credentials, as described in :doc:`guide_credentials` and import the |sdk-php|.
+Before running the example code, configure your AWS credentials, as described in :doc:`guide_credentials`. Then import the |sdk-php|.
 
-Uploading a Local Directory to |S3|
------------------------------------
+Upload a Local Directory to |S3|
+--------------------------------
 
 The ``Aws\S3\Transfer`` object is used to perform transfers. The following
 example shows how to recursively upload a local directory of files to an
@@ -45,7 +45,7 @@ example shows how to recursively upload a local directory of files to an
 .. literalinclude:: example_code/s3/TransferManager.php
    :lines: 25-29
    :language: php
-   
+
 .. literalinclude:: example_code/s3/TransferManager.php
    :lines: 34-44
    :language: php
@@ -53,9 +53,9 @@ example shows how to recursively upload a local directory of files to an
 
 
 In this example, we created an |S3| client, created a ``Transfer`` object,
-and performed transfer synchronously. Using the previous example demonstrates the
+and performed a transfer synchronously. Using the previous example demonstrates the
 bare minimum amount of code needed to perform a transfer. The transfer object
-can perform transfers asynchronously and has various configuration options you can
+can also perform transfers asynchronously and has various configuration options you can
 use to customize the transfers.
 
 You can upload the local files to a "subfolder" of a an |S3| bucket by
@@ -64,8 +64,8 @@ local files on disk to the ``bucket`` bucket and stores the files under the
 ``foo`` key prefix.
 
 
-Downloading an |S3| Bucket
---------------------------
+Download an |S3| Bucket
+-----------------------
 
 You can recursively download an |S3| bucket to a local directory on disk
 by specifying the ``$source`` argument as an |S3| URI
@@ -77,7 +77,7 @@ directory.
 .. literalinclude:: example_code/s3/TransferManager.php
    :lines: 49-54
    :language: php
-   
+
 .. literalinclude:: example_code/s3/TransferManager.php
    :lines: 43-44
    :language: php
@@ -85,8 +85,8 @@ directory.
 
 .. note::
 
-    The SDK will automatically create any necessary directories when
-    downloading the objects in the bucket.
+    The |sdk-php| automatically creates any necessary directories when
+    downloading the objects that are in the bucket.
 
 You can include a key prefix in the |S3| URI after the bucket to download
 only objects stored under a "pseudo-folder". The following example downloads
@@ -105,7 +105,7 @@ The ``Transfer`` object constructor accepts the following arguments.
     The source data being transferred. This can point
     to a local path on disk (e.g., ``/path/to/files``) or an |S3| bucket
     (e.g., ``s3://bucket``). The ``s3://`` URI may also contain a key prefix
-    that can be used to only transfer objects under a common prefix.
+    that can be used to transfer only objects under a common prefix.
 
     If the ``$source`` argument is an |S3| URI, the ``$dest``
     argument must be a local directory (and vice versa).
@@ -116,7 +116,7 @@ The ``Transfer`` object constructor accepts the following arguments.
     ``$options`` associative array.
 
 ``$dest``
-    The destination where the files will be transferred. If the ``$source``
+    The destination to which the files will be transferred. If the ``$source``
     argument is a local path on disk, ``$dest`` must be an |S3|
     bucket URI (e.g., ``s3://bucket``). If the ``$source`` argument is an
     |S3| bucket URI, the ``$dest`` argument must be a local path on
@@ -132,7 +132,7 @@ Transfer Options
 
 ``base_dir`` (string)
     Base directory of the source, if ``$source`` is an iterator. If
-    the ``$source`` option is not an array, then this option is ignored.
+    the ``$source`` option is not an array, this option is ignored.
 
 ``before`` (callable)
     A callback to invoke before each transfer. The callback should
@@ -149,7 +149,7 @@ Transfer Options
     Number of files to upload concurrently. The ideal
     concurrency value will vary based on the number of files being uploaded and
     the average size of each file. Generally, smaller files benefit
-    from a higher concurrency while larger files do not.
+    from a higher concurrency while larger files don't.
 
 ``debug`` (bool)
     Set to ``true`` to print out debug information for transfers. Set to
@@ -170,18 +170,18 @@ object.
 .. literalinclude:: example_code/s3/TransferManager.php
    :lines: 50-54
    :language: php
-   
+
 .. literalinclude:: example_code/s3/TransferManager.php
    :lines: 58-64
    :language: php
    :dedent: 4
 
 
-The promise will be rejected if any of the files fail to transfer. You can
+If any of the files fail to transfer, the promise is rejected. You can
 handle the failed transfer asynchronously using the ``otherwise`` method of the
 promise. The ``otherwise`` function accepts a callback to invoke when an error
-occurs. The callback accepts the ``$reason`` for the rejection, which will
-typically be an instance of ``Aws\Exception\AwsException`` (although a value of
+occurs. The callback accepts the ``$reason`` for the rejection, which is
+typically an instance of ``Aws\Exception\AwsException`` (although a value of
 **any** type can be delivered to the callback).
 
 .. code-block:: php
@@ -194,10 +194,10 @@ typically be an instance of ``Aws\Exception\AwsException`` (although a value of
 Because the ``Transfer`` object returns a promise, these transfers can occur
 concurrently with other asynchronous promises.
 
-Customizing the Transfer Manager's Commands
--------------------------------------------
+Customize the Transfer Manager's Commands
+-----------------------------------------
 
-Custom options can be set on the operations executed by the transfer manager via
+You can set custom options on the operations executed by the transfer manager via
 a callback passed to its constructor.
 
 .. code-block:: php
