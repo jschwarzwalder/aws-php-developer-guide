@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-=====================
-|S3| Transfer Manager
-=====================
+================================================
+Upload a whole directory to |S3| using |sdk-php|
+================================================
 
 .. meta::
    :description: Upload, copy, or download files and directories to an Amazon S3 bucket using the AWS SDK for PHP.
@@ -30,7 +30,7 @@ All the example code for the |sdk-php| is available `here on GitHub <https://git
 Credentials
 -----------
 
-Before running the example code, configure your AWS credentials, as described in :doc:`guide_credentials`. Then import the |sdk-php|.
+Before running the example code, configure your AWS credentials, as described in :doc:`guide_credentials`.
 
 Upload a Local Directory to |S3|
 --------------------------------
@@ -53,9 +53,9 @@ example shows how to recursively upload a local directory of files to an
 
 
 In this example, we created an |S3| client, created a ``Transfer`` object,
-and performed a transfer synchronously. Using the previous example demonstrates the
-bare minimum amount of code needed to perform a transfer. The transfer object
-can also perform transfers asynchronously and has various configuration options you can
+and performed a transfer synchronously. The example demonstrates how to use a 
+minimal amount of code to perform a transfer. The transfer object
+can also perform transfers of files asynchronously and has various configuration options you can
 use to customize the transfers.
 
 You can upload the local files to a "subfolder" of a an |S3| bucket by
@@ -156,12 +156,12 @@ Transfer Options
     an ``fopen()`` resource to write to a specific stream instead of writing
     to STDOUT.
 
-Async Transfers
----------------
+Transfer files Asynchronously
+-----------------------------
 
 The ``Transfer`` object is an instance of
 ``GuzzleHttp\Promise\PromisorInterface``. This means that the transfer can
-occur asynchronously and is initiated by calling the ``promise`` method of the
+occur asynchronously and is initiated by calling the ``promise`` function of the
 object.
 
 
@@ -178,7 +178,7 @@ object.
 
 
 If any of the files fail to transfer, the promise is rejected. You can
-handle the failed transfer asynchronously using the ``otherwise`` method of the
+handle the failed transfer asynchronously using the ``otherwise`` function of the
 promise. The ``otherwise`` function accepts a callback to invoke when an error
 occurs. The callback accepts the ``$reason`` for the rejection, which is
 typically an instance of ``Aws\Exception\AwsException`` (although a value of
